@@ -11,7 +11,9 @@
 / {
         keymap {
                 compatible = "zmk,keymap";
-
+                &led_strip {
+                    chain-length = <21>;
+                };
                 default_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
