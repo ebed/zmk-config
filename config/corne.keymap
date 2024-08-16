@@ -37,9 +37,9 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &trans    &trans    &trans &trans   &trans   &trans  &trans      &kp UP   &trans     &kp HOME &kp PGUP &kp DEL  
-   &trans    &trans    &trans &trans   &trans &trans   &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN &kp BSCP
+   &trans    &trans    &trans &trans   &trans &trans   &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN &kp BSPC
    &trans    &trans    &trans &trans   &trans   &trans     &trans &trans   &trans   &trans     &trans &trans  
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+                             &kp LGUI &mo 3   &kp SPACE   &kp RET   &trans    &kp RALT
                         >;
                 };
                 nums_layer {
