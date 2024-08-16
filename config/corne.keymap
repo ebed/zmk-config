@@ -29,6 +29,17 @@
                    &kp LSHFT   &kp LGUI &kp SPACE   &mo 1 &mo 2 &kp RALT
                         >;
                 };
+                nums_layer {
+// -----------------------------------------------------------------------------------------
+// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
+   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
+   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
+                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
@@ -36,25 +47,11 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &kp PGUP  &trans &kp UP &trans  &kp HOME &trans
-   &kp LSHFT  &out OUT_TOG &rgb_ug RGB_TOG  &trans &trans &rgb_ug RGB_EFF       &kp PGDN &kp LEFT &kp DOWN &kp RIGHT   &kp END &trans
+   &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &trans &trans &rgb_ug RGB_TOG  &rgb_ug RGB_EFF &trans &trans &trans &trans
+   &out OUT_TOG &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &trans &trans &rgb_ug RGB_COLOR(128, 100,100) &rgb_ug RGB_COLOR(0,100,100) &rgb_ug RGB_COLOR(240,100,100) &trans &trans &trans
                                     &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB   &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &rgb_ug RGB_COLOR_HSB(128,100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
+                       >;
                 };
         };
 };
