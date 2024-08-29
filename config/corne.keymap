@@ -38,7 +38,7 @@
                         bindings = <
    &none    &none    &none &kp K_PP   &kp K_FORWARD   &none  &none    &none  &kp UP   &none     &kp HOME &kp PGUP  
    &none    &none    &none &none   &none &none  &none &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN 
-   &none    &none    &none &none   &none   &none     &none &none   &none   &none     &none &none  
+   &kp LCTRL &none    &none &none   &none   &none     &none &none   &none   &none     &none &none
                              &kp LGUI &mo 3   &kp SPACE   &kp RET   &none    &kp RALT
                         >;
                 };
