@@ -37,7 +37,7 @@
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
    &none    &none    &none &kp K_PP   &kp K_FORWARD   &none  &none    &none  &kp UP   &none     &kp HOME &kp PGUP  
-   &none    &none    &none &none   &none &none  &none &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN 
+   &kp LALT &none    &none &none   &none &none  &none &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN 
    &kp LCTRL &none    &none &none   &none   &none     &none &none   &none   &none     &none &none
                              &kp LGUI &mo 3   &kp SPACE   &kp RET   &none    &kp RALT
                         >;
@@ -62,7 +62,7 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &bt BT_CLR &none &none &none &none &out OUT_TOG  &none &none &none &none &none &none &rgb_ug RGB_TOG  
+   &bt BT_CLR &none &none &none &none &out OUT_TOG    &bl BL_TOG &none &none &none &none &rgb_ug RGB_TOG  
    &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none &none &rgb_ug RGB_EFF &none &none &none &none &none  
    &none &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &none &none &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none &none
                                     &kp LGUI     &none       &kp SPACE      &kp RET  &none   &kp RALT
