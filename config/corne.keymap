@@ -40,7 +40,7 @@
    &none    &none    &none &kp K_PP   &kp K_FORWARD   &none  &none    &none  &kp UP   &none     &kp HOME &kp PGUP  
    &kp LSHFT &none    &none &none   &none &none  &none &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN 
    &kp LCTRL &none    &none &none   &none   &none     &none &none   &none   &none     &none &none
-                             &kp LALT &mo 3   &kp LGUI   &none   &none    &kp RALT
+                             &kp LALT &mo 3   &kp LGUI   &none   &mo 4    &kp RALT
                         >;
                 };
                 nums_layer {
@@ -69,6 +69,20 @@
                                     &kp LGUI     &none       &kp SPACE      &kp RET  &none   &kp RALT
                        >;
                 };
+                functions_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        bindings = <
+   &kp F1   &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9     &kp F10   &kp F11    &kp F12
+   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  
+   &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  
+                   &none   &none &none   &none &none &none
+                       >;
+                };
+
         };
 };
 
