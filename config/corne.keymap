@@ -41,7 +41,7 @@
    &none    &none    &none &kp K_PP   &kp K_FORWARD   &none  &none    &none  &kp UP   &none     &kp HOME &kp PGUP  
    &kp TAB &none    &none &none   &none &none  &none &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN 
    &kp LCTRL &none    &none &none   &none   &none     &none &none   &none   &none     &none &none
-                             &kp LSHFT &mo 3   &kp LGUI   &none   &mo 4    &kp RALT
+                             &kp LSHFT &kp LGUI   &mo 3  &none   &mo 4    &kp RALT
                         >;
                 };
 	    // LAYER 2
