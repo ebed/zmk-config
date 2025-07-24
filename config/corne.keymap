@@ -30,6 +30,7 @@
 /*         |SHFT | GUI | SPACE|                              |MO2  | MO1 | RALT| */
 /*         `-------------------'                            `-------------------' */
         layer_0 {
+            display-name = "Base",
             bindings = <
                 &kp ESC    &kp Q    &kp W    &kp F    &kp P    &kp B          &kp J    &kp L    &kp U    &kp Y    &kp SEMI &kp BSPC
                 &kp TAB    &kp A    &kp R    &kp S    &kp T    &kp G          &kp M    &kp N    &kp E    &kp I    &kp O    &kp SQT
@@ -49,6 +50,7 @@
 /*         |SHFT | GUI | SPACE|                              | MO 3 |ONE | RALT| */
 /*         `-------------------'                            `-------------------' */
         layer_1 {
+            display-name = "L 1",
             bindings = <
                 &none      &kp N1   &kp N2   &kp N3   &kp N4   &kp N5         &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &kp DEL
  	        &kp TAB    &none    &none    &none    &none    &none          &kp MINUS &kp EQUAL &none    &none    &kp BSLH  &kp GRAVE
@@ -68,6 +70,7 @@
 /*         |SHFT | GUI | SPACE|                              |NONE  |MO 4 | RALT| */
 /*         `-------------------'                            `-------------------' */
         layer_2 {
+            display-name = "L 2",
             bindings = <
                 &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none    &none    &kp UP     &none     &none       &kp BSPC
                 &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none    &kp LEFT &kp DOWN   &kp RIGHT &kp  HOME   &kp PG_UP
@@ -87,6 +90,7 @@
 /*         | GUI |NONE |SPACE|                               |RET  |NONE |RALT| */
 /*         `-------------------'                            `-------------------' */
         lower_layer {
+            display-name = "L 3",
             bindings = <
                     &bt BT_CLR    &none        &none        &none         &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG                         &rgb_ug RGB_TOG  
                     &soft_off     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &none         &none           &rgb_ug RGB_EFF                     &none &bl BL_DEC                 &bl BL_INC                         &rgb_ug RGB_BRD                  &rgb_ug RGB_BRI 
@@ -107,6 +111,7 @@
 /*         |SHFT |NONE |NONE |                               |NONE |NONE |NONE| */
 /*         `-------------------'                            `-------------------' */
         functions_layer {
+            display-name = "L 4",
             bindings = <
                     &kp F1    &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9     &kp F10  &kp F11    &kp F12
                     &none     &none  &none  &none  &none  &none    &none  &none   &none      &none    &none      &none  
