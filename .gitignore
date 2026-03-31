@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+.west/
+modules/
+optional/
+zmk/
+zmk-nice-oled/
+zephyr/
+
+# Local build scripts
+build-local.sh
+
+# IDE
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+path/
+
+# macOS
+.DS_Store

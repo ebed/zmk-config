@@ -16,6 +16,18 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -32,10 +44,10 @@
         layer_0 {
             display-name = "Base";
             bindings = <
-                &kp ESC    &kp Q    &kp W    &kp F    &kp P    &kp B          &kp J    &kp L    &kp U    &kp Y    &kp SEMI &kp BSPC
-                &kp TAB    &kp A    &kp R    &kp S    &kp T    &kp G          &kp M    &kp N    &kp E    &kp I    &kp O    &kp SQT
-                &kp LCTRL  &kp Z    &kp X    &kp C    &kp D    &kp V          &kp K    &kp H    &kp COMMA&kp DOT  &kp SLASH&kp RET
-                                  &kp LSHFT &kp LGUI &kp SPACE                &mo 2    &mo 1    &kp RALT
+                &kp ESC    &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
+                &kp TAB    &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G          &kp M    &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O  &kp SQT
+                &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
+                                       &kp LSHFT   &kp LGUI     &kp SPACE                   &mo 2    &mo 1        &kp RALT
             >;
         };
 
