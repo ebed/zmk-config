@@ -1,0 +1,71 @@
+═══════════════════════════════════════════════════════════════
+         nice!nano v2 - Vista superior (Pinout)
+═══════════════════════════════════════════════════════════════
+
+            ┌──────── USB-C ────────┐
+            │                       │
+            │   ┌───────────────┐   │
+            │   │               │   │
+            └───┴───────────────┴───┘
+                │               │
+    
+LADO IZQUIERDO          nice!nano          LADO DERECHO
+(componentes hacia ti)                     (componentes hacia ti)
+
+RAW  ●                                             ● VCC
+GND  ●  ← ESTE (cortocircuito aquí)               ● RST  ← CON ESTE
+RST  ●  ← 
+VCC  ●                                             ● P0.10
+P1.15●                                             ● P1.11
+P0.02●                                             ● P1.13
+P0.29●                                             ● P1.15
+P0.03●                                             ● P0.02
+P0.28●                                             ● P0.29
+P0.30●                                             ● P0.03
+P0.31●                                             ● P0.28
+P0.05●                                             ● P0.30
+P0.04●                                             ● P0.31
+
+
+═══════════════════════════════════════════════════════════════
+                    MÉTODO DE CORTOCIRCUITO
+═══════════════════════════════════════════════════════════════
+
+Paso 1: Conecta el teclado por USB
+
+Paso 2: Con un destornillador o cable, haz contacto:
+
+         GND ●───┐  ← Toca estos dos
+                 │     pines a la vez
+         RST ●───┘
+
+Paso 3: Mantén el contacto 1-2 segundos
+
+Paso 4: Suelta → Debería aparecer drive "NICENANO"
+
+
+═══════════════════════════════════════════════════════════════
+              VISTA LATERAL (Cómo sostener el destornillador)
+═══════════════════════════════════════════════════════════════
+
+                    ┌────────┐
+   Destornillador → │========│ ← Punta tocando ambos pines
+                    │        │
+                    └────────┘
+                    ┌────┐
+                    │USB │
+                    └────┘
+    nice!nano  →    ├────┤
+                    │ ●● │  ← GND + RST (estos dos)
+                    │ ●  │
+                    │ ●  │
+                    └────┘
+
+
+TIP: Si no tienes destornillador, puedes usar:
+- Un clip/alfiler
+- Cable pelado
+- Pinzas metálicas
+- Cualquier objeto conductor pequeño
+
+⚠️  NO toques otros pines! Solo GND y RST
