@@ -218,14 +218,19 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado.
 
 ## OLED — Widgets activos
 
+### Left OLED (central)
+
 | Widget | Descripción |
 |--------|-------------|
-| Layer name | Nombre de la capa activa (`Base` / `Nums` / `Nav` / `Sys` / `Fn`) |
-| Modifier indicators | Muestra qué HRM está activo (GUI / ALT / CTL / SHF) |
-| HID indicators | CapsLock — activa animación Luna |
-| WPM | Contador de palabras por minuto en tiempo real |
-| Luna animation | Animada por modificadores y CapsLock |
-| Battery | Nivel de batería en el lado periférico |
+| Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac`) |
+| Bongo Cat | Idle: gato en reposo — typing: gato animado según WPM |
+
+### Right OLED (periférico)
+
+| Widget | Descripción |
+|--------|-------------|
+| Battery | Nivel de batería |
+| Peripheral cat | Animación sincronizada con WPM del lado central via BLE |
 
 ---
 
