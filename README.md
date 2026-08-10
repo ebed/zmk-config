@@ -148,20 +148,33 @@ F1–F12 en la fila superior.
 
 ## Layer 5 — Mac (hold RALT)
 
-Macros macOS y tmux. Activación: hold pulgar derecho externo (RALT).  
-Mismas posiciones de Layer 1 anterior para mantener muscle memory.
+Activación: hold pulgar derecho externo (RALT).
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|      |     |      |      |      |          |        |      |     |      |      |      |       |
-|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
-|      |     |SS⌘4  |SS⌘3  |SS⌘5  |Mission   |        |      |     |tmx:dt|tmx:zm|      |       |
-|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
-|      |DSK← |DSK→  |Exposé|      |          |        |      |     |tmx:nw|tmx:% |tmx:" |       |
-'------+-----+------+------+------+----------'        '------+-----+------+------+------+-------'
+|      |     |      |      |      |          |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
+|------+-----+------+------+------+----------|        |-----+-----+------+------+------+-------|
+|      |     |SS⌘4  |SS⌘3  |SS⌘5  |Mission   |        |     |CTR  |tmx:dt|tmx:zm|      |       |
+|------+-----+------+------+------+----------|        |-----+-----+------+------+------+-------|
+|      |DSK← |DSK→  |Exposé|      |          |        |     |     |tmx:nw|tmx:% |tmx:" |       |
+'------+-----+------+------+------+----------'        '-----+-----+------+------+------+-------'
              |      | GUI  | SPACE|                         |      |      |[held]|
              '------+------+------'                         '------+------+------'
 ```
+
+### Rectangle — Window Management (lado derecho, fila superior)
+
+Requiere [Rectangle](https://rectangleapp.com/) instalado.
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `J` | `⌃⌥←` | Snap mitad izquierda |
+| `L` | `⌃⌥→` | Snap mitad derecha |
+| `U` | `⌃⌥↑` | Snap mitad superior |
+| `Y` | `⌃⌥↓` | Snap mitad inferior |
+| `;` | `⌃⌥↩` | Maximizar |
+| `BSPC` | `⌃⌥⌫` | Restaurar tamaño anterior |
+| `N` | `⌃⌥C` | Centrar ventana |
 
 ### Shortcuts macOS (lado izquierdo)
 
@@ -185,7 +198,7 @@ Mismas posiciones de Layer 1 anterior para mantener muscle memory.
 | `.` | `Ctrl+B`, `%` | Split vertical (paneles lado a lado) |
 | `/` | `Ctrl+B`, `"` | Split horizontal (paneles apilados) |
 
-> **Nota tmux:** con HRM ya tenés `Ctrl+B` en cualquier layer — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos en un solo key.
+> **Nota tmux:** con HRM ya tenés `Ctrl+B` — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos en un solo key.
 
 ---
 
