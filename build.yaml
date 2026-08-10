@@ -18,9 +18,9 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: corne_left nice_oled
-  - board: nice_nano_v2
-    shield: corne_right nice_oled
-  - board: nice_nano_v2
+  - board: nrfmicro/nrf52840
+    shield: corne_left
+  - board: nrfmicro/nrf52840
+    shield: corne_right
+  - board: nrfmicro/nrf52840
     shield: settings_reset
