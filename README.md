@@ -20,10 +20,11 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 
 ```
 Base (Layer 0) — siempre activa
-  └─ hold MO1 (pulgar der medio) → Nums (Layer 1)
+  └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
        └─ tap MO3 (pulgar der izq) → Sys (Layer 3)
   └─ hold MO2 (pulgar der izq) → Nav (Layer 2)
        └─ tap MO4 (pulgar der med) → Fn (Layer 4)
+  └─ hold RALT (pulgar der externo) → Mac (Layer 5)
 ```
 
 ---
@@ -79,43 +80,21 @@ Activa modo ALL_CAPS. Las letras salen en mayúscula y `_` pasa sin desactivar. 
 
 ---
 
-## Layer 1 — Nums (hold MO1)
+## Layer 1 — Sym (hold MO1)
+
+Números y símbolos puros. Macros en Layer 5.
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|      |  1  |  2   |  3   |  4   |  5       |        |  6   |  7  |  8    |  9    |  0   | DEL   |
-|------+-----+------+------+------+----------|        |------+-----+-------+-------+------+-------|
-| TAB  |     |SS⌘4  |SS⌘3  |SS⌘5  |Mission   |        |  -   |  =  |tmx:dt |tmx:zm |  \   |  `    |
-|------+-----+------+------+------+----------|        |------+-----+-------+-------+------+-------|
-|      |DSK← |DSK→  |Exposé|      |          |        |  [   |  ]  |tmx:nw |tmx:%  |tmx:" | RET   |
-'------+-----+------+------+------+----------'        '------+-----+-------+-------+------+-------'
-             |CPSW  | GUI  | SPACE|                         | MO3 |       |RALT   |
-             '------+------+------'                         '-----+-------+-------'
+|      |  1  |  2   |  3   |  4   |  5       |        |  6   |  7  |  8   |  9   |  0   | DEL   |
+|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
+| TAB  |     |      |      |      |          |        |  -   |  =  |      |      |  \   |  `    |
+|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
+|      |     |      |      |      |          |        |  [   |  ]  |      |      |      | RET   |
+'------+-----+------+------+------+----------'        '------+-----+------+------+------+-------'
+             |CPSW  | GUI  | SPACE|                         | MO3 |      |RALT  |
+             '------+------+------'                         '-----+------+------'
 ```
-
-### Shortcuts macOS (lado izquierdo)
-
-| Tecla (Layer 1) | Shortcut | Acción |
-|-----------------|----------|--------|
-| `R` | `⌘+Shift+4` | Screenshot — selección de área |
-| `S` | `⌘+Shift+3` | Screenshot — pantalla completa |
-| `T` | `⌘+Shift+5` | Screenshot — toolbar (video/área) |
-| `G` | `Ctrl+↑` | Mission Control |
-| `Z` | `Ctrl+←` | Escritorio anterior |
-| `X` | `Ctrl+→` | Escritorio siguiente |
-| `C` | `Ctrl+↓` | App Exposé (ventanas de la app activa) |
-
-### Macros tmux (lado derecho, prefix = `Ctrl+B`)
-
-| Tecla (Layer 1) | Secuencia tmux | Acción |
-|-----------------|----------------|--------|
-| `E` (col 8) | `Ctrl+B`, `d` | Detach sesión |
-| `I` (col 9) | `Ctrl+B`, `z` | Zoom/unzoom pane activo |
-| `,` (col 8 bot) | `Ctrl+B`, `c` | Nueva ventana |
-| `.` (col 9 bot) | `Ctrl+B`, `%` | Split vertical (paneles lado a lado) |
-| `/` (col 10 bot) | `Ctrl+B`, `"` | Split horizontal (paneles apilados) |
-
-> **Nota tmux:** con HRM ya tenés `Ctrl+B` en cualquier layer — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos (prefix + acción) en un solo key.
 
 ---
 
@@ -164,6 +143,49 @@ Mouse en la mano izquierda — click, scroll y movimiento. Flechas + navegación
 ## Layer 4 — Fn (MO2 + MO4)
 
 F1–F12 en la fila superior.
+
+---
+
+## Layer 5 — Mac (hold RALT)
+
+Macros macOS y tmux. Activación: hold pulgar derecho externo (RALT).  
+Mismas posiciones de Layer 1 anterior para mantener muscle memory.
+
+```
+,--------------------------------------------.        ,--------------------------------------------.
+|      |     |      |      |      |          |        |      |     |      |      |      |       |
+|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
+|      |     |SS⌘4  |SS⌘3  |SS⌘5  |Mission   |        |      |     |tmx:dt|tmx:zm|      |       |
+|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
+|      |DSK← |DSK→  |Exposé|      |          |        |      |     |tmx:nw|tmx:% |tmx:" |       |
+'------+-----+------+------+------+----------'        '------+-----+------+------+------+-------'
+             |      | GUI  | SPACE|                         |      |      |[held]|
+             '------+------+------'                         '------+------+------'
+```
+
+### Shortcuts macOS (lado izquierdo)
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `R` | `⌘+Shift+4` | Screenshot — selección de área |
+| `S` | `⌘+Shift+3` | Screenshot — pantalla completa |
+| `T` | `⌘+Shift+5` | Screenshot — toolbar (video/área) |
+| `G` | `Ctrl+↑` | Mission Control |
+| `Z` | `Ctrl+←` | Escritorio anterior |
+| `X` | `Ctrl+→` | Escritorio siguiente |
+| `C` | `Ctrl+↓` | App Exposé (ventanas de la app activa) |
+
+### Macros tmux (lado derecho, prefix = `Ctrl+B`)
+
+| Tecla | Secuencia tmux | Acción |
+|-------|----------------|--------|
+| `E` | `Ctrl+B`, `d` | Detach sesión |
+| `I` | `Ctrl+B`, `z` | Zoom/unzoom pane activo |
+| `,` | `Ctrl+B`, `c` | Nueva ventana |
+| `.` | `Ctrl+B`, `%` | Split vertical (paneles lado a lado) |
+| `/` | `Ctrl+B`, `"` | Split horizontal (paneles apilados) |
+
+> **Nota tmux:** con HRM ya tenés `Ctrl+B` en cualquier layer — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos en un solo key.
 
 ---
 

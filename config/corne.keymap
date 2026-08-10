@@ -178,6 +178,7 @@
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
  * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
+ * RALT = tap→RALT / hold→Layer 5 (Mac)
  * ,----------------------------------.                ,----------------------------------.
  * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
@@ -185,7 +186,7 @@
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET |
  * `-------------------------------'                    `-------------------------------'
- *         |CPSW | GUI |SPACE|                              | MO2 | MO1 |RALT|
+ *         |CPSW | GUI |SPACE|                              | MO2 | MO1 |lt5/RALT|
  *         `-------------------'                            `-------------------'
  */
         layer_0 {
@@ -194,29 +195,29 @@
                 &gresc     &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &kp TAB    &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G          &kp M    &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O  &kp SQT
                 &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
-                                       &caps_word  &kp LGUI     &kp SPACE                   &mo 2    &mo 1        &kp RALT
+                                       &caps_word  &kp LGUI     &kp SPACE                   &mo 2    &mo 1        &lt 5 RALT
             >;
         };
 
-/* ### Layer 1 — Nums  (hold MO1)
- * Izquierda: macOS shortcuts   Derecha: números + tmux
+/* ### Layer 1 — Sym  (hold MO1)
+ * Números y símbolos puros — macros movidos a Layer 5
  * ,----------------------------------.                ,----------------------------------.
  * |     |  1  |  2  |  3  |  4  |  5 |                |  6  |  7  |  8  |  9  |  0  |DEL |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * | TAB |     |SS/4 |SS/3 |SS/5 |MSN |                |  -  |  =  |TMX.D|TMX.Z|  \  | `  |
+ * | TAB |     |     |     |     |    |                |  -  |  =  |     |     |  \  | `  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * |     |DSK← |DSK→ |EXP  |     |     |               |  [  |  ]  |TMX.N|TMX.% |TMX." |RET|
+ * |     |     |     |     |     |    |                |  [  |  ]  |     |     |     |RET |
  * `-------------------------------'                    `-------------------------------'
  *         |CPSW | GUI |SPACE|                              | MO3 |     |RALT|
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
-            display-name = "Nums";
+            display-name = "Sym";
             bindings = <
-                &none       &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6    &kp N7    &kp N8     &kp N9      &kp N0     &kp DEL
-                &kp TAB     &none        &mac_ss_area &mac_ss_full &mac_ss_tool &mac_mission   &kp MINUS &kp EQUAL &tmux_det  &tmux_zoom  &kp BSLH   &kp GRAVE
-                &trans      &mac_desk_l  &mac_desk_r  &mac_expose  &none        &none          &kp LBKT  &kp RBKT  &tmux_new  &tmux_sph   &tmux_spv  &kp RET
-                                         &trans       &kp LGUI     &kp SPACE                   &mo 3     &none     &kp RALT
+                &none       &kp N1  &kp N2  &kp N3  &kp N4  &kp N5         &kp N6    &kp N7    &kp N8  &kp N9  &kp N0   &kp DEL
+                &kp TAB     &none   &none   &none   &none   &none          &kp MINUS &kp EQUAL &none   &none   &kp BSLH &kp GRAVE
+                &trans      &none   &none   &none   &none   &none          &kp LBKT  &kp RBKT  &none   &none   &none    &kp RET
+                                     &trans  &kp LGUI &kp SPACE             &mo 3     &none     &trans
             >;
         };
 
@@ -229,7 +230,7 @@
                 &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none    &none    &kp UP     &none      &none     &kp BSPC
                 &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none    &kp LEFT &kp DOWN   &kp RIGHT  &kp HOME  &kp PG_UP
                 &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none    &none    &none      &none      &kp END   &kp PG_DN
-                                                &trans         &kp LGUI         &kp SPACE            &none    &mo 4    &kp RALT
+                                                &trans         &kp LGUI         &kp SPACE            &none    &mo 4    &trans
             >;
         };
 
@@ -242,7 +243,7 @@
                 &bt BT_CLR  &none        &none        &none         &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
                 &soft_off   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &none         &none           &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
                 &bootloader &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &none         &none           &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none            &none
-                                         &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &kp RALT
+                                         &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &trans
             >;
         };
 
@@ -256,6 +257,29 @@
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
                 &trans &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
                               &trans &none  &none            &none  &none  &none
+            >;
+        };
+
+/* ### Layer 5 — Mac  (hold RALT)
+ * macOS shortcuts (izquierda) + tmux macros (derecha)
+ * Mismas posiciones que tenían en Layer 1 para muscle memory
+ * ,----------------------------------.                ,----------------------------------.
+ * |     |     |     |     |     |    |                |     |     |     |     |     |    |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
+ * |     |     |SS/4 |SS/3 |SS/5 |MSN |                |     |     |TMX.D|TMX.Z|     |    |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
+ * |     |DSK← |DSK→ |EXP  |     |    |                |     |     |TMX.N|TMX.% |TMX."|   |
+ * `-------------------------------'                    `-------------------------------'
+ *         |     | GUI |SPACE|                              |     |     |[held]|
+ *         `-------------------'                            `-------------------'
+ */
+        macro_layer {
+            display-name = "Mac";
+            bindings = <
+                &none  &none        &none        &none        &none        &none          &none  &none  &none      &none       &none      &none
+                &none  &none        &mac_ss_area &mac_ss_full &mac_ss_tool &mac_mission   &none  &none  &tmux_det  &tmux_zoom  &none      &none
+                &none  &mac_desk_l  &mac_desk_r  &mac_expose  &none        &none          &none  &none  &tmux_new  &tmux_sph   &tmux_spv  &none
+                                    &none        &kp LGUI     &kp SPACE                   &none  &none  &trans
             >;
         };
     };
