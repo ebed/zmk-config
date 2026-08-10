@@ -16,26 +16,38 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-/* ### Layer 0 (Base) */
+/* ### Layer 0 (Base — Colemak-DH + Home Row Mods) */
 /* ,----------------------------------.                ,----------------------------------. */
 /* | ESC |  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC| */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* | TAB |  A  |  R  |  S  |  T  |  G |                |  M  |  N  |  E  |  I  |  O  | '  | */
+/* | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  | */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
 /* |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET | */
 /* `-------------------------------'                    `-------------------------------' */
-/*         |SHFT | GUI | SPACE|                              |MO2  | MO1 | RALT| */
+/*         |CPSW | GUI |SPACE|                              | MO2 | MO1 |RALT| */
 /*         `-------------------'                            `-------------------' */
         layer_0 {
             display-name = "Base";
             bindings = <
-                &kp ESC    &kp Q    &kp W    &kp F    &kp P    &kp B          &kp J    &kp L    &kp U    &kp Y    &kp SEMI &kp BSPC
-                &kp TAB    &kp A    &kp R    &kp S    &kp T    &kp G          &kp M    &kp N    &kp E    &kp I    &kp O    &kp SQT
-                &kp LCTRL  &kp Z    &kp X    &kp C    &kp D    &kp V          &kp K    &kp H    &kp COMMA&kp DOT  &kp SLASH&kp RET
-                                  &kp LSHFT &kp LGUI &kp SPACE                &mo 2    &mo 1    &kp RALT
+                &kp ESC    &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
+                &kp TAB    &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G          &kp M    &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O  &kp SQT
+                &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
+                                       &caps_word  &kp LGUI     &kp SPACE                   &mo 2    &mo 1        &kp RALT
             >;
         };
 
@@ -45,172 +57,81 @@
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
 /* | TAB |NONE |NONE |NONE |NONE |NONE|                |  -  |  =  |NONE |NONE |  \  | `  | */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |CTRL |NONE |NONE |NONE |NONE |NONE|                |  [  |  ]  |NONE |NONE |NONE |RET | */
+/* |trns |NONE |NONE |NONE |NONE |NONE|                |  [  |  ]  |NONE |NONE |NONE |RET | */
 /* `-------------------------------'                    `-------------------------------' */
-/*         |SHFT | GUI | SPACE|                              | MO 3 |ONE | RALT| */
+/*         |trns | GUI |SPACE|                              | MO3 |NONE |RALT| */
 /*         `-------------------'                            `-------------------' */
         layer_1 {
             display-name = "Layer 1";
             bindings = <
-                &none      &kp N1   &kp N2   &kp N3   &kp N4   &kp N5         &kp N6   &kp N7   &kp N8   &kp N9   &kp N0   &kp DEL
- 	        &kp TAB    &none    &none    &none    &none    &none          &kp MINUS &kp EQUAL &none    &none    &kp BSLH  &kp GRAVE
-	        &kp LCTRL  &none    &none    &none    &none    &none          &kp LBKT  &kp RBKT  &none    &none    &none     &kp RET
-                                  &kp LSHFT &kp LGUI &kp SPACE                &mo 3    &none    &kp RALT
+                &none   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5         &kp N6    &kp N7    &kp N8   &kp N9   &kp N0    &kp DEL
+                &kp TAB &none    &none    &none    &none    &none          &kp MINUS  &kp EQUAL &none    &none    &kp BSLH  &kp GRAVE
+                &trans  &none    &none    &none    &none    &none          &kp LBKT   &kp RBKT  &none    &none    &none     &kp RET
+                                 &trans   &kp LGUI &kp SPACE                &mo 3    &none      &kp RALT
             >;
         };
 
 /* ### Layer 2 (Navigation/Mouse) */
 /* ,----------------------------------.                ,----------------------------------. */
-/* |SCRUP|NONE |MUP  |NONE |LCLK |NONE|                |NONE |NONE | UP  |NONE |NONE |BSPC| */
+/* |SCRUP|NONE |MUP  |NONE |LCLK |NONE|                |NONE | UP  |NONE |NONE |NONE |BSPC| */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |SCRDN|MLFT |MDN  |MRGT |MCLK |NONE|                |NONE |LEFT |DOWN |RGHT |PGUP |HOME| */
+/* |SCRDN|MLFT |MDN  |MRGT |MCLK |NONE|                |LEFT |DOWN |RGHT |HOME |PGUP |NONE| */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |SCLFT|SCRT |NONE |NONE |RCLK |NONE|                |NONE |NONE |NONE |NONE |PGDN |END | */
+/* |SCLFT|SCRT |NONE |NONE |RCLK |NONE|                |NONE |NONE |NONE |END  |PGDN |NONE| */
 /* `-------------------------------'                    `-------------------------------' */
-/*         |SHFT | GUI | SPACE|                              |NONE  |MO 4 | RALT| */
+/*         |trns | GUI |SPACE|                              |NONE | MO4 |RALT| */
 /*         `-------------------'                            `-------------------' */
         layer_2 {
             display-name = "Layer 2";
             bindings = <
-                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none    &none    &kp UP     &none     &none       &kp BSPC
-                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none    &kp LEFT &kp DOWN   &kp RIGHT &kp  HOME   &kp PG_UP
-                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none    &none    &none      &none     &kp END     &kp PG_DN
-                                  &kp LSHFT &kp LGUI &kp SPACE                  &none      &mo 4    &kp RALT
+                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none    &none    &kp UP     &none      &none     &kp BSPC
+                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none    &kp LEFT &kp DOWN   &kp RIGHT  &kp HOME  &kp PG_UP
+                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none    &none    &none      &none      &kp END   &kp PG_DN
+                                                &trans         &kp LGUI         &kp SPACE            &none    &mo 4    &kp RALT
             >;
         };
 
-/* ### Layer 3 (Lower/BT/RGB) */
+/* ### Layer 3 (Sistema — BT/RGB/Bootloader) */
 /* ,----------------------------------.                ,----------------------------------. */
 /* |BTCLR|NONE |NONE |NONE |BLE  |USB |                |NONE |NONE |NONE |NONE |BLTG |RGBT| */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
 /* |SOFF | BT0 | BT1 | BT2 |NONE |NONE|                |RGBE |NONE |BLD  |BLI  |RGBD |RGBI| */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |NONE | BT3 | BT4 | BT5 |NONE |NONE|                |RGB1 |RGB2 |RGB3 |RGB4 |NONE |NONE| */
+/* |BOOT | BT3 | BT4 | BT5 |NONE |NONE|                |RGB1 |RGB2 |RGB3 |RGB4 |NONE |NONE| */
 /* `-------------------------------'                    `-------------------------------' */
-/*         | GUI |NONE |SPACE|                               |RET  |NONE |RALT| */
+/*         | GUI |NONE |SPACE|                              |RET  |NONE |RALT| */
 /*         `-------------------'                            `-------------------' */
         lower_layer {
             display-name = "Layer 3";
             bindings = <
-                    &bt BT_CLR    &none        &none        &none         &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG                         &rgb_ug RGB_TOG  
-                    &soft_off     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &none         &none           &rgb_ug RGB_EFF                     &none &bl BL_DEC                 &bl BL_INC                         &rgb_ug RGB_BRD                  &rgb_ug RGB_BRI 
-                    &none         &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &none         &none           &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none &none
-                        &kp LGUI     &none       &kp SPACE                                                &kp RET  &none   &kp RALT
-           >;
+                &bt BT_CLR  &none        &none        &none         &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
+                &soft_off   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &none         &none           &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
+                &bootloader &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &none         &none           &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none            &none
+                                         &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &kp RALT
+            >;
         };
 
-
-/* ### Layer 4 (Functions) */
+/* ### Layer 4 (Funciones) */
 /* ,----------------------------------.                ,----------------------------------. */
 /* | F1  | F2  | F3  | F4  | F5  | F6 |                | F7  | F8  | F9  | F10 | F11 |F12 | */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
 /* |NONE |NONE |NONE |NONE |NONE |NONE|                |NONE |NONE |NONE |NONE |NONE |NONE| */
 /* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |CTRL |NONE |NONE |NONE |NONE |NONE|                |NONE |NONE |NONE |NONE |NONE |NONE| */
+/* |trns |NONE |NONE |NONE |NONE |NONE|                |NONE |NONE |NONE |NONE |NONE |NONE| */
 /* `-------------------------------'                    `-------------------------------' */
-/*         |SHFT |NONE |NONE |                               |NONE |NONE |NONE| */
+/*         |trns |NONE |NONE |                              |NONE |NONE |NONE| */
 /*         `-------------------'                            `-------------------' */
         functions_layer {
             display-name = "Layer 4";
             bindings = <
-                    &kp F1    &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9     &kp F10  &kp F11    &kp F12
-                    &none     &none  &none  &none  &none  &none    &none  &none   &none      &none    &none      &none  
-                    &kp LCTRL &none  &none  &none  &none  &none    &none  &none   &none      &none    &none      &none  
-                                &kp LSHFT &none  &none              &none  &none &none
-                       >;
-                };
+                &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
+                &trans &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
+                              &trans &none  &none            &none  &none  &none
+            >;
+        };
     };
 };
-
-/* / { */
-/*         keymap { */
-/*                 compatible = "zmk,keymap"; */
-/*                 default_layer { */
-/* // ----------------------------------------------------------------------------------------- */
-/* // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP | */
-/* // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   | */
-/* // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  | */
-/* //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT | */
-/*                         bindings = < */
-/*    &kp ESC   &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SEMI    &kp BSPC */
-/*    &kp TAB   &kp A &kp R &kp S &kp T &kp G   &kp M &kp N  &kp E     &kp I   &kp O &kp SQT */
-/*    &kp LCTRL &kp Z &kp X &kp C &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &kp FSLH &kp RET */
-/*                    &kp LSHFT   &kp LGUI &kp SPACE   &mo 1 &mo 2 &kp RALT */
-/*                         >; */
-/*                 }; */
-/* 	    // LAYER 1 */
-/*          directions_layer { */
-/* // ----------------------------------------------------------------------------------------- */
-/* // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL | */
-/* // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      | */
-/* // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      | */
-/* //                    | GUI |     | SPC |   | ENT |     | ALT | */
-/*                         bindings = < */
-/*    &none    &none    &none &kp K_PP   &kp K_FORWARD   &none  &none    &none  &kp UP   &none     &kp HOME &kp PGUP   */
-/*    &kp TAB &none    &none &none   &none &none  &none &kp LEFT     &kp DOWN &kp RIGHT   &kp END &kp PGDN  */
-/*    &kp LCTRL &none    &none &none   &none   &none     &mo 5 &none   &none   &none     &none &none */
-/*                              &kp LSHFT &kp LGUI   &kp LALT &none   &mo 4    &mo 3   */
-/*                         >; */
-/*                 }; */
-/* 	    // LAYER 2 */
-/*                 nums_layer { */
-/* // ----------------------------------------------------------------------------------------- */
-/* // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL | */
-/* // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      | */
-/* // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      | */
-/* //                    | GUI |     | SPC |   | ENT |     | ALT | */
-/*                         bindings = < */
-/*    &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp DEL */
-/*    &kp TAB &none   &none &none   &none   &none      &kp MINUS &kp EQUAL &none &none &kp BSLH &kp GRAVE */
-/*    &kp LCTRL &none   &none &none   &none   &none      &kp LBKT &kp RBKT  &none &none &none &kp RET */
-/*                              &kp LSHFT &kp LGUI &kp SPACE   &mo 5   &none    &kp RALT */
-/*                         >; */
-/*                 }; */
-/* 	    // LAYER 3 */
-/*                 lower_layer { */
-/* // ----------------------------------------------------------------------------------------- */
-/* // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL | */
-/* // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      | */
-/* // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      | */
-/* //                    | GUI |     | SPC |   | ENT |     | ALT | */
-/*                         bindings = < */
-/*    &bt BT_CLR &none &none &none &out OUT_BLE &out OUT_USB    &none &none &none &none &bl BL_TOG &rgb_ug RGB_TOG   */
-/*    &soft_off &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none &none &rgb_ug RGB_EFF &none &bl BL_DEC &bl BL_INC &rgb_ug RGB_BRD &rgb_ug RGB_BRI  */
-/*    &none &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &none &none &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none &none */
-/*                                     &kp LGUI     &none       &kp SPACE      &kp RET  &none   &kp RALT */
-/*                        >; */
-/*                 }; */
-/* 	    // LAYER 4 */
-/*                 functions_layer { */
-/* // ----------------------------------------------------------------------------------------- */
-/* // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL | */
-/* // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      | */
-/* // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      | */
-/* //                    | GUI |     | SPC |   | ENT |     | ALT | */
-/*                         bindings = < */
-/*    &kp F1   &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8  &kp F9     &kp F10   &kp F11    &kp F12 */
-/*    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   */
-/*    &kp LCTRL  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   */
-/*                    &kp LSHFT   &none &none   &none &none &none */
-/*                        >; */
-/*                 }; */
-/* 	    // LAYER 5 */
-/*                 combos_layer { */
-/* // ----------------------------------------------------------------------------------------- */
-/* // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | DEL | */
-/* // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      | */
-/* // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      | */
-/* //                    | GUI |     | SPC |   | ENT |     | ALT | */
-/*                         bindings = < */
-/*    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   */
-/*    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   */
-/*    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   */
-/*    &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none   */
-/*                    &none &none &none   &none &none &none */
-/*                        >; */
-/*                 }; */
-/*         }; */
-/* }; */
 
 
 &spi3 {
@@ -237,5 +158,3 @@
                           LED_COLOR_ID_BLUE>;
   };
 };
-
-
