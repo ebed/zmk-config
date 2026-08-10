@@ -16,7 +16,21 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    /* ------------------------------------------------------------------ */
+    /* Combos                                                               */
+    /*   J+L (pos 6+7) → ESC  — accesible sin mover manos del home row    */
+    /* ------------------------------------------------------------------ */
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp ESC>;
+        };
+    };
+
     behaviors {
+        /* Home Row Mods ------------------------------------------------- */
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -26,61 +40,189 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
         };
+
+        /* macOS — Screenshots ------------------------------------------- */
+        mac_ss_area: mac_screenshot_area {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp N4>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        mac_ss_full: mac_screenshot_full {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp N3>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+        mac_ss_tool: mac_screenshot_toolbar {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LGUI>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp N5>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
+        /* macOS — Escritorios / Mission Control -------------------------- */
+        mac_desk_l: mac_desktop_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp LEFT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        mac_desk_r: mac_desktop_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp RIGHT>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        mac_mission: mac_mission_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp UP>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+        mac_expose: mac_app_expose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp DOWN>
+                , <&macro_release &kp LCTRL>
+                ;
+        };
+
+        /* tmux — prefix = Ctrl+B ---------------------------------------- */
+        tmux_new: tmux_new_window {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp C>
+                ;
+        };
+        tmux_sph: tmux_split_horizontal {
+            /* Ctrl+B, % → split vertical (paneles lado a lado) */
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LCTRL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp N5>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+        tmux_spv: tmux_split_vertical {
+            /* Ctrl+B, " → split horizontal (paneles apilados) */
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LCTRL>
+                , <&macro_press &kp LSHFT>
+                , <&macro_tap &kp SQT>
+                , <&macro_release &kp LSHFT>
+                ;
+        };
+        tmux_det: tmux_detach {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp D>
+                ;
+        };
+        tmux_zoom: tmux_zoom_pane {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LCTRL>
+                , <&macro_tap &kp B>
+                , <&macro_release &kp LCTRL>
+                , <&macro_tap &kp Z>
+                ;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-/* ### Layer 0 (Base — Colemak-DH + Home Row Mods) */
-/* ,----------------------------------.                ,----------------------------------. */
-/* | ESC |  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC| */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  | */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET | */
-/* `-------------------------------'                    `-------------------------------' */
-/*         |CPSW | GUI |SPACE|                              | MO2 | MO1 |RALT| */
-/*         `-------------------'                            `-------------------' */
+/* ### Layer 0 — Base (Colemak-DH + HRM)
+ * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
+ * ,----------------------------------.                ,----------------------------------.
+ * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
+ * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
+ * |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET |
+ * `-------------------------------'                    `-------------------------------'
+ *         |CPSW | GUI |SPACE|                              | MO2 | MO1 |RALT|
+ *         `-------------------'                            `-------------------'
+ */
         layer_0 {
             display-name = "Base";
             bindings = <
-                &kp ESC    &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
+                &gresc     &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &kp TAB    &hm LGUI A  &hm LALT R  &hm LCTRL S  &hm LSHFT T  &kp G          &kp M    &hm RSHFT N  &hm RCTRL E  &hm RALT I  &hm RGUI O  &kp SQT
                 &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
                                        &caps_word  &kp LGUI     &kp SPACE                   &mo 2    &mo 1        &kp RALT
             >;
         };
 
-/* ### Layer 1 (Numbers/Symbols) */
-/* ,----------------------------------.                ,----------------------------------. */
-/* |NONE |  1  |  2  |  3  |  4  |  5 |                |  6  |  7  |  8  |  9  |  0  |DEL | */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* | TAB |NONE |NONE |NONE |NONE |NONE|                |  -  |  =  |NONE |NONE |  \  | `  | */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |trns |NONE |NONE |NONE |NONE |NONE|                |  [  |  ]  |NONE |NONE |NONE |RET | */
-/* `-------------------------------'                    `-------------------------------' */
-/*         |trns | GUI |SPACE|                              | MO3 |NONE |RALT| */
-/*         `-------------------'                            `-------------------' */
+/* ### Layer 1 — Nums  (hold MO1)
+ * Izquierda: macOS shortcuts   Derecha: números + tmux
+ * ,----------------------------------.                ,----------------------------------.
+ * |     |  1  |  2  |  3  |  4  |  5 |                |  6  |  7  |  8  |  9  |  0  |DEL |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
+ * | TAB |     |SS/4 |SS/3 |SS/5 |MSN |                |  -  |  =  |TMX.D|TMX.Z|  \  | `  |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
+ * |     |DSK← |DSK→ |EXP  |     |     |               |  [  |  ]  |TMX.N|TMX.% |TMX." |RET|
+ * `-------------------------------'                    `-------------------------------'
+ *         |CPSW | GUI |SPACE|                              | MO3 |     |RALT|
+ *         `-------------------'                            `-------------------'
+ */
         layer_1 {
             display-name = "Nums";
             bindings = <
-                &none   &kp N1   &kp N2   &kp N3   &kp N4   &kp N5         &kp N6    &kp N7    &kp N8   &kp N9   &kp N0    &kp DEL
-                &kp TAB &none    &none    &none    &none    &none          &kp MINUS  &kp EQUAL &none    &none    &kp BSLH  &kp GRAVE
-                &trans  &none    &none    &none    &none    &none          &kp LBKT   &kp RBKT  &none    &none    &none     &kp RET
-                                 &trans   &kp LGUI &kp SPACE                &mo 3    &none      &kp RALT
+                &none       &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6    &kp N7    &kp N8     &kp N9      &kp N0     &kp DEL
+                &kp TAB     &none        &mac_ss_area &mac_ss_full &mac_ss_tool &mac_mission   &kp MINUS &kp EQUAL &tmux_det  &tmux_zoom  &kp BSLH   &kp GRAVE
+                &trans      &mac_desk_l  &mac_desk_r  &mac_expose  &none        &none          &kp LBKT  &kp RBKT  &tmux_new  &tmux_sph   &tmux_spv  &kp RET
+                                         &trans       &kp LGUI     &kp SPACE                   &mo 3     &none     &kp RALT
             >;
         };
 
-/* ### Layer 2 (Navigation/Mouse) */
-/* ,----------------------------------.                ,----------------------------------. */
-/* |SCRUP|NONE |MUP  |NONE |LCLK |NONE|                |NONE | UP  |NONE |NONE |NONE |BSPC| */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |SCRDN|MLFT |MDN  |MRGT |MCLK |NONE|                |LEFT |DOWN |RGHT |HOME |PGUP |NONE| */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |SCLFT|SCRT |NONE |NONE |RCLK |NONE|                |NONE |NONE |NONE |END  |PGDN |NONE| */
-/* `-------------------------------'                    `-------------------------------' */
-/*         |trns | GUI |SPACE|                              |NONE | MO4 |RALT| */
-/*         `-------------------'                            `-------------------' */
+/* ### Layer 2 — Nav  (hold MO2)
+ * Mouse izquierda, flechas + nav derecha
+ */
         layer_2 {
             display-name = "Nav";
             bindings = <
@@ -91,16 +233,9 @@
             >;
         };
 
-/* ### Layer 3 (Sistema — BT/RGB/Bootloader) */
-/* ,----------------------------------.                ,----------------------------------. */
-/* |BTCLR|NONE |NONE |NONE |BLE  |USB |                |NONE |NONE |NONE |NONE |BLTG |RGBT| */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |SOFF | BT0 | BT1 | BT2 |NONE |NONE|                |RGBE |NONE |BLD  |BLI  |RGBD |RGBI| */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |BOOT | BT3 | BT4 | BT5 |NONE |NONE|                |RGB1 |RGB2 |RGB3 |RGB4 |NONE |NONE| */
-/* `-------------------------------'                    `-------------------------------' */
-/*         | GUI |NONE |SPACE|                              |RET  |NONE |RALT| */
-/*         `-------------------'                            `-------------------' */
+/* ### Layer 3 — Sys  (MO1 + MO3)
+ * Bluetooth, RGB, Backlight, Bootloader
+ */
         lower_layer {
             display-name = "Sys";
             bindings = <
@@ -111,16 +246,9 @@
             >;
         };
 
-/* ### Layer 4 (Funciones) */
-/* ,----------------------------------.                ,----------------------------------. */
-/* | F1  | F2  | F3  | F4  | F5  | F6 |                | F7  | F8  | F9  | F10 | F11 |F12 | */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |NONE |NONE |NONE |NONE |NONE |NONE|                |NONE |NONE |NONE |NONE |NONE |NONE| */
-/* |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----| */
-/* |trns |NONE |NONE |NONE |NONE |NONE|                |NONE |NONE |NONE |NONE |NONE |NONE| */
-/* `-------------------------------'                    `-------------------------------' */
-/*         |trns |NONE |NONE |                              |NONE |NONE |NONE| */
-/*         `-------------------'                            `-------------------' */
+/* ### Layer 4 — Fn  (MO2 + MO4)
+ * F1–F12
+ */
         functions_layer {
             display-name = "Fn";
             bindings = <
