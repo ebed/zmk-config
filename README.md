@@ -230,7 +230,7 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado.
 | Widget | Descripción |
 |--------|-------------|
 | Battery | Nivel de batería |
-| Peripheral cat | Animación sincronizada con WPM del lado central via BLE |
+| Peripheral cat | Animación propia del lado periférico |
 
 ---
 
