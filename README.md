@@ -82,19 +82,29 @@ Activa modo ALL_CAPS. Las letras salen en mayúscula y `_` pasa sin desactivar. 
 
 ## Layer 1 — Sym (hold MO1)
 
-Números y símbolos puros. Macros en Layer 5.
+Números, símbolos y One-Shot Shift. Macros en Layer 5.
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
 |      |  1  |  2   |  3   |  4   |  5       |        |  6   |  7  |  8   |  9   |  0   | DEL   |
 |------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
-| TAB  |     |      |      |      |          |        |  -   |  =  |      |      |  \   |  `    |
+| TAB  | OSM |      |      |      |          |        |  -   |  =  |      |      |  \   |  `    |
 |------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
 |      |     |      |      |      |          |        |  [   |  ]  |      |      |      | RET   |
 '------+-----+------+------+------+----------'        '------+-----+------+------+------+-------'
              |CPSW  | GUI  | SPACE|                         | MO3 |      |RALT  |
              '------+------+------'                         '-----+------+------'
 ```
+
+### One-Shot Shift (`OSM`) — posición `A` en Layer 1
+
+| Input | Resultado |
+|-------|-----------|
+| Tap | Shift activo para el próximo char, luego off |
+| Doble tap | Sticky — shift hasta la próxima tecla modificadora |
+| Triple tap | Lock — equivalente a CapsLock real |
+
+Complementa HRM shift cuando `require-prior-idle` bloquea la activación por haber tipeado recientemente.
 
 ---
 
@@ -120,11 +130,11 @@ Mouse en la mano izquierda — click, scroll y movimiento. Flechas + navegación
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|BTCLR |     |     |     | BLE  | USB        |        |     |     |     |     |BL-TG| RGB-T |
+|BTCLR |PRV  |PLAY |NXT  | BLE  | USB        |        |     |     |     |     |BL-TG| RGB-T |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SOFF  | BT0 | BT1 | BT2 |      |            |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
+|SOFF  | BT0 | BT1 | BT2 |VOL-  |VOL+        |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|BOOT  | BT3 | BT4 | BT5 |      |            |        |🟢   | 🔴  | 🔵  | 🟡  |     |       |
+|BOOT  | BT3 | BT4 | BT5 |MUTE  |LCK         |        |🟢   | 🔴  | 🔵  | 🟡  |     |       |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | GUI |     | SPACE|                           | RET |     |RALT |
              '-----+-----+------'                           '-----+-----+-----'
@@ -135,6 +145,10 @@ Mouse en la mano izquierda — click, scroll y movimiento. Flechas + navegación
 | `BTCLR` | Borra emparejamiento del perfil activo |
 | `BT0–BT5` | Selecciona perfil Bluetooth |
 | `BLE/USB` | Cambia output activo |
+| `PRV/PLAY/NXT` | Media: pista anterior / play-pause / siguiente |
+| `VOL-/VOL+` | Volumen |
+| `MUTE` | Silenciar |
+| `LCK` | Lock screen macOS (`⌘+Ctrl+Q`) |
 | `SOFF` | Soft-off (apagado profundo, requiere reset para despertar) |
 | `BOOT` | Entra en modo bootloader para flashear firmware |
 

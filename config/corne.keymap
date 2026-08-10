@@ -200,11 +200,11 @@
         };
 
 /* ### Layer 1 — Sym  (hold MO1)
- * Números y símbolos puros — macros movidos a Layer 5
+ * Números y símbolos. OSM shift en A (one-shot: tap→shift para 1 char)
  * ,----------------------------------.                ,----------------------------------.
  * |     |  1  |  2  |  3  |  4  |  5 |                |  6  |  7  |  8  |  9  |  0  |DEL |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * | TAB |     |     |     |     |    |                |  -  |  =  |     |     |  \  | `  |
+ * | TAB |OSM  |     |     |     |    |                |  -  |  =  |     |     |  \  | `  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * |     |     |     |     |     |    |                |  [  |  ]  |     |     |     |RET |
  * `-------------------------------'                    `-------------------------------'
@@ -214,10 +214,10 @@
         layer_1 {
             display-name = "Sym";
             bindings = <
-                &none       &kp N1  &kp N2  &kp N3  &kp N4  &kp N5         &kp N6    &kp N7    &kp N8  &kp N9  &kp N0   &kp DEL
-                &kp TAB     &none   &none   &none   &none   &none          &kp MINUS &kp EQUAL &none   &none   &kp BSLH &kp GRAVE
-                &trans      &none   &none   &none   &none   &none          &kp LBKT  &kp RBKT  &none   &none   &none    &kp RET
-                                     &trans  &kp LGUI &kp SPACE             &mo 3     &none     &trans
+                &none       &kp N1          &kp N2  &kp N3  &kp N4  &kp N5         &kp N6    &kp N7    &kp N8  &kp N9  &kp N0   &kp DEL
+                &kp TAB     &osm MOD_LSFT   &none   &none   &none   &none          &kp MINUS &kp EQUAL &none   &none   &kp BSLH &kp GRAVE
+                &trans      &none           &none   &none   &none   &none          &kp LBKT  &kp RBKT  &none   &none   &none    &kp RET
+                                             &trans  &kp LGUI &kp SPACE             &mo 3     &none     &trans
             >;
         };
 
@@ -235,14 +235,23 @@
         };
 
 /* ### Layer 3 — Sys  (MO1 + MO3)
- * Bluetooth, RGB, Backlight, Bootloader
+ * Bluetooth, RGB, Backlight, Bootloader, Media, Lock
+ * ,----------------------------------.                ,----------------------------------.
+ * |BTCLR|PRV  |PLAY |NXT  | BLE  |USB |                |     |     |     |     |BL-TG|RGB-T|
+ * |-----+-----+-----+-----+------+---|                |-----+-----+-----+-----+-----+-----|
+ * |SOFF | BT0 | BT1 | BT2 |VOL- |VOL+|                |RGB+ |     | BL- | BL+ |RGB- |RGB++|
+ * |-----+-----+-----+-----+------+---|                |-----+-----+-----+-----+-----+-----|
+ * |BOOT | BT3 | BT4 | BT5 |MUTE |LCK |                |🟢   | 🔴  | 🔵  | 🟡  |     |     |
+ * `-------------------------------'                    `-------------------------------'
+ *         | GUI |     |SPACE|                              | RET |     |RALT |
+ *         `-------------------'                            `-------------------'
  */
         lower_layer {
             display-name = "Sys";
             bindings = <
-                &bt BT_CLR  &none        &none        &none         &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
-                &soft_off   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &none         &none           &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
-                &bootloader &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &none         &none           &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none            &none
+                &bt BT_CLR  &kp C_PREV   &kp C_PP     &kp C_NEXT    &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
+                &soft_off   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp C_VOL_DN  &kp C_VOL_UP   &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
+                &bootloader &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &kp C_MUTE    &kp LG(LC(Q))  &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none            &none
                                          &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &trans
             >;
         };
