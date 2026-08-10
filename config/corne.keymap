@@ -200,11 +200,11 @@
         };
 
 /* ### Layer 1 — Sym  (hold MO1)
- * Números y símbolos. OSM shift en A (one-shot: tap→shift para 1 char)
+ * Números y símbolos. SK shift en A (sticky key: tap→shift para 1 char)
  * ,----------------------------------.                ,----------------------------------.
  * |     |  1  |  2  |  3  |  4  |  5 |                |  6  |  7  |  8  |  9  |  0  |DEL |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * | TAB |OSM  |     |     |     |    |                |  -  |  =  |     |     |  \  | `  |
+ * | TAB | SK  |     |     |     |    |                |  -  |  =  |     |     |  \  | `  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * |     |     |     |     |     |    |                |  [  |  ]  |     |     |     |RET |
  * `-------------------------------'                    `-------------------------------'
@@ -215,7 +215,7 @@
             display-name = "Sym";
             bindings = <
                 &none       &kp N1          &kp N2  &kp N3  &kp N4  &kp N5         &kp N6    &kp N7    &kp N8  &kp N9  &kp N0   &kp DEL
-                &kp TAB     &osm MOD_LSFT   &none   &none   &none   &none          &kp MINUS &kp EQUAL &none   &none   &kp BSLH &kp GRAVE
+                &kp TAB     &sk LSHFT       &none   &none   &none   &none          &kp MINUS &kp EQUAL &none   &none   &kp BSLH &kp GRAVE
                 &trans      &none           &none   &none   &none   &none          &kp LBKT  &kp RBKT  &none   &none   &none    &kp RET
                                              &trans  &kp LGUI &kp SPACE             &mo 3     &none     &trans
             >;
