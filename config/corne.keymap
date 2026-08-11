@@ -286,9 +286,9 @@
 
 /* ### Layer 5 — Mac  (hold RALT)
  * Izquierda: macOS shortcuts   Derecha: Rectangle win mgmt (fila 1) + tmux (filas 2-3)
- * Rectangle shortcuts: Ctrl+Alt+← → ↑ ↓ ↩ ⌫ C
+ * Rectangle shortcuts: ⌥⌘← → ↑ ↓  /  ⌥⌘F (max)  /  ⌥⌘⌫ (restore)  /  ⌥⌘C (center)
  * ,----------------------------------.                ,-------------------------------------------.
- * |     |     |     |     |     |    |                |WIN← |WIN→ |WIN↑ |WIN↓ |MAX  | RST |
+ * |     |     |     |     |     |    |                |WIN← |WIN→ |WIN↑ |WIN↓ |MAX⌥⌘F|RST⌥⌘⌫|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
  * |     |     |SS/4 |SS/3 |SS/5 |MSN |                |     |CTR  |TMX.D|TMX.Z|     |     |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
@@ -300,8 +300,8 @@
         macro_layer {
             display-name = "Mac";
             bindings = <
-                &none  &none        &none        &none        &none        &none          &kp LC(LA(LEFT))  &kp LC(LA(RIGHT))  &kp LC(LA(UP))  &kp LC(LA(DOWN))  &kp LC(LA(RET))  &kp LC(LA(BSPC))
-                &none  &none        &mac_ss_area &mac_ss_full &mac_ss_tool &mac_mission   &none             &kp LC(LA(C))      &tmux_det       &tmux_zoom        &none            &none
+                &none  &none        &none        &none        &none        &none          &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))    &kp LA(LG(BSPC))
+                &none  &none        &mac_ss_area &mac_ss_full &mac_ss_tool &mac_mission   &none             &kp LA(LG(C))      &tmux_det       &tmux_zoom        &none            &none
                 &none  &mac_desk_l  &mac_desk_r  &mac_expose  &none        &none          &none             &none              &tmux_new       &tmux_sph         &tmux_spv        &none
                                     &none        &kp LGUI     &kp SPACE                   &none             &none              &trans
             >;
