@@ -286,24 +286,26 @@
 
 /* ### Layer 5 — Mac  (hold RALT)
  * Izquierda: macOS shortcuts   Derecha: Rectangle win mgmt (fila 1) + tmux (filas 2-3)
- * Rectangle shortcuts: ⌥⌘← → ↑ ↓  /  ⌥⌘F (max)  /  ⌥⌘⌫ (restore)  /  ⌥⌘C (center)
- * ,----------------------------------.                ,-------------------------------------------.
- * |     |     |     |     |     |    |                |WIN← |WIN→ |WIN↑ |WIN↓ |MAX⌥⌘F|RST⌥⌘⌫|
- * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
- * |     |     |SS/4 |SS/3 |SS/5 |MSN |                |     |CTR  |TMX.D|TMX.Z|     |     |
- * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
- * |     |DSK← |DSK→ |EXP  |     |    |                |     |     |TMX.N|TMX.% |TMX."|    |
- * `-------------------------------'                    `-------------------------------------------'
+ * Rectangle: ⌥⌘← → ↑ ↓ F(max) ⌫(rst) C(ctr)
+ * DSK1-5: requiere activar en Ajustes→Teclado→Atajos→Mission Control
+ * MW←/→:  requiere activar "Mover ventana al espacio" en los mismos Ajustes
+ * ,--------------------------------------------.                ,-------------------------------------------.
+ * |DSK1 |DSK2 |DSK3 |DSK4 |DSK5 | HDE  |                |WIN← |WIN→ |WIN↑ |WIN↓ |⌥⌘F  |⌥⌘⌫  |
+ * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
+ * | FQ  |     |SS/4 |SS/3 |SS/5 | MCrl |                |     | CTR |TMX.D|TMX.Z|     |     |
+ * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
+ * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |     |     |TMX.N|TMX.%|TMX."|     |
+ * `--------------------------------------------'                `-------------------------------------------'
  *         |     | GUI |SPACE|                              |     |     |[held]|
  *         `-------------------'                            `-------------------'
  */
         macro_layer {
             display-name = "Mac";
             bindings = <
-                &none  &none        &none        &none        &none        &none          &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))    &kp LA(LG(BSPC))
-                &none  &none        &mac_ss_area &mac_ss_full &mac_ss_tool &mac_mission   &none             &kp LA(LG(C))      &tmux_det       &tmux_zoom        &none            &none
-                &none  &mac_desk_l  &mac_desk_r  &mac_expose  &none        &none          &none             &none              &tmux_new       &tmux_sph         &tmux_spv        &none
-                                    &none        &kp LGUI     &kp SPACE                   &none             &none              &trans
+                &kp LC(N1)       &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)       &kp LG(LA(H))    &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))  &kp LA(LG(BSPC))
+                &kp LG(LA(ESC)) &none         &mac_ss_area &mac_ss_full &mac_ss_tool     &mac_mission     &none             &kp LA(LG(C))      &tmux_det       &tmux_zoom        &none          &none
+                &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &none             &none              &tmux_new       &tmux_sph         &tmux_spv      &none
+                                              &none        &kp LGUI     &kp SPACE                          &none             &none              &trans
             >;
         };
     };
