@@ -58,10 +58,7 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 | Anular der | `I` | `i` | `RALT` |
 | Pinky der | `O` | `o` | `RGUI` |
 
-**Timings:** `tapping-term=280ms` · `quick-tap=175ms` · `require-prior-idle=150ms` · flavor `balanced`
-
-> Si hay misfires al tipear → subir `require-prior-idle-ms` a 200.
-> Si los mods se activan tarde → bajar `tapping-term-ms` a 230.
+**Timings:** `tapping-term=400ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
 
 ### `&gresc` — ESC inteligente
 
@@ -165,42 +162,54 @@ F1–F12 en la fila superior.
 Activación: hold pulgar derecho externo (RALT).
 
 ```
-,--------------------------------------------.        ,--------------------------------------------.
-|      |     |      |      |      |          |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
-|------+-----+------+------+------+----------|        |-----+-----+------+------+------+-------|
-|      |     |SS⌘4  |SS⌘3  |SS⌘5  |Mission   |        |     |CTR  |tmx:dt|tmx:zm|      |       |
-|------+-----+------+------+------+----------|        |-----+-----+------+------+------+-------|
-|      |DSK← |DSK→  |Exposé|      |          |        |     |     |tmx:nw|tmx:% |tmx:" |       |
-'------+-----+------+------+------+----------'        '-----+-----+------+------+------+-------'
+,----------------------------------------------.        ,--------------------------------------------.
+|DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
+|-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
+| FQ  |SS📋  |SS⌘4  |SS⌘3  |SS⌘5  |MCrl        |        |     |CTR  |tmx:dt|tmx:zm|      |       |
+|-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
+|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |     |     |tmx:nw|tmx:% |tmx:" |       |
+'-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
              |      | GUI  | SPACE|                         |      |      |[held]|
              '------+------+------'                         '------+------+------'
 ```
 
+> **DSK1-5 y MW←/→** requieren activar los atajos correspondientes en **Ajustes del sistema → Teclado → Atajos → Mission Control**.
+
 ### Rectangle — Window Management (lado derecho, fila superior)
 
-Requiere [Rectangle](https://rectangleapp.com/) instalado.
+Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
-| `J` | `⌃⌥←` | Snap mitad izquierda |
-| `L` | `⌃⌥→` | Snap mitad derecha |
-| `U` | `⌃⌥↑` | Snap mitad superior |
-| `Y` | `⌃⌥↓` | Snap mitad inferior |
-| `;` | `⌃⌥↩` | Maximizar |
-| `BSPC` | `⌃⌥⌫` | Restaurar tamaño anterior |
-| `N` | `⌃⌥C` | Centrar ventana |
+| `J` | `⌥⌘←` | Snap mitad izquierda |
+| `L` | `⌥⌘→` | Snap mitad derecha |
+| `U` | `⌥⌘↑` | Snap mitad superior |
+| `Y` | `⌥⌘↓` | Snap mitad inferior |
+| `;` | `⌥⌘F` | Maximizar |
+| `BSPC` | `⌥⌘⌫` | Restaurar tamaño anterior |
+| `N` | `⌥⌘C` | Centrar ventana |
 
 ### Shortcuts macOS (lado izquierdo)
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
-| `R` | `⌘+Shift+4` | Screenshot — selección de área |
-| `S` | `⌘+Shift+3` | Screenshot — pantalla completa |
-| `T` | `⌘+Shift+5` | Screenshot — toolbar (video/área) |
+| `Q` | `Ctrl+1` | Ir a escritorio 1 |
+| `W` | `Ctrl+2` | Ir a escritorio 2 |
+| `F` | `Ctrl+3` | Ir a escritorio 3 |
+| `P` | `Ctrl+4` | Ir a escritorio 4 |
+| `B` | `Ctrl+5` | Ir a escritorio 5 |
+| `Tab` | `⌘⌥H` | Hide others (ocultar otras apps) |
+| `CapsW` | `⌘⌥Esc` | Force Quit |
+| `A` | `⌘⌃⇧4` | Screenshot área → portapapeles |
+| `R` | `⌘⇧4` | Screenshot área → archivo |
+| `S` | `⌘⇧3` | Screenshot completo → archivo |
+| `T` | `⌘⇧5` | Screenshot toolbar (video/área) |
 | `G` | `Ctrl+↑` | Mission Control |
 | `Z` | `Ctrl+←` | Escritorio anterior |
 | `X` | `Ctrl+→` | Escritorio siguiente |
 | `C` | `Ctrl+↓` | App Exposé (ventanas de la app activa) |
+| `D` | `Ctrl+⇧←` | Mover ventana al escritorio anterior |
+| `V` | `Ctrl+⇧→` | Mover ventana al escritorio siguiente |
 
 ### Macros tmux (lado derecho, prefix = `Ctrl+B`)
 
@@ -238,12 +247,12 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado.
 
 | Evento | Tiempo | Acción |
 |--------|--------|--------|
-| Inactividad | 10 min | Apaga display (OLED) |
-| Tecla presionada | — | OLED vuelve solo |
+| Inactividad | 30 s | Apaga display (OLED) — se despierta con cualquier tecla |
+| Inactividad | 5 min | Deep sleep — se despierta **solo con doble-tap en reset físico** |
 | RGB Underglow | — | **Apagado por default** — toggle manual en Layer 3 (`RGB-T`) |
 | Batería | — | Reporta nivel cada 60s |
 
-> **Deep sleep desactivado** (`CONFIG_ZMK_SLEEP=n`) — el teclado se despierta con cualquier tecla sin reset físico.
+> Deep sleep activo — protege contra activaciones accidentales durante transporte.
 
 ---
 
