@@ -238,10 +238,12 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado.
 
 | Evento | Tiempo | Acción |
 |--------|--------|--------|
-| Inactividad | 5 min | Apaga display y RGB |
-| Inactividad | 15 min | Deep sleep |
-| USB conectado | — | RGB siempre activo |
+| Inactividad | 10 min | Apaga display (OLED) |
+| Tecla presionada | — | OLED vuelve solo |
+| RGB Underglow | — | **Apagado por default** — toggle manual en Layer 3 (`RGB-T`) |
 | Batería | — | Reporta nivel cada 60s |
+
+> **Deep sleep desactivado** (`CONFIG_ZMK_SLEEP=n`) — el teclado se despierta con cualquier tecla sin reset físico.
 
 ---
 
