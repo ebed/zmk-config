@@ -60,6 +60,13 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 
 **Timings:** `tapping-term=400ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
 
+### `CPSW` — Caps Word + Layer 6
+
+| Input | Output |
+|-------|--------|
+| Tap | Caps Word (letras en mayúscula hasta espacio o símbolo) |
+| Hold | Layer 6 (Lang/Español) — libera para volver a Base |
+
 ### `&gresc` — ESC inteligente
 
 | Input | Output |
@@ -89,7 +96,7 @@ Números en row 0. Todos los símbolos en rows 1-2 sin necesitar Shift.
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             |CPSW  | GUI  | SPACE|                         | MO3 |      |RALT  |
+             |lt6/CW| GUI  | SPACE|                         | MO3 |      |RALT  |
              '------+------+------'                         '-----+------+------'
 ```
 
@@ -237,6 +244,32 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 | `/` | `Ctrl+B`, `"` | Split horizontal (paneles apilados) |
 
 > **Nota tmux:** con HRM ya tenés `Ctrl+B` — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos en un solo key.
+
+---
+
+## Layer 6 — Lang (hold CPSW)
+
+Activación: hold pulgar izquierdo externo. Todo transparente excepto el home row izquierdo.
+
+```
+,---------------------------------------------.        ,--------------------------------------------.
+|      |     |      |      |      |            |        |     |     |      |      |      |       |
+|------+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
+|      |  ´  |  ~   |  ¨   |  ¿   |  ¡         |        |     |     |      |      |      |       |
+|------+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
+|      |     |      |      |      |            |        |     |     |      |      |      |       |
+'------+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
+             |[held]|      |      |                         |      |      |      |
+             '------+------+------'                         '------+------+------'
+```
+
+| Tecla | Dead key | Cómo usarlo |
+|-------|----------|-------------|
+| A — `´` | `⌥E` dead acute | hold CPSW → tap A → suelta CPSW → escribe vocal → `á/é/í/ó/ú` |
+| R — `~` | `⌥N` dead tilde | hold CPSW → tap R → suelta CPSW → escribe N → `ñ` |
+| S — `¨` | `⌥U` dead umlaut | hold CPSW → tap S → suelta CPSW → escribe U → `ü` |
+| T — `¿` | directo | hold CPSW → tap T → `¿` |
+| G — `¡` | directo | hold CPSW → tap G → `¡` |
 
 ---
 

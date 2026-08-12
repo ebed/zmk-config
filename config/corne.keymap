@@ -43,6 +43,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /* Layer 6 (Lang) activator: tap→caps_word  /  hold→Layer 6 ---------- */
+        lang_cw: lang_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&caps_word>;
+        };
+
         /* Home Row Mods — derecha: hold solo al presionar mano izquierda -- */
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
@@ -91,20 +101,6 @@
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp LGUI>
                 , <&macro_release &kp LCTRL>
-                ;
-        };
-
-        /* macOS — Español: acentos ---------------------------------------- */
-        /* dead acute: ⌥E → suelta RALT → escribe vocal → á/é/í/ó/ú         */
-        /* ñ: macro completa en un tap (⌥N + N)                               */
-        mac_n_tilde: mac_n_tilde {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LALT>
-                , <&macro_tap &kp N>
-                , <&macro_release &kp LALT>
-                , <&macro_tap &kp N>
                 ;
         };
 
@@ -210,7 +206,8 @@
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
  * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
- * RALT = tap→RALT / hold→Layer 5 (Mac)
+ * RALT cubierto por hmr (I). Layer 5 activado por MO5.
+ * CPSW: tap→CapsWord / hold→Layer 6 (Lang/Español)
  * ,----------------------------------.                ,----------------------------------.
  * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
@@ -218,8 +215,8 @@
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET |
  * `-------------------------------'                    `-------------------------------'
- *         |CPSW | GUI |SPACE|                              | MO2 | MO1 |lt5/RALT|
- *         `-------------------'                            `-------------------'
+ *         |lt6/CW| GUI |SPACE|                             | MO2 | MO1 | MO5 |
+ *         `--------------------'                           `-------------------'
  */
         layer_0 {
             display-name = "Base";
@@ -227,7 +224,7 @@
                 &gresc     &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
                 &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
-                                       &caps_word  &kp LGUI     &kp SPACE                   &mo 2    &mo 1        &lt 5 RALT
+                                       &lang_cw 6 0  &kp LGUI   &kp SPACE                   &mo 2    &mo 1        &mo 5
             >;
         };
 
@@ -310,7 +307,7 @@
  * ,--------------------------------------------.                ,-------------------------------------------.
  * |DSK1 |DSK2 |DSK3 |DSK4 |DSK5 | HDE  |                |WIN← |WIN→ |WIN↑ |WIN↓ |⌥⌘F  |⌥⌘⌫  |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
- * | FQ  |SS📋 |SS/4 | ´   | ñ   | MCrl |                |     | CTR |TMX.D|TMX.Z|     |     |
+ * | FQ  |SS📋 |SS/4 |     |     | MCrl |                |     | CTR |TMX.D|TMX.Z|     |     |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |     |     |TMX.N|TMX.%|TMX."|     |
  * `--------------------------------------------'                `-------------------------------------------'
@@ -321,9 +318,35 @@
             display-name = "Mac";
             bindings = <
                 &kp LC(N1)       &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)       &kp LG(LA(H))    &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))  &kp LA(LG(BSPC))
-                &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &kp LA(E)    &mac_n_tilde     &mac_mission     &none             &kp LA(LG(C))      &tmux_det       &tmux_zoom        &none          &none
+                &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &none        &none            &mac_mission     &none             &kp LA(LG(C))      &tmux_det       &tmux_zoom        &none          &none
                 &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &none             &none              &tmux_new       &tmux_sph         &tmux_spv      &none
                                               &none        &kp LGUI     &kp SPACE                          &none             &none              &trans
+            >;
+        };
+
+/* ### Layer 6 — Lang (hold CPSW)
+ * Español: dead keys + ¿ + ¡ en el home row izquierdo.
+ * Todo lo demás transparente — las teclas normales siguen funcionando.
+ * ´ = ⌥E dead acute → suelta CPSW → escribe vocal → á/é/í/ó/ú
+ * ~ = ⌥N dead tilde → suelta CPSW → escribe N → ñ
+ * ¨ = ⌥U dead umlaut → suelta CPSW → escribe U → ü
+ * ,-----------------------------------.                ,----------------------------------.
+ * |     |     |     |     |     |     |                |     |     |     |     |     |    |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+----|
+ * |     |  ´  |  ~  |  ¨  |  ¿  |  ¡  |                |     |     |     |     |     |    |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+----|
+ * |     |     |     |     |     |     |                |     |     |     |     |     |    |
+ * `------------------------------------'                `-------------------------------'
+ *         |[held]|     |     |                              |     |     |     |
+ *         `---------------------'                           `-------------------'
+ */
+        lang_layer {
+            display-name = "Lang";
+            bindings = <
+                &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &trans &trans &trans &trans
+                &trans  &kp LA(E)   &kp LA(N)   &kp LA(U)   &kp LA(LS(FSLH))  &kp LA(N1)    &trans &trans &trans &trans &trans &trans
+                &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &trans &trans &trans &trans
+                                    &trans      &trans      &trans                            &trans &trans &trans
             >;
         };
     };
