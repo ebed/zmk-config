@@ -262,6 +262,7 @@
 
 /* ### Layer 2 — Nav  (hold MO2)
  * Mouse izquierda / flechas + nav + word-jump + selección derecha
+ * MO7: hold MO2 + hold izq-interno → Layer 7 (Apps)
  * ,------------------------------------.                ,--------------------------------------------.
  * |SCRL↑ |     |MUS↑ |     |LCLK |    |                |     |WJ←  |  ↑  |WJ→  |     |BSPC |
  * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
@@ -269,7 +270,7 @@
  * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
  * |SCRL← |SCRL→|     |     |RCLK |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `------------------------------------'                `--------------------------------------------'
- *         |     | GUI |SPACE|                              |     |MO4  |     |
+ *         |     | GUI | MO7 |                              |     |MO4  |     |
  *         `-------------------'                            `-------------------'
  */
         layer_2 {
@@ -278,7 +279,7 @@
                 &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none        &kp LC(LEFT)  &kp UP       &kp LC(RIGHT)  &none     &kp BSPC
                 &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none        &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME  &kp PG_UP
                 &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none        &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END   &kp PG_DN
-                                                &trans         &kp LGUI         &kp SPACE            &none    &mo 4    &trans
+                                                &trans         &kp LGUI         &mo 7                &none    &mo 4    &trans
             >;
         };
 
@@ -327,7 +328,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * | FQ  |SS📋 |SS/4 | UND | RED | MCrl |                | BCK | CTR |TMX.D|TMX.Z| FWD |     |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
- * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |     |     |TMX.N|TMX.%|TMX."|     |
+ * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |DSP← |DSP→ |TMX.N|TMX.%|TMX."|     |
  * `--------------------------------------------'                `-------------------------------------------'
  *         |     | GUI |SPACE|                              |     |     |[held]|
  *         `-------------------'                            `-------------------'
@@ -337,7 +338,7 @@
             bindings = <
                 &kp LC(N1)       &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)       &kp LG(LA(H))    &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))  &kp LA(LG(BSPC))
                 &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &kp LG(Z)   &kp LG(LS(Z))   &mac_mission     &kp LG(LBKT)      &kp LA(LG(C))      &tmux_det       &tmux_zoom        &kp LG(RBKT)   &none
-                &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &none             &none              &tmux_new       &tmux_sph         &tmux_spv      &none
+                &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &tmux_new       &tmux_sph         &tmux_spv      &none
                                               &none        &kp LGUI     &kp SPACE                          &none             &none              &trans
             >;
         };
@@ -365,6 +366,32 @@
                 &trans  &kp LA(E)   &kp LA(N)   &kp LA(U)   &kp LA(LS(FSLH))  &kp LA(N1)    &trans &trans &trans &trans &trans &trans
                 &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &trans &trans &trans &trans
                                     &trans      &trans      &trans                            &trans &trans &trans
+            >;
+        };
+
+/* ### Layer 7 — Apps  (hold MO2 + hold MO7 / izq-interno)
+ * Activación: hold MO2 (der-interno) + hold izq-interno (era SPACE en Nav)
+ * Izq top row : WezTerm (Q=new-tab W=close F=split-V P=split-H) + Zoom (B=leave)
+ * Izq home row: Zoom (A=mute R=video S=share) + Slack (T=code G=jump)
+ * Izq bot row : Claude (Z=new) + Slack (X=mentions)
+ * Derecha: transparente — hereda Nav (flechas y mouse siguen funcionando)
+ * ,------------------------------------.                ,--------------------------------------------.
+ * |     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE|                |     |WJ←  |  ↑  |WJ→  |     |BSPC |
+ * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
+ * |     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP|                |     | ←   |  ↓  |  →  |HOME |PGUP |
+ * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
+ * |     |CLNEW|SMEN |      |      |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * `------------------------------------'                `--------------------------------------------'
+ *         |     |     |[held]|                              |     |MO4  |     |
+ *         `-------------------'                             `-------------------'
+ */
+        apps_layer {
+            display-name = "Apps";
+            bindings = <
+                &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &kp LG(LS(H))    &trans &trans &trans &trans &trans &trans
+                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(C))  &kp LG(K)        &trans &trans &trans &trans &trans &trans
+                &none  &kp LG(N)      &kp LG(LS(M))  &none          &none          &none            &trans &trans &trans &trans &trans &trans
+                                       &trans          &trans          &trans                           &trans &trans &trans
             >;
         };
     };

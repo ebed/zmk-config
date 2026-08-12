@@ -56,13 +56,14 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL← |SCRL→|     |     | RCLK |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     | GUI | SPACE|                           |     | MO4 |     |
+             |     | GUI |  MO7 |                           |     | MO4 |     |
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
 - Izquierdo: mouse (movimiento, scroll, clics)
 - Derecho: flechas, word-jump (`WJ←/→` = Ctrl+←/→), selección, paginación
 - `SEL←` / `SEL↓` / `SEL→` = Shift+←/↓/→
+- `MO7`: hold MO2 + hold MO7 (izq-interno) → Layer 7 (Apps)
 
 ---
 
@@ -115,15 +116,16 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
 | FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |tmx:dt|tmx:zm| FWD  |       |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |     |     |tmx:nw|tmx:% |tmx:" |       |
+|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |DISP←|DISP→|tmx:nw|tmx:% |tmx:" |       |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
              |      | GUI  | SPACE|                         |      |      |[held]|
              '------+------+------'                         '------+------+------'
 ```
 
 - Izquierdo: escritorios (DSK1-5), hide others, screenshots, undo/redo, Mission Control
-- Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav (BCK/FWD), tmux
+- Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav (BCK/FWD), tmux, display switch (DISP←/→)
 - `UND`=⌘Z, `RED`=⌘⇧Z, `BCK`=⌘[, `FWD`=⌘], `FQ`=Force Quit, `MCrl`=Mission Control
+- `DISP←`=Ctrl+⌘+← (mover ventana a display anterior), `DISP→`=Ctrl+⌘+→ (siguiente display)
 
 ---
 
@@ -149,6 +151,40 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ---
 
+## Layer 7 — Apps (hold MO2 + hold MO7)
+
+```
+,--------------------------------------------.        ,--------------------------------------------.
+|     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        |     | WJ← | ↑   | WJ→ |     | BSPC  |
+|-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
+|     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP        |        |     | ←   | ↓   | →   |HOME | PGUP  |
+|-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
+|     |CLNEW|SMEN |      |      |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+'-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
+             |     |      |[held]|                         |     | MO4 |     |
+             '-----+------+------'                         '-----+-----+-----'
+```
+
+- Activación: hold `MO2` (der-interno) + hold `MO7` (izq-interno, era SPACE en Nav)
+- Derecho: transparente — hereda Layer 2 Nav (flechas y mouse siguen funcionando)
+
+| Key | Shortcut | App | Acción |
+|-----|----------|-----|--------|
+| `Q` — WTAB | `⌘+T` | WezTerm | Nueva tab |
+| `W` — WCLS | `⌘+W` | WezTerm | Cerrar tab/pane |
+| `F` — WSPL-V | `⌘+D` | WezTerm | Split vertical |
+| `P` — WSPL-H | `⌘+Shift+D` | WezTerm | Split horizontal |
+| `B` — ZLVE | `⌘+Shift+H` | Zoom | Salir del meeting |
+| `A` — ZMUT | `⌘+Shift+A` | Zoom | Mute/unmute |
+| `R` — ZVID | `⌘+Shift+V` | Zoom | Video on/off |
+| `S` — ZSHR | `⌘+Shift+S` | Zoom | Screen share |
+| `T` — SCOD | `⌘+Shift+C` | Slack | Format as code |
+| `G` — SJMP | `⌘+K` | Slack/WezTerm | Jump to / clear |
+| `Z` — CLNEW | `⌘+N` | Claude Desktop | Nueva conversación |
+| `X` — SMEN | `⌘+Shift+M` | Slack | Menciones |
+
+---
+
 ## Leyenda
 
 | Símbolo | Significado |
@@ -160,7 +196,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `1/!` | tap=1, hold=! |
 | `SYM/5` | tap=Sticky Layer 1, hold=Layer 5 |
 | `CPSW` | tap=CapsWord, hold=Layer 6 |
-| `MO1/2/3/4` | momentáneo — activo mientras se mantiene |
+| `MO1/2/3/4/7` | momentáneo — activo mientras se mantiene |
+| `MO7` | hold MO2 + hold MO7 (izq-interno) → Apps |
 | `TOG1` | toggle Layer 1 (lock/unlock sin mantener) |
 | `[held]` | tecla mantenida para activar la capa |
 | `WJ←/→` | word jump (Ctrl+←/→) |

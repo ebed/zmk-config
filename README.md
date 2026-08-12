@@ -15,8 +15,9 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **2 Nav** | hold `MO2` | Mouse, flechas, word-jump, selección |
 | **3 Sys** | `MO1` + `MO3` | BT, media, RGB, brillo, lock |
 | **4 Fn** | `MO2` + `MO4` | F1–F12 |
-| **5 Mac** | hold `SYM/5` | macOS, Rectangle, tmux, undo/redo, browser |
+| **5 Mac** | hold `SYM/5` | macOS, Rectangle, tmux, undo/redo, browser, display |
 | **6 Lang** | hold `CPSW` | Español: ´ ~ ¨ ¿ ¡ |
+| **7 Apps** | `MO2` + `MO7` (izq-interno) | Zoom, Slack, WezTerm, Claude Desktop |
 
 **Thumbs (Layer 0):**
 
@@ -51,7 +52,8 @@ Base (Layer 0) — siempre activa
        └─ tap MO3 (pulgar der izq) → Sys (Layer 3)
        └─ tap outer-right thumb (TOG1) → bloquea Layer 1 (numpad mode)
   └─ hold MO2 (pulgar der izq) → Nav (Layer 2)
-       └─ tap MO4 (pulgar der med) → Fn (Layer 4)
+       └─ hold MO4 (pulgar der med) → Fn (Layer 4)
+       └─ hold MO7 (izq-interno, era SPACE) → Apps (Layer 7)
   └─ hold outer-right thumb → Mac (Layer 5)
   └─ tap outer-right thumb → Sticky Layer 1 (un símbolo sin hold)
   └─ tap CPSW → CapsWord / hold CPSW → Lang (Layer 6)
@@ -172,6 +174,8 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 | `HOME` / `END` | Inicio / fin de línea |
 | `PGUP` / `PGDN` | Página arriba / abajo |
 
+`MO7` — hold `MO2` + hold izq-interno (era `SPACE`) → activa Layer 7 (Apps). El lado derecho hereda los keybindings de Nav, por lo que las flechas y el mouse siguen funcionando.
+
 ---
 
 ## Layer 3 — Sys (MO1 + MO3)
@@ -260,6 +264,15 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 
 > **Nota tmux:** con HRM ya tenés `Ctrl+B` — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos en un solo key.
 
+### Display switching (lado derecho, fila inferior)
+
+Requiere [Rectangle](https://rectangleapp.com/).
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `K` | `Ctrl+⌘+←` | Mover ventana al display anterior |
+| `H` | `Ctrl+⌘+→` | Mover ventana al display siguiente |
+
 ---
 
 ## Layer 6 — Lang (hold CPSW)
@@ -276,13 +289,52 @@ Activación: hold pulgar izquierdo externo. Todo transparente excepto el home ro
 
 ---
 
+## Layer 7 — Apps (hold MO2 + hold MO7)
+
+Activación: hold `MO2` (pulgar der-interno) + hold pulgar izq-interno (era `SPACE` en Nav).  
+El lado derecho hereda Layer 2 — flechas y mouse siguen activos.
+
+### WezTerm
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `Q` | `⌘+T` | Nueva tab |
+| `W` | `⌘+W` | Cerrar tab/pane |
+| `F` | `⌘+D` | Split pane vertical |
+| `P` | `⌘+Shift+D` | Split pane horizontal |
+
+### Zoom
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `A` | `⌘+Shift+A` | Mute/unmute audio |
+| `R` | `⌘+Shift+V` | Video on/off |
+| `S` | `⌘+Shift+S` | Compartir pantalla |
+| `B` | `⌘+Shift+H` | Salir del meeting |
+
+### Slack
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `T` | `⌘+Shift+C` | Format as code |
+| `G` | `⌘+K` | Jump to conversation |
+| `X` | `⌘+Shift+M` | Menciones |
+
+### Claude Desktop
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `Z` | `⌘+N` | Nueva conversación |
+
+---
+
 ## OLED — Widgets activos
 
 ### Left OLED (central)
 
 | Widget | Descripción |
 |--------|-------------|
-| Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac`) |
+| Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac` / `Lang` / `Apps`) |
 | Bongo Cat | Idle: gato en reposo — typing: gato animado según WPM |
 
 ### Right OLED (periférico)
