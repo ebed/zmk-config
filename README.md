@@ -180,7 +180,7 @@ Activación: hold pulgar derecho externo (RALT).
 ,----------------------------------------------.        ,--------------------------------------------.
 |DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-| FQ  |SS📋  |SS⌘4  |SS⌘3  |SS⌘5  |MCrl        |        |     |CTR  |tmx:dt|tmx:zm|      |       |
+| FQ  |SS📋  |SS⌘5  |      |      |MCrl        |        |     |CTR  |tmx:dt|tmx:zm|      |       |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
 |     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |     |     |tmx:nw|tmx:% |tmx:" |       |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
@@ -215,10 +215,8 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 | `B` | `Ctrl+5` | Ir a escritorio 5 |
 | `Tab` | `⌘⌥H` | Hide others (ocultar otras apps) |
 | `CapsW` | `⌘⌥Esc` | Force Quit |
-| `A` | `⌘⌃⇧4` | Screenshot área → portapapeles |
-| `R` | `⌘⇧4` | Screenshot área → archivo |
-| `S` | `⌘⇧3` | Screenshot completo → archivo |
-| `T` | `⌘⇧5` | Screenshot toolbar (video/área) |
+| `A` | `⌘⌃⇧4` | Screenshot área → portapapeles (directo, sin diálogo) |
+| `R` | `⌘⇧5` | Screenshot toolbar — elegís área/ventana/pantalla y qué hacer con el resultado |
 | `G` | `Ctrl+↑` | Mission Control |
 | `Z` | `Ctrl+←` | Escritorio anterior |
 | `X` | `Ctrl+→` | Escritorio siguiente |
