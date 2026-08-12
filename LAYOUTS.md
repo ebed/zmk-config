@@ -155,7 +155,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        |     | WJ← | ↑   | WJ→ |     | BSPC  |
+|     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        | WEZ | SLK | ZOM | CHR |     | BSPC  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
 |     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP        |        |     | ←   | ↓   | →   |HOME | PGUP  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
@@ -166,7 +166,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ```
 
 - Activación: hold `MO2` (der-interno) + hold `MO7` (izq-interno, era SPACE en Nav)
-- Derecho: transparente — hereda Layer 2 Nav (flechas y mouse siguen funcionando)
+- Der fila superior: focus-or-launch vía Hammerspoon (`⌥⌘⇧` + letra)
+- Der resto: transparente — hereda Layer 2 Nav (flechas y mouse siguen funcionando)
 
 | Key | Shortcut | App | Acción |
 |-----|----------|-----|--------|
@@ -182,6 +183,10 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `G` — SJMP | `⌘+K` | Slack/WezTerm | Jump to / clear |
 | `Z` — CLNEW | `⌘+N` | Claude Desktop | Nueva conversación |
 | `X` — SMEN | `⌘+Shift+M` | Slack | Menciones |
+| `J` — WEZ | `⌥⌘⇧+W` | Hammerspoon | Focus-or-launch WezTerm |
+| `L` — SLK | `⌥⌘⇧+S` | Hammerspoon | Focus-or-launch Slack |
+| `U` — ZOM | `⌥⌘⇧+Z` | Hammerspoon | Focus-or-launch Zoom |
+| `Y` — CHR | `⌥⌘⇧+C` | Hammerspoon | Focus-or-launch Chrome |
 
 ---
 

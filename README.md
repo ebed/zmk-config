@@ -326,6 +326,17 @@ El lado derecho hereda Layer 2 — flechas y mouse siguen activos.
 |-------|----------|--------|
 | `Z` | `⌘+N` | Nueva conversación |
 
+### Focus-or-launch — Hammerspoon (lado derecho, fila superior)
+
+Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hs.application.launchOrFocus()` mapeado en `init.lua`.
+
+| Tecla | Shortcut | App |
+|-------|----------|-----|
+| `J` | `⌥⌘⇧+W` | WezTerm |
+| `L` | `⌥⌘⇧+S` | Slack |
+| `U` | `⌥⌘⇧+Z` | Zoom |
+| `Y` | `⌥⌘⇧+C` | Chrome |
+
 ---
 
 ## OLED — Widgets activos
