@@ -66,6 +66,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /* tap = número / hold = símbolo Shift+número ----------------------- */
+        num_sym: num_sym {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         /* macOS — Screenshots ------------------------------------------- */
         mac_ss_area: mac_screenshot_area {
             compatible = "zmk,behavior-macro";
@@ -74,17 +84,6 @@
                 = <&macro_press &kp LGUI>
                 , <&macro_press &kp LSHFT>
                 , <&macro_tap &kp N4>
-                , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LGUI>
-                ;
-        };
-        mac_ss_tool: mac_screenshot_toolbar {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LGUI>
-                , <&macro_press &kp LSHFT>
-                , <&macro_tap &kp N5>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp LGUI>
                 ;
@@ -229,22 +228,23 @@
         };
 
 /* ### Layer 1 — Sym  (hold MO1)
- * Números row 0 / Símbolos directos rows 1-2 (sin Shift)
+ * Números row 0: tap=número, hold=símbolo (1/! 2/@ 3/# 4/$ 5/% 6/^ 7/& 8/* 9/( 0/))
+ * Home row mantiene acceso rápido a símbolos comunes (ruta ergonómica alternativa)
  * SK (sticky shift) abajo del TAB — mismo dedo, fila inferior
- * ,-----------------------------------.                ,----------------------------------.
- * |     |  1  |  2  |  3  |  4  |  5  |                |  6  |  7  |  8  |  9  |  0  |DEL |
- * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+----|
- * | TAB |  !  |  @  |  #  |  $  |  %  |                |  -  |  =  |  ^  |  |  |  \  | `  |
- * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+----|
- * | SK  |  &  |  *  |  (  |  )  |  _  |                |  [  |  ]  |  {  |  }  |  +  |RET |
- * `------------------------------------'                `-------------------------------'
+ * ,------------------------------------.                ,----------------------------------.
+ * |     |1/!  |2/@  |3/#  |4/$  |5/%   |                |6/^  |7/&  |8/*  |9/(  |0/)  |DEL |
+ * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
+ * | TAB |  !  |  @  |  #  |  $  |  %   |                |  -  |  =  |  ^  |  |  |  \  | `  |
+ * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
+ * | SK  |  &  |  *  |  (  |  )  |  _   |                |  [  |  ]  |  {  |  }  |  +  |RET |
+ * `-------------------------------------'                `-------------------------------'
  *         |CPSW | GUI |SPACE|                              | MO3 |     |RALT|
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
             display-name = "Sym";
             bindings = <
-                &none      &kp N1    &kp N2   &kp N3   &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0    &kp DEL
+                &none      &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
                 &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp CARET &kp PIPE &kp BSLH  &kp GRAVE
                 &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp UNDER   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
                                       &trans   &kp LGUI &kp SPACE             &mo 3     &none     &trans
@@ -252,14 +252,23 @@
         };
 
 /* ### Layer 2 — Nav  (hold MO2)
- * Mouse izquierda, flechas + nav derecha
+ * Mouse izquierda / flechas + nav + word-jump + selección derecha
+ * ,------------------------------------.                ,--------------------------------------------.
+ * |SCRL↑ |     |MUS↑ |     |LCLK |    |                |     |WJ←  |  ↑  |WJ→  |     |BSPC |
+ * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
+ * |SCRL↓ |MUS← |MUS↓ |MUS→ |MCLK |    |                |     | ←   |  ↓  |  →  |HOME |PGUP |
+ * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
+ * |SCRL← |SCRL→|     |     |RCLK |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * `------------------------------------'                `--------------------------------------------'
+ *         |     | GUI |SPACE|                              |     |MO4  |     |
+ *         `-------------------'                            `-------------------'
  */
         layer_2 {
             display-name = "Nav";
             bindings = <
-                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none    &none    &kp UP     &none      &none     &kp BSPC
-                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none    &kp LEFT &kp DOWN   &kp RIGHT  &kp HOME  &kp PG_UP
-                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none    &none    &none      &none      &kp END   &kp PG_DN
+                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none        &kp LC(LEFT)  &kp UP       &kp LC(RIGHT)  &none     &kp BSPC
+                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none        &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME  &kp PG_UP
+                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none        &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END   &kp PG_DN
                                                 &trans         &kp LGUI         &kp SPACE            &none    &mo 4    &trans
             >;
         };
