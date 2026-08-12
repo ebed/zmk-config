@@ -24,7 +24,7 @@ Base (Layer 0) — siempre activa
        └─ tap MO3 (pulgar der izq) → Sys (Layer 3)
   └─ hold MO2 (pulgar der izq) → Nav (Layer 2)
        └─ tap MO4 (pulgar der med) → Fn (Layer 4)
-  └─ hold RALT (pulgar der externo) → Mac (Layer 5)
+  └─ hold MO5 (pulgar der externo) → Mac (Layer 5)
 ```
 
 ---
@@ -39,7 +39,7 @@ Base (Layer 0) — siempre activa
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | CTRL |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | RET   |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
-             |CPSW | GUI | SPACE|                        | MO2 | MO1 |RALT |
+             |CPSW | GUI | SPACE|                        | MO2 | MO1 | MO5 |
              '-----+-----+------'                        '-----+-----+-----'
 ```
 
@@ -86,34 +86,48 @@ Activa modo ALL_CAPS. Las letras salen en mayúscula y `_` pasa sin desactivar. 
 
 ## Layer 1 — Sym (hold MO1)
 
-Números en row 0. Todos los símbolos en rows 1-2 sin necesitar Shift.
+Dos rutas para acceder a símbolos:
+- **Hold-tap en número**: tap = dígito / hold = símbolo Shift+número (`1/!`, `2/@`, ...)
+- **Home row**: símbolos directos sin Shift para acceso ergonómico rápido
 
 ```
 ,---------------------------------------------.        ,--------------------------------------------.
-|      |  1  |  2   |  3   |  4   |  5        |        |  6   |  7  |  8   |  9   |  0   | DEL   |
+|      |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 | TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  ^   |  |   |  \   |  `    |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             |lt6/CW| GUI  | SPACE|                         | MO3 |      |RALT  |
+             | CPSW | GUI  | SPACE|                         | MO3 |      |      |
              '------+------+------'                         '-----+------+------'
 ```
 
-Acceso a cualquier símbolo: **MO1 + tecla** (sin Shift).
+### Hold-tap en números (`num_sym`)
 
-| Símbolo | Tecla (Colemak) | Símbolo | Tecla |
-|---------|-----------------|---------|-------|
-| `!` | R | `&` | Z |
-| `@` | S | `*` | X |
-| `#` | T | `(` | C |
-| `$` | G | `)` | D |
-| `%` | E (der) | `_` | V |
-| `^` | I (der) | `{` | , (der) |
-| `\|` | O (der) | `}` | . (der) |
-| `-` | M (der) | `+` | / (der) |
-| `=` | N (der) | `[` | K (der) |
-| `\` | ; (der) | `]` | H (der) |
+| Tap | Hold | | Tap | Hold |
+|-----|------|-|-----|------|
+| `1` | `!` | | `6` | `^` |
+| `2` | `@` | | `7` | `&` |
+| `3` | `#` | | `8` | `*` |
+| `4` | `$` | | `9` | `(` |
+| `5` | `%` | | `0` | `)` |
+
+`tapping-term=200ms` · `quick-tap=175ms` · flavor `tap-preferred`
+
+### Home row — símbolos directos (ruta ergonómica)
+
+| Símbolo | Tecla | | Símbolo | Tecla |
+|---------|-------|-|---------|-------|
+| `!` | A | | `&` | Z |
+| `@` | R | | `*` | X |
+| `#` | S | | `(` | C |
+| `$` | T | | `)` | D |
+| `%` | G | | `_` | V |
+| `-` | M (der) | | `[` | K (der) |
+| `=` | N (der) | | `]` | H (der) |
+| `^` | E (der) | | `{` | , (der) |
+| `\|` | I (der) | | `}` | . (der) |
+| `\` | O (der) | | `+` | / (der) |
 
 ### Sticky Shift (`SK`) — posición CTRL en Layer 1 (abajo del TAB)
 
@@ -131,17 +145,25 @@ Acceso a cualquier símbolo: **MO1 + tecla** (sin Shift).
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|SCRL↑ |     | M↑  |     | LCLK |            |        |     | ↑   |     |     |     | BSPC  |
+|SCRL↑ |     | M↑  |     | LCLK |            |        |     | WJ← | ↑   | WJ→ |     | BSPC  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ | M←  | M↓  | M→  | MCLK |            |        | ←   | ↓   | →   |HOME |PGUP |       |
+|SCRL↓ | M←  | M↓  | M→  | MCLK |            |        |     | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL← |SCRL→|     |     | RCLK |            |        |     |     |     |END  |PGDN |       |
+|SCRL← |SCRL→|     |     | RCLK |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     | GUI | SPACE|                           |     | MO4 |RALT |
+             |     | GUI | SPACE|                           |     | MO4 |     |
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
 Mouse en la mano izquierda — click, scroll y movimiento. Flechas + navegación en la derecha.
+
+| Key | Acción |
+|-----|--------|
+| `WJ←` / `WJ→` | Word jump — `Ctrl+←/→` (saltar palabra) |
+| `←` `↓` `↑` `→` | Flechas normales |
+| `SEL←` `SEL↓` `SEL→` | Selección de texto — `Shift+←/↓/→` |
+| `HOME` / `END` | Inicio / fin de línea |
+| `PGUP` / `PGDN` | Página arriba / abajo |
 
 ---
 
@@ -181,7 +203,7 @@ F1–F12 en la fila superior.
 
 ## Layer 5 — Mac (hold RALT)
 
-Activación: hold pulgar derecho externo (RALT).
+Activación: hold pulgar derecho externo (`MO5`).
 
 ```
 ,----------------------------------------------.        ,--------------------------------------------.
@@ -215,23 +237,23 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
-| `Q` | `Ctrl+1` | Ir a escritorio 1 |
-| `W` | `Ctrl+2` | Ir a escritorio 2 |
-| `F` | `Ctrl+3` | Ir a escritorio 3 |
-| `P` | `Ctrl+4` | Ir a escritorio 4 |
-| `B` | `Ctrl+5` | Ir a escritorio 5 |
-| `Tab` | `⌘⌥H` | Hide others (ocultar otras apps) |
-| `CapsW` | `⌘⌥Esc` | Force Quit |
-| `A` | `⌘⌃⇧4` | Screenshot área → portapapeles (dibujás el cuadrado, copia directo) |
-| `R` | `⌘⇧4` | Screenshot área → archivo (dibujás el cuadrado, guarda en ~/Desktop) |
-| `S` | `⌥E` | **Dead acute** — luego escribís la vocal: a→á e→é i→í o→ó u→ú |
-| `T` | macro | **ñ** directo en un tap |
+| `ESC/~` | `Ctrl+1` | Ir a escritorio 1 |
+| `Q` | `Ctrl+2` | Ir a escritorio 2 |
+| `W` | `Ctrl+3` | Ir a escritorio 3 |
+| `F` | `Ctrl+4` | Ir a escritorio 4 |
+| `P` | `Ctrl+5` | Ir a escritorio 5 |
+| `B` | `⌘⌥H` | Hide others (ocultar otras apps) |
+| `TAB` | `⌘⌥Esc` | Force Quit |
+| `A` | `⌘⌃⇧4` | Screenshot área → portapapeles |
+| `R` | `⌘⇧4` | Screenshot área → archivo |
 | `G` | `Ctrl+↑` | Mission Control |
 | `Z` | `Ctrl+←` | Escritorio anterior |
 | `X` | `Ctrl+→` | Escritorio siguiente |
 | `C` | `Ctrl+↓` | App Exposé (ventanas de la app activa) |
 | `D` | `Ctrl+⇧←` | Mover ventana al escritorio anterior |
 | `V` | `Ctrl+⇧→` | Mover ventana al escritorio siguiente |
+
+> **Nota:** Las tildes y caracteres especiales (´ ~ ¨ ¿ ¡) están en **Layer 6 (Lang)**, no aquí.
 
 ### Macros tmux (lado derecho, prefix = `Ctrl+B`)
 
