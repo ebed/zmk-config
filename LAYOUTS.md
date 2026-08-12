@@ -125,7 +125,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Izquierdo: escritorios (DSK1-5), hide others, screenshots, undo/redo, Mission Control
 - Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav (BCK/FWD), tmux, display switch (DISP←/→)
 - `UND`=⌘Z, `RED`=⌘⇧Z, `BCK`=⌘[, `FWD`=⌘], `FQ`=Force Quit, `MCrl`=Mission Control
-- `DISP←`=Ctrl+⌘+← (mover ventana a display anterior), `DISP→`=Ctrl+⌘+→ (siguiente display)
+- `DISP←`=⌥⌘⇧← (mover ventana a display anterior), `DISP→`=⌥⌘⇧→ (siguiente display) — configurar en Rectangle Preferences → Shortcuts
 
 ---
 

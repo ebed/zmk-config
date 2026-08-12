@@ -270,8 +270,8 @@ Requiere [Rectangle](https://rectangleapp.com/).
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
-| `K` | `Ctrl+⌘+←` | Mover ventana al display anterior |
-| `H` | `Ctrl+⌘+→` | Mover ventana al display siguiente |
+| `K` | `⌥⌘⇧←` | Mover ventana al display anterior |
+| `H` | `⌥⌘⇧→` | Mover ventana al display siguiente |
 
 ---
 
