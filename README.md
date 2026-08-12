@@ -22,9 +22,12 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 Base (Layer 0) — siempre activa
   └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
        └─ tap MO3 (pulgar der izq) → Sys (Layer 3)
+       └─ tap outer-right thumb (TOG1) → bloquea Layer 1 (numpad mode)
   └─ hold MO2 (pulgar der izq) → Nav (Layer 2)
        └─ tap MO4 (pulgar der med) → Fn (Layer 4)
-  └─ hold MO5 (pulgar der externo) → Mac (Layer 5)
+  └─ hold outer-right thumb → Mac (Layer 5)
+  └─ tap outer-right thumb → Sticky Layer 1 (un símbolo sin hold)
+  └─ tap CPSW → CapsWord / hold CPSW → Lang (Layer 6)
 ```
 
 ---
@@ -39,7 +42,7 @@ Base (Layer 0) — siempre activa
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | CTRL |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | RET   |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
-             |CPSW | GUI | SPACE|                        | MO2 | MO1 | MO5 |
+             |CPSW | GUI | SPACE|                        | MO2 | MO1 |SYM/5|
              '-----+-----+------'                        '-----+-----+-----'
 ```
 
@@ -59,6 +62,13 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 | Pinky der | `O` | `o` | `RGUI` |
 
 **Timings:** `tapping-term=400ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
+
+### `SYM/5` — Outer right thumb (sticky sym / Mac layer)
+
+| Input | Output |
+|-------|--------|
+| Tap | Sticky Layer 1 — activa Sym para el siguiente keypress, luego vuelve a Base |
+| Hold | Layer 5 (Mac shortcuts / Rectangle / tmux) |
 
 ### `CPSW` — Caps Word + Layer 6
 
@@ -98,11 +108,13 @@ Dos rutas para acceder a símbolos:
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             | CPSW | GUI  | SPACE|                         | MO3 |      |      |
+             | CPSW | GUI  | SPACE|                         | MO3 |      | TOG1 |
              '------+------+------'                         '-----+------+------'
 ```
 
 `REPT` (`&key_repeat`) — repite el último key presionado en cualquier layer. Acceso: `MO1 + ESC/~`.
+
+`TOG1` (`&tog 1`) — bloquea Layer 1 sin tener que mantener el pulgar. Acceso: `hold MO1 + tap outer-right thumb`. Para salir: tap `TOG1` nuevamente.
 
 ### Hold-tap en números (`num_sym`)
 
@@ -175,7 +187,7 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|BTCLR |PRV  |PLAY |NXT  | BLE  | USB        |        |     |     |     |     |BL-TG| RGB-T |
+|BTCLR |PRV  |PLAY |NXT  | BLE  | USB        |        |BRI- |BRI+ |     |     |BL-TG| RGB-T |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SOFF  | BT0 | BT1 | BT2 |VOL-  |VOL+        |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
@@ -192,6 +204,7 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 | `BLE/USB` | Cambia output activo |
 | `PRV/PLAY/NXT` | Media: pista anterior / play-pause / siguiente |
 | `VOL-/VOL+` | Volumen |
+| `BRI-/BRI+` | Brillo de pantalla |
 | `MUTE` | Silenciar |
 | `LCK` | Lock screen macOS (`⌘+Ctrl+Q`) |
 | `SOFF` | Soft-off (apagado profundo, requiere reset para despertar) |
@@ -250,6 +263,8 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 | `TAB` | `⌘⌥Esc` | Force Quit |
 | `A` | `⌘⌃⇧4` | Screenshot área → portapapeles |
 | `R` | `⌘⇧4` | Screenshot área → archivo |
+| `S` | `⌘Z` | Undo |
+| `T` | `⌘⇧Z` | Redo |
 | `G` | `Ctrl+↑` | Mission Control |
 | `Z` | `Ctrl+←` | Escritorio anterior |
 | `X` | `Ctrl+→` | Escritorio siguiente |
@@ -258,6 +273,13 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 | `V` | `Ctrl+⇧→` | Mover ventana al escritorio siguiente |
 
 > **Nota:** Las tildes y caracteres especiales (´ ~ ¨ ¿ ¡) están en **Layer 6 (Lang)**, no aquí.
+
+### Browser navigation (lado derecho, home row)
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `M` | `⌘[` | Browser/Finder — atrás |
+| `O` | `⌘]` | Browser/Finder — adelante |
 
 ### Macros tmux (lado derecho, prefix = `Ctrl+B`)
 

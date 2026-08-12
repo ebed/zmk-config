@@ -66,6 +66,15 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /* tap→sticky Layer 1 (un símbolo sin hold) / hold→Layer 5 (Mac) ---- */
+        sym_mac: sym_or_mac {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&sl>;
+        };
+
         /* tap = número / hold = símbolo Shift+número ----------------------- */
         num_sym: num_sym {
             compatible = "zmk,behavior-hold-tap";
@@ -205,7 +214,7 @@
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
  * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
- * RALT cubierto por hmr (I). Layer 5 activado por MO5.
+ * RALT cubierto por hmr (I). Outer right thumb: tap→sticky Sym, hold→Layer 5.
  * CPSW: tap→CapsWord / hold→Layer 6 (Lang/Español)
  * ,----------------------------------.                ,----------------------------------.
  * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
@@ -214,7 +223,7 @@
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET |
  * `-------------------------------'                    `-------------------------------'
- *         |lt6/CW| GUI |SPACE|                             | MO2 | MO1 | MO5 |
+ *         |CPSW | GUI |SPACE|                             | MO2 | MO1 |SYM/5|
  *         `--------------------'                           `-------------------'
  */
         layer_0 {
@@ -223,7 +232,7 @@
                 &gresc     &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
                 &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
-                                       &lang_cw 6 0  &kp LGUI   &kp SPACE                   &mo 2    &mo 1        &mo 5
+                                       &lang_cw 6 0  &kp LGUI   &kp SPACE                   &mo 2    &mo 1        &sym_mac 5 1
             >;
         };
 
@@ -238,7 +247,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
  * | SK  |  &  |  *  |  (  |  )  |  _   |                |  [  |  ]  |  {  |  }  |  +  |RET |
  * `-------------------------------------'                `-------------------------------'
- *         |CPSW | GUI |SPACE|                              | MO3 |     |RALT|
+ *         |CPSW | GUI |SPACE|                              | MO3 |     |TOG1|
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
@@ -247,7 +256,7 @@
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
                 &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp CARET &kp PIPE &kp BSLH  &kp GRAVE
                 &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp UNDER   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
-                                      &trans   &kp LGUI &kp SPACE             &mo 3     &none     &trans
+                                      &trans   &kp LGUI &kp SPACE             &mo 3     &none     &tog 1
             >;
         };
 
@@ -276,7 +285,7 @@
 /* ### Layer 3 — Sys  (MO1 + MO3)
  * Bluetooth, RGB, Backlight, Bootloader, Media, Lock
  * ,----------------------------------.                ,----------------------------------.
- * |BTCLR|PRV  |PLAY |NXT  | BLE  |USB |                |     |     |     |     |BL-TG|RGB-T|
+ * |BTCLR|PRV  |PLAY |NXT  | BLE  |USB |                |BRI- |BRI+ |     |     |BL-TG|RGB-T|
  * |-----+-----+-----+-----+------+---|                |-----+-----+-----+-----+-----+-----|
  * |SOFF | BT0 | BT1 | BT2 |VOL- |VOL+|                |RGB+ |     | BL- | BL+ |RGB- |RGB++|
  * |-----+-----+-----+-----+------+---|                |-----+-----+-----+-----+-----+-----|
@@ -288,7 +297,7 @@
         lower_layer {
             display-name = "Sys";
             bindings = <
-                &bt BT_CLR  &kp C_PREV   &kp C_PP     &kp C_NEXT    &out OUT_BLE  &out OUT_USB    &none                               &none                            &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
+                &bt BT_CLR  &kp C_PREV   &kp C_PP     &kp C_NEXT    &out OUT_BLE  &out OUT_USB    &kp C_BRI_DN                        &kp C_BRI_UP                     &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
                 &soft_off   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp C_VOL_DN  &kp C_VOL_UP   &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
                 &bootloader &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &kp C_MUTE    &kp LG(LC(Q))  &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none            &none
                                          &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &trans
@@ -316,7 +325,7 @@
  * ,--------------------------------------------.                ,-------------------------------------------.
  * |DSK1 |DSK2 |DSK3 |DSK4 |DSK5 | HDE  |                |WIN← |WIN→ |WIN↑ |WIN↓ |⌥⌘F  |⌥⌘⌫  |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
- * | FQ  |SS📋 |SS/4 |     |     | MCrl |                |     | CTR |TMX.D|TMX.Z|     |     |
+ * | FQ  |SS📋 |SS/4 | UND | RED | MCrl |                | BCK | CTR |TMX.D|TMX.Z| FWD |     |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |     |     |TMX.N|TMX.%|TMX."|     |
  * `--------------------------------------------'                `-------------------------------------------'
@@ -327,7 +336,7 @@
             display-name = "Mac";
             bindings = <
                 &kp LC(N1)       &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)       &kp LG(LA(H))    &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))  &kp LA(LG(BSPC))
-                &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &none        &none            &mac_mission     &none             &kp LA(LG(C))      &tmux_det       &tmux_zoom        &none          &none
+                &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &kp LG(Z)   &kp LG(LS(Z))   &mac_mission     &kp LG(LBKT)      &kp LA(LG(C))      &tmux_det       &tmux_zoom        &kp LG(RBKT)   &none
                 &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &none             &none              &tmux_new       &tmux_sph         &tmux_spv      &none
                                               &none        &kp LGUI     &kp SPACE                          &none             &none              &trans
             >;
