@@ -336,6 +336,7 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hs.application.launchO
 | `L` | `⌥⌘⇧+S` | Slack |
 | `U` | `⌥⌘⇧+Z` | Zoom |
 | `Y` | `⌥⌘⇧+C` | Chrome |
+| `;` | `⌘+\`` | Ciclar ventanas de la app activa (Chrome profiles, etc.) |
 
 ---
 

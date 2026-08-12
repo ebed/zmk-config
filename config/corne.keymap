@@ -374,9 +374,9 @@
  * Izq top row : WezTerm (Q=new-tab W=close F=split-V P=split-H) + Zoom (B=leave)
  * Izq home row: Zoom (A=mute R=video S=share) + Slack (T=code G=jump)
  * Izq bot row : Claude (Z=new) + Slack (X=mentions)
- * Der top row : Hammerspoon focus-or-launch (J=Wez L=Slk U=Zoom Y=Chrome)
+ * Der top row : Hammerspoon focus-or-launch (J=Wez L=Slk U=Zoom Y=Chrome ;=cycle-win)
  * ,------------------------------------.                ,--------------------------------------------.
- * |     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE|                | WEZ | SLK | ZOM | CHR |     |BSPC |
+ * |     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE|                | WEZ | SLK | ZOM | CHR |CYCL |BSPC |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
  * |     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP|                |     | ←   |  ↓  |  →  |HOME |PGUP |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
@@ -388,7 +388,7 @@
         apps_layer {
             display-name = "Apps";
             bindings = <
-                &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &kp LG(LS(H))    &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &trans &trans
+                &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &kp LG(LS(H))    &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
                 &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(C))  &kp LG(K)        &trans            &trans            &trans            &trans            &trans &trans
                 &none  &kp LG(N)      &kp LG(LS(M))  &none          &none          &none            &trans            &trans            &trans            &trans            &trans &trans
                                        &trans          &trans          &trans                           &trans &trans &trans

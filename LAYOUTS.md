@@ -155,7 +155,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        | WEZ | SLK | ZOM | CHR |     | BSPC  |
+|     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        | WEZ | SLK | ZOM | CHR |CYCL | BSPC  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
 |     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP        |        |     | ←   | ↓   | →   |HOME | PGUP  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
@@ -187,6 +187,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `L` — SLK | `⌥⌘⇧+S` | Hammerspoon | Focus-or-launch Slack |
 | `U` — ZOM | `⌥⌘⇧+Z` | Hammerspoon | Focus-or-launch Zoom |
 | `Y` — CHR | `⌥⌘⇧+C` | Hammerspoon | Focus-or-launch Chrome |
+| `;` — CYCL | `⌘+\`` | macOS | Ciclar ventanas de la app activa |
 
 ---
 
