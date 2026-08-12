@@ -180,7 +180,7 @@ Activación: hold pulgar derecho externo (RALT).
 ,----------------------------------------------.        ,--------------------------------------------.
 |DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-| FQ  |SS📋  |SS⌘4  |      |      |MCrl        |        |     |CTR  |tmx:dt|tmx:zm|      |       |
+| FQ  |SS📋  |SS⌘4  |  ´   |  ñ   |MCrl        |        |     |CTR  |tmx:dt|tmx:zm|      |       |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
 |     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |     |     |tmx:nw|tmx:% |tmx:" |       |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
@@ -217,6 +217,8 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 | `CapsW` | `⌘⌥Esc` | Force Quit |
 | `A` | `⌘⌃⇧4` | Screenshot área → portapapeles (dibujás el cuadrado, copia directo) |
 | `R` | `⌘⇧4` | Screenshot área → archivo (dibujás el cuadrado, guarda en ~/Desktop) |
+| `S` | `⌥E` | **Dead acute** — luego escribís la vocal: a→á e→é i→í o→ó u→ú |
+| `T` | macro | **ñ** directo en un tap |
 | `G` | `Ctrl+↑` | Mission Control |
 | `Z` | `Ctrl+←` | Escritorio anterior |
 | `X` | `Ctrl+→` | Escritorio siguiente |
