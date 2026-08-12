@@ -79,21 +79,36 @@ Activa modo ALL_CAPS. Las letras salen en mayúscula y `_` pasa sin desactivar. 
 
 ## Layer 1 — Sym (hold MO1)
 
-Números, símbolos y One-Shot Shift. Macros en Layer 5.
+Números en row 0. Todos los símbolos en rows 1-2 sin necesitar Shift.
 
 ```
-,--------------------------------------------.        ,--------------------------------------------.
-|      |  1  |  2   |  3   |  4   |  5       |        |  6   |  7  |  8   |  9   |  0   | DEL   |
-|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
-| TAB  | SK  |      |      |      |          |        |  -   |  =  |      |      |  \   |  `    |
-|------+-----+------+------+------+----------|        |------+-----+------+------+------+-------|
-|      |     |      |      |      |          |        |  [   |  ]  |      |      |      | RET   |
-'------+-----+------+------+------+----------'        '------+-----+------+------+------+-------'
+,---------------------------------------------.        ,--------------------------------------------.
+|      |  1  |  2   |  3   |  4   |  5        |        |  6   |  7  |  8   |  9   |  0   | DEL   |
+|------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
+| TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  ^   |  |   |  \   |  `    |
+|------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
+|  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
+'------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
              |CPSW  | GUI  | SPACE|                         | MO3 |      |RALT  |
              '------+------+------'                         '-----+------+------'
 ```
 
-### Sticky Shift (`SK`) — posición `A` en Layer 1
+Acceso a cualquier símbolo: **MO1 + tecla** (sin Shift).
+
+| Símbolo | Tecla (Colemak) | Símbolo | Tecla |
+|---------|-----------------|---------|-------|
+| `!` | R | `&` | Z |
+| `@` | S | `*` | X |
+| `#` | T | `(` | C |
+| `$` | G | `)` | D |
+| `%` | E (der) | `_` | V |
+| `^` | I (der) | `{` | , (der) |
+| `\|` | O (der) | `}` | . (der) |
+| `-` | M (der) | `+` | / (der) |
+| `=` | N (der) | `[` | K (der) |
+| `\` | ; (der) | `]` | H (der) |
+
+### Sticky Shift (`SK`) — posición CTRL en Layer 1 (abajo del TAB)
 
 | Input | Resultado |
 |-------|-----------|
@@ -101,7 +116,7 @@ Números, símbolos y One-Shot Shift. Macros en Layer 5.
 | Doble tap | Sticky — shift hasta la próxima tecla modificadora |
 | Triple tap | Lock — equivalente a CapsLock real |
 
-Complementa HRM shift cuando `require-prior-idle` bloquea la activación por haber tipeado recientemente.
+Útil cuando `require-prior-idle` del HRM bloquea activación por haber tipeado recientemente.
 
 ---
 

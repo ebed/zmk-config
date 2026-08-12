@@ -229,24 +229,25 @@
         };
 
 /* ### Layer 1 — Sym  (hold MO1)
- * Números y símbolos. SK shift en A (sticky key: tap→shift para 1 char)
- * ,----------------------------------.                ,----------------------------------.
- * |     |  1  |  2  |  3  |  4  |  5 |                |  6  |  7  |  8  |  9  |  0  |DEL |
- * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * | TAB | SK  |     |     |     |    |                |  -  |  =  |     |     |  \  | `  |
- * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * |     |     |     |     |     |    |                |  [  |  ]  |     |     |     |RET |
- * `-------------------------------'                    `-------------------------------'
+ * Números row 0 / Símbolos directos rows 1-2 (sin Shift)
+ * SK (sticky shift) abajo del TAB — mismo dedo, fila inferior
+ * ,-----------------------------------.                ,----------------------------------.
+ * |     |  1  |  2  |  3  |  4  |  5  |                |  6  |  7  |  8  |  9  |  0  |DEL |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+----|
+ * | TAB |  !  |  @  |  #  |  $  |  %  |                |  -  |  =  |  ^  |  |  |  \  | `  |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+----|
+ * | SK  |  &  |  *  |  (  |  )  |  _  |                |  [  |  ]  |  {  |  }  |  +  |RET |
+ * `------------------------------------'                `-------------------------------'
  *         |CPSW | GUI |SPACE|                              | MO3 |     |RALT|
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
             display-name = "Sym";
             bindings = <
-                &none       &kp N1          &kp N2  &kp N3  &kp N4  &kp N5         &kp N6    &kp N7    &kp N8  &kp N9  &kp N0   &kp DEL
-                &kp TAB     &sk LSHFT       &none   &none   &none   &none          &kp MINUS &kp EQUAL &none   &none   &kp BSLH &kp GRAVE
-                &trans      &none           &none   &none   &none   &none          &kp LBKT  &kp RBKT  &none   &none   &none    &kp RET
-                                             &trans  &kp LGUI &kp SPACE             &mo 3     &none     &trans
+                &none      &kp N1    &kp N2   &kp N3   &kp N4   &kp N5      &kp N6    &kp N7    &kp N8    &kp N9   &kp N0    &kp DEL
+                &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp CARET &kp PIPE &kp BSLH  &kp GRAVE
+                &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp UNDER   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
+                                      &trans   &kp LGUI &kp SPACE             &mo 3     &none     &trans
             >;
         };
 
