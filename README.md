@@ -4,6 +4,33 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 
 ---
 
+## Quick Reference
+
+> Layouts completos (ASCII art de ambos lados): **[LAYOUTS.md](LAYOUTS.md)**
+
+| Layer | Activación | Función principal |
+|-------|-----------|-------------------|
+| **0 Base** | siempre activa | Colemak-DH + HRM en home row |
+| **1 Sym** | hold `MO1` | Números con hold-tap, símbolos directos |
+| **2 Nav** | hold `MO2` | Mouse, flechas, word-jump, selección |
+| **3 Sys** | `MO1` + `MO3` | BT, media, RGB, brillo, lock |
+| **4 Fn** | `MO2` + `MO4` | F1–F12 |
+| **5 Mac** | hold `SYM/5` | macOS, Rectangle, tmux, undo/redo, browser |
+| **6 Lang** | hold `CPSW` | Español: ´ ~ ¨ ¿ ¡ |
+
+**Thumbs (Layer 0):**
+
+| Pulgar | Tecla | Tap | Hold |
+|--------|-------|-----|------|
+| Izq externo | `CPSW` | CapsWord | Layer 6 (Lang) |
+| Izq medio | `GUI` | Cmd | — |
+| Izq interno | `SPC` | Space | — |
+| Der interno | `MO2` | — | Layer 2 (Nav) |
+| Der medio | `MO1` | — | Layer 1 (Sym) |
+| Der externo | `SYM/5` | Sticky Layer 1 | Layer 5 (Mac) |
+
+---
+
 ## Hardware
 
 | Componente | Detalle |
@@ -33,18 +60,6 @@ Base (Layer 0) — siempre activa
 ---
 
 ## Layer 0 — Base (Colemak-DH + Home Row Mods)
-
-```
-,------------------------------------------.        ,-----------------------------------------.
-|gresc |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  | BSPC  |
-|------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
-| TAB  |GUI/A|ALT/R|CTL/S|SHF/T |  G      |        |  M   |SHF/N|CTL/E|ALT/I|GUI/O|  '    |
-|------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
-| CTRL |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | RET   |
-'------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
-             |CPSW | GUI | SPACE|                        | MO2 | MO1 |SYM/5|
-             '-----+-----+------'                        '-----+-----+-----'
-```
 
 ### Home Row Mods (HRM)
 
@@ -100,18 +115,6 @@ Dos rutas para acceder a símbolos:
 - **Hold-tap en número**: tap = dígito / hold = símbolo Shift+número (`1/!`, `2/@`, ...)
 - **Home row**: símbolos directos sin Shift para acceso ergonómico rápido
 
-```
-,---------------------------------------------.        ,--------------------------------------------.
-| REPT |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
-|------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-| TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  ^   |  |   |  \   |  `    |
-|------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-|  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
-'------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             | CPSW | GUI  | SPACE|                         | MO3 |      | TOG1 |
-             '------+------+------'                         '-----+------+------'
-```
-
 `REPT` (`&key_repeat`) — repite el último key presionado en cualquier layer. Acceso: `MO1 + ESC/~`.
 
 `TOG1` (`&tog 1`) — bloquea Layer 1 sin tener que mantener el pulgar. Acceso: `hold MO1 + tap outer-right thumb`. Para salir: tap `TOG1` nuevamente.
@@ -157,18 +160,6 @@ Dos rutas para acceder a símbolos:
 
 ## Layer 2 — Nav (hold MO2)
 
-```
-,--------------------------------------------.        ,--------------------------------------------.
-|SCRL↑ |     | M↑  |     | LCLK |            |        |     | WJ← | ↑   | WJ→ |     | BSPC  |
-|------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ | M←  | M↓  | M→  | MCLK |            |        |     | ←   | ↓   | →   |HOME | PGUP  |
-|------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL← |SCRL→|     |     | RCLK |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
-'------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     | GUI | SPACE|                           |     | MO4 |     |
-             '-----+-----+------'                           '-----+-----+-----'
-```
-
 Mouse en la mano izquierda — click, scroll y movimiento. Flechas + navegación en la derecha.
 
 Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
@@ -184,18 +175,6 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 ---
 
 ## Layer 3 — Sys (MO1 + MO3)
-
-```
-,--------------------------------------------.        ,--------------------------------------------.
-|BTCLR |PRV  |PLAY |NXT  | BLE  | USB        |        |BRI- |BRI+ |     |     |BL-TG| RGB-T |
-|------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SOFF  | BT0 | BT1 | BT2 |VOL-  |VOL+        |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
-|------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|BOOT  | BT3 | BT4 | BT5 |MUTE  |LCK         |        |🟢   | 🔴  | 🔵  | 🟡  |     |       |
-'------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             | GUI |     | SPACE|                           | RET |     |RALT |
-             '-----+-----+------'                           '-----+-----+-----'
-```
 
 | Key | Acción |
 |-----|--------|
@@ -221,18 +200,6 @@ F1–F12 en la fila superior.
 ## Layer 5 — Mac (hold outer-right thumb)
 
 Activación: hold pulgar derecho externo (`SYM/5`).
-
-```
-,----------------------------------------------.        ,--------------------------------------------.
-|DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
-|-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-| FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |tmx:dt|tmx:zm| FWD  |       |
-|-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |     |     |tmx:nw|tmx:% |tmx:" |       |
-'-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
-             |      | GUI  | SPACE|                         |      |      |[held]|
-             '------+------+------'                         '------+------+------'
-```
 
 > **DSK1-5 y MW←/→** requieren activar los atajos correspondientes en **Ajustes del sistema → Teclado → Atajos → Mission Control**.
 
@@ -298,18 +265,6 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 ## Layer 6 — Lang (hold CPSW)
 
 Activación: hold pulgar izquierdo externo. Todo transparente excepto el home row izquierdo.
-
-```
-,---------------------------------------------.        ,--------------------------------------------.
-|      |     |      |      |      |            |        |     |     |      |      |      |       |
-|------+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|      |  ´  |  ~   |  ¨   |  ¿   |  ¡         |        |     |     |      |      |      |       |
-|------+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|      |     |      |      |      |            |        |     |     |      |      |      |       |
-'------+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
-             |[held]|      |      |                         |      |      |      |
-             '------+------+------'                         '------+------+------'
-```
 
 | Tecla | Dead key | Cómo usarlo |
 |-------|----------|-------------|
