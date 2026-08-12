@@ -92,7 +92,7 @@ Dos rutas para acceder a símbolos:
 
 ```
 ,---------------------------------------------.        ,--------------------------------------------.
-|      |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
+| REPT |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 | TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  ^   |  |   |  \   |  `    |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
@@ -101,6 +101,8 @@ Dos rutas para acceder a símbolos:
              | CPSW | GUI  | SPACE|                         | MO3 |      |      |
              '------+------+------'                         '-----+------+------'
 ```
+
+`REPT` (`&key_repeat`) — repite el último key presionado en cualquier layer. Acceso: `MO1 + ESC/~`.
 
 ### Hold-tap en números (`num_sym`)
 
@@ -156,6 +158,8 @@ Dos rutas para acceder a símbolos:
 ```
 
 Mouse en la mano izquierda — click, scroll y movimiento. Flechas + navegación en la derecha.
+
+Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 
 | Key | Acción |
 |-----|--------|
