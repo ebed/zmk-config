@@ -218,15 +218,15 @@ F1–F12 en la fila superior.
 
 ---
 
-## Layer 5 — Mac (hold RALT)
+## Layer 5 — Mac (hold outer-right thumb)
 
-Activación: hold pulgar derecho externo (`MO5`).
+Activación: hold pulgar derecho externo (`SYM/5`).
 
 ```
 ,----------------------------------------------.        ,--------------------------------------------.
 |DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-| FQ  |SS📋  |SS⌘4  |  ´   |  ñ   |MCrl        |        |     |CTR  |tmx:dt|tmx:zm|      |       |
+| FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |tmx:dt|tmx:zm| FWD  |       |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
 |     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |     |     |tmx:nw|tmx:% |tmx:" |       |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
