@@ -55,21 +55,48 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
-|SCRL↑ |     |     | M↑  | LCLK |            |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
+|      |     |     |     |     | DEL          |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ |     | M←  | M↓  | M→  | MCLK       |        |     | ←   | ↓   | →   |HOME | PGUP  |
+|      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |     | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL← |SCRL→|     |     |     | RCLK       |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|      |     | ⌘X  | ⌘C  | ⌘V  |              |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     |     |      |                           | MO4 |     |[hld]|
+             |     | MO4 |      |                           | MO4 |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Izquierdo: mouse (movimiento ESDF-like: F=M↑ R=M← S=M↓ T=M→, scroll col externo, clics col inner-index)
+- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘X/C/V`=cut/copy/paste · `DEL`=forward delete
 - Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
 - Derecho fila 3: `SEL↑/←/↓/→` = Shift+flecha
-- Layer 7 (Apps): hold `MO7` (izq-medio) desde cualquier layer
-- `MO4` (inner right) + `BSP/L4` (hold BSPC) → ambas rutas a Fn layer
+- `MO4` (ambos thumbs inner) → Fn layer
+
+---
+
+## Layer 8 — Mouse (tog 8 desde meñique der inferior en L0)
+
+```
+,--------------------------------------------.        ,---------------------------------------------.
+|SCRL↑ |     |     | M↑  |     |              |        |LCLK |     |     |     |     |       |
+|------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
+|SCRL↓ |     | M←  | M↓  | M→  |              |        |MCLK |     |     |     |     |       |
+|------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
+|SCRL← |SCRL→|     |     |     |              |        |RCLK |     |     |     |     | EXIT  |
+'------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
+             | EXIT|     |      |                           |     |TURBO|     |
+             '-----+-----+------'                           '-----+-----+-----'
+```
+
+- Activación: `tog 8` (meñique der inferior en L0) — toggle, no hold
+- Izquierdo: movimiento ESDF-like (F=M↑, R=M←, S=M↓, T=M→) + scroll col externa
+- Derecho clics columna inner-index: `LCLK`=J · `MCLK`=M · `RCLK`=K
+- `EXIT`: tog 8 en pulgar izq outer o meñique der inferior (misma tecla que activó)
+- `TURBO`: pulgar der medio → MO9 (mantener para velocidad 2×)
+
+---
+
+## Layer 9 — Mouse Turbo (MO9 desde L8)
+
+Idéntica a L8 pero `mmv_fast` (3000 vs 1500). Momentánea mientras se sostiene el pulgar der.
 
 ---
 

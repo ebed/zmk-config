@@ -233,6 +233,11 @@
             #binding-cells = <0>;
             bindings = <&kp LA(N)>, <&kp N>;
         };
+        mmv_fast: mouse_move_fast {
+            compatible = "zmk,behavior-mouse-move";
+            #binding-cells = <1>;
+            default-speed-ub = <3000>;
+        };
     };
 
     keymap {
@@ -258,7 +263,7 @@
             bindings = <
                 &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &lt 4 BSPC
                 &kp TAB         &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
-                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &mo 3
+                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &tog 8
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 1  &mo 2
             >;
         };
@@ -288,25 +293,24 @@
         };
 
 /* ### Layer 2 — Nav  (hold MO2)
- * Mouse izquierda / flechas + nav + word-jump + selección derecha
- * Layer 7 (Apps): hold CTL/L7 (izq-medio) desde cualquier layer
+ * Edición texto izquierda / flechas + nav + word-jump + selección derecha
  * ,------------------------------------.                ,--------------------------------------------.
- * |SCRL↑ |     |MUS↑ |     |LCLK |    |                |     |WJ←  |  ↑  |WJ→  |     |BSPC |
- * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
- * |SCRL↓ |MUS← |MUS↓ |MUS→ |MCLK |    |                |     | ←   |  ↓  |  →  |HOME |PGUP |
- * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
- * |SCRL← |SCRL→|     |     |RCLK |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
- * `------------------------------------'                `--------------------------------------------'
- *         |     |     |     |                              |     |MO4  |     |
+ * |     |     |     |     |     | DEL  |                |⇧HOME|WJ←  |  ↑  |WJ→  |⇧END |BSPC |
+ * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
+ * |     |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→   |                |     | ←   |  ↓  |  →  |HOME |PGUP |
+ * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
+ * |     |     | ⌘X  | ⌘C  | ⌘V  |      |                |SEL↑ |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * `-------------------------------------'               `--------------------------------------------'
+ *         |     | MO4 |     |                              |MO4  |     |     |
  *         `-------------------'                            `-------------------'
  */
         layer_2 {
             display-name = "Nav";
             bindings = <
-                &msc SCRL_UP   &none            &none          &mmv MOVE_UP     &none      &mkp LCLK    &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
-                &msc SCRL_DOWN &none            &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MCLK    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
-                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &none      &mkp RCLK    &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
-                                                &trans         &trans           &trans               &mo 4    &trans   &trans
+                &none  &none  &none          &none          &none           &kp DEL          &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
+                &none  &none  &kp LG(LEFT)   &kp LG(Z)      &kp LG(LS(Z))  &kp LG(RIGHT)    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
+                &none  &none  &kp LG(X)      &kp LG(C)      &kp LG(V)      &none            &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
+                               &trans         &mo 4          &trans                           &mo 4    &trans   &trans
             >;
         };
 
@@ -419,6 +423,45 @@
                 &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &trans            &trans            &trans            &trans &trans
                 &none  &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &trans            &trans            &trans            &trans            &trans &trans
                                        &trans          &trans          &trans                           &trans &trans &trans
+            >;
+        };
+
+/* ### Layer 8 — Mouse  (tog 8 desde meñique der inferior en L0)
+ * Toggle: tap para entrar / tap para salir (TOG8 en pulgar izq o meñique der inferior).
+ * Izquierda: movimiento ESDF-like + scroll col externa.
+ * Derecha: clics columna inner-index (J=LCLK M=MCLK K=RCLK).
+ * Pulgar der medio: MO9 (turbo — mantener para velocidad 2×).
+ * ,------------------------------------.                ,----------------------------------.
+ * |SCRL↑|     |     |  M↑ |     |     |                |LCLK |     |     |     |     |     |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |SCRL↓|     | M←  | M↓  | M→  |     |                |MCLK |     |     |     |     |     |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |SCRL←|SCRL→|     |     |     |     |                |RCLK |     |     |     |     |EXIT |
+ * `-------------------------------------'               `----------------------------------'
+ *         | EXIT|     |     |                              |     |TURBO|     |
+ *         `-------------------'                            `-------------------'
+ */
+        mouse_layer {
+            display-name = "Mouse";
+            bindings = <
+                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &mkp LCLK  &none  &none  &none  &none  &none
+                &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &mkp MCLK  &none  &none  &none  &none  &none
+                &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none           &none  &none    &mkp RCLK  &none  &none  &none  &none  &tog 8
+                                &tog 8           &none  &none                            &none  &mo 9  &none
+            >;
+        };
+
+/* ### Layer 9 — Mouse Turbo  (MO9 desde L8 pulgar der medio)
+ * Idéntica a L8 pero con mmv_fast (3000 vs 1500 default).
+ * Momentánea: solo activa mientras se mantiene el pulgar.
+ */
+        mouse_turbo_layer {
+            display-name = "Turbo";
+            bindings = <
+                &msc SCRL_UP    &none            &none  &mmv_fast MOVE_UP    &none  &none    &mkp LCLK  &none  &none  &none  &none  &none
+                &msc SCRL_DOWN  &none            &mmv_fast MOVE_LEFT  &mmv_fast MOVE_DOWN  &mmv_fast MOVE_RIGHT  &none    &mkp MCLK  &none  &none  &none  &none  &none
+                &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none                &none  &none    &mkp RCLK  &none  &none  &none  &none  &tog 8
+                                &tog 8           &none  &none                                &none  &trans  &none
             >;
         };
     };

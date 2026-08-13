@@ -134,6 +134,7 @@ window.onload = function() { show('home'); };
   <div class="ni sub L3" data-l="3" onclick="show('3')"><span class="lbadge L3">3 Sys</span><span class="lhow">SPC+MO2</span></div>
   <div class="ni sub L4" data-l="4" onclick="show('4')"><span class="lbadge L4">4 Fn</span><span class="lhow">BSPC</span></div>
   <div class="ni sub L7" data-l="7" onclick="show('7')"><span class="lbadge L7">7 Apps</span><span class="lhow">MO7</span></div>
+  <div class="ni sub" data-l="8" onclick="show('8')" style="--lbb:#0088cc"><span class="lbadge" style="background:#0088cc">8 Mouse</span><span class="lhow">tog8</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
 </nav>
@@ -212,7 +213,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key" id="l0-k-comma"><span class="kl">,</span></div>
       <div class="kb-key" id="l0-k-dot"><span class="kl">.</span></div>
       <div class="kb-key" id="l0-k-slash"><span class="kl">/</span></div>
-      <div class="kb-key kb-extra active L3" id="l0-k-ret"><span class="kl">MO3</span><span class="km">Sys3</span></div>
+      <div class="kb-key kb-extra active L8" id="l0-k-ret"><span class="kl">MOUSE</span><span class="km">tog8</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L6" id="l0-k-cpsw"><span class="kl">CW/L6</span><span class="km">CW·Lang6</span></div>
@@ -230,7 +231,7 @@ window.onload = function() { show('home'); };
     <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
     <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
     <li><b>REPT</b>: repite el último key — meñique izq inferior</li>
-    <li><b>MO3</b>: meñique der inferior → Layer 3 Sys (BT, media, lock)</li>
+    <li><b>MOUSE</b>: meñique der inferior → tog Layer 8 Mouse (Sys vía combo SPC+MO2)</li>
     <li><b>BSPC</b>: tap=⌫ / hold=Layer 4 (Fn)</li>
     <li><b>HRM</b>: tap=letra, hold=modificador (GUI/ALT/CTL/SHF)</li>
   </ul>
@@ -308,12 +309,12 @@ window.onload = function() { show('home'); };
   <div class="dhdr L2"><div class="dnum L2">2</div><div><div class="dname">Nav</div><div class="dhow">hold MO2 (der-ext)</div></div></div>
   <div class="kb">
     <div class="kb-row">
-      <div class="kb-key kb-extra active L2" id="l2-k-esc"><span class="kl">SCRL↑</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-esc"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l2-k-q"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l2-k-w"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-f"><span class="kl">M↑</span></div>
+      <div class="kb-key dim" id="l2-k-f"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l2-k-p"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-b"><span class="kl">LCLK</span></div>
+      <div class="kb-key active L2" id="l2-k-b"><span class="kl">DEL</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-j"><span class="kl">⇧HOME</span><span class="km">sel inicio</span></div>
       <div class="kb-key active L2" id="l2-k-l"><span class="kl">WJ←</span><span class="km">⌥←</span></div>
@@ -323,12 +324,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L2" id="l2-k-bspc"><span class="kl">⌫</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L2" id="l2-k-tab"><span class="kl">SCRL↓</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-tab"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l2-k-a"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-r"><span class="kl">M←</span></div>
-      <div class="kb-key active L2" id="l2-k-s"><span class="kl">M↓</span></div>
-      <div class="kb-key active L2" id="l2-k-t"><span class="kl">M→</span></div>
-      <div class="kb-key active L2" id="l2-k-g"><span class="kl">MCLK</span></div>
+      <div class="kb-key active L2" id="l2-k-r"><span class="kl">⌘←</span><span class="km">línea inicio</span></div>
+      <div class="kb-key active L2" id="l2-k-s"><span class="kl">⌘Z</span><span class="km">undo</span></div>
+      <div class="kb-key active L2" id="l2-k-t"><span class="kl">⌘⇧Z</span><span class="km">redo</span></div>
+      <div class="kb-key active L2" id="l2-k-g"><span class="kl">⌘→</span><span class="km">línea fin</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key dim" id="l2-k-m"><span class="kl">·</span></div>
       <div class="kb-key active L2" id="l2-k-n"><span class="kl">←</span></div>
@@ -338,12 +339,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L2" id="l2-k-apos"><span class="kl">PGUP</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L2" id="l2-k-ctrl"><span class="kl">SCRL←</span></div>
-      <div class="kb-key active L2" id="l2-k-z"><span class="kl">SCRL→</span></div>
-      <div class="kb-key dim" id="l2-k-x"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-c"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-d"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-v"><span class="kl">RCLK</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-ctrl"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-z"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-x"><span class="kl">⌘X</span><span class="km">cut</span></div>
+      <div class="kb-key active L2" id="l2-k-c"><span class="kl">⌘C</span><span class="km">copy</span></div>
+      <div class="kb-key active L2" id="l2-k-d"><span class="kl">⌘V</span><span class="km">paste</span></div>
+      <div class="kb-key dim" id="l2-k-v"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-k"><span class="kl">SEL↑</span><span class="km">⇧↑</span></div>
       <div class="kb-key active L2" id="l2-k-h"><span class="kl">SEL←</span><span class="km">⇧←</span></div>
@@ -354,7 +355,7 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb dim" id="l2-k-cpsw"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-gui"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb active L4" id="l2-k-gui"><span class="kl">MO4</span><span class="km">→Fn</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb active L4" id="l2-k-mo2"><span class="kl">MO4</span><span class="km">→Fn</span></div>
@@ -363,7 +364,7 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li>Izquierdo: mouse ESDF-like (F=M↑ R=M← S=M↓ T=M→, B=LCLK G=MCLK V=RCLK)</li>
+    <li>Izquierdo: edición — <b>⌘←/→</b>=inicio/fin línea · <b>⌘Z/⌘⇧Z</b>=undo/redo · <b>⌘X/C/V</b>=cut/copy/paste · <b>DEL</b>=forward delete</li>
     <li>Derecho fila 1: <b>⇧HOME</b>=sel inicio línea · <b>WJ←/→</b>=⌥←/→ (word jump) · <b>⇧END</b>=sel fin línea</li>
     <li>Derecho fila 3: <b>SEL↑/←/↓/→</b>=⇧+flecha</li>
     <li><b>Layer 7 Apps</b>: hold MO7 (izq-med)</li>
@@ -676,6 +677,73 @@ window.onload = function() { show('home'); };
     <li>Der fila sup: focus-or-launch vía Hammerspoon (⌥⌘⇧W/S/Z/C)</li>
     <li><b>HELP</b> (tecla M): abre/cierra este popup</li>
     <li>Grises punteados: heredados de Layer 2 Nav (transparentes)</li>
+  </ul>
+</div>
+
+<!-- LAYER 8 — Mouse -->
+<div id="v-8" class="view L8">
+  <div class="dhdr L8" style="--lbb:#0088cc"><div class="dnum" style="background:#0088cc">8</div><div><div class="dname">Mouse</div><div class="dhow">tog MOUSE (meñique der inf)</div></div></div>
+  <div class="kb">
+    <div class="kb-row">
+      <div class="kb-key kb-extra active L8" id="l8-k-esc"><span class="kl">SCRL↑</span></div>
+      <div class="kb-key dim" id="l8-k-q"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-w"><span class="kl">·</span></div>
+      <div class="kb-key active L8" id="l8-k-f"><span class="kl">M↑</span></div>
+      <div class="kb-key dim" id="l8-k-p"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-b"><span class="kl">·</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active L8" id="l8-k-j"><span class="kl">LCLK</span></div>
+      <div class="kb-key dim" id="l8-k-l"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-u"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-y"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-semi"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l8-k-bspc"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra active L8" id="l8-k-tab"><span class="kl">SCRL↓</span></div>
+      <div class="kb-key dim" id="l8-k-a"><span class="kl">·</span></div>
+      <div class="kb-key active L8" id="l8-k-r"><span class="kl">M←</span></div>
+      <div class="kb-key active L8" id="l8-k-s"><span class="kl">M↓</span></div>
+      <div class="kb-key active L8" id="l8-k-t"><span class="kl">M→</span></div>
+      <div class="kb-key dim" id="l8-k-g"><span class="kl">·</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active L8" id="l8-k-m"><span class="kl">MCLK</span></div>
+      <div class="kb-key dim" id="l8-k-n"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-e"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-i"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-o"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-apos"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra active L8" id="l8-k-ctrl"><span class="kl">SCRL←</span></div>
+      <div class="kb-key active L8" id="l8-k-z"><span class="kl">SCRL→</span></div>
+      <div class="kb-key dim" id="l8-k-x"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-c"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-d"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-v"><span class="kl">·</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active L8" id="l8-k-k"><span class="kl">RCLK</span></div>
+      <div class="kb-key dim" id="l8-k-h"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-comma"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-dot"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra active L8" id="l8-k-ret"><span class="kl">EXIT</span><span class="km">tog8</span></div>
+    </div>
+    <div class="kb-row kb-center">
+      <div class="kb-key kb-thumb active L8" id="l8-k-cpsw"><span class="kl">EXIT</span><span class="km">tog8</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-gui"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-sep" style="width:24px"></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-mo2"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb active L9" id="l8-k-mo1"><span class="kl">TURBO</span><span class="km">hold→2×</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-sym5"><span class="kl">·</span></div>
+    </div>
+  </div>
+  <ul class="notes">
+    <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
+    <li>Derecho: clics inner-index (<b>J=LCLK M=MCLK K=RCLK</b>) — mano derecha libre mientras izquierda mueve</li>
+    <li><b>TURBO</b>: pulgar der medio → mantener para velocidad 2× (MO9)</li>
+    <li><b>EXIT</b>: pulgar izq outer o meñique der inferior (mismo tog8)</li>
   </ul>
 </div>
 
