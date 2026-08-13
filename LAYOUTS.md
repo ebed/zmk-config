@@ -88,7 +88,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 - Activación: `tog 8` (meñique der inferior en L0) — toggle, no hold
 - Izquierdo: movimiento ESDF-like (F=M↑, R=M←, S=M↓, T=M→) + scroll col externa
-- Derecho clics home row: `LCLK`=M · `MCLK`=N · `RCLK`=E (índice→medio→anular)
+- Derecho clics home row: `LCLK`=N · `MCLK`=E · `RCLK`=I (índice→medio→anular)
 - `EXIT`: tog 8 en pulgar izq outer o meñique der inferior (misma tecla que activó)
 - Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
 

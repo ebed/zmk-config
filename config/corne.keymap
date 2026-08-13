@@ -425,7 +425,7 @@
 /* ### Layer 8 — Mouse  (tog 8 desde meñique der inferior en L0)
  * Toggle: tap para entrar / tap para salir (TOG8 en pulgar izq o meñique der inferior).
  * Izquierda: movimiento ESDF-like + scroll col externa.
- * Derecha: clics home row (M=LCLK N=MCLK E=RCLK).
+ * Derecha: clics home row (N=LCLK E=MCLK I=RCLK).
  * ,------------------------------------.                ,----------------------------------.
  * |SCRL↑|     |     |  M↑ |     |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
@@ -440,7 +440,7 @@
             display-name = "Mouse";
             bindings = <
                 &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &none      &none       &none       &none  &none  &none
-                &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &mkp LCLK  &mkp MCLK   &mkp RCLK   &none  &none  &none
+                &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &none      &mkp LCLK   &mkp MCLK   &mkp RCLK  &none  &none
                 &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none           &none  &none    &none      &none       &none       &none  &none  &tog 8
                                 &tog 8           &none  &none                            &none  &none  &none
             >;

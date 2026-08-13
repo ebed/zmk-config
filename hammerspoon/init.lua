@@ -708,10 +708,10 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L8" id="l8-k-t"><span class="kl">M→</span></div>
       <div class="kb-key dim" id="l8-k-g"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L8" id="l8-k-m"><span class="kl">LCLK</span></div>
-      <div class="kb-key active L8" id="l8-k-n"><span class="kl">MCLK</span></div>
-      <div class="kb-key active L8" id="l8-k-e"><span class="kl">RCLK</span></div>
-      <div class="kb-key dim" id="l8-k-i"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-m"><span class="kl">·</span></div>
+      <div class="kb-key active L8" id="l8-k-n"><span class="kl">LCLK</span></div>
+      <div class="kb-key active L8" id="l8-k-e"><span class="kl">MCLK</span></div>
+      <div class="kb-key active L8" id="l8-k-i"><span class="kl">RCLK</span></div>
       <div class="kb-key dim" id="l8-k-o"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l8-k-apos"><span class="kl">·</span></div>
     </div>
@@ -742,7 +742,7 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
-    <li>Derecho: clics home row (<b>M=LCLK N=MCLK E=RCLK</b>) — índice→medio→anular</li>
+    <li>Derecho: clics home row (<b>N=LCLK E=MCLK I=RCLK</b>) — índice→medio→anular</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
     <li><b>EXIT</b>: pulgar izq outer o meñique der inferior (mismo tog8)</li>
   </ul>
