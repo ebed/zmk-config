@@ -385,6 +385,66 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` 
 
 ---
 
+## Setup en máquina nueva
+
+Al conectar el teclado en una Mac por primera vez, estos pasos activan todos los shortcuts del keymap.
+
+### 1. Hammerspoon (Layer 7 — focus-or-launch + keymap popup)
+
+```bash
+# Instala Hammerspoon (si no está) y crea el symlink
+bash scripts/setup-hammerspoon.sh
+```
+
+Shortcuts disponibles tras el setup: `⌥⌘⇧W/S/Z/C` (apps) y `⌥⌘⇧H` (keymap popup).  
+No requiere configuración adicional — todo está en `hammerspoon/init.lua`.
+
+---
+
+### 2. Rectangle (Layer 5 — window management)
+
+Instalar desde [rectangleapp.com](https://rectangleapp.com/) o `brew install --cask rectangle`.
+
+Los shortcuts `⌥⌘←/→/↑/↓/F/⌫` funcionan con los defaults de Rectangle.  
+Solo hay que configurar los de display switching:
+
+**Rectangle Preferences → Shortcuts:**
+
+| Acción | Shortcut a asignar |
+|--------|-------------------|
+| Move to Previous Display | `⌥⌘⇧←` |
+| Move to Next Display | `⌥⌘⇧→` |
+
+---
+
+### 3. Mission Control (Layer 5 — escritorios y espacios)
+
+**Ajustes del sistema → Teclado → Atajos de teclado → Mission Control:**
+
+| Shortcut | Acción | Estado default |
+|----------|--------|----------------|
+| `^1` … `^5` | Cambiar al Escritorio 1–5 | ☐ desactivado — **activar** |
+| `^←` | Moverse al espacio a la izquierda | ☐ desactivado — **activar** |
+| `^→` | Moverse al espacio a la derecha | ☐ desactivado — **activar** |
+| `^⇧←` | Mover ventana al espacio anterior | ☐ desactivado — **activar** |
+| `^⇧→` | Mover ventana al espacio siguiente | ☐ desactivado — **activar** |
+| `^↑` | Mission Control | ✓ ya activo |
+| `^↓` | Exposé de la app | ✓ ya activo |
+
+> Nota: los escritorios `^1-5` solo aparecen en la lista cuando Mission Control tiene espacios fijos. Activar **"Organizar espacios automáticamente"** + crear al menos 5 escritorios primero.
+
+---
+
+### Checklist de setup rápido
+
+- [ ] `bash scripts/setup-hammerspoon.sh` ejecutado
+- [ ] Hammerspoon tiene permisos de Accesibilidad (Ajustes → Privacidad → Accesibilidad)
+- [ ] Rectangle instalado
+- [ ] Rectangle: Move to Previous/Next Display → `⌥⌘⇧←/→`
+- [ ] Mission Control: activar `^1-5`, `^←/→`, `^⇧←/→`
+
+---
+
 ## Compilación y flash
 
 El firmware se compila automáticamente via GitHub Actions en cada push.  
