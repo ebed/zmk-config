@@ -401,10 +401,11 @@
  * Izq home row: Zoom (A=mute R=video S=share T=leave) — G vacío
  * Izq bot row : Claude (Z=new) + Slack (X=mentions C=code D=jump)
  * Der top row : Hammerspoon focus-or-launch (J=Wez L=Slk U=Zoom Y=Chrome ;=cycle-win)
+ * Der home row: M=HELP, N=CLU (Claude Desktop focus-or-launch)
  * ,------------------------------------.                ,--------------------------------------------.
  * |     |WTAB |WCLS |WSPL-V|WSPL-H|    |                | WEZ | SLK | ZOM | CHR |CYCL |BSPC |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | ←   |  ↓  |  →  |HOME |PGUP |
+ * |     |ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | CLU |  ↓  |  →  |HOME |PGUP |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
  * |     |CLNEW|SMEN |SCOD  |SJMP  |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `------------------------------------'                `--------------------------------------------'
@@ -415,7 +416,7 @@
             display-name = "Apps";
             bindings = <
                 &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &none            &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
-                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &trans            &trans            &trans            &trans &trans
+                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &kp LA(LG(LS(N))) &trans            &trans            &trans &trans
                 &none  &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &trans            &trans            &trans            &trans            &trans &trans
                                        &trans          &trans          &trans                           &trans &trans &trans
             >;

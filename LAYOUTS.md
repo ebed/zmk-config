@@ -191,7 +191,7 @@ Idéntica a L8 pero `mmv_fast` (3000 vs 1500). Momentánea mientras se sostiene 
 ,--------------------------------------------.        ,--------------------------------------------.
 |     |WTAB |WCLS |WSPL-V|WSPL-H|            |        | WEZ | SLK | ZOM | CHR |CYCL | BSPC  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|     |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | ←   | ↓   | →   |HOME | PGUP  |
+|     |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | CLU | ↓   | →   |HOME | PGUP  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
 |     |CLNEW|SMEN |SCOD  |SJMP  |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
@@ -221,6 +221,7 @@ Idéntica a L8 pero `mmv_fast` (3000 vs 1500). Momentánea mientras se sostiene 
 | `C` — SCOD | `⌘+Shift+C` | Slack | Format as code |
 | `D` — SJMP | `⌘+K` | Slack/WezTerm | Jump to / clear |
 | `M` — HELP | `⌥⌘⇧+H` | Hammerspoon | Popup: árbol de acceso a capas |
+| `N` — CLU | `⌥⌘⇧+N` | Hammerspoon | Focus-or-launch Claude Desktop |
 | `J` — WEZ | `⌥⌘⇧+W` | Hammerspoon | Focus-or-launch WezTerm |
 | `L` — SLK | `⌥⌘⇧+S` | Hammerspoon | Focus-or-launch Slack |
 | `U` — ZOM | `⌥⌘⇧+Z` | Hammerspoon | Focus-or-launch Zoom |

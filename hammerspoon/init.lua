@@ -12,6 +12,7 @@ hs.hotkey.bind({"cmd","alt","shift"}, "W", function() focusOrLaunch("WezTerm") e
 hs.hotkey.bind({"cmd","alt","shift"}, "S", function() focusOrLaunch("Slack") end)
 hs.hotkey.bind({"cmd","alt","shift"}, "Z", function() focusOrLaunch("zoom.us") end)
 hs.hotkey.bind({"cmd","alt","shift"}, "C", function() focusOrLaunch("Google Chrome") end)
+hs.hotkey.bind({"cmd","alt","shift"}, "N", function() focusOrLaunch("Claude") end)
 
 local keymapHtml = [[<!DOCTYPE html>
 <html>
@@ -641,7 +642,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l7-k-g"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L7" id="l7-k-m"><span class="kl">HELP</span><span class="km">⌥⌘⇧H</span></div>
-      <div class="kb-key inherited" id="l7-k-n"><span class="kl">←</span></div>
+      <div class="kb-key active L7" id="l7-k-n"><span class="kl">CLU</span><span class="km">⌥⌘⇧N</span></div>
       <div class="kb-key inherited" id="l7-k-e"><span class="kl">↓</span></div>
       <div class="kb-key inherited" id="l7-k-i"><span class="kl">→</span></div>
       <div class="kb-key inherited" id="l7-k-o"><span class="kl">HOME</span></div>
@@ -675,7 +676,7 @@ window.onload = function() { show('home'); };
   <ul class="notes">
     <li>Activación: hold <b>MO7</b> (izq-med) — sin tap, ⌃ Ctrl vía HRM en S</li>
     <li>Der fila sup: focus-or-launch vía Hammerspoon (⌥⌘⇧W/S/Z/C)</li>
-    <li><b>HELP</b> (tecla M): abre/cierra este popup</li>
+    <li><b>HELP</b> (tecla M): abre/cierra este popup · <b>CLU</b> (tecla N): focus Claude Desktop</li>
     <li>Grises punteados: heredados de Layer 2 Nav (transparentes)</li>
   </ul>
 </div>
@@ -875,6 +876,7 @@ local kcToKeyL7 = {
     [1]="l7-k-l",    -- ⌥⌘⇧S → L (SLK)
     [6]="l7-k-u",    -- ⌥⌘⇧Z → U (ZOM)
     [8]="l7-k-y",    -- ⌥⌘⇧C → Y (CHR)
+    [45]="l7-k-n",   -- ⌥⌘⇧N → N (CLU — Claude Desktop)
 }
 
 -- Infer which ZMK layer generated the keycode received by macOS
