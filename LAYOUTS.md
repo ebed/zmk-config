@@ -82,7 +82,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL← |SCRL→|     |     |     |              |        |RCLK |     |     |     |     | EXIT  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             | EXIT|     |      |                           |     |TURBO|     |
+             | EXIT|     |      |                           |     |     |     |
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
@@ -90,13 +90,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Izquierdo: movimiento ESDF-like (F=M↑, R=M←, S=M↓, T=M→) + scroll col externa
 - Derecho clics columna inner-index: `LCLK`=J · `MCLK`=M · `RCLK`=K
 - `EXIT`: tog 8 en pulgar izq outer o meñique der inferior (misma tecla que activó)
-- `TURBO`: pulgar der medio → MO9 (mantener para velocidad 2×)
-
----
-
-## Layer 9 — Mouse Turbo (MO9 desde L8)
-
-Idéntica a L8 pero `mmv_fast` (3000 vs 1500). Momentánea mientras se sostiene el pulgar der.
+- Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
 
 ---
 

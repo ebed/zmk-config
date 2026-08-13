@@ -736,14 +736,14 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb dim" id="l8-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l8-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb active L9" id="l8-k-mo1"><span class="kl">TURBO</span><span class="km">hold→2×</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-mo1"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l8-k-sym5"><span class="kl">·</span></div>
     </div>
   </div>
   <ul class="notes">
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
     <li>Derecho: clics inner-index (<b>J=LCLK M=MCLK K=RCLK</b>) — mano derecha libre mientras izquierda mueve</li>
-    <li><b>TURBO</b>: pulgar der medio → mantener para velocidad 2× (MO9)</li>
+    <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
     <li><b>EXIT</b>: pulgar izq outer o meñique der inferior (mismo tog8)</li>
   </ul>
 </div>
