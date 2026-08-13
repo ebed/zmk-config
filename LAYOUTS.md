@@ -36,9 +36,9 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,---------------------------------------------.        ,--------------------------------------------.
 | REPT |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-| TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  ^   |  |   |  \   |  `    |
+| TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  _   |  |   |  \   |  `    |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-|  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
+|  SK  |  &  |  *   |  (   |  )   |  ^        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
              |CW/L6 | MO7  | SPACE|                         | MO3 |      | TOG1|
              '------+------+------'                         '-----+------+-----'
@@ -55,17 +55,17 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
-|SCRL↑ |     | M↑  |     | LCLK |            |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
+|SCRL↑ |     |     | M↑  | LCLK |            |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ | M←  | M↓  | M→  | MCLK |            |        |     | ←   | ↓   | →   |HOME | PGUP  |
+|SCRL↓ |     | M←  | M↓  | M→  | MCLK       |        |     | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL← |SCRL→|     |     | RCLK |            |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|SCRL← |SCRL→|     |     |     | RCLK       |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              |     |     |      |                           | MO4 |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Izquierdo: mouse (movimiento, scroll, clics)
+- Izquierdo: mouse (movimiento ESDF-like: F=M↑ R=M← S=M↓ T=M→, scroll col externo, clics col inner-index)
 - Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
 - Derecho fila 3: `SEL↑/←/↓/→` = Shift+flecha
 - Layer 7 (Apps): hold `MO7` (izq-medio) desde cualquier layer
@@ -79,9 +79,9 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,--------------------------------------------.
 |BTCLR |PRV  |PLAY |NXT  | BLE  | USB        |        |BRI- |BRI+ |     |     |BL-TG| RGB-T |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SOFF  | BT0 | BT1 | BT2 |VOL-  |VOL+        |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
+|      | BT0 | BT1 | BT2 |VOL-  |VOL+        |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|BOOT  | BT3 | BT4 | BT5 |MUTE  |LCK         |        | 🟢  | 🔴  | 🔵  | 🟡  |     |       |
+|      | BT3 | BT4 |     |MUTE  |LCK         |        | 🟢  | 🔴  | 🔵  | 🟡  |SOFF |BOOT   |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | GUI |     | SPACE|                           | RET |     |RALT |
              '-----+-----+------'                           '-----+-----+-----'
@@ -90,8 +90,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - `BRI-/BRI+`: brillo de pantalla
 - `RGB-T`: toggle RGB underglow
 - `BL-TG`: toggle backlight
-- `SOFF`: soft-off (deep sleep)
-- `BOOT`: modo bootloader para flashear
+- `SOFF`: soft-off (deep sleep) — right pinky col, bottom row (difícil de presionar accidentalmente)
+- `BOOT`: modo bootloader para flashear — right extra col, bottom row (la posición más difícil)
 
 ---
 
@@ -139,9 +139,9 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,---------------------------------------------.        ,--------------------------------------------.
-|      |     |      |      |      |            |        |     |     |      |      |      |       |
+|      |     |      |      |      |            |        |     |     |  ú   |      |      |       |
 |------+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|      |  ´  |  ~   |  ¨   |  ¿   |  ¡         |        |     |     |      |      |      |       |
+|      |  ´  |  ~   |  ¨   |  ¿   |  ¡         |        |  á  |  ñ  |  é   |  í   |  ó   |       |
 |------+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
 |      |     |      |      |      |            |        |     |     |      |      |      |       |
 '------+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
@@ -149,11 +149,12 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
              '------+------+------'                         '------+------+------'
 ```
 
-- Todo transparente excepto home row izquierdo
-- `´` = dead acute (⌥E) → vocal → á/é/í/ó/ú
-- `~` = dead tilde (⌥N) → n → ñ
+- Izquierdo home row: dead keys (`´`=⌥E, `~`=⌥N, `¨`=⌥U) + `¿` y `¡` directos
+- Derecho home row: vocales directas (`á`=M-pos, `ñ`=N-pos, `é`=E-pos, `í`=I-pos, `ó`=O-pos)
+- Derecho top row: `ú`=U-pos
+- `´` = dead acute (⌥E) → vocal → á/é/í/ó/ú (para mayúsculas vía HRM+vocal)
+- `~` = dead tilde (⌥N) → n → ñ (dead key conservado en izquierdo)
 - `¨` = dead umlaut (⌥U) → u → ü
-- `¿` y `¡` = directos
 
 ---
 

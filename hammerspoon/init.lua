@@ -265,7 +265,7 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L1" id="l1-k-m"><span class="kl">-</span></div>
       <div class="kb-key active L1" id="l1-k-n"><span class="kl">=</span></div>
-      <div class="kb-key active L1" id="l1-k-e"><span class="kl">^</span></div>
+      <div class="kb-key active L1" id="l1-k-e"><span class="kl">_</span></div>
       <div class="kb-key active L1" id="l1-k-i"><span class="kl">|</span></div>
       <div class="kb-key active L1" id="l1-k-o"><span class="kl">\</span></div>
       <div class="kb-key active L1" id="l1-k-apos"><span class="kl">`</span></div>
@@ -276,7 +276,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L1" id="l1-k-x"><span class="kl">*</span></div>
       <div class="kb-key active L1" id="l1-k-c"><span class="kl">(</span></div>
       <div class="kb-key active L1" id="l1-k-d"><span class="kl">)</span></div>
-      <div class="kb-key active L1" id="l1-k-v"><span class="kl">_</span></div>
+      <div class="kb-key active L1" id="l1-k-v"><span class="kl">^</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L1" id="l1-k-k"><span class="kl">[</span></div>
       <div class="kb-key active L1" id="l1-k-h"><span class="kl">]</span></div>
@@ -310,10 +310,10 @@ window.onload = function() { show('home'); };
     <div class="kb-row">
       <div class="kb-key kb-extra active L2" id="l2-k-esc"><span class="kl">SCRL↑</span></div>
       <div class="kb-key dim" id="l2-k-q"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-w"><span class="kl">M↑</span></div>
-      <div class="kb-key dim" id="l2-k-f"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-p"><span class="kl">LCLK</span></div>
-      <div class="kb-key dim" id="l2-k-b"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-w"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-f"><span class="kl">M↑</span></div>
+      <div class="kb-key dim" id="l2-k-p"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-b"><span class="kl">LCLK</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-j"><span class="kl">⇧HOME</span><span class="km">sel inicio</span></div>
       <div class="kb-key active L2" id="l2-k-l"><span class="kl">WJ←</span><span class="km">⌥←</span></div>
@@ -324,11 +324,11 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L2" id="l2-k-tab"><span class="kl">SCRL↓</span></div>
-      <div class="kb-key active L2" id="l2-k-a"><span class="kl">M←</span></div>
-      <div class="kb-key active L2" id="l2-k-r"><span class="kl">M↓</span></div>
-      <div class="kb-key active L2" id="l2-k-s"><span class="kl">M→</span></div>
-      <div class="kb-key active L2" id="l2-k-t"><span class="kl">MCLK</span></div>
-      <div class="kb-key dim" id="l2-k-g"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-a"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-r"><span class="kl">M←</span></div>
+      <div class="kb-key active L2" id="l2-k-s"><span class="kl">M↓</span></div>
+      <div class="kb-key active L2" id="l2-k-t"><span class="kl">M→</span></div>
+      <div class="kb-key active L2" id="l2-k-g"><span class="kl">MCLK</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key dim" id="l2-k-m"><span class="kl">·</span></div>
       <div class="kb-key active L2" id="l2-k-n"><span class="kl">←</span></div>
@@ -342,8 +342,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L2" id="l2-k-z"><span class="kl">SCRL→</span></div>
       <div class="kb-key dim" id="l2-k-x"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l2-k-c"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-d"><span class="kl">RCLK</span></div>
-      <div class="kb-key dim" id="l2-k-v"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-d"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-v"><span class="kl">RCLK</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-k"><span class="kl">SEL↑</span><span class="km">⇧↑</span></div>
       <div class="kb-key active L2" id="l2-k-h"><span class="kl">SEL←</span><span class="km">⇧←</span></div>
@@ -363,7 +363,7 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li>Izquierdo: mouse (movimiento, scroll, clics)</li>
+    <li>Izquierdo: mouse ESDF-like (F=M↑ R=M← S=M↓ T=M→, B=LCLK G=MCLK V=RCLK)</li>
     <li>Derecho fila 1: <b>⇧HOME</b>=sel inicio línea · <b>WJ←/→</b>=⌥←/→ (word jump) · <b>⇧END</b>=sel fin línea</li>
     <li>Derecho fila 3: <b>SEL↑/←/↓/→</b>=⇧+flecha</li>
     <li><b>Layer 7 Apps</b>: hold MO7 (izq-med)</li>
@@ -390,7 +390,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L3" id="l3-k-bspc"><span class="kl">RGB-T</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L3" id="l3-k-tab"><span class="kl">SOFF</span></div>
+      <div class="kb-key kb-extra dim" id="l3-k-tab"><span class="kl">·</span></div>
       <div class="kb-key active L3" id="l3-k-a"><span class="kl">BT0</span></div>
       <div class="kb-key active L3" id="l3-k-r"><span class="kl">BT1</span></div>
       <div class="kb-key active L3" id="l3-k-s"><span class="kl">BT2</span></div>
@@ -405,10 +405,10 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L3" id="l3-k-apos"><span class="kl">RGB++</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L3" id="l3-k-ctrl"><span class="kl">BOOT</span></div>
+      <div class="kb-key kb-extra dim" id="l3-k-ctrl"><span class="kl">·</span></div>
       <div class="kb-key active L3" id="l3-k-z"><span class="kl">BT3</span></div>
       <div class="kb-key active L3" id="l3-k-x"><span class="kl">BT4</span></div>
-      <div class="kb-key active L3" id="l3-k-c"><span class="kl">BT5</span></div>
+      <div class="kb-key dim" id="l3-k-c"><span class="kl">·</span></div>
       <div class="kb-key active L3" id="l3-k-d"><span class="kl">MUTE</span></div>
       <div class="kb-key active L3" id="l3-k-v"><span class="kl">LCK</span></div>
       <div class="kb-sep"></div>
@@ -416,8 +416,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L3" id="l3-k-h"><span class="kl">🔴</span></div>
       <div class="kb-key active L3" id="l3-k-comma"><span class="kl">🔵</span></div>
       <div class="kb-key active L3" id="l3-k-dot"><span class="kl">🟡</span></div>
-      <div class="kb-key dim" id="l3-k-slash"><span class="kl">·</span></div>
-      <div class="kb-key kb-extra dim" id="l3-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key active L3" id="l3-k-slash"><span class="kl">SOFF</span></div>
+      <div class="kb-key kb-extra active L3" id="l3-k-ret"><span class="kl">BOOT</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L3" id="l3-k-cpsw"><span class="kl">⌘</span></div>
@@ -569,7 +569,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l6-k-b"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key dim" id="l6-k-j"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-l"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-u"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-y"><span class="kl">·</span></div>
+      <div class="kb-key active L6" id="l6-k-u"><span class="kl">ú</span></div><div class="kb-key dim" id="l6-k-y"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l6-k-semi"><span class="kl">·</span></div><div class="kb-key kb-extra dim" id="l6-k-bspc"><span class="kl">·</span></div>
     </div>
     <div class="kb-row">
@@ -580,9 +580,9 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L6" id="l6-k-t"><span class="kl">¿</span></div>
       <div class="kb-key active L6" id="l6-k-g"><span class="kl">¡</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l6-k-m"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-n"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-e"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-i"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-o"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key active L6" id="l6-k-m"><span class="kl">á</span></div><div class="kb-key active L6" id="l6-k-n"><span class="kl">ñ</span></div>
+      <div class="kb-key active L6" id="l6-k-e"><span class="kl">é</span></div><div class="kb-key active L6" id="l6-k-i"><span class="kl">í</span></div>
+      <div class="kb-key active L6" id="l6-k-o"><span class="kl">ó</span></div><div class="kb-key dim" id="l6-k-apos"><span class="kl">·</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l6-k-ctrl"><span class="kl">·</span></div>
@@ -605,9 +605,9 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li><b>´</b>: dead acute (⌥E) → á/é/í/ó/ú</li>
-    <li><b>~</b>: dead tilde (⌥N) → ñ</li>
-    <li><b>¨</b>: dead umlaut (⌥U) → ü</li>
+    <li><b>á ñ é í ó ú</b>: directas en home right (mnemónico: misma tecla que vocal base)</li>
+    <li><b>´</b>: dead acute (⌥E) → mayúsculas Á/É/Í/Ó/Ú vía HRM+vocal</li>
+    <li><b>~</b>: dead tilde (⌥N) → ñ / <b>¨</b>: dead umlaut (⌥U) → ü</li>
     <li><b>¿</b> y <b>¡</b>: teclas directas</li>
   </ul>
 </div>

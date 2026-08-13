@@ -203,6 +203,36 @@
                 , <&macro_tap &kp Z>
                 ;
         };
+        lang_a: lang_a_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E)>, <&kp A>;
+        };
+        lang_e: lang_e_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E)>, <&kp E>;
+        };
+        lang_i: lang_i_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E)>, <&kp I>;
+        };
+        lang_o: lang_o_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E)>, <&kp O>;
+        };
+        lang_u: lang_u_acute {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(E)>, <&kp U>;
+        };
+        lang_n: lang_n_tilde {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(N)>, <&kp N>;
+        };
     };
 
     keymap {
@@ -251,8 +281,8 @@
             display-name = "Sym";
             bindings = <
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
-                &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp CARET &kp PIPE &kp BSLH  &kp GRAVE
-                &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp UNDER   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
+                &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp UNDER &kp PIPE &kp BSLH  &kp GRAVE
+                &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp CARET   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
                                       &trans   &trans   &kp SPACE             &mo 3     &trans    &tog 1
             >;
         };
@@ -273,9 +303,9 @@
         layer_2 {
             display-name = "Nav";
             bindings = <
-                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
-                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
-                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
+                &msc SCRL_UP   &none            &none          &mmv MOVE_UP     &none      &mkp LCLK    &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
+                &msc SCRL_DOWN &none            &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT  &mkp MCLK    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
+                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &none      &mkp RCLK    &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
                                                 &trans         &trans           &trans               &mo 4    &trans   &trans
             >;
         };
@@ -296,8 +326,8 @@
             display-name = "Sys";
             bindings = <
                 &bt BT_CLR  &kp C_PREV   &kp C_PP     &kp C_NEXT    &out OUT_BLE  &out OUT_USB    &kp C_BRI_DN                        &kp C_BRI_UP                     &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
-                &soft_off   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp C_VOL_DN  &kp C_VOL_UP   &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
-                &bootloader &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5  &kp C_MUTE    &kp LG(LC(Q))  &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &none            &none
+                &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp C_VOL_DN  &kp C_VOL_UP   &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
+                &none       &bt BT_SEL 3 &bt BT_SEL 4 &none         &kp C_MUTE    &kp LG(LC(Q))  &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &soft_off        &bootloader
                                          &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &trans
             >;
         };
@@ -359,8 +389,8 @@
         lang_layer {
             display-name = "Lang";
             bindings = <
-                &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &trans &trans &trans &trans
-                &trans  &kp LA(E)   &kp LA(N)   &kp LA(U)   &kp LA(LS(FSLH))  &kp LA(N1)    &trans &trans &trans &trans &trans &trans
+                &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &lang_u &trans &trans &trans
+                &trans  &kp LA(E)   &kp LA(N)   &kp LA(U)   &kp LA(LS(FSLH))  &kp LA(N1)    &lang_a &lang_n &lang_e &lang_i &lang_o &trans
                 &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &trans &trans &trans &trans
                                     &trans      &trans      &trans                            &trans &trans &trans
             >;
