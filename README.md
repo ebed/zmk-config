@@ -168,9 +168,10 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 
 | Key | Acción |
 |-----|--------|
-| `WJ←` / `WJ→` | Word jump — `Ctrl+←/→` (saltar palabra) |
+| `WJ←` / `WJ→` | Word jump — `⌥←/→` (saltar palabra) |
 | `←` `↓` `↑` `→` | Flechas normales |
-| `SEL←` `SEL↓` `SEL→` | Selección de texto — `Shift+←/↓/→` |
+| `⇧HOME` / `⇧END` | Selección al inicio / fin de línea |
+| `SEL↑` `SEL←` `SEL↓` `SEL→` | Selección de texto — `Shift+↑/←/↓/→` |
 | `HOME` / `END` | Inicio / fin de línea |
 | `PGUP` / `PGDN` | Página arriba / abajo |
 
@@ -328,15 +329,18 @@ El lado derecho hereda Layer 2 — flechas y mouse siguen activos.
 
 ### Focus-or-launch — Hammerspoon (lado derecho, fila superior)
 
-Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hs.application.launchOrFocus()` mapeado en `init.lua`.
+Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` (symlink via `scripts/setup-hammerspoon.sh`).
 
-| Tecla | Shortcut | App |
-|-------|----------|-----|
-| `J` | `⌥⌘⇧+W` | WezTerm |
-| `L` | `⌥⌘⇧+S` | Slack |
-| `U` | `⌥⌘⇧+Z` | Zoom |
-| `Y` | `⌥⌘⇧+C` | Chrome |
-| `;` | `⌘+\`` | Ciclar ventanas de la app activa (Chrome profiles, etc.) |
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `M` | `⌥⌘⇧+H` | **Abrir/cerrar keymap reference** (popup interactivo con todas las capas) |
+| `J` | `⌥⌘⇧+W` | Focus-or-launch WezTerm |
+| `L` | `⌥⌘⇧+S` | Focus-or-launch Slack |
+| `U` | `⌥⌘⇧+Z` | Focus-or-launch Zoom |
+| `Y` | `⌥⌘⇧+C` | Focus-or-launch Chrome |
+| `;` | `⌘+\`` | Ciclar ventanas de la app activa |
+
+> El popup de `HELP` también es accesible desde cualquier capa pulsando `⌥⌘⇧H` directamente. Muestra un grid interactivo de todas las capas y destaca las teclas presionadas en tiempo real.
 
 ---
 
