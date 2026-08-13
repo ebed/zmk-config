@@ -57,9 +57,9 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,---------------------------------------------.
 |      |     |     |     |     | DEL          |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |     | ←   | ↓   | →   |HOME | PGUP  |
+|      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |SWJ← | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|      |     | ⌘X  | ⌘C  | ⌘V  |              |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|      |     | ⌘X  | ⌘C  | ⌘V  |              |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              |     | MO4 |      |                           |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
@@ -67,7 +67,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 - Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘X/C/V`=cut/copy/paste · `DEL`=forward delete
 - Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
-- Derecho fila 3: `SEL↑/←/↓/→` = Shift+flecha
+- Derecho fila 2: `SWJ←/→` = ⌥⇧←/→ (word select) — col inner
+- Derecho fila 3: `SEL←/↓/→` = Shift+flecha
 - `MO4` (pulgar izq inner) → Fn layer — solo izquierdo porque MO2 (der outer) ya ocupa el pulgar derecho
 
 ---
