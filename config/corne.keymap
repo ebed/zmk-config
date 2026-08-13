@@ -14,7 +14,6 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
-#include <input/processors.dtsi>
 
 / {
     /* ------------------------------------------------------------------ */
@@ -490,10 +489,3 @@
   };
 };
 
-/* Mouse turbo: L9 moves 2× faster than L8 */
-&mmv_input_listener {
-    turbo {
-        layers = <9>;
-        input-processors = <&zip_xy_scaler 2 1>;
-    };
-};
