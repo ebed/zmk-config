@@ -12,16 +12,16 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | TAB  |GUI/A|ALT/R|CTL/S|SHF/T |  G      |        |  M   |SHF/N|CTL/E|ALT/I|GUI/O|  '    |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
-|CW/⌘  |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | REPT  |
+| REPT |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  |       |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
              |CW/L6 | MO7 |SPACE|                      |RET/L5| MO2 | MO1|
              '------+-----+-----'                       '------+-----+----'
 ```
 
 - `gresc`: tap=ESC, Shift+tap=`~`
-- `CW/⌘`: tap=CapsWord / hold=⌘ GUI
+- `REPT`: repite el último key (`&key_repeat`) — meñique izquierdo inferior
 - `BSP/L4`: tap=⌫ / hold=Layer 4 (Fn)
-- `REPT`: repite el último key (`&key_repeat`)
+- Bot-der: vacío (`&none`) — silencioso para evitar presses accidentales
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
 - `MO7`: hold=Layer 7 (Apps) — Ctrl viene del HRM en `S`
 - `RET/L5`: tap=↵ RET / hold=Layer 5 (Mac)
@@ -210,7 +210,6 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `CTL/S` | tap=S, hold=Ctrl |
 | `SHF/T` | tap=T, hold=Shift |
 | `1/!` | tap=1, hold=! |
-| `CW/⌘` | tap=CapsWord, hold=⌘ GUI |
 | `BSP/L4` | tap=⌫, hold=Layer 4 (Fn) |
 | `REPT` | repite el último key (`&key_repeat`) |
 | `CW/L6` | tap=CapsWord, hold=Layer 6 (Lang) |

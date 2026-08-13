@@ -23,7 +23,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 
 | Posición | Tecla | Tap | Hold |
 |----------|-------|-----|------|
-| Bot-izq (pinky row) | `CW/⌘` | CapsWord | ⌘ GUI |
+| Bot-izq (pinky row) | `REPT` | repite último key | — |
 | Izq externo (thumb) | `CW/L6` | CapsWord | Layer 6 (Lang) |
 | Izq medio (thumb) | `MO7` | — | Layer 7 (Apps) |
 | Izq interno (thumb) | `SPC` | Space | — |
@@ -31,7 +31,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | Der medio (thumb) | `MO2` | — | Layer 2 (Nav) |
 | Der externo (thumb) | `MO1` | — | Layer 1 (Sym) |
 | Top-der (pinky row) | `BSP/L4` | ⌫ BSPC | Layer 4 (Fn) |
-| Bot-der (pinky row) | `REPT` | repite último key | — |
+| Bot-der (pinky row) | `—` | vacío (`&none`) | — |
 
 ---
 
@@ -113,13 +113,6 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 |-------|--------|
 | Tap | ⌫ Backspace |
 | Hold | Layer 4 (Fn — F1–F12) |
-
-### `CW/⌘` — Bottom-left (CapsWord / GUI)
-
-| Input | Output |
-|-------|--------|
-| Tap | CapsWord (letras en mayúscula hasta espacio o símbolo) |
-| Hold | ⌘ GUI (Cmd) |
 
 ### `&gresc` — ESC inteligente
 
