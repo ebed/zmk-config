@@ -27,6 +27,11 @@
             key-positions = <6 7>;
             bindings = <&kp ESC>;
         };
+        combo_sys {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&mo 3>;
+        };
     };
 
     behaviors {
@@ -43,14 +48,14 @@
             bindings = <&kp>, <&kp>;
         };
 
-        /* Layer 6 (Lang) activator: tap→caps_word  /  hold→Layer 6 ---------- */
-        lang_cw: lang_caps_word {
+        /* Bottom-left: tap→CapsWord / hold→⌘ GUI ----------------------------- */
+        gui_cw: gui_caps_word {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&caps_word>;
+            bindings = <&kp>, <&caps_word>;
         };
 
         /* Home Row Mods — derecha: hold solo al presionar mano izquierda -- */
@@ -64,15 +69,6 @@
             hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
-        };
-
-        /* tap→sticky Layer 1 (un símbolo sin hold) / hold→Layer 5 (Mac) ---- */
-        sym_mac: sym_or_mac {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&sl>;
         };
 
         /* tap = número / hold = símbolo Shift+número ----------------------- */
@@ -214,25 +210,26 @@
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
  * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
- * RALT cubierto por hmr (I). Outer right thumb: tap→sticky Sym, hold→Layer 5.
- * CPSW: tap→CapsWord / hold→Layer 6 (Lang/Español)
+ * BSPC: tap→⌫ / hold→Fn 4.  Bottom-left: tap→CapsWord / hold→⌘ GUI.
+ * Left thumb: SHF/L6 (tap SHIFT·hold Lang) · CTL/L7 (tap CTRL·hold Apps).
+ * Right outer: tap→RET / hold→Mac 5.    Combo SPC+MO2 → Sys 3.
  * ,----------------------------------.                ,----------------------------------.
- * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
+ * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSP4|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * |CTRL |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |RET |
+ * |CW/⌘ |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |REPT|
  * `-------------------------------'                    `-------------------------------'
- *         |CPSW | GUI |SPACE|                             | MO2 | MO1 |SYM/5|
- *         `--------------------'                           `-------------------'
+ *         |SHF/L6|CTL/L7|SPACE|                          | MO2 | MO1 |RET/5|
+ *         `---------------------'                         `-------------------'
  */
         layer_0 {
             display-name = "Base";
             bindings = <
-                &gresc     &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
-                &kp TAB    &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
-                &kp LCTRL  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp RET
-                                       &lang_cw 6 0  &kp LGUI   &kp SPACE                   &mo 2    &mo 1        &sym_mac 5 1
+                &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &lt 4 BSPC
+                &kp TAB         &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
+                &gui_cw LGUI 0  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &key_repeat
+                                            &lt 6 LSHIFT  &lt 7 LCTRL  &kp SPACE                  &mo 2    &mo 1        &lt 5 RET
             >;
         };
 
@@ -247,7 +244,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
  * | SK  |  &  |  *  |  (  |  )  |  _   |                |  [  |  ]  |  {  |  }  |  +  |RET |
  * `-------------------------------------'                `-------------------------------'
- *         |CPSW | GUI |SPACE|                              | MO3 |     |TOG1|
+ *         |SHF/L6|CTL/L7|SPACE|                             | MO3 |     |TOG1|
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
@@ -256,13 +253,13 @@
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
                 &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp CARET &kp PIPE &kp BSLH  &kp GRAVE
                 &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp UNDER   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
-                                      &trans   &kp LGUI &kp SPACE             &mo 3     &none     &tog 1
+                                      &trans   &trans   &kp SPACE             &mo 3     &none     &tog 1
             >;
         };
 
 /* ### Layer 2 — Nav  (hold MO2)
  * Mouse izquierda / flechas + nav + word-jump + selección derecha
- * MO7: hold MO2 + hold izq-interno → Layer 7 (Apps)
+ * Layer 7 (Apps): hold CTL/L7 (izq-medio) desde cualquier layer
  * ,------------------------------------.                ,--------------------------------------------.
  * |SCRL↑ |     |MUS↑ |     |LCLK |    |                |     |WJ←  |  ↑  |WJ→  |     |BSPC |
  * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
@@ -270,7 +267,7 @@
  * |------+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
  * |SCRL← |SCRL→|     |     |RCLK |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `------------------------------------'                `--------------------------------------------'
- *         |     | GUI | MO7 |                              |     |MO4  |     |
+ *         |     |     |     |                              |     |MO4  |     |
  *         `-------------------'                            `-------------------'
  */
         layer_2 {
@@ -279,7 +276,7 @@
                 &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
                 &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
                 &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
-                                                &trans         &kp LGUI         &mo 7                &none    &mo 4    &trans
+                                                &trans         &trans           &trans               &none    &mo 4    &trans
             >;
         };
 
@@ -369,28 +366,28 @@
             >;
         };
 
-/* ### Layer 7 — Apps  (hold MO2 + hold MO7 / izq-interno)
- * Activación: hold MO2 (der-interno) + hold izq-interno (era SPACE en Nav)
- * Izq top row : WezTerm (Q=new-tab W=close F=split-V P=split-H) + Zoom (B=leave)
- * Izq home row: Zoom (A=mute R=video S=share) + Slack (T=code G=jump)
- * Izq bot row : Claude (Z=new) + Slack (X=mentions)
+/* ### Layer 7 — Apps  (hold CTL/L7 / izq-medio)
+ * Activación: hold CTL/L7 (izq-medio) desde cualquier layer — single key
+ * Izq top row : WezTerm (Q=new-tab W=close F=split-V P=split-H) — B vacío
+ * Izq home row: Zoom (A=mute R=video S=share T=leave) — G vacío
+ * Izq bot row : Claude (Z=new) + Slack (X=mentions C=code D=jump)
  * Der top row : Hammerspoon focus-or-launch (J=Wez L=Slk U=Zoom Y=Chrome ;=cycle-win)
  * ,------------------------------------.                ,--------------------------------------------.
- * |     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE|                | WEZ | SLK | ZOM | CHR |CYCL |BSPC |
+ * |     |WTAB |WCLS |WSPL-V|WSPL-H|    |                | WEZ | SLK | ZOM | CHR |CYCL |BSPC |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP|                |     | ←   |  ↓  |  →  |HOME |PGUP |
+ * |     |ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | ←   |  ↓  |  →  |HOME |PGUP |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |CLNEW|SMEN |      |      |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * |     |CLNEW|SMEN |SCOD  |SJMP  |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `------------------------------------'                `--------------------------------------------'
- *         |     |     |[held]|                              |     |MO4  |     |
+ *         |     |[held]|     |                              |     |MO4  |     |
  *         `-------------------'                             `-------------------'
  */
         apps_layer {
             display-name = "Apps";
             bindings = <
-                &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &kp LG(LS(H))    &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
-                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(C))  &kp LG(K)        &kp LA(LG(LS(H))) &trans            &trans            &trans            &trans &trans
-                &none  &kp LG(N)      &kp LG(LS(M))  &none          &none          &none            &trans            &trans            &trans            &trans            &trans &trans
+                &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &none            &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
+                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &trans            &trans            &trans            &trans &trans
+                &none  &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &trans            &trans            &trans            &trans            &trans &trans
                                        &trans          &trans          &trans                           &trans &trans &trans
             >;
         };

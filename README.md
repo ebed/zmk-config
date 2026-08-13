@@ -13,22 +13,25 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **0 Base** | siempre activa | Colemak-DH + HRM en home row |
 | **1 Sym** | hold `MO1` | Números con hold-tap, símbolos directos |
 | **2 Nav** | hold `MO2` | Mouse, flechas, word-jump, selección |
-| **3 Sys** | `MO1` + `MO3` | BT, media, RGB, brillo, lock |
-| **4 Fn** | `MO2` + `MO4` | F1–F12 |
-| **5 Mac** | hold `SYM/5` | macOS, Rectangle, tmux, undo/redo, browser, display |
-| **6 Lang** | hold `CPSW` | Español: ´ ~ ¨ ¿ ¡ |
-| **7 Apps** | `MO2` + `MO7` (izq-interno) | Zoom, Slack, WezTerm, Claude Desktop |
+| **3 Sys** | combo `SPC+MO2` | BT, media, RGB, brillo, lock |
+| **4 Fn** | hold `BSP/L4` | F1–F12 |
+| **5 Mac** | hold `RET/L5` | macOS, Rectangle, tmux, undo/redo, browser, display |
+| **6 Lang** | hold `SHF/L6` | Español: ´ ~ ¨ ¿ ¡ |
+| **7 Apps** | hold `CTL/L7` | Zoom, Slack, WezTerm, Claude Desktop |
 
-**Thumbs (Layer 0):**
+**Thumbs y teclas especiales (Layer 0):**
 
-| Pulgar | Tecla | Tap | Hold |
-|--------|-------|-----|------|
-| Izq externo | `CPSW` | CapsWord | Layer 6 (Lang) |
-| Izq medio | `GUI` | Cmd | — |
-| Izq interno | `SPC` | Space | — |
-| Der interno | `MO2` | — | Layer 2 (Nav) |
-| Der medio | `MO1` | — | Layer 1 (Sym) |
-| Der externo | `SYM/5` | Sticky Layer 1 | Layer 5 (Mac) |
+| Posición | Tecla | Tap | Hold |
+|----------|-------|-----|------|
+| Bot-izq (pinky row) | `CW/⌘` | CapsWord | ⌘ GUI |
+| Izq externo (thumb) | `SHF/L6` | ⇧ Shift | Layer 6 (Lang) |
+| Izq medio (thumb) | `CTL/L7` | ⌃ Ctrl | Layer 7 (Apps) |
+| Izq interno (thumb) | `SPC` | Space | — |
+| Der interno (thumb) | `MO2` | — | Layer 2 (Nav) |
+| Der medio (thumb) | `MO1` | — | Layer 1 (Sym) |
+| Der externo (thumb) | `RET/L5` | ↵ RET | Layer 5 (Mac) |
+| Top-der (pinky row) | `BSP/L4` | ⌫ BSPC | Layer 4 (Fn) |
+| Bot-der (pinky row) | `REPT` | repite último key | — |
 
 ---
 
@@ -49,14 +52,16 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 ```
 Base (Layer 0) — siempre activa
   └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
-       └─ tap MO3 (pulgar der izq) → Sys (Layer 3)
+       └─ tap MO3 → Sys (Layer 3)    [alternativa a combo]
        └─ tap outer-right thumb (TOG1) → bloquea Layer 1 (numpad mode)
-  └─ hold MO2 (pulgar der izq) → Nav (Layer 2)
-       └─ hold MO4 (pulgar der med) → Fn (Layer 4)
-       └─ hold MO7 (izq-interno, era SPACE) → Apps (Layer 7)
-  └─ hold outer-right thumb → Mac (Layer 5)
-  └─ tap outer-right thumb → Sticky Layer 1 (un símbolo sin hold)
-  └─ tap CPSW → CapsWord / hold CPSW → Lang (Layer 6)
+  └─ hold MO2 (pulgar der interno) → Nav (Layer 2)
+       └─ hold MO4 (pulgar der medio) → Fn (Layer 4)
+  └─ combo SPC+MO2 (ambos inner thumbs) → Sys (Layer 3)   ← acceso directo
+  └─ hold BSP/L4 (top-der, BSPC) → Fn (Layer 4)           ← acceso directo
+  └─ hold CTL/L7 (pulgar izq medio) → Apps (Layer 7)       ← single key
+  └─ hold RET/L5 (pulgar der externo) → Mac (Layer 5)      ← single key
+  └─ hold SHF/L6 (pulgar izq externo) → Lang (Layer 6)     ← single key
+  └─ tap CW/⌘ (bot-izq) → CapsWord / hold → ⌘ GUI
 ```
 
 ---
@@ -80,19 +85,40 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 
 **Timings:** `tapping-term=400ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
 
-### `SYM/5` — Outer right thumb (sticky sym / Mac layer)
+### `SHF/L6` — Outer left thumb (Shift / Lang layer)
 
 | Input | Output |
 |-------|--------|
-| Tap | Sticky Layer 1 — activa Sym para el siguiente keypress, luego vuelve a Base |
+| Tap | ⇧ Shift (modificador normal) |
+| Hold | Layer 6 (Lang/Español) — libera para volver a Base |
+
+### `CTL/L7` — Middle left thumb (Ctrl / Apps layer)
+
+| Input | Output |
+|-------|--------|
+| Tap | ⌃ Ctrl (modificador normal) |
+| Hold | Layer 7 (Apps — Zoom, Slack, WezTerm, Claude) |
+
+### `RET/L5` — Outer right thumb (Return / Mac layer)
+
+| Input | Output |
+|-------|--------|
+| Tap | ↵ Return |
 | Hold | Layer 5 (Mac shortcuts / Rectangle / tmux) |
 
-### `CPSW` — Caps Word + Layer 6
+### `BSP/L4` — Top-right (BSPC / Fn layer)
 
 | Input | Output |
 |-------|--------|
-| Tap | Caps Word (letras en mayúscula hasta espacio o símbolo) |
-| Hold | Layer 6 (Lang/Español) — libera para volver a Base |
+| Tap | ⌫ Backspace |
+| Hold | Layer 4 (Fn — F1–F12) |
+
+### `CW/⌘` — Bottom-left (CapsWord / GUI)
+
+| Input | Output |
+|-------|--------|
+| Tap | CapsWord (letras en mayúscula hasta espacio o símbolo) |
+| Hold | ⌘ GUI (Cmd) |
 
 ### `&gresc` — ESC inteligente
 
@@ -175,11 +201,11 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 | `HOME` / `END` | Inicio / fin de línea |
 | `PGUP` / `PGDN` | Página arriba / abajo |
 
-`MO7` — hold `MO2` + hold izq-interno (era `SPACE`) → activa Layer 7 (Apps). El lado derecho hereda los keybindings de Nav, por lo que las flechas y el mouse siguen funcionando.
+Layer 7 (Apps): hold `CTL/L7` (pulgar izq-medio) desde cualquier layer — single key, sin combo. El lado derecho hereda los keybindings de Nav, por lo que las flechas y el mouse siguen funcionando.
 
 ---
 
-## Layer 3 — Sys (MO1 + MO3)
+## Layer 3 — Sys (combo SPC+MO2)
 
 | Key | Acción |
 |-----|--------|
@@ -196,15 +222,15 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 
 ---
 
-## Layer 4 — Fn (MO2 + MO4)
+## Layer 4 — Fn (hold BSP/L4)
 
 F1–F12 en la fila superior.
 
 ---
 
-## Layer 5 — Mac (hold outer-right thumb)
+## Layer 5 — Mac (hold RET/L5)
 
-Activación: hold pulgar derecho externo (`SYM/5`).
+Activación: hold pulgar derecho externo (`RET/L5`).
 
 > **DSK1-5 y MW←/→** requieren activar los atajos correspondientes en **Ajustes del sistema → Teclado → Atajos → Mission Control**.
 
@@ -276,26 +302,26 @@ Requiere [Rectangle](https://rectangleapp.com/).
 
 ---
 
-## Layer 6 — Lang (hold CPSW)
+## Layer 6 — Lang (hold SHF/L6)
 
-Activación: hold pulgar izquierdo externo. Todo transparente excepto el home row izquierdo.
+Activación: hold pulgar izquierdo externo (`SHF/L6`). Todo transparente excepto el home row izquierdo.
 
 | Tecla | Dead key | Cómo usarlo |
 |-------|----------|-------------|
-| A — `´` | `⌥E` dead acute | hold CPSW → tap A → suelta CPSW → escribe vocal → `á/é/í/ó/ú` |
-| R — `~` | `⌥N` dead tilde | hold CPSW → tap R → suelta CPSW → escribe N → `ñ` |
-| S — `¨` | `⌥U` dead umlaut | hold CPSW → tap S → suelta CPSW → escribe U → `ü` |
-| T — `¿` | directo | hold CPSW → tap T → `¿` |
-| G — `¡` | directo | hold CPSW → tap G → `¡` |
+| A — `´` | `⌥E` dead acute | hold SHF/L6 → tap A → suelta → escribe vocal → `á/é/í/ó/ú` |
+| R — `~` | `⌥N` dead tilde | hold SHF/L6 → tap R → suelta → escribe N → `ñ` |
+| S — `¨` | `⌥U` dead umlaut | hold SHF/L6 → tap S → suelta → escribe U → `ü` |
+| T — `¿` | directo | hold SHF/L6 → tap T → `¿` |
+| G — `¡` | directo | hold SHF/L6 → tap G → `¡` |
 
 ---
 
-## Layer 7 — Apps (hold MO2 + hold MO7)
+## Layer 7 — Apps (hold CTL/L7)
 
-Activación: hold `MO2` (pulgar der-interno) + hold pulgar izq-interno (era `SPACE` en Nav).  
+Activación: hold `CTL/L7` (pulgar izq-medio) desde cualquier layer — single key.  
 El lado derecho hereda Layer 2 — flechas y mouse siguen activos.
 
-### WezTerm
+### WezTerm (top row: Q–P)
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
@@ -304,28 +330,23 @@ El lado derecho hereda Layer 2 — flechas y mouse siguen activos.
 | `F` | `⌘+D` | Split pane vertical |
 | `P` | `⌘+Shift+D` | Split pane horizontal |
 
-### Zoom
+### Zoom (home row: A–T)
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
 | `A` | `⌘+Shift+A` | Mute/unmute audio |
 | `R` | `⌘+Shift+V` | Video on/off |
 | `S` | `⌘+Shift+S` | Compartir pantalla |
-| `B` | `⌘+Shift+H` | Salir del meeting |
+| `T` | `⌘+Shift+H` | Salir del meeting |
 
-### Slack
-
-| Tecla | Shortcut | Acción |
-|-------|----------|--------|
-| `T` | `⌘+Shift+C` | Format as code |
-| `G` | `⌘+K` | Jump to conversation |
-| `X` | `⌘+Shift+M` | Menciones |
-
-### Claude Desktop
+### Claude Desktop + Slack (bot row: Z–D)
 
 | Tecla | Shortcut | Acción |
 |-------|----------|--------|
-| `Z` | `⌘+N` | Nueva conversación |
+| `Z` | `⌘+N` | Claude Desktop — nueva conversación |
+| `X` | `⌘+Shift+M` | Slack — menciones |
+| `C` | `⌘+Shift+C` | Slack — format as code |
+| `D` | `⌘+K` | Slack — jump to conversation |
 
 ### Focus-or-launch — Hammerspoon (lado derecho, fila superior)
 
@@ -450,4 +471,4 @@ Solo hay que configurar los de display switching:
 El firmware se compila automáticamente via GitHub Actions en cada push.  
 Los artefactos (`.uf2`) se descargan desde la pestaña **Actions**.
 
-Para flashear desde el teclado: **Layer 3** (`MO1` + `MO3`) → tecla `BOOT`.
+Para flashear desde el teclado: **Layer 3** (combo `SPC+MO2`) → tecla `BOOT`.

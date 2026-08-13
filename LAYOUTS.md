@@ -8,19 +8,24 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,------------------------------------------.        ,-----------------------------------------.
-|gresc |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  | BSPC  |
+|gresc |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  |BSP/L4 |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | TAB  |GUI/A|ALT/R|CTL/S|SHF/T |  G      |        |  M   |SHF/N|CTL/E|ALT/I|GUI/O|  '    |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
-| CTRL |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | RET   |
+|CW/⌘  |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | REPT  |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
-             | CPSW| GUI | SPACE|                        | MO2 | MO1 |SYM/5|
-             '-----+-----+------'                        '-----+-----+-----'
+             |SHF/L6|CTL/L7|SPACE|                      | MO2 | MO1 |RET/L5|
+             '------+------+-----'                       '-----+-----+------'
 ```
 
 - `gresc`: tap=ESC, Shift+tap=`~`
-- `CPSW`: tap=CapsWord / hold=Layer 6 (Lang)
-- `SYM/5`: tap=Sticky Layer 1 / hold=Layer 5 (Mac)
+- `CW/⌘`: tap=CapsWord / hold=⌘ GUI
+- `BSP/L4`: tap=⌫ / hold=Layer 4 (Fn)
+- `REPT`: repite el último key (`&key_repeat`)
+- `SHF/L6`: tap=⇧ Shift / hold=Layer 6 (Lang)
+- `CTL/L7`: tap=⌃ Ctrl / hold=Layer 7 (Apps)
+- `RET/L5`: tap=↵ RET / hold=Layer 5 (Mac)
+- Combo `SPC+MO2` → Layer 3 (Sys)
 - HRM (home row): tap=letra, hold=mod (GUI/ALT/CTL/SHF)
 
 ---
@@ -56,14 +61,14 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL← |SCRL→|     |     | RCLK |            |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     | GUI |  MO7 |                           |     | MO4 |     |
+             |     |     |      |                           |     | MO4 |     |
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
 - Izquierdo: mouse (movimiento, scroll, clics)
 - Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
 - Derecho fila 3: `SEL↑/←/↓/→` = Shift+flecha
-- `MO7`: hold MO2 + hold MO7 (izq-interno) → Layer 7 (Apps)
+- Layer 7 (Apps): hold `CTL/L7` (izq-medio) desde cualquier layer
 
 ---
 
@@ -151,23 +156,26 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ---
 
-## Layer 7 — Apps (hold MO2 + hold MO7)
+## Layer 7 — Apps (hold CTL/L7)
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        | WEZ | SLK | ZOM | CHR |CYCL | BSPC  |
+|     |WTAB |WCLS |WSPL-V|WSPL-H|            |        | WEZ | SLK | ZOM | CHR |CYCL | BSPC  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP        |        |HELP | ←   | ↓   | →   |HOME | PGUP  |
+|     |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | ←   | ↓   | →   |HOME | PGUP  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|     |CLNEW|SMEN |      |      |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|     |CLNEW|SMEN |SCOD  |SJMP  |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     |      |[held]|                         |     | MO4 |     |
+             |     |[held]|      |                         |     | MO4 |     |
              '-----+------+------'                         '-----+-----+-----'
 ```
 
-- Activación: hold `MO2` (der-interno) + hold `MO7` (izq-interno, era SPACE en Nav)
+- Activación: hold `CTL/L7` (izq-medio) desde cualquier layer — single key, sin combo
+- Izq top row: WezTerm (Q-P), B vacío
+- Izq home row: Zoom completo en A-T (mute/video/share/leave), G vacío
+- Izq bot row: Claude (Z) + Slack (X=menciones, C=code, D=jump)
 - Der fila superior: focus-or-launch vía Hammerspoon (`⌥⌘⇧` + letra)
-- Der resto: transparente — hereda Layer 2 Nav (flechas y mouse siguen funcionando)
+- Der resto: transparente — hereda Layer 2 Nav (flechas siguen funcionando)
 
 | Key | Shortcut | App | Acción |
 |-----|----------|-----|--------|
@@ -175,14 +183,14 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `W` — WCLS | `⌘+W` | WezTerm | Cerrar tab/pane |
 | `F` — WSPL-V | `⌘+D` | WezTerm | Split vertical |
 | `P` — WSPL-H | `⌘+Shift+D` | WezTerm | Split horizontal |
-| `B` — ZLVE | `⌘+Shift+H` | Zoom | Salir del meeting |
 | `A` — ZMUT | `⌘+Shift+A` | Zoom | Mute/unmute |
 | `R` — ZVID | `⌘+Shift+V` | Zoom | Video on/off |
 | `S` — ZSHR | `⌘+Shift+S` | Zoom | Screen share |
-| `T` — SCOD | `⌘+Shift+C` | Slack | Format as code |
-| `G` — SJMP | `⌘+K` | Slack/WezTerm | Jump to / clear |
+| `T` — ZLVE | `⌘+Shift+H` | Zoom | Salir del meeting |
 | `Z` — CLNEW | `⌘+N` | Claude Desktop | Nueva conversación |
 | `X` — SMEN | `⌘+Shift+M` | Slack | Menciones |
+| `C` — SCOD | `⌘+Shift+C` | Slack | Format as code |
+| `D` — SJMP | `⌘+K` | Slack/WezTerm | Jump to / clear |
 | `M` — HELP | `⌥⌘⇧+H` | Hammerspoon | Popup: árbol de acceso a capas |
 | `J` — WEZ | `⌥⌘⇧+W` | Hammerspoon | Focus-or-launch WezTerm |
 | `L` — SLK | `⌥⌘⇧+S` | Hammerspoon | Focus-or-launch Slack |
@@ -201,12 +209,16 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `CTL/S` | tap=S, hold=Ctrl |
 | `SHF/T` | tap=T, hold=Shift |
 | `1/!` | tap=1, hold=! |
-| `SYM/5` | tap=Sticky Layer 1, hold=Layer 5 |
-| `CPSW` | tap=CapsWord, hold=Layer 6 |
-| `MO1/2/3/4/7` | momentáneo — activo mientras se mantiene |
-| `MO7` | hold MO2 + hold MO7 (izq-interno) → Apps |
+| `CW/⌘` | tap=CapsWord, hold=⌘ GUI |
+| `BSP/L4` | tap=⌫, hold=Layer 4 (Fn) |
+| `REPT` | repite el último key (`&key_repeat`) |
+| `SHF/L6` | tap=⇧ Shift, hold=Layer 6 (Lang) |
+| `CTL/L7` | tap=⌃ Ctrl, hold=Layer 7 (Apps) |
+| `RET/L5` | tap=↵ RET, hold=Layer 5 (Mac) |
+| `MO1/2/4` | momentáneo — activo mientras se mantiene |
 | `TOG1` | toggle Layer 1 (lock/unlock sin mantener) |
 | `[held]` | tecla mantenida para activar la capa |
+| `SPC+MO2` | combo (ambos inner thumbs) → Layer 3 (Sys) |
 | `WJ←/→` | word jump (⌥←/→) |
 | `⇧HOME` / `⇧END` | selección al inicio/fin de línea |
 | `SEL↑/←/↓/→` | selección de texto (Shift+flecha) |
