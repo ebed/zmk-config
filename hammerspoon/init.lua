@@ -155,7 +155,7 @@ window.onload = function() { show('home'); };
   <div class="tree">
     <div class="tr L0" onclick="show('0')"><span class="tbadge L0">Base 0</span><span class="thow">siempre activo</span></div>
     <div class="tr L1" onclick="show('1')"><span class="tbadge L1">Sym 1</span><span class="thow">hold <b>MO1</b> (der-med)</span></div>
-    <div class="tr L2" onclick="show('2')"><span class="tbadge L2">Nav 2</span><span class="thow">hold <b>MO2</b> (der-int)</span></div>
+    <div class="tr L2" onclick="show('2')"><span class="tbadge L2">Nav 2</span><span class="thow">hold <b>MO2</b> (der-ext)</span></div>
     <div class="tr tsub L3" onclick="show('3')"><span class="tbadge L3">Sys 3</span><span class="thow">hold <b>SPC + MO2</b> combo</span></div>
     <div class="tr tsub L4" onclick="show('4')"><span class="tbadge L4">Fn 4</span><span class="thow">hold <b>BSPC</b></span></div>
     <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>MO7</b> (izq-med)</span></div>
@@ -220,8 +220,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb" id="l0-k-mo7"><span class="kl">SPACE</span><span class="km">—</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb active L5" id="l0-k-mo2"><span class="kl">RET/L5</span><span class="km">↵·Mac5</span></div>
-      <div class="kb-key kb-thumb active L2" id="l0-k-mo1"><span class="kl">MO2</span><span class="km">Nav2</span></div>
-      <div class="kb-key kb-thumb active L1" id="l0-k-sym5"><span class="kl">MO1</span><span class="km">Sym1</span></div>
+      <div class="kb-key kb-thumb active L1" id="l0-k-mo1"><span class="kl">MO1</span><span class="km">Sym1</span></div>
+      <div class="kb-key kb-thumb active L2" id="l0-k-sym5"><span class="kl">MO2</span><span class="km">Nav2</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -291,8 +291,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb active L1" id="l1-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb active L3" id="l1-k-mo2"><span class="kl">MO3</span><span class="km">Sys3</span></div>
-      <div class="kb-key kb-thumb active L1" id="l1-k-mo1"><span class="kl">TOG1</span><span class="km">lock</span></div>
-      <div class="kb-key kb-thumb dim" id="l1-k-sym5"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
+      <div class="kb-key kb-thumb dim" id="l1-k-mo1"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
+      <div class="kb-key kb-thumb active L1" id="l1-k-sym5"><span class="kl">TOG1</span><span class="km">lock</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -305,7 +305,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 2 -->
 <div id="v-2" class="view L2">
-  <div class="dhdr L2"><div class="dnum L2">2</div><div><div class="dname">Nav</div><div class="dhow">hold MO2 (der-med)</div></div></div>
+  <div class="dhdr L2"><div class="dnum L2">2</div><div><div class="dname">Nav</div><div class="dhow">hold MO2 (der-ext)</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra active L2" id="l2-k-esc"><span class="kl">SCRL↑</span></div>
@@ -358,8 +358,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb dim" id="l2-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb active L4" id="l2-k-mo2"><span class="kl">MO4</span><span class="km">→Fn</span></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l2-k-sym5"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -372,7 +372,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 3 -->
 <div id="v-3" class="view L3">
-  <div class="dhdr L3"><div class="dnum L3">3</div><div><div class="dname">Sys</div><div class="dhow">combo SPC + MO2 (thumbs internos)</div></div></div>
+  <div class="dhdr L3"><div class="dnum L3">3</div><div><div class="dname">Sys</div><div class="dhow">combo SPC + MO2 (der-int + der-ext)</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra active L3" id="l3-k-esc"><span class="kl">BTCLR</span></div>
@@ -424,9 +424,9 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb dim" id="l3-k-gui"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-mo7"><span class="kl">[hld]</span><span class="km">SPC</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l3-k-mo2"><span class="kl">[hld]</span><span class="km">MO2</span></div>
+      <div class="kb-key kb-thumb dim" id="l3-k-mo2"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-mo1"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb active L3" id="l3-k-sym5"><span class="kl">RALT</span></div>
+      <div class="kb-key kb-thumb dim" id="l3-k-sym5"><span class="kl">[hld]</span><span class="km">MO2</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -667,8 +667,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb dim" id="l7-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb inherited" id="l7-k-mo2"><span class="kl">RET/L5</span></div>
-      <div class="kb-key kb-thumb inherited" id="l7-k-mo1"><span class="kl">MO2</span></div>
-      <div class="kb-key kb-thumb inherited" id="l7-k-sym5"><span class="kl">MO1</span></div>
+      <div class="kb-key kb-thumb inherited" id="l7-k-mo1"><span class="kl">MO1</span></div>
+      <div class="kb-key kb-thumb inherited" id="l7-k-sym5"><span class="kl">MO2</span></div>
     </div>
   </div>
   <ul class="notes">

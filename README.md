@@ -28,8 +28,8 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | Izq medio (thumb) | `MO7` | — | Layer 7 (Apps) |
 | Izq interno (thumb) | `SPC` | Space | — |
 | Der interno (thumb) | `RET/L5` | ↵ RET | Layer 5 (Mac) |
-| Der medio (thumb) | `MO2` | — | Layer 2 (Nav) |
-| Der externo (thumb) | `MO1` | — | Layer 1 (Sym) |
+| Der medio (thumb) | `MO1` | — | Layer 1 (Sym) |
+| Der externo (thumb) | `MO2` | — | Layer 2 (Nav) |
 | Top-der (pinky row) | `BSP/L4` | ⌫ BSPC | Layer 4 (Fn) |
 | Bot-der (pinky row) | `MO3` | — | Layer 3 (Sys) |
 
@@ -51,12 +51,12 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 
 ```
 Base (Layer 0) — siempre activa
-  └─ hold MO1 (pulgar der externo) → Sym (Layer 1)
-       └─ hold MO2 → TOG1 (bloquea Layer 1 — numpad mode)
+  └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
+       └─ hold MO2 (outer) → TOG1 (bloquea Layer 1 — numpad mode)
        └─ tap inner right → MO3 → Sys (Layer 3)   [alternativa a combo]
-  └─ hold MO2 (pulgar der medio) → Nav (Layer 2)
+  └─ hold MO2 (pulgar der externo) → Nav (Layer 2)
        └─ tap inner right → MO4 → Fn (Layer 4)
-  └─ combo SPC+MO2 (left inner + right middle) → Sys (Layer 3)   ← acceso directo
+  └─ combo SPC+MO2 (left inner + right outer) → Sys (Layer 3)   ← acceso directo
   └─ hold BSP/L4 (top-der, BSPC) → Fn (Layer 4)                  ← acceso directo
   └─ hold MO7 (pulgar izq medio) → Apps (Layer 7)                  ← single key
   └─ hold RET/L5 (pulgar der interno) → Mac (Layer 5)              ← single key
@@ -139,7 +139,7 @@ Dos rutas para acceder a símbolos:
 
 `REPT` (`&key_repeat`) — repite el último key presionado en cualquier layer. Acceso: `MO1 + ESC/~`.
 
-`TOG1` (`&tog 1`) — bloquea Layer 1 sin tener que mantener el pulgar. Acceso: `hold MO1 + tap outer-right thumb`. Para salir: tap `TOG1` nuevamente.
+`TOG1` (`&tog 1`) — bloquea Layer 1 sin tener que mantener el pulgar. Acceso: `hold MO1 (der-med) + tap MO2 (der-ext)`. Para salir: tap `TOG1` nuevamente.
 
 ### Hold-tap en números (`num_sym`)
 

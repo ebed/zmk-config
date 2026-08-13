@@ -14,7 +14,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | REPT |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | MO3   |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
-             |CW/L6 | MO7 |SPACE|                      |RET/L5| MO2 | MO1|
+             |CW/L6 | MO7 |SPACE|                      |RET/L5| MO1 | MO2|
              '------+-----+-----'                       '------+-----+----'
 ```
 
@@ -25,7 +25,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
 - `MO7`: hold=Layer 7 (Apps) — Ctrl viene del HRM en `S`
 - `RET/L5`: tap=↵ RET / hold=Layer 5 (Mac)
-- Combo `SPC+MO2` (pos 38+40) → Layer 3 (Sys)
+- Combo `SPC+MO2` (pos 38+41) → Layer 3 (Sys)
 - HRM (home row): tap=letra, hold=mod (GUI/ALT/CTL/SHF)
 
 ---
@@ -40,7 +40,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |  &  |  *   |  (   |  )   |  _        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             |CW/L6 | MO7  | SPACE|                         | MO3 | TOG1 |     |
+             |CW/L6 | MO7  | SPACE|                         | MO3 |      | TOG1|
              '------+------+------'                         '-----+------+-----'
 ```
 
@@ -61,7 +61,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL← |SCRL→|     |     | RCLK |            |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     |     |      |                           | MO4 |[hld]|     |
+             |     |     |      |                           | MO4 |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
@@ -167,7 +167,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
 |     |CLNEW|SMEN |SCOD  |SJMP  |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |CW/L6|[held]|      |                         |RET/L5| MO2 | MO1|
+             |CW/L6|[held]|      |                         |RET/L5| MO1 | MO2|
              '-----+------+------'                         '------+-----+----'
 ```
 
@@ -218,7 +218,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `MO1/2/4` | momentáneo — activo mientras se mantiene |
 | `TOG1` | toggle Layer 1 (lock/unlock sin mantener) |
 | `[held]` | tecla mantenida para activar la capa |
-| `SPC+MO2` | combo (left inner + right middle) → Layer 3 (Sys) |
+| `SPC+MO2` | combo (left inner + right outer) → Layer 3 (Sys) |
 | `WJ←/→` | word jump (⌥←/→) |
 | `⇧HOME` / `⇧END` | selección al inicio/fin de línea |
 | `SEL↑/←/↓/→` | selección de texto (Shift+flecha) |
