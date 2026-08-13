@@ -8,7 +8,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,------------------------------------------.        ,-----------------------------------------.
-|gresc |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  |BSP/L4 |
+|gresc |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  | BSPC  |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | TAB  |GUI/A|ALT/R|CTL/S|SHF/T |  G      |        |  M   |SHF/N|CTL/E|ALT/I|GUI/O|  '    |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
@@ -20,7 +20,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 - `gresc`: tap=ESC, Shift+tap=`~`
 - `REPT`: repite el último key (`&key_repeat`) — meñique izquierdo inferior
-- `BSP/L4`: tap=⌫ / hold=Layer 4 (Fn)
+- `BSPC`: ⌫ directo — Fn (L4) accesible desde L2 via MO4
 - `MOUSE`: meñique derecho inferior → `&tog 8` — toggle Layer 8 (Mouse)
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
 - `MO7`: hold=Layer 7 (Apps) — Ctrl viene del HRM en `S`
@@ -235,7 +235,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `CTL/S` | tap=S, hold=Ctrl |
 | `SHF/T` | tap=T, hold=Shift |
 | `1/!` | tap=1, hold=! |
-| `BSP/L4` | tap=⌫, hold=Layer 4 (Fn) |
+| `BSPC` | ⌫ directo |
 | `REPT` | repite el último key (`&key_repeat`) |
 | `CW/L6` | tap=CapsWord, hold=Layer 6 (Lang) |
 | `MO7` | hold=Layer 7 (Apps) — sin tap |

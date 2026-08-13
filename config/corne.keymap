@@ -240,11 +240,11 @@
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
  * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
- * BSPC: tap→⌫ / hold→Fn 4.  Bottom-left: tap→CapsWord / hold→⌘ GUI.
+ * Bottom-left: tap→CapsWord / hold→⌘ GUI.
  * Left thumb: CW/L6 (tap CapsWord·hold Lang) · MO7 (hold Apps).
  * Right: inner=tap RET/hold Mac5 · middle=MO1 · outer=MO2.   Combo SPC+MO2 → Sys 3.
  * ,----------------------------------.                ,----------------------------------.
- * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSP4|
+ * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
@@ -256,7 +256,7 @@
         layer_0 {
             display-name = "Base";
             bindings = <
-                &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &lt 4 BSPC
+                &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &kp TAB         &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
                 &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &tog 8
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 1  &mo 2

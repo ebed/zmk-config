@@ -184,7 +184,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key" id="l0-k-u"><span class="kl">U</span></div>
       <div class="kb-key" id="l0-k-y"><span class="kl">Y</span></div>
       <div class="kb-key" id="l0-k-semi"><span class="kl">;</span></div>
-      <div class="kb-key kb-extra active L4" id="l0-k-bspc"><span class="kl">⌫</span><span class="km">hold→Fn4</span></div>
+      <div class="kb-key kb-extra active L0" id="l0-k-bspc"><span class="kl">⌫</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra" id="l0-k-tab"><span class="kl">TAB</span></div>
