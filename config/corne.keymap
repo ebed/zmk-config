@@ -274,7 +274,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
  * | SK  |  &  |  *  |  (  |  )  |  _   |                |  [  |  ]  |  {  |  }  |  +  |RET |
  * `-------------------------------------'                `-------------------------------'
- *         |CW/L6 | MO7  |SPACE|                             |     |     |TOG1|
+ *         |TOG1  | MO7  |SPACE|                             |     |     |    |
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
@@ -283,7 +283,7 @@
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
                 &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp UNDER &kp PIPE &kp BSLH  &kp GRAVE
                 &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp CARET   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
-                                      &trans   &trans   &kp SPACE             &trans    &trans    &tog 1
+                                      &tog 1   &trans   &kp SPACE             &trans    &trans    &trans
             >;
         };
 

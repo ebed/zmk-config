@@ -288,13 +288,13 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L1" id="l1-k-ret"><span class="kl">↵</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb inherited" id="l1-k-cpsw"><span class="kl">CW/L6</span></div>
+      <div class="kb-key kb-thumb active L1" id="l1-k-cpsw"><span class="kl">TOG1</span><span class="km">lock</span></div>
       <div class="kb-key kb-thumb inherited" id="l1-k-gui"><span class="kl">MO7</span></div>
       <div class="kb-key kb-thumb active L1" id="l1-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l1-k-mo2"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l1-k-mo1"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
-      <div class="kb-key kb-thumb active L1" id="l1-k-sym5"><span class="kl">TOG1</span><span class="km">lock</span></div>
+      <div class="kb-key kb-thumb dim" id="l1-k-sym5"><span class="kl">·</span></div>
     </div>
   </div>
   <ul class="notes">

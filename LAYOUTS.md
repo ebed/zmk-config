@@ -40,14 +40,14 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |  &  |  *   |  (   |  )   |  ^        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             |CW/L6 | MO7  | SPACE|                         |     |      | TOG1|
+             |TOG1  | MO7  | SPACE|                         |     |      |     |
              '------+------+------'                         '-----+------+-----'
 ```
 
 - `REPT` (`&key_repeat`): repite el último key en cualquier layer
 - `1/!` … `0/)`: tap=número, hold=símbolo Shift+número
 - `SK`: Sticky Shift (tap=1 char, doble=sticky, triple=CapsLock)
-- `TOG1` (`&tog 1`): bloquea/desbloquea Layer 1 — hold MO1 + tap MO2
+- `TOG1` (`&tog 1`): bloquea/desbloquea Layer 1 — hold MO1 (der middle) + tap izq outer
 
 ---
 
