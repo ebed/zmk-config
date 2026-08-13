@@ -29,7 +29,7 @@
         };
         combo_sys {
             timeout-ms = <50>;
-            key-positions = <38 39>;
+            key-positions = <38 40>;
             bindings = <&mo 3>;
         };
     };
@@ -46,6 +46,16 @@
             hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
             hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
+        };
+
+        /* Left outer thumb: tap→CapsWord / hold→Lang (L6) -------------------- */
+        lang_cw: lang_caps_word {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&caps_word>;
         };
 
         /* Bottom-left: tap→CapsWord / hold→⌘ GUI ----------------------------- */
@@ -211,8 +221,8 @@
 /* ### Layer 0 — Base (Colemak-DH + HRM)
  * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
  * BSPC: tap→⌫ / hold→Fn 4.  Bottom-left: tap→CapsWord / hold→⌘ GUI.
- * Left thumb: SHF/L6 (tap SHIFT·hold Lang) · CTL/L7 (tap CTRL·hold Apps).
- * Right outer: tap→RET / hold→Mac 5.    Combo SPC+MO2 → Sys 3.
+ * Left thumb: CW/L6 (tap CapsWord·hold Lang) · MO7 (hold Apps).
+ * Right: inner=tap RET/hold Mac5 · middle=MO2 · outer=MO1.   Combo SPC+MO2 → Sys 3.
  * ,----------------------------------.                ,----------------------------------.
  * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSP4|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
@@ -220,8 +230,8 @@
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * |CW/⌘ |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |REPT|
  * `-------------------------------'                    `-------------------------------'
- *         |SHF/L6|CTL/L7|SPACE|                          | MO2 | MO1 |RET/5|
- *         `---------------------'                         `-------------------'
+ *         |CW/L6| MO7 |SPACE|                          |RET/5| MO2 | MO1 |
+ *         `---------------------'                       `-------------------'
  */
         layer_0 {
             display-name = "Base";
@@ -229,7 +239,7 @@
                 &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &lt 4 BSPC
                 &kp TAB         &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
                 &gui_cw LGUI 0  &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &key_repeat
-                                            &lt 6 LSHIFT  &lt 7 LCTRL  &kp SPACE                  &mo 2    &mo 1        &lt 5 RET
+                                            &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 2  &mo 1
             >;
         };
 
@@ -244,7 +254,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
  * | SK  |  &  |  *  |  (  |  )  |  _   |                |  [  |  ]  |  {  |  }  |  +  |RET |
  * `-------------------------------------'                `-------------------------------'
- *         |SHF/L6|CTL/L7|SPACE|                             | MO3 |     |TOG1|
+ *         |CW/L6 | MO7  |SPACE|                             | MO3 |TOG1 |    |
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
@@ -253,7 +263,7 @@
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
                 &kp TAB    &kp EXCL  &kp AT   &kp HASH &kp DLLR &kp PRCNT   &kp MINUS &kp EQUAL &kp CARET &kp PIPE &kp BSLH  &kp GRAVE
                 &sk LSHFT  &kp AMPS  &kp STAR &kp LPAR &kp RPAR &kp UNDER   &kp LBKT  &kp RBKT  &kp LBRC  &kp RBRC &kp PLUS  &kp RET
-                                      &trans   &trans   &kp SPACE             &mo 3     &none     &tog 1
+                                      &trans   &trans   &kp SPACE             &mo 3     &tog 1    &trans
             >;
         };
 
@@ -276,7 +286,7 @@
                 &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
                 &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
                 &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
-                                                &trans         &trans           &trans               &none    &mo 4    &trans
+                                                &trans         &trans           &trans               &mo 4    &trans   &trans
             >;
         };
 
@@ -379,7 +389,7 @@
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
  * |     |CLNEW|SMEN |SCOD  |SJMP  |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `------------------------------------'                `--------------------------------------------'
- *         |     |[held]|     |                              |     |MO4  |     |
+ *         |CW/L6|[held]|     |                              |RET/5| MO2 | MO1 |
  *         `-------------------'                             `-------------------'
  */
         apps_layer {

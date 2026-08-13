@@ -16,20 +16,20 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **3 Sys** | combo `SPC+MO2` | BT, media, RGB, brillo, lock |
 | **4 Fn** | hold `BSP/L4` | F1–F12 |
 | **5 Mac** | hold `RET/L5` | macOS, Rectangle, tmux, undo/redo, browser, display |
-| **6 Lang** | hold `SHF/L6` | Español: ´ ~ ¨ ¿ ¡ |
-| **7 Apps** | hold `CTL/L7` | Zoom, Slack, WezTerm, Claude Desktop |
+| **6 Lang** | hold `CW/L6` | Español: ´ ~ ¨ ¿ ¡ |
+| **7 Apps** | hold `MO7` | Zoom, Slack, WezTerm, Claude Desktop |
 
 **Thumbs y teclas especiales (Layer 0):**
 
 | Posición | Tecla | Tap | Hold |
 |----------|-------|-----|------|
 | Bot-izq (pinky row) | `CW/⌘` | CapsWord | ⌘ GUI |
-| Izq externo (thumb) | `SHF/L6` | ⇧ Shift | Layer 6 (Lang) |
-| Izq medio (thumb) | `CTL/L7` | ⌃ Ctrl | Layer 7 (Apps) |
+| Izq externo (thumb) | `CW/L6` | CapsWord | Layer 6 (Lang) |
+| Izq medio (thumb) | `MO7` | — | Layer 7 (Apps) |
 | Izq interno (thumb) | `SPC` | Space | — |
-| Der interno (thumb) | `MO2` | — | Layer 2 (Nav) |
-| Der medio (thumb) | `MO1` | — | Layer 1 (Sym) |
-| Der externo (thumb) | `RET/L5` | ↵ RET | Layer 5 (Mac) |
+| Der interno (thumb) | `RET/L5` | ↵ RET | Layer 5 (Mac) |
+| Der medio (thumb) | `MO2` | — | Layer 2 (Nav) |
+| Der externo (thumb) | `MO1` | — | Layer 1 (Sym) |
 | Top-der (pinky row) | `BSP/L4` | ⌫ BSPC | Layer 4 (Fn) |
 | Bot-der (pinky row) | `REPT` | repite último key | — |
 
@@ -51,16 +51,16 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 
 ```
 Base (Layer 0) — siempre activa
-  └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
-       └─ tap MO3 → Sys (Layer 3)    [alternativa a combo]
-       └─ tap outer-right thumb (TOG1) → bloquea Layer 1 (numpad mode)
-  └─ hold MO2 (pulgar der interno) → Nav (Layer 2)
-       └─ hold MO4 (pulgar der medio) → Fn (Layer 4)
-  └─ combo SPC+MO2 (ambos inner thumbs) → Sys (Layer 3)   ← acceso directo
-  └─ hold BSP/L4 (top-der, BSPC) → Fn (Layer 4)           ← acceso directo
-  └─ hold CTL/L7 (pulgar izq medio) → Apps (Layer 7)       ← single key
-  └─ hold RET/L5 (pulgar der externo) → Mac (Layer 5)      ← single key
-  └─ hold SHF/L6 (pulgar izq externo) → Lang (Layer 6)     ← single key
+  └─ hold MO1 (pulgar der externo) → Sym (Layer 1)
+       └─ hold MO2 → TOG1 (bloquea Layer 1 — numpad mode)
+       └─ tap inner right → MO3 → Sys (Layer 3)   [alternativa a combo]
+  └─ hold MO2 (pulgar der medio) → Nav (Layer 2)
+       └─ tap inner right → MO4 → Fn (Layer 4)
+  └─ combo SPC+MO2 (left inner + right middle) → Sys (Layer 3)   ← acceso directo
+  └─ hold BSP/L4 (top-der, BSPC) → Fn (Layer 4)                  ← acceso directo
+  └─ hold MO7 (pulgar izq medio) → Apps (Layer 7)                  ← single key
+  └─ hold RET/L5 (pulgar der interno) → Mac (Layer 5)              ← single key
+  └─ hold CW/L6 (pulgar izq externo) → Lang (Layer 6)              ← single key
   └─ tap CW/⌘ (bot-izq) → CapsWord / hold → ⌘ GUI
 ```
 
@@ -85,21 +85,22 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 
 **Timings:** `tapping-term=400ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
 
-### `SHF/L6` — Outer left thumb (Shift / Lang layer)
+### `CW/L6` — Outer left thumb (CapsWord / Lang layer)
 
 | Input | Output |
 |-------|--------|
-| Tap | ⇧ Shift (modificador normal) |
+| Tap | CapsWord (letras en mayúscula hasta espacio o símbolo) |
 | Hold | Layer 6 (Lang/Español) — libera para volver a Base |
 
-### `CTL/L7` — Middle left thumb (Ctrl / Apps layer)
+> ⌃ Ctrl y ⇧ Shift vienen del HRM en `S` y `T` respectivamente — no tienen tap en thumbs.
+
+### `MO7` — Middle left thumb (Apps layer — hold only)
 
 | Input | Output |
 |-------|--------|
-| Tap | ⌃ Ctrl (modificador normal) |
 | Hold | Layer 7 (Apps — Zoom, Slack, WezTerm, Claude) |
 
-### `RET/L5` — Outer right thumb (Return / Mac layer)
+### `RET/L5` — Inner right thumb (Return / Mac layer)
 
 | Input | Output |
 |-------|--------|
@@ -302,23 +303,23 @@ Requiere [Rectangle](https://rectangleapp.com/).
 
 ---
 
-## Layer 6 — Lang (hold SHF/L6)
+## Layer 6 — Lang (hold CW/L6)
 
-Activación: hold pulgar izquierdo externo (`SHF/L6`). Todo transparente excepto el home row izquierdo.
+Activación: hold pulgar izquierdo externo (`CW/L6`). Todo transparente excepto el home row izquierdo.
 
 | Tecla | Dead key | Cómo usarlo |
 |-------|----------|-------------|
-| A — `´` | `⌥E` dead acute | hold SHF/L6 → tap A → suelta → escribe vocal → `á/é/í/ó/ú` |
-| R — `~` | `⌥N` dead tilde | hold SHF/L6 → tap R → suelta → escribe N → `ñ` |
-| S — `¨` | `⌥U` dead umlaut | hold SHF/L6 → tap S → suelta → escribe U → `ü` |
-| T — `¿` | directo | hold SHF/L6 → tap T → `¿` |
-| G — `¡` | directo | hold SHF/L6 → tap G → `¡` |
+| A — `´` | `⌥E` dead acute | hold CW/L6 → tap A → suelta → escribe vocal → `á/é/í/ó/ú` |
+| R — `~` | `⌥N` dead tilde | hold CW/L6 → tap R → suelta → escribe N → `ñ` |
+| S — `¨` | `⌥U` dead umlaut | hold CW/L6 → tap S → suelta → escribe U → `ü` |
+| T — `¿` | directo | hold CW/L6 → tap T → `¿` |
+| G — `¡` | directo | hold CW/L6 → tap G → `¡` |
 
 ---
 
-## Layer 7 — Apps (hold CTL/L7)
+## Layer 7 — Apps (hold MO7)
 
-Activación: hold `CTL/L7` (pulgar izq-medio) desde cualquier layer — single key.  
+Activación: hold `MO7` (pulgar izq-medio) desde cualquier layer — single key, sin tap.  
 El lado derecho hereda Layer 2 — flechas y mouse siguen activos.
 
 ### WezTerm (top row: Q–P)

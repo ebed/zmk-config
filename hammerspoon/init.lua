@@ -133,9 +133,9 @@ window.onload = function() { show('home'); };
   <div class="ni L2" data-l="2" onclick="show('2')"><span class="lbadge L2">2 Nav</span><span class="lhow">MO2</span></div>
   <div class="ni sub L3" data-l="3" onclick="show('3')"><span class="lbadge L3">3 Sys</span><span class="lhow">SPC+MO2</span></div>
   <div class="ni sub L4" data-l="4" onclick="show('4')"><span class="lbadge L4">4 Fn</span><span class="lhow">BSPC</span></div>
-  <div class="ni sub L7" data-l="7" onclick="show('7')"><span class="lbadge L7">7 Apps</span><span class="lhow">CTL/L7</span></div>
+  <div class="ni sub L7" data-l="7" onclick="show('7')"><span class="lbadge L7">7 Apps</span><span class="lhow">MO7</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
-  <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">SHF/L6</span></div>
+  <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
 </nav>
 <div class="content">
 
@@ -143,8 +143,8 @@ window.onload = function() { show('home'); };
 <div id="v-home" class="view">
   <div class="thumb-label">◄ IZQUIERDO ──────────────────── DERECHO ►</div>
   <div class="thumb-row">
-    <div class="tkey L6" style="--lbb:#22aa66" onclick="show('6')"><div class="kn">SHF/L6</div><div class="kt">tap: ⇧ Shift</div><div class="kh">hold → Lang 6</div></div>
-    <div class="tkey L7" style="--lbb:#5533aa" onclick="show('7')"><div class="kn">CTL/L7</div><div class="kt">tap: ⌃ Ctrl</div><div class="kh">hold → Apps 7</div></div>
+    <div class="tkey L6" style="--lbb:#22aa66" onclick="show('6')"><div class="kn">CW/L6</div><div class="kt">tap: CapsWord</div><div class="kh">hold → Lang 6</div></div>
+    <div class="tkey L7" style="--lbb:#5533aa" onclick="show('7')"><div class="kn">MO7</div><div class="kt">hold only</div><div class="kh">hold → Apps 7</div></div>
     <div class="tkey" style="--lc:#555;--lbb:#333"><div class="kn">SPACE</div><div class="kt">—</div><div class="kh" style="color:#333">—</div></div>
     <div class="tgap"></div>
     <div class="tkey L2" style="--lbb:#1a4488" onclick="show('2')"><div class="kn">MO2</div><div class="kt">solo: nada</div><div class="kh">hold → Nav 2</div></div>
@@ -158,9 +158,9 @@ window.onload = function() { show('home'); };
     <div class="tr L2" onclick="show('2')"><span class="tbadge L2">Nav 2</span><span class="thow">hold <b>MO2</b> (der-int)</span></div>
     <div class="tr tsub L3" onclick="show('3')"><span class="tbadge L3">Sys 3</span><span class="thow">hold <b>SPC + MO2</b> combo</span></div>
     <div class="tr tsub L4" onclick="show('4')"><span class="tbadge L4">Fn 4</span><span class="thow">hold <b>BSPC</b></span></div>
-    <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>CTL/L7</b> (izq-med)</span></div>
+    <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>MO7</b> (izq-med)</span></div>
     <div class="tr L5" onclick="show('5')"><span class="tbadge L5">Mac 5</span><span class="thow">hold <b>RET/L5</b> (der-ext)</span></div>
-    <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>SHF/L6</b> (izq-ext)</span></div>
+    <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>CW/L6</b> (izq-ext)</span></div>
   </div>
   <div style="text-align:center;color:#252525;font-size:11px;margin-top:18px">⌥⌘⇧H · Layer 7 tecla M · click título para volver aquí</div>
 </div>
@@ -215,19 +215,20 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra" id="l0-k-ret"><span class="kl">REPT</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb active L6" id="l0-k-cpsw"><span class="kl">SHF/L6</span><span class="km">⇧·Lang6</span></div>
-      <div class="kb-key kb-thumb active L7" id="l0-k-gui"><span class="kl">CTL/L7</span><span class="km">⌃·Apps7</span></div>
+      <div class="kb-key kb-thumb active L6" id="l0-k-cpsw"><span class="kl">CW/L6</span><span class="km">CW·Lang6</span></div>
+      <div class="kb-key kb-thumb active L7" id="l0-k-gui"><span class="kl">MO7</span><span class="km">→Apps7</span></div>
       <div class="kb-key kb-thumb" id="l0-k-mo7"><span class="kl">SPACE</span><span class="km">—</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb active L2" id="l0-k-mo2"><span class="kl">MO2</span><span class="km">Nav2</span></div>
-      <div class="kb-key kb-thumb active L1" id="l0-k-mo1"><span class="kl">MO1</span><span class="km">Sym1</span></div>
-      <div class="kb-key kb-thumb active L5" id="l0-k-sym5"><span class="kl">RET/L5</span><span class="km">↵·Mac5</span></div>
+      <div class="kb-key kb-thumb active L5" id="l0-k-mo2"><span class="kl">RET/L5</span><span class="km">↵·Mac5</span></div>
+      <div class="kb-key kb-thumb active L2" id="l0-k-mo1"><span class="kl">MO2</span><span class="km">Nav2</span></div>
+      <div class="kb-key kb-thumb active L1" id="l0-k-sym5"><span class="kl">MO1</span><span class="km">Sym1</span></div>
     </div>
   </div>
   <ul class="notes">
     <li><b>gresc</b>: tap=ESC, Shift+tap=`~`</li>
-    <li><b>SHF/L6</b>: tap=⇧ Shift / hold=Layer 6 (Lang)</li>
-    <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac)</li>
+    <li><b>CW/L6</b>: tap=CapsWord / hold=Layer 6 (Lang)</li>
+    <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
+    <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
     <li><b>CW/⌘</b>: tap=CapsWord / hold=⌘ GUI</li>
     <li><b>BSPC</b>: tap=⌫ / hold=Layer 4 (Fn)</li>
     <li><b>HRM</b>: tap=letra, hold=modificador (GUI/ALT/CTL/SHF)</li>
@@ -284,26 +285,26 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L1" id="l1-k-ret"><span class="kl">↵</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb inherited" id="l1-k-cpsw"><span class="kl">SHF/L6</span></div>
-      <div class="kb-key kb-thumb inherited" id="l1-k-gui"><span class="kl">CTL/L7</span></div>
+      <div class="kb-key kb-thumb inherited" id="l1-k-cpsw"><span class="kl">CW/L6</span></div>
+      <div class="kb-key kb-thumb inherited" id="l1-k-gui"><span class="kl">MO7</span></div>
       <div class="kb-key kb-thumb active L1" id="l1-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb active L3" id="l1-k-mo2"><span class="kl">MO3</span><span class="km">Sys3</span></div>
-      <div class="kb-key kb-thumb dim" id="l1-k-mo1"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
-      <div class="kb-key kb-thumb active L1" id="l1-k-sym5"><span class="kl">TOG1</span><span class="km">lock</span></div>
+      <div class="kb-key kb-thumb active L1" id="l1-k-mo1"><span class="kl">TOG1</span><span class="km">lock</span></div>
+      <div class="kb-key kb-thumb dim" id="l1-k-sym5"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
     </div>
   </div>
   <ul class="notes">
     <li><b>REPT</b>: repite el último key en cualquier layer</li>
     <li><b>1/!</b> … <b>0/)</b>: tap=número, hold=símbolo</li>
     <li><b>SK</b>: Sticky Shift (tap=1 char, doble=sticky, triple=CapsLock)</li>
-    <li><b>TOG1</b>: bloquea/desbloquea Layer 1 sin mantener MO1</li>
+    <li><b>TOG1</b>: bloquea/desbloquea Layer 1 — hold MO1 + tap MO2</li>
   </ul>
 </div>
 
 <!-- LAYER 2 -->
 <div id="v-2" class="view L2">
-  <div class="dhdr L2"><div class="dnum L2">2</div><div><div class="dname">Nav</div><div class="dhow">hold MO2 (der-int)</div></div></div>
+  <div class="dhdr L2"><div class="dnum L2">2</div><div><div class="dname">Nav</div><div class="dhow">hold MO2 (der-med)</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra active L2" id="l2-k-esc"><span class="kl">SCRL↑</span></div>
@@ -355,8 +356,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb dim" id="l2-k-gui"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-mo2"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
-      <div class="kb-key kb-thumb active L4" id="l2-k-mo1"><span class="kl">MO4</span><span class="km">→Fn</span></div>
+      <div class="kb-key kb-thumb active L4" id="l2-k-mo2"><span class="kl">MO4</span><span class="km">→Fn</span></div>
+      <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-sym5"><span class="kl">·</span></div>
     </div>
   </div>
@@ -364,7 +365,7 @@ window.onload = function() { show('home'); };
     <li>Izquierdo: mouse (movimiento, scroll, clics)</li>
     <li>Derecho fila 1: <b>⇧HOME</b>=sel inicio línea · <b>WJ←/→</b>=⌥←/→ (word jump) · <b>⇧END</b>=sel fin línea</li>
     <li>Derecho fila 3: <b>SEL↑/←/↓/→</b>=⇧+flecha</li>
-    <li><b>Layer 7 Apps</b>: hold CTL/L7 (izq-med)</li>
+    <li><b>Layer 7 Apps</b>: hold MO7 (izq-med)</li>
   </ul>
 </div>
 
@@ -558,7 +559,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 6 -->
 <div id="v-6" class="view L6">
-  <div class="dhdr L6"><div class="dnum L6">6</div><div><div class="dname">Lang</div><div class="dhow">hold SHF/L6 (izq-ext)</div></div></div>
+  <div class="dhdr L6"><div class="dnum L6">6</div><div><div class="dname">Lang</div><div class="dhow">hold CW/L6 (izq-ext)</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l6-k-esc"><span class="kl">·</span></div>
@@ -593,7 +594,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l6-k-slash"><span class="kl">·</span></div><div class="kb-key kb-extra dim" id="l6-k-ret"><span class="kl">·</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb dim" id="l6-k-cpsw"><span class="kl">[hld]</span><span class="km">SHF/L6</span></div>
+      <div class="kb-key kb-thumb dim" id="l6-k-cpsw"><span class="kl">[hld]</span><span class="km">CW/L6</span></div>
       <div class="kb-key kb-thumb dim" id="l6-k-gui"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l6-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
@@ -612,7 +613,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 7 -->
 <div id="v-7" class="view L7">
-  <div class="dhdr L7"><div class="dnum L7">7</div><div><div class="dname">Apps</div><div class="dhow">hold CTL/L7 (izq-med)</div></div></div>
+  <div class="dhdr L7"><div class="dnum L7">7</div><div><div class="dname">Apps</div><div class="dhow">hold MO7 (izq-med)</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l7-k-esc"><span class="kl">·</span></div>
@@ -660,17 +661,17 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra inherited" id="l7-k-ret"><span class="kl">PGDN</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb inherited" id="l7-k-cpsw"><span class="kl">SHF/L6</span></div>
+      <div class="kb-key kb-thumb inherited" id="l7-k-cpsw"><span class="kl">CW/L6</span></div>
       <div class="kb-key kb-thumb dim" id="l7-k-gui"><span class="kl">[hld]</span><span class="km">Apps7</span></div>
       <div class="kb-key kb-thumb dim" id="l7-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l7-k-mo2"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
-      <div class="kb-key kb-thumb active L4" id="l7-k-mo1"><span class="kl">MO4</span><span class="km">→Fn</span></div>
-      <div class="kb-key kb-thumb inherited" id="l7-k-sym5"><span class="kl">RET/L5</span></div>
+      <div class="kb-key kb-thumb inherited" id="l7-k-mo2"><span class="kl">RET/L5</span></div>
+      <div class="kb-key kb-thumb inherited" id="l7-k-mo1"><span class="kl">MO2</span></div>
+      <div class="kb-key kb-thumb inherited" id="l7-k-sym5"><span class="kl">MO1</span></div>
     </div>
   </div>
   <ul class="notes">
-    <li>Activación: hold <b>CTL/L7</b> (izq-med)</li>
+    <li>Activación: hold <b>MO7</b> (izq-med) — sin tap, ⌃ Ctrl vía HRM en S</li>
     <li>Der fila sup: focus-or-launch vía Hammerspoon (⌥⌘⇧W/S/Z/C)</li>
     <li><b>HELP</b> (tecla M): abre/cierra este popup</li>
     <li>Grises punteados: heredados de Layer 2 Nav (transparentes)</li>
@@ -721,11 +722,9 @@ local kcToKeyL0 = {
     [51]="l0-k-bspc", [48]="l0-k-tab",
     [0]="l0-k-a",   [15]="l0-k-r",  [1]="l0-k-s",   [17]="l0-k-t",  [5]="l0-k-g",
     [46]="l0-k-m",  [45]="l0-k-n",  [14]="l0-k-e",  [34]="l0-k-i",  [31]="l0-k-o",  [39]="l0-k-apos",
-    [59]="l0-k-gui",  -- kc=59 (CTRL) ahora es CTL/L7 (thumb izq-med)
-    [56]="l0-k-cpsw", -- kc=56 (LSHIFT) ahora es SHF/L6 (thumb izq-ext)
     [6]="l0-k-z",   [7]="l0-k-x",   [8]="l0-k-c",   [2]="l0-k-d",   [9]="l0-k-v",
     [40]="l0-k-k",  [4]="l0-k-h",   [43]="l0-k-comma", [47]="l0-k-dot", [44]="l0-k-slash",
-    [36]="l0-k-sym5", -- kc=36 (RET) ahora es RET/L5 (thumb der-ext)
+    [36]="l0-k-mo2", -- kc=36 (RET) → thumb der-int (RET/L5)
 }
 
 -- Layer 6 (Lang): alt + specific key → español dead keys / ¿ / ¡
