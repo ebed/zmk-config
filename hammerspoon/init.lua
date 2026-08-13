@@ -212,7 +212,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key" id="l0-k-comma"><span class="kl">,</span></div>
       <div class="kb-key" id="l0-k-dot"><span class="kl">.</span></div>
       <div class="kb-key" id="l0-k-slash"><span class="kl">/</span></div>
-      <div class="kb-key kb-extra dim" id="l0-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra active L3" id="l0-k-ret"><span class="kl">MO3</span><span class="km">Sys3</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L6" id="l0-k-cpsw"><span class="kl">CW/L6</span><span class="km">CW·Lang6</span></div>
@@ -230,6 +230,7 @@ window.onload = function() { show('home'); };
     <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
     <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
     <li><b>REPT</b>: repite el último key — meñique izq inferior</li>
+    <li><b>MO3</b>: meñique der inferior → Layer 3 Sys (BT, media, lock)</li>
     <li><b>BSPC</b>: tap=⌫ / hold=Layer 4 (Fn)</li>
     <li><b>HRM</b>: tap=letra, hold=modificador (GUI/ALT/CTL/SHF)</li>
   </ul>

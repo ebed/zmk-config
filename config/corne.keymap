@@ -218,7 +218,7 @@
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * |REPT |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |    |
+ * |REPT |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |MO3 |
  * `-------------------------------'                    `-------------------------------'
  *         |CW/L6| MO7 |SPACE|                          |RET/5| MO2 | MO1 |
  *         `---------------------'                       `-------------------'
@@ -228,7 +228,7 @@
             bindings = <
                 &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &lt 4 BSPC
                 &kp TAB         &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
-                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &none
+                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &mo 3
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 2  &mo 1
             >;
         };

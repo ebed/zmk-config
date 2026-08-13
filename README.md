@@ -13,7 +13,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **0 Base** | siempre activa | Colemak-DH + HRM en home row |
 | **1 Sym** | hold `MO1` | Números con hold-tap, símbolos directos |
 | **2 Nav** | hold `MO2` | Mouse, flechas, word-jump, selección |
-| **3 Sys** | combo `SPC+MO2` | BT, media, RGB, brillo, lock |
+| **3 Sys** | hold `MO3` (bot-der) o combo `SPC+MO2` | BT, media, RGB, brillo, lock |
 | **4 Fn** | hold `BSP/L4` | F1–F12 |
 | **5 Mac** | hold `RET/L5` | macOS, Rectangle, tmux, undo/redo, browser, display |
 | **6 Lang** | hold `CW/L6` | Español: ´ ~ ¨ ¿ ¡ |
@@ -31,7 +31,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | Der medio (thumb) | `MO2` | — | Layer 2 (Nav) |
 | Der externo (thumb) | `MO1` | — | Layer 1 (Sym) |
 | Top-der (pinky row) | `BSP/L4` | ⌫ BSPC | Layer 4 (Fn) |
-| Bot-der (pinky row) | `—` | vacío (`&none`) | — |
+| Bot-der (pinky row) | `MO3` | — | Layer 3 (Sys) |
 
 ---
 
