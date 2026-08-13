@@ -40,7 +40,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |  &  |  *   |  (   |  )   |  ^        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             |CW/L6 | MO7  | SPACE|                         | MO3 |      | TOG1|
+             |CW/L6 | MO7  | SPACE|                         |     |      | TOG1|
              '------+------+------'                         '-----+------+-----'
 ```
 
@@ -61,7 +61,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      |     | ⌘X  | ⌘C  | ⌘V  |              |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     | MO4 |      |                           |     |     |[hld]|
+             | MO3 | MO4 |      |                           |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
@@ -69,7 +69,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
 - Derecho fila 2: `SWJ←/→` = ⌥⇧←/→ (word select) — col inner
 - Derecho fila 3: `SEL←/↓/→` = Shift+flecha
-- `MO4` (pulgar izq inner) → Fn layer — solo izquierdo porque MO2 (der outer) ya ocupa el pulgar derecho
+- `MO3` (pulgar izq outer) → Sys layer — izq outer, mano libre mientras MO2 sostiene der
+- `MO4` (pulgar izq middle) → Fn layer
 
 ---
 

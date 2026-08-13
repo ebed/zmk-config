@@ -292,7 +292,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb inherited" id="l1-k-gui"><span class="kl">MO7</span></div>
       <div class="kb-key kb-thumb active L1" id="l1-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb active L3" id="l1-k-mo2"><span class="kl">MO3</span><span class="km">Sys3</span></div>
+      <div class="kb-key kb-thumb dim" id="l1-k-mo2"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l1-k-mo1"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
       <div class="kb-key kb-thumb active L1" id="l1-k-sym5"><span class="kl">TOG1</span><span class="km">lock</span></div>
     </div>
@@ -355,11 +355,11 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L2" id="l2-k-ret"><span class="kl">PGDN</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb dim" id="l2-k-cpsw"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb active L3" id="l2-k-cpsw"><span class="kl">MO3</span><span class="km">→Sys</span></div>
       <div class="kb-key kb-thumb active L4" id="l2-k-gui"><span class="kl">MO4</span><span class="km">→Fn</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb active L4" id="l2-k-mo2"><span class="kl">MO4</span><span class="km">→Fn</span></div>
+      <div class="kb-key kb-thumb dim" id="l2-k-mo2"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-sym5"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
     </div>
