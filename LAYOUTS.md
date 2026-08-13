@@ -12,7 +12,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | TAB  |GUI/A|ALT/R|CTL/S|SHF/T |  G      |        |  M   |SHF/N|CTL/E|ALT/I|GUI/O|  '    |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
-| REPT |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | MO3   |
+| REPT |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | MOUSE |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
              |CW/L6 | MO7 |SPACE|                      |RET/L5| MO1 | MO2|
              '------+-----+-----'                       '------+-----+----'
@@ -21,7 +21,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - `gresc`: tap=ESC, Shift+tap=`~`
 - `REPT`: repite el último key (`&key_repeat`) — meñique izquierdo inferior
 - `BSP/L4`: tap=⌫ / hold=Layer 4 (Fn)
-- `MO3`: meñique derecho inferior → Layer 3 (Sys) directo — BT, media, lock
+- `MOUSE`: meñique derecho inferior → `&tog 8` — toggle Layer 8 (Mouse)
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
 - `MO7`: hold=Layer 7 (Apps) — Ctrl viene del HRM en `S`
 - `RET/L5`: tap=↵ RET / hold=Layer 5 (Mac)
@@ -61,14 +61,14 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      |     | ⌘X  | ⌘C  | ⌘V  |              |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             |     | MO4 |      |                           | MO4 |     |[hld]|
+             |     | MO4 |      |                           |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
 - Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘X/C/V`=cut/copy/paste · `DEL`=forward delete
 - Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
 - Derecho fila 3: `SEL↑/←/↓/→` = Shift+flecha
-- `MO4` (ambos thumbs inner) → Fn layer
+- `MO4` (pulgar izq inner) → Fn layer — solo izquierdo porque MO2 (der outer) ya ocupa el pulgar derecho
 
 ---
 
@@ -76,11 +76,11 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
-|SCRL↑ |     |     | M↑  |     |              |        |LCLK |     |     |     |     |       |
+|SCRL↑ |     |     | M↑  |     |              |        |     |     |     |     |     |       |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ |     | M←  | M↓  | M→  |              |        |MCLK |     |     |     |     |       |
+|SCRL↓ |     | M←  | M↓  | M→  |              |        |LCLK |MCLK |RCLK |     |     |       |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL← |SCRL→|     |     |     |              |        |RCLK |     |     |     |     | EXIT  |
+|SCRL← |SCRL→|     |     |     |              |        |     |     |     |     |     | EXIT  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | EXIT|     |      |                           |     |     |     |
              '-----+-----+------'                           '-----+-----+-----'
@@ -88,7 +88,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 - Activación: `tog 8` (meñique der inferior en L0) — toggle, no hold
 - Izquierdo: movimiento ESDF-like (F=M↑, R=M←, S=M↓, T=M→) + scroll col externa
-- Derecho clics columna inner-index: `LCLK`=J · `MCLK`=M · `RCLK`=K
+- Derecho clics home row: `LCLK`=M · `MCLK`=N · `RCLK`=E (índice→medio→anular)
 - `EXIT`: tog 8 en pulgar izq outer o meñique der inferior (misma tecla que activó)
 - Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
 

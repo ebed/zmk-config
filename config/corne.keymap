@@ -248,7 +248,7 @@
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * |REPT |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |MO3 |
+ * |REPT |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |MOUS|
  * `-------------------------------'                    `-------------------------------'
  *         |CW/L6| MO7 |SPACE|                          |RET/5| MO1 | MO2 |
  *         `---------------------'                       `-------------------'
@@ -296,7 +296,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * |     |     | ⌘X  | ⌘C  | ⌘V  |      |                |SEL↑ |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `-------------------------------------'               `--------------------------------------------'
- *         |     | MO4 |     |                              |MO4  |     |     |
+ *         |     | MO4 |     |                              |     |     |     |
  *         `-------------------'                            `-------------------'
  */
         layer_2 {
@@ -305,7 +305,7 @@
                 &none  &none  &none          &none          &none           &kp DEL          &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
                 &none  &none  &kp LG(LEFT)   &kp LG(Z)      &kp LG(LS(Z))  &kp LG(RIGHT)    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
                 &none  &none  &kp LG(X)      &kp LG(C)      &kp LG(V)      &none            &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
-                               &trans         &mo 4          &trans                           &mo 4    &trans   &trans
+                               &trans         &mo 4          &trans                           &trans   &trans   &trans
             >;
         };
 
@@ -425,13 +425,13 @@
 /* ### Layer 8 — Mouse  (tog 8 desde meñique der inferior en L0)
  * Toggle: tap para entrar / tap para salir (TOG8 en pulgar izq o meñique der inferior).
  * Izquierda: movimiento ESDF-like + scroll col externa.
- * Derecha: clics columna inner-index (J=LCLK M=MCLK K=RCLK).
+ * Derecha: clics home row (M=LCLK N=MCLK E=RCLK).
  * ,------------------------------------.                ,----------------------------------.
- * |SCRL↑|     |     |  M↑ |     |     |                |LCLK |     |     |     |     |     |
+ * |SCRL↑|     |     |  M↑ |     |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |SCRL↓|     | M←  | M↓  | M→  |     |                |MCLK |     |     |     |     |     |
+ * |SCRL↓|     | M←  | M↓  | M→  |     |                |LCLK |MCLK |RCLK |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |SCRL←|SCRL→|     |     |     |     |                |RCLK |     |     |     |     |EXIT |
+ * |SCRL←|SCRL→|     |     |     |     |                |     |     |     |     |     |EXIT |
  * `-------------------------------------'               `----------------------------------'
  *         | EXIT|     |     |                              |     |     |     |
  *         `-------------------'                            `-------------------'
@@ -439,9 +439,9 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &mkp LCLK  &none  &none  &none  &none  &none
-                &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &mkp MCLK  &none  &none  &none  &none  &none
-                &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none           &none  &none    &mkp RCLK  &none  &none  &none  &none  &tog 8
+                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &none      &none       &none       &none  &none  &none
+                &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &mkp LCLK  &mkp MCLK   &mkp RCLK   &none  &none  &none
+                &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none           &none  &none    &none      &none       &none       &none  &none  &tog 8
                                 &tog 8           &none  &none                            &none  &none  &none
             >;
         };
