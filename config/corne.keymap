@@ -14,22 +14,8 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
-#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {
-    /* ------------------------------------------------------------------ */
-    /* Input processors                                                     */
-    /* ------------------------------------------------------------------ */
-    input_processors {
-        zip_xy_scaler: zip_xy_scaler_2x {
-            compatible = "zmk,input-processor-scaler";
-            #input-processor-cells = <2>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X INPUT_REL_Y>;
-            track-remainders;
-        };
-    };
-
     /* ------------------------------------------------------------------ */
     /* Combos                                                               */
     /*   J+L (pos 6+7) → ESC  — accesible sin mover manos del home row    */
@@ -466,7 +452,6 @@
  */
         mouse_turbo_layer {
             display-name = "Turbo";
-            input-processors = <&zip_xy_scaler 2 1>;
             bindings = <
                 &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &mkp LCLK  &none  &none  &none  &none  &none
                 &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &mkp MCLK  &none  &none  &none  &none  &none
