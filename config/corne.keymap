@@ -403,11 +403,11 @@
  * Der top row : Hammerspoon focus-or-launch (J=Wez L=Slk U=Zoom Y=Chrome ;=cycle-win)
  * Der home row: M=HELP, N=CLU (Claude Desktop focus-or-launch)
  * ,------------------------------------.                ,--------------------------------------------.
- * |     |WTAB |WCLS |WSPL-V|WSPL-H|    |                | WEZ | SLK | ZOM | CHR |CYCL |BSPC |
+ * |     |WTAB |WCLS |WSPL-V|WSPL-H|    |                | WEZ | SLK | ZOM | CHR |CYCL |  ·  |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | CLU |  ↓  |  →  |HOME |PGUP |
+ * |     |ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | CLU |  ·  |  ·  |  ·  |  ·  |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |CLNEW|SMEN |SCOD  |SJMP  |    |                |     |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * |     |CLNEW|SMEN |SCOD  |SJMP  |    |                |  ·  |  ·  |  ·  |  ·  |  ·  |  ·  |
  * `------------------------------------'                `--------------------------------------------'
  *         |CW/L6|[held]|     |                              |RET/5| MO1 | MO2 |
  *         `-------------------'                             `-------------------'

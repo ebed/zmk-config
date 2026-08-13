@@ -184,11 +184,11 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|     |WTAB |WCLS |WSPL-V|WSPL-H|            |        | WEZ | SLK | ZOM | CHR |CYCL | BSPC  |
+|     |WTAB |WCLS |WSPL-V|WSPL-H|            |        | WEZ | SLK | ZOM | CHR |CYCL |  ·    |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|     |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | CLU | ↓   | →   |HOME | PGUP  |
+|     |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | CLU |  ·  |  ·  |  ·  |  ·    |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|     |CLNEW|SMEN |SCOD  |SJMP  |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|     |CLNEW|SMEN |SCOD  |SJMP  |            |        |  ·  |  ·  |  ·  |  ·  |  ·  |  ·    |
 '-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
              |CW/L6|[held]|      |                         |RET/L5| MO1 | MO2|
              '-----+------+------'                         '------+-----+----'
@@ -199,7 +199,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Izq home row: Zoom completo en A-T (mute/video/share/leave), G vacío
 - Izq bot row: Claude (Z) + Slack (X=menciones, C=code, D=jump)
 - Der fila superior: focus-or-launch vía Hammerspoon (`⌥⌘⇧` + letra)
-- Der resto: transparente — hereda Layer 2 Nav (flechas siguen funcionando)
+- Der resto: `·` transparente — cae al L0 Colemak-DH base (escribe las letras normales)
 
 | Key | Shortcut | App | Acción |
 |-----|----------|-----|--------|
