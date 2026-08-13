@@ -49,20 +49,20 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ## Layer 2 — Nav (hold MO2)
 
 ```
-,--------------------------------------------.        ,--------------------------------------------.
-|SCRL↑ |     | M↑  |     | LCLK |            |        |     | WJ← | ↑   | WJ→ |     | BSPC  |
+,--------------------------------------------.        ,---------------------------------------------.
+|SCRL↑ |     | M↑  |     | LCLK |            |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL↓ | M←  | M↓  | M→  | MCLK |            |        |     | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL← |SCRL→|     |     | RCLK |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|SCRL← |SCRL→|     |     | RCLK |            |        |SEL↑ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              |     | GUI |  MO7 |                           |     | MO4 |     |
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
 - Izquierdo: mouse (movimiento, scroll, clics)
-- Derecho: flechas, word-jump (`WJ←/→` = Ctrl+←/→), selección, paginación
-- `SEL←` / `SEL↓` / `SEL→` = Shift+←/↓/→
+- Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
+- Derecho fila 3: `SEL↑/←/↓/→` = Shift+flecha
 - `MO7`: hold MO2 + hold MO7 (izq-interno) → Layer 7 (Apps)
 
 ---
@@ -157,7 +157,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,--------------------------------------------.
 |     |WTAB |WCLS |WSPL-V|WSPL-H|ZLVE        |        | WEZ | SLK | ZOM | CHR |CYCL | BSPC  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP        |        |     | ←   | ↓   | →   |HOME | PGUP  |
+|     |ZMUT |ZVID |ZSHR  |SCOD  |SJMP        |        |HELP | ←   | ↓   | →   |HOME | PGUP  |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
 |     |CLNEW|SMEN |      |      |            |        |     |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
@@ -183,6 +183,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `G` — SJMP | `⌘+K` | Slack/WezTerm | Jump to / clear |
 | `Z` — CLNEW | `⌘+N` | Claude Desktop | Nueva conversación |
 | `X` — SMEN | `⌘+Shift+M` | Slack | Menciones |
+| `M` — HELP | `⌥⌘⇧+H` | Hammerspoon | Popup: árbol de acceso a capas |
 | `J` — WEZ | `⌥⌘⇧+W` | Hammerspoon | Focus-or-launch WezTerm |
 | `L` — SLK | `⌥⌘⇧+S` | Hammerspoon | Focus-or-launch Slack |
 | `U` — ZOM | `⌥⌘⇧+Z` | Hammerspoon | Focus-or-launch Zoom |
@@ -206,5 +207,6 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `MO7` | hold MO2 + hold MO7 (izq-interno) → Apps |
 | `TOG1` | toggle Layer 1 (lock/unlock sin mantener) |
 | `[held]` | tecla mantenida para activar la capa |
-| `WJ←/→` | word jump (Ctrl+←/→) |
-| `SEL←/↓/→` | selección de texto (Shift+flecha) |
+| `WJ←/→` | word jump (⌥←/→) |
+| `⇧HOME` / `⇧END` | selección al inicio/fin de línea |
+| `SEL↑/←/↓/→` | selección de texto (Shift+flecha) |

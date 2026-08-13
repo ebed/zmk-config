@@ -276,9 +276,9 @@
         layer_2 {
             display-name = "Nav";
             bindings = <
-                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &none        &kp LC(LEFT)  &kp UP       &kp LC(RIGHT)  &none     &kp BSPC
-                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none        &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME  &kp PG_UP
-                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &none        &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END   &kp PG_DN
+                &msc SCRL_UP   &none            &mmv MOVE_UP   &none            &mkp LCLK  &none    &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
+                &msc SCRL_DOWN &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT  &mkp MCLK  &none    &none         &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
+                &msc SCRL_LEFT &msc SCRL_RIGHT  &none          &none            &mkp RCLK  &none    &kp LS(UP)    &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
                                                 &trans         &kp LGUI         &mo 7                &none    &mo 4    &trans
             >;
         };
@@ -389,7 +389,7 @@
             display-name = "Apps";
             bindings = <
                 &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &kp LG(LS(H))    &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
-                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(C))  &kp LG(K)        &trans            &trans            &trans            &trans            &trans &trans
+                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(C))  &kp LG(K)        &kp LA(LG(LS(H))) &trans            &trans            &trans            &trans &trans
                 &none  &kp LG(N)      &kp LG(LS(M))  &none          &none          &none            &trans            &trans            &trans            &trans            &trans &trans
                                        &trans          &trans          &trans                           &trans &trans &trans
             >;
