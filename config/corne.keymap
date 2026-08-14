@@ -403,22 +403,22 @@
  * Der top row : Hammerspoon focus-or-launch (J=Wez L=Slk U=Zoom Y=Chrome ;=cycle-win)
  * Der home row: M=HELP, N=CLU (Claude Desktop focus-or-launch)
  * ,------------------------------------.                ,--------------------------------------------.
- * |     |WTAB |WCLS |WSPL-V|WSPL-H|    |                | WEZ | SLK | ZOM | CHR |CYCL |  ·  |
+ * |⌘Q  |WTAB |WCLS |WSPL-V|WSPL-H|    |                | WEZ | SLK | ZOM | CHR |CYCL |  ·  |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | CLU |  ·  |  ·  |  ·  |  ·  |
+ * |⌘TAB|ZMUT |ZVID |ZSHR  |ZLVE  |    |                |HELP | CLU |  ·  |  ·  |  ·  |  ·  |
  * |-----+-----+-----+------+------+----|                |-----+-----+-----+-----+-----+-----|
- * |     |CLNEW|SMEN |SCOD  |SJMP  |    |                |  ·  |  ·  |  ·  |  ·  |  ·  |  ·  |
+ * |⌘⇧TB|CLNEW|SMEN |SCOD  |SJMP  |    |                |  ·  |  ·  |  ·  |  ·  |  ·  |  ·  |
  * `------------------------------------'                `--------------------------------------------'
- *         |CW/L6|[held]|     |                              |RET/5| MO1 | MO2 |
+ *         |CW/L6|[held]|     |                              |⌘RET | MO1 | MO2 |
  *         `-------------------'                             `-------------------'
  */
         apps_layer {
             display-name = "Apps";
             bindings = <
-                &none  &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &none            &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
-                &none  &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &kp LA(LG(LS(N))) &trans            &trans            &trans &trans
-                &none  &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &trans            &trans            &trans            &trans            &trans &trans
-                                       &trans          &trans          &trans                           &trans &trans &trans
+                &kp LG(Q)       &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &none            &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
+                &kp LG(TAB)     &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &kp LA(LG(LS(N))) &trans            &trans            &trans &trans
+                &kp LG(LS(TAB)) &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &trans            &trans            &trans            &trans            &trans &trans
+                                       &trans          &trans          &trans                           &kp LG(RET) &trans &trans
             >;
         };
 
