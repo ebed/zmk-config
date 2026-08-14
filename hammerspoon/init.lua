@@ -535,7 +535,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L5" id="l5-k-d"><span class="kl">MW←</span></div>
       <div class="kb-key active L5" id="l5-k-v"><span class="kl">MW→</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L5" id="l5-k-k"><span class="kl">DISP←</span></div>
+      <div class="kb-key dim" id="l5-k-k"><span class="kl">·</span></div>
       <div class="kb-key active L5" id="l5-k-h"><span class="kl">DISP→</span></div>
       <div class="kb-key active L5" id="l5-k-comma"><span class="kl">nw</span><span class="km">tmx new</span></div>
       <div class="kb-key active L5" id="l5-k-dot"><span class="kl">%</span><span class="km">tmx sph</span></div>

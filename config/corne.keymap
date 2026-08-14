@@ -354,7 +354,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * | FQ  |SS📋 |SS/4 | UND | RED | MCrl |                | BCK | CTR |TMX.D|TMX.Z| FWD |     |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
- * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |DSP← |DSP→ |TMX.N|TMX.%|TMX."|     |
+ * |     |DSK← |DSK→ |EXP  | MW← | MW→  |                |     |DSP→ |TMX.N|TMX.%|TMX."|     |
  * `--------------------------------------------'                `-------------------------------------------'
  *         |     | GUI |SPACE|                              |     |     |[held]|
  *         `-------------------'                            `-------------------'
@@ -364,7 +364,7 @@
             bindings = <
                 &kp LC(N1)       &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)       &kp LG(LA(H))    &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))  &kp LA(LG(BSPC))
                 &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &kp LG(Z)   &kp LG(LS(Z))   &mac_mission     &kp LG(LBKT)      &kp LA(LG(C))      &tmux_det       &tmux_zoom        &kp LG(RBKT)   &none
-                &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &kp LA(LG(LS(LEFT))) &kp LA(LG(LS(RIGHT))) &tmux_new    &tmux_sph         &tmux_spv      &none
+                &none            &mac_desk_l  &mac_desk_r  &mac_expose  &kp LC(LS(LEFT)) &kp LC(LS(RIGHT)) &none                 &kp LA(LG(LS(RIGHT))) &tmux_new    &tmux_sph         &tmux_spv      &none
                                               &none        &kp LGUI     &kp SPACE                          &none             &none              &trans
             >;
         };
