@@ -634,7 +634,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra inherited" id="l7-k-bspc"><span class="kl">⌫</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L7" id="l7-k-tab"><span class="kl">⌘Tab</span></div>
+      <div class="kb-key kb-extra active L7" id="l7-k-tab"><span class="kl">⌃Tab</span></div>
       <div class="kb-key active L7" id="l7-k-a"><span class="kl">ZMUT</span><span class="km">⌘⇧A</span></div>
       <div class="kb-key active L7" id="l7-k-r"><span class="kl">ZVID</span><span class="km">⌘⇧V</span></div>
       <div class="kb-key active L7" id="l7-k-s"><span class="kl">ZSHR</span><span class="km">⌘⇧S</span></div>
@@ -649,7 +649,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key inherited" id="l7-k-apos"><span class="kl">PGUP</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L7" id="l7-k-ctrl"><span class="kl">⌘⇧Tab</span></div>
+      <div class="kb-key kb-extra active L7" id="l7-k-ctrl"><span class="kl">⌃⇧Tab</span></div>
       <div class="kb-key active L7" id="l7-k-z"><span class="kl">CLNEW</span><span class="km">⌘N</span></div>
       <div class="kb-key active L7" id="l7-k-x"><span class="kl">SMEN</span><span class="km">⌘⇧M</span></div>
       <div class="kb-key active L7" id="l7-k-c"><span class="kl">SCOD</span><span class="km">⌘⇧C</span></div>

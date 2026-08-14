@@ -187,16 +187,16 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,--------------------------------------------.
 |⌘Q   |WTAB |WCLS |WSPL-V|WSPL-H|            |        | WEZ | SLK | ZOM | CHR |CYCL |  ·    |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|⌘TAB |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | CLU |  ·  |  ·  |  ·  |  ·    |
+|⌃TAB |ZMUT |ZVID |ZSHR  |ZLVE  |            |        |HELP | CLU |  ·  |  ·  |  ·  |  ·    |
 |-----+-----+-----+------+------+------------|        |-----+-----+-----+-----+-----+-------|
-|⌘⇧Tab|CLNEW|SMEN |SCOD  |SJMP  |            |        |  ·  |  ·  |  ·  |  ·  |  ·  |  ·    |
+|⌃⇧Tab|CLNEW|SMEN |SCOD  |SJMP  |            |        |  ·  |  ·  |  ·  |  ·  |  ·  |  ·    |
 '-----+-----+-----+------+------+------------'        '-----+-----+-----+-----+-----+-------'
              |CW/L6|[held]|      |                         | ⌘↩  | MO1 | MO2|
              '-----+------+------'                         '------+-----+----'
 ```
 
 - Activación: hold `MO7` (izq-medio, sin tap) desde cualquier layer — single key, sin combo
-- Izq extra col: `⌘Q` (cerrar app), `⌘Tab` (cambiar app), `⌘⇧Tab` (cambiar app inverso)
+- Izq extra col: `⌘Q` (cerrar app), `⌃Tab` (siguiente tab en app activa), `⌃⇧Tab` (tab anterior)
 - Izq top row: WezTerm (Q-P), B vacío
 - Izq home row: Zoom completo en A-T (mute/video/share/leave), G vacío
 - Izq bot row: Claude (Z) + Slack (X=menciones, C=code, D=jump)
@@ -207,8 +207,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | Key | Shortcut | App | Acción |
 |-----|----------|-----|--------|
 | `ESC` — ⌘Q | `⌘+Q` | activa | Cerrar aplicación |
-| `TAB` — ⌘Tab | `⌘+Tab` | macOS | Cambiar app (siguiente) |
-| `CTRL` — ⌘⇧Tab | `⌘+⇧+Tab` | macOS | Cambiar app (anterior) |
+| `TAB` — ⌃Tab | `⌃+Tab` | macOS | Siguiente tab (en app activa) |
+| `CTRL` — ⌃⇧Tab | `⌃+⇧+Tab` | macOS | Tab anterior (en app activa) |
 | thumb-⌘↩ | `⌘+↩` | — | Ejecutar/confirmar (thumb der inner) |
 | `Q` — WTAB | `⌘+T` | WezTerm | Nueva tab |
 | `W` — WCLS | `⌘+W` | WezTerm | Cerrar tab/pane |
