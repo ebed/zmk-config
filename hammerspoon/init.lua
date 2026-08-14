@@ -683,7 +683,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 8 — Mouse -->
 <div id="v-8" class="view L8">
-  <div class="dhdr L8" style="--lbb:#0088cc"><div class="dnum" style="background:#0088cc">8</div><div><div class="dname">Mouse</div><div class="dhow">tog MOUSE (meñique der inf)</div></div></div>
+  <div class="dhdr L8" style="--lbb:#0088cc"><div class="dnum" style="background:#0088cc">8</div><div><div class="dname">Mouse</div><div class="dhow">tog MOUSE (L2 pos V, hold MO2 + tap V)</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-esc"><span class="kl">SCRL↑</span></div>
@@ -744,7 +744,7 @@ window.onload = function() { show('home'); };
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
     <li>Derecho: clics home row (<b>N=LCLK E=MCLK I=RCLK</b>) — índice→medio→anular</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
-    <li><b>EXIT</b>: pulgar izq outer o meñique der inferior (mismo tog8)</li>
+    <li><b>EXIT</b>: pulgar izq outer (L8) o L2 pos V (mismo tog8)</li>
   </ul>
 </div>
 
