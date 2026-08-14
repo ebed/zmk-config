@@ -239,16 +239,16 @@
         compatible = "zmk,keymap";
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
- * &gresc = tap→ESC / shift→~    combo J+L → ESC alternativo
- * Bottom-left: tap→CapsWord / hold→⌘ GUI.
+ * ESC = tap→ESC (plain)    combo J+L → ESC alternativo
  * Left thumb: CW/L6 (tap CapsWord·hold Lang) · MO7 (hold Apps).
  * Right: inner=tap RET/hold Mac5 · middle=MO1 · outer=MO2.   Combo SPC+MO2 → Sys 3.
+ * DEL: meñique der inferior (Mouse toggle movido a L2 pos V).
  * ,----------------------------------.                ,----------------------------------.
- * |gresc|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
+ * | ESC |  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
- * |REPT |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  |MOUS|
+ * |REPT |  Z  |  X  |  C  |  D  |  V |                |  K  |  H  |  ,  |  .  |  /  | DEL|
  * `-------------------------------'                    `-------------------------------'
  *         |CW/L6| MO7 |SPACE|                          |RET/5| MO1 | MO2 |
  *         `---------------------'                       `-------------------'
@@ -256,9 +256,9 @@
         layer_0 {
             display-name = "Base";
             bindings = <
-                &gresc          &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
+                &kp ESC         &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &kp TAB         &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
-                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &tog 8
+                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp DEL
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 1  &mo 2
             >;
         };
@@ -294,7 +294,7 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * |     |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→   |                |SWJ← | ←   |  ↓  |  →  |HOME |PGUP |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
- * |     |     | ⌘X  | ⌘C  | ⌘V  |      |                |SWJ→ |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * |     |     | ⌘X  | ⌘C  | ⌘V  |MOUSE|                |SWJ→ |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `-------------------------------------'               `--------------------------------------------'
  *         | MO3 | MO4 |     |                              |     |     |     |
  *         `-------------------'                            `-------------------'
@@ -304,7 +304,7 @@
             bindings = <
                 &none  &none  &none          &none          &none           &kp DEL          &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
                 &none  &none  &kp LG(LEFT)   &kp LG(Z)      &kp LG(LS(Z))  &kp LG(RIGHT)    &kp LA(LS(LEFT))  &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
-                &none  &none  &kp LG(X)      &kp LG(C)      &kp LG(V)      &none            &kp LA(LS(RIGHT)) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
+                &none  &none  &kp LG(X)      &kp LG(C)      &kp LG(V)      &tog 8           &kp LA(LS(RIGHT)) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
                                &mo 3          &mo 4          &trans                           &trans   &trans   &trans
             >;
         };

@@ -8,20 +8,20 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,------------------------------------------.        ,-----------------------------------------.
-|gresc |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  | BSPC  |
+| ESC  |  Q  |  W  |  F  |  P   |  B      |        |  J   |  L  |  U  |  Y  |  ;  | BSPC  |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
 | TAB  |GUI/A|ALT/R|CTL/S|SHF/T |  G      |        |  M   |SHF/N|CTL/E|ALT/I|GUI/O|  '    |
 |------+-----+-----+-----+------+---------|        |------+-----+-----+-----+-----+-------|
-| REPT |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | MOUSE |
+| REPT |  Z  |  X  |  C  |  D   |  V      |        |  K   |  H  |  ,  |  .  |  /  | DEL   |
 '------+-----+-----+-----+------+---------'        '------+-----+-----+-----+-----+-------'
              |CW/L6 | MO7 |SPACE|                      |RET/L5| MO1 | MO2|
              '------+-----+-----'                       '------+-----+----'
 ```
 
-- `gresc`: tap=ESC, Shift+tap=`~`
+- `ESC`: tap=ESC (plain)
 - `REPT`: repite el último key (`&key_repeat`) — meñique izquierdo inferior
 - `BSPC`: ⌫ directo — Fn (L4) accesible desde L2 via MO4
-- `MOUSE`: meñique derecho inferior → `&tog 8` — toggle Layer 8 (Mouse)
+- `DEL`: meñique derecho inferior → ⌦ forward delete
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
 - `MO7`: hold=Layer 7 (Apps) — Ctrl viene del HRM en `S`
 - `RET/L5`: tap=↵ RET / hold=Layer 5 (Mac)
@@ -59,7 +59,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |SWJ← | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|      |     | ⌘X  | ⌘C  | ⌘V  |              |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|      |     | ⌘X  | ⌘C  | ⌘V  |MOUSE         |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | MO3 | MO4 |      |                           |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
@@ -74,7 +74,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ---
 
-## Layer 8 — Mouse (tog 8 desde meñique der inferior en L0)
+## Layer 8 — Mouse (tog 8 desde L2 pos V, índice izq inferior)
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
@@ -88,10 +88,10 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Activación: `tog 8` (meñique der inferior en L0) — toggle, no hold
+- Activación: `tog 8` (L2 pos V — índice izq inferior, hold MO2 + tap V) — toggle, no hold
 - Izquierdo: movimiento ESDF-like (F=M↑, R=M←, S=M↓, T=M→) + scroll col externa
 - Derecho clics home row: `LCLK`=N · `MCLK`=E · `RCLK`=I (índice→medio→anular)
-- `EXIT`: tog 8 en pulgar izq outer o meñique der inferior (misma tecla que activó)
+- `EXIT`: tog 8 en pulgar izq outer (L8) o L2 pos V (misma tecla que activó)
 - Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
 
 ---

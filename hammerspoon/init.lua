@@ -172,7 +172,7 @@ window.onload = function() { show('home'); };
   <div class="dhdr L0"><div class="dnum L0">0</div><div><div class="dname">Base</div><div class="dhow">Colemak-DH + HRM — siempre activo</div></div></div>
   <div class="kb">
     <div class="kb-row">
-      <div class="kb-key kb-extra" id="l0-k-esc"><span class="kl">gresc</span><span class="km">ESC·`~`</span></div>
+      <div class="kb-key kb-extra active L0" id="l0-k-esc"><span class="kl">ESC</span></div>
       <div class="kb-key" id="l0-k-q"><span class="kl">Q</span></div>
       <div class="kb-key" id="l0-k-w"><span class="kl">W</span></div>
       <div class="kb-key" id="l0-k-f"><span class="kl">F</span></div>
@@ -214,7 +214,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key" id="l0-k-comma"><span class="kl">,</span></div>
       <div class="kb-key" id="l0-k-dot"><span class="kl">.</span></div>
       <div class="kb-key" id="l0-k-slash"><span class="kl">/</span></div>
-      <div class="kb-key kb-extra active L8" id="l0-k-ret"><span class="kl">MOUSE</span><span class="km">tog8</span></div>
+      <div class="kb-key kb-extra active L0" id="l0-k-ret"><span class="kl">DEL</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L6" id="l0-k-cpsw"><span class="kl">CW/L6</span><span class="km">CW·Lang6</span></div>
@@ -227,12 +227,12 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li><b>gresc</b>: tap=ESC, Shift+tap=`~`</li>
+    <li><b>ESC</b>: tap=ESC (plain)</li>
     <li><b>CW/L6</b>: tap=CapsWord / hold=Layer 6 (Lang)</li>
     <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
     <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
     <li><b>REPT</b>: repite el último key — meñique izq inferior</li>
-    <li><b>MOUSE</b>: meñique der inferior → tog Layer 8 Mouse (Sys vía combo SPC+MO2)</li>
+    <li><b>DEL</b>: meñique der inferior (⌦) · <b>MOUSE</b>: L2 pos V → tog Layer 8 Mouse</li>
     <li><b>BSPC</b>: tap=⌫ / hold=Layer 4 (Fn)</li>
     <li><b>HRM</b>: tap=letra, hold=modificador (GUI/ALT/CTL/SHF)</li>
   </ul>
@@ -345,7 +345,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L2" id="l2-k-x"><span class="kl">⌘X</span><span class="km">cut</span></div>
       <div class="kb-key active L2" id="l2-k-c"><span class="kl">⌘C</span><span class="km">copy</span></div>
       <div class="kb-key active L2" id="l2-k-d"><span class="kl">⌘V</span><span class="km">paste</span></div>
-      <div class="kb-key dim" id="l2-k-v"><span class="kl">·</span></div>
+      <div class="kb-key active L8" id="l2-k-v"><span class="kl">MOUSE</span><span class="km">tog8</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-k"><span class="kl">SEL↑</span><span class="km">⇧↑</span></div>
       <div class="kb-key active L2" id="l2-k-h"><span class="kl">SEL←</span><span class="km">⇧←</span></div>
