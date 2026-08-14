@@ -1,0 +1,11 @@
+/*
+ * Soft-off wakers — restricts what can wake from &soft_off.
+ * Without wakeup-sources, only the hardware reset button can wake the keyboard.
+ * This prevents accidental wakeup from key presses during transport.
+ */
+/ {
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakers";
+        status = "okay";
+    };
+};
