@@ -14,6 +14,24 @@ hs.hotkey.bind({"cmd","alt","shift"}, "Z", function() focusOrLaunch("zoom.us") e
 hs.hotkey.bind({"cmd","alt","shift"}, "C", function() focusOrLaunch("Google Chrome") end)
 hs.hotkey.bind({"cmd","alt","shift"}, "N", function() focusOrLaunch("Claude") end)
 
+-- Credential auto-type via macOS Keychain (L5 triggers ⌥⌘⇧U/E/P)
+-- Setup per machine (one-time):
+--   security add-generic-password -s "zmk-keyboard" -a "username" -w "YOUR_USERNAME"
+--   security add-generic-password -s "zmk-keyboard" -a "email"    -w "YOUR_EMAIL"
+--   security add-generic-password -s "zmk-keyboard" -a "password" -w "YOUR_PASSWORD"
+local function typeFromKeychain(account)
+    local value, ok = hs.execute(
+        string.format("security find-generic-password -s 'zmk-keyboard' -a '%s' -w 2>/dev/null", account)
+    )
+    if ok and value and #value > 0 then
+        hs.eventtap.keyStrokes(value:gsub("\n$", ""))
+    end
+end
+
+hs.hotkey.bind({"cmd","alt","shift"}, "U", function() typeFromKeychain("username") end)
+hs.hotkey.bind({"cmd","alt","shift"}, "E", function() typeFromKeychain("email") end)
+hs.hotkey.bind({"cmd","alt","shift"}, "P", function() typeFromKeychain("password") end)
+
 local keymapHtml = [[<!DOCTYPE html>
 <html>
 <head>
@@ -525,7 +543,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L5" id="l5-k-e"><span class="kl">dt</span><span class="km">tmx detach</span></div>
       <div class="kb-key active L5" id="l5-k-i"><span class="kl">zm</span><span class="km">tmx zoom</span></div>
       <div class="kb-key active L5" id="l5-k-o"><span class="kl">FWD</span></div>
-      <div class="kb-key dim" id="l5-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key active L5" id="l5-k-apos"><span class="kl">EML</span><span class="km">⌥⌘⇧E</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l5-k-ctrl"><span class="kl">·</span></div>
@@ -535,12 +553,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L5" id="l5-k-d"><span class="kl">MW←</span></div>
       <div class="kb-key active L5" id="l5-k-v"><span class="kl">MW→</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l5-k-k"><span class="kl">·</span></div>
+      <div class="kb-key active L5" id="l5-k-k"><span class="kl">USR</span><span class="km">⌥⌘⇧U</span></div>
       <div class="kb-key active L5" id="l5-k-h"><span class="kl">DISP→</span></div>
       <div class="kb-key active L5" id="l5-k-comma"><span class="kl">nw</span><span class="km">tmx new</span></div>
       <div class="kb-key active L5" id="l5-k-dot"><span class="kl">%</span><span class="km">tmx sph</span></div>
       <div class="kb-key active L5" id="l5-k-slash"><span class="kl">"</span><span class="km">tmx spv</span></div>
-      <div class="kb-key kb-extra dim" id="l5-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra active L5" id="l5-k-ret"><span class="kl">PWD</span><span class="km">⌥⌘⇧P</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb dim" id="l5-k-cpsw"><span class="kl">·</span></div>

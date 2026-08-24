@@ -143,9 +143,9 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,----------------------------------------------.        ,--------------------------------------------.
 |DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-| FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |tmx:dt|tmx:zm| FWD  |       |
+| FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |tmx:dt|tmx:zm| FWD  | EML   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        |  ·  |DISP→|tmx:nw|tmx:% |tmx:" |       |
+|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        | USR |DISP→|tmx:nw|tmx:% |tmx:" | PWD   |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
              |      | GUI  | SPACE|                         |      |      |[held]|
              '------+------+------'                         '------+------+------'
@@ -155,6 +155,9 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav (BCK/FWD), tmux, display switch (DISP←/→)
 - `UND`=⌘Z, `RED`=⌘⇧Z, `BCK`=⌘[, `FWD`=⌘], `FQ`=Force Quit, `MCrl`=Mission Control
 - `DISP→`=⌥⌘⇧→ (mover ventana al siguiente display) — configurar en Rectangle Preferences → Shortcuts
+- `USR`/`EML`/`PWD`: triggers → Hammerspoon recupera de macOS Keychain (`zmk-keyboard` service)
+  - Setup: `security add-generic-password -s "zmk-keyboard" -a "username" -w "VALUE"`
+  - Ídem para `email` y `password` — cada Mac configura sus propios valores
 
 ---
 
