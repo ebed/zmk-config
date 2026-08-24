@@ -339,8 +339,8 @@
             bindings = <
                 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6   &kp F7 &kp F8 &kp F9 &kp F10 &kp F11 &kp F12
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
-                &trans &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
-                              &trans &none  &none            &none  &none  &none
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none   &none   &none
+                              &none  &none  &none            &none  &none  &none
             >;
         };
 
@@ -415,9 +415,9 @@
         apps_layer {
             display-name = "Apps";
             bindings = <
-                &kp LG(Q)       &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &none            &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &trans
-                &kp LC(TAB)     &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &kp LA(LG(LS(N))) &trans            &trans            &trans &trans
-                &kp LC(LS(TAB)) &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &trans            &trans            &trans            &trans            &trans &trans
+                &kp LG(Q)       &kp LG(T)      &kp LG(W)      &kp LG(D)      &kp LG(LS(D))  &none            &kp LA(LG(LS(W))) &kp LA(LG(LS(S))) &kp LA(LG(LS(Z))) &kp LA(LG(LS(C))) &kp LG(GRAVE) &none
+                &kp LC(TAB)     &kp LG(LS(A))  &kp LG(LS(V))  &kp LG(LS(S))  &kp LG(LS(H))  &none            &kp LA(LG(LS(H))) &kp LA(LG(LS(N))) &none             &none             &none  &none
+                &kp LC(LS(TAB)) &kp LG(N)      &kp LG(LS(M))  &kp LG(LS(C))  &kp LG(K)      &none            &none             &none             &none             &none             &none  &none
                                        &trans          &trans          &trans                           &kp LG(RET) &trans &trans
             >;
         };
