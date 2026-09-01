@@ -55,7 +55,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
-|      |     |     |     |     | DEL          |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
+|      |     |⌘⇧←  |⌘⇧→  |     | DEL          |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |SWJ← | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
@@ -65,8 +65,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘X/C/V`=cut/copy/paste · `DEL`=forward delete
-- Derecho fila 1: `⇧HOME`=sel inicio línea · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin línea
+- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘X/C/V`=cut/copy/paste · `DEL`=forward delete
+- Derecho fila 1: `⇧HOME`=sel inicio doc · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin doc
 - Derecho fila 2: `SWJ←/→` = ⌥⇧←/→ (word select) — col inner
 - Derecho fila 3: `SEL←/↓/→` = Shift+flecha
 - `MO3` (pulgar izq outer) → Sys layer — izq outer, mano libre mientras MO2 sostiene der
