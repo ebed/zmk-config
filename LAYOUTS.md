@@ -59,13 +59,16 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |SWJ← | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|      |     | ⌘X  | ⌘C  | ⌘V  |MOUSE         |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|MOUSE |UND/R|     |CPY/X|     | ⌘V           |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | MO3 | MO4 |      |                           |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘X/C/V`=cut/copy/paste · `DEL`=forward delete
+- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `CPY/X`=copy/cut · `⌘V`=paste · `DEL`=forward delete
+- `UND/R`: tap=⌘Z undo / hold=⌘⇧Z redo (300ms, tap-preferred)
+- `CPY/X`: tap=⌘C copy / hold=⌘X cut (300ms, tap-preferred)
+- `MOUSE`: toggle Layer 8 (reubicado desde V)
 - Derecho fila 1: `⇧HOME`=sel inicio doc · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin doc
 - Derecho fila 2: `SWJ←/→` = ⌥⇧←/→ (word select) — col inner
 - Derecho fila 3: `SEL←/↓/→` = Shift+flecha

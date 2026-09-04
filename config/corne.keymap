@@ -75,7 +75,17 @@
         num_sym: num_sym {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
+        /* tap = acción primaria / hold = acción lenta deliberada (redo, cut) */
+        slow_ht: slow_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <175>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
@@ -294,17 +304,19 @@
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
  * |     |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→   |                |SWJ← | ←   |  ↓  |  →  |HOME |PGUP |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+-----|
- * |     |     | ⌘X  | ⌘C  | ⌘V  |MOUSE|                |SWJ→ |SEL← |SEL↓ |SEL→ |END  |PGDN |
+ * |MOUSE|UND/R|     |CPY/X|     | ⌘V  |                |SWJ→ |SEL← |SEL↓ |SEL→ |END  |PGDN |
  * `-------------------------------------'               `--------------------------------------------'
- *         | MO3 | MO4 |     |                              |     |     |     |
+ *         | MO3 | MO4 |     |                              |     |     |[hld]|
  *         `-------------------'                            `-------------------'
+ * UND/R = tap ⌘Z undo / hold ⌘⇧Z redo (300ms)
+ * CPY/X = tap ⌘C copy / hold ⌘X cut  (300ms)
  */
         layer_2 {
             display-name = "Nav";
             bindings = <
                 &none  &none  &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &none     &kp DEL          &kp LS(HOME)  &kp LA(LEFT)  &kp UP       &kp LA(RIGHT)  &kp LS(END)  &kp BSPC
                 &none  &none  &kp LG(LEFT)   &kp LG(Z)      &kp LG(LS(Z))  &kp LG(RIGHT)    &kp LA(LS(LEFT))  &kp LEFT      &kp DOWN     &kp RIGHT      &kp HOME     &kp PG_UP
-                &none  &none  &kp LG(X)      &kp LG(C)      &kp LG(V)      &tog 8           &kp LA(LS(RIGHT)) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
+                &tog 8 &slow_ht LG(LS(Z)) LG(Z)  &none  &slow_ht LG(X) LG(C)  &none  &kp LG(V)  &kp LA(LS(RIGHT)) &kp LS(LEFT)  &kp LS(DOWN) &kp LS(RIGHT)  &kp END      &kp PG_DN
                                &mo 3          &mo 4          &trans                           &trans   &trans   &trans
             >;
         };
