@@ -36,18 +36,22 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,---------------------------------------------.        ,--------------------------------------------.
 | REPT |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-| TAB  |  !  |  @   |  #   |  $   |  %        |        |  -   |  =  |  _   |  |   |  \   |  `    |
+| TAB  |BSPC |  <   |  >   |  :   |  ?        |        | -/_  | =/+ | \/|  | `/~  |      |       |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-|  SK  |  &  |  *   |  (   |  )   |  ^        |        |  [   |  ]  |  {   |  }   |  +   | RET   |
+|  SK  |     |      |      |      |           |        | [/{  | ]/} |      |      |      | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
              |TOG1  | MO7  | SPACE|                         |     |      |     |
              '------+------+------'                         '-----+------+-----'
 ```
 
 - `REPT` (`&key_repeat`): repite el último key en cualquier layer
-- `1/!` … `0/)`: tap=número, hold=símbolo Shift+número
+- `1/!` … `0/)`: tap=número, hold=símbolo Shift+número (280ms)
 - `SK`: Sticky Shift (tap=1 char, doble=sticky, triple=CapsLock)
 - `TOG1` (`&tog 1`): bloquea/desbloquea Layer 1 — hold MO1 (der middle) + tap izq outer
+- Izq home row: `BSPC` · `<` · `>` · `:` · `?` — símbolos frecuentes en código
+- Der home/bot: tap=base, hold=Shift+base (280ms, tap-preferred) — patrón igual a fila numérica
+  - `-/_` tap=`-` hold=`_` · `=/+` tap=`=` hold=`+` · `\/|` tap=`\` hold=`|` · `` `/~ `` tap=`` ` `` hold=`~`
+  - `[/{` tap=`[` hold=`{` · `]/}` tap=`]` hold=`}`
 
 ---
 
@@ -59,14 +63,14 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |SWJ← | ←   | ↓   | →   |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|MOUSE |UND/R|     |CPY/X|     | ⌘V           |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|MOUSE | ⌘A  |     |CPY/X|     | ⌘V           |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | MO3 | MO4 |      |                           |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `CPY/X`=copy/cut · `⌘V`=paste · `DEL`=forward delete
-- `UND/R`: tap=⌘Z undo / hold=⌘⇧Z redo (300ms, tap-preferred)
+- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘A`=select all · `CPY/X`=copy/cut · `⌘V`=paste · `DEL`=forward delete
+- `⌘A`: Select All — X-position (anular izq), tap directo
 - `CPY/X`: tap=⌘C copy / hold=⌘X cut (300ms, tap-preferred)
 - `MOUSE`: toggle Layer 8 (reubicado desde V)
 - Derecho fila 1: `⇧HOME`=sel inicio doc · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin doc
@@ -83,7 +87,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,---------------------------------------------.
 |SCRL↑ |     |     | M↑  |     |              |        |     |     |     |     |     |       |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ |     | M←  | M↓  | M→  |              |        |LCLK |MCLK |RCLK |     |     |       |
+|SCRL↓ |     | M←  | M↓  | M→  |              |        |LCLK |MCLK |RCLK | MB4 | MB5 |       |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL← |SCRL→|     |     |     |              |        |     |     |     |     |     | EXIT  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
@@ -94,6 +98,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Activación: `tog 8` (L2 pos V — índice izq inferior, hold MO2 + tap V) — toggle, no hold
 - Izquierdo: movimiento ESDF-like (F=M↑, R=M←, S=M↓, T=M→) + scroll col externa
 - Derecho clics home row: `LCLK`=N · `MCLK`=E · `RCLK`=I (índice→medio→anular)
+- `MB4`/`MB5`: back/forward del browser — anular y meñique derechos
 - `EXIT`: tog 8 en pulgar izq outer (L8) o L2 pos V (misma tecla que activó)
 - Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
 
@@ -127,16 +132,18 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,--------------------------------------------.
 |  F1  |  F2 |  F3 |  F4 |  F5  |  F6        |        |  F7  |  F8 |  F9 | F10 | F11 |  F12  |
 |------+-----+-----+-----+------+------------|        |------+-----+-----+-----+-----+-------|
-|      |     |     |     |      |            |        |      |     |     |     |     |       |
+|      |     |     |     |      |            |        |  7   |  8  |  9  |  -  |  /  |   *   |
 |------+-----+-----+-----+------+------------|        |------+-----+-----+-----+-----+-------|
-|      |     |     |     |      |            |        |      |     |     |     |     |       |
+|  0   |  .  |     |     |      |            |        |  4   |  5  |  6  |  1  |  2  |   3   |
 '------+-----+-----+-----+------+------------'        '------+-----+-----+-----+-----+-------'
-             |     |     |      |                           |      |[hld]|     |
+             |     |[hld]|      |                           |      |     |[hld]|
              '-----+-----+------'                           '------+-----+-----'
 ```
 
 - F1–F12 en la fila superior
-- `[hld]` = MO4 (mantenido desde Layer 2 para activar esta capa)
+- Numpad der: `7 8 9 - / *` (home row) + `4 5 6 1 2 3` (bot row)
+- Numpad izq: `0 .` (bot row, meñique y anular)
+- `[hld]` = MO4 (izq middle) + MO2 (der outer) — ambos mantenidos para activar la capa
 
 ---
 
