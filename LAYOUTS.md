@@ -87,7 +87,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,--------------------------------------------.        ,---------------------------------------------.
 |SCRL↑ |     |     | M↑  |     |              |        |     |     |     |     |     |       |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|SCRL↓ |     | M←  | M↓  | M→  |              |        |LCLK |MCLK |RCLK | MB4 | MB5 |       |
+|SCRL↓ |     | M←  | M↓  | M→  |              |        |     |LCLK |MCLK |RCLK | MB4 | MB5   |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL← |SCRL→|     |     |     |              |        |     |     |     |     |     | EXIT  |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
@@ -104,7 +104,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ---
 
-## Layer 3 — Sys (MO1 + MO3)
+## Layer 3 — Sys (MO2 + MO3)
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
@@ -114,7 +114,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      | BT3 | BT4 |     |MUTE  |LCK         |        | 🟢  | 🔴  | 🔵  | 🟡  |SOFF |BOOT   |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             | GUI |     | SPACE|                           | RET |     |RALT |
+             | GUI |     | SPACE|                           | RET |     |     |
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
@@ -147,7 +147,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ---
 
-## Layer 5 — Mac (hold SYM/5)
+## Layer 5 — Mac (hold RET/L5)
 
 ```
 ,----------------------------------------------.        ,--------------------------------------------.
@@ -157,7 +157,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
 |     |DSK← |DSK→  |Exposé| MW←  | MW→        |        | USR |DISP→|tmx:nw|tmx:% |tmx:" | PWD   |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
-             |      | GUI  | SPACE|                         |      |      |[held]|
+             |      | GUI  | SPACE|                         |[held]|      |      |
              '------+------+------'                         '------+------+------'
 ```
 

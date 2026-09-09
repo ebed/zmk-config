@@ -153,20 +153,26 @@ Dos rutas para acceder a símbolos:
 
 `tapping-term=200ms` · `quick-tap=175ms` · flavor `tap-preferred`
 
-### Home row — símbolos directos (ruta ergonómica)
+### Izquierdo home row — símbolos frecuentes (tap directo)
 
-| Símbolo | Tecla | | Símbolo | Tecla |
-|---------|-------|-|---------|-------|
-| `!` | A | | `&` | Z |
-| `@` | R | | `*` | X |
-| `#` | S | | `(` | C |
-| `$` | T | | `)` | D |
-| `%` | G | | `_` | V |
-| `-` | M (der) | | `[` | K (der) |
-| `=` | N (der) | | `]` | H (der) |
-| `^` | E (der) | | `{` | , (der) |
-| `\|` | I (der) | | `}` | . (der) |
-| `\` | O (der) | | `+` | / (der) |
+| Tecla | Símbolo |
+|-------|---------|
+| BSPC-pos | `⌫` Backspace |
+| R-pos | `<` |
+| S-pos | `>` |
+| T-pos | `:` |
+| G-pos | `?` |
+
+### Derecho home/bot — hold-tap (tap=base · hold=Shift+base · 280ms)
+
+| Tap | Hold | Posición |
+|-----|------|----------|
+| `-` | `_` | M (home) |
+| `=` | `+` | N (home) |
+| `\` | `\|` | E (home) |
+| `` ` `` | `~` | I (home) |
+| `[` | `{` | K (bot) |
+| `]` | `}` | H (bot) |
 
 ### Sticky Shift (`SK`) — posición CTRL en Layer 1 (abajo del TAB)
 
@@ -188,12 +194,19 @@ Velocidad del mouse: `1500` (default ZMK: 600). Scroll: `20`.
 
 | Key | Acción |
 |-----|--------|
-| `WJ←` / `WJ→` | Word jump — `⌥←/→` (saltar palabra) |
+| `⌘A` | Select All |
+| `⌘←/→` | Inicio / fin de línea |
+| `⌘⇧←/→` | Selección inicio / fin de línea |
+| `⌘Z` / `⌘⇧Z` | Undo / Redo |
+| `CPY/X` | tap=⌘C copy · hold=⌘X cut |
+| `⌘V` | Paste |
+| `WJ←` / `WJ→` | Word jump — `⌥←/→` |
 | `←` `↓` `↑` `→` | Flechas normales |
-| `⇧HOME` / `⇧END` | Selección al inicio / fin de línea |
-| `SEL↑` `SEL←` `SEL↓` `SEL→` | Selección de texto — `Shift+↑/←/↓/→` |
+| `⇧HOME` / `⇧END` | Selección al inicio / fin de documento |
+| `SEL↑` `SEL←` `SEL↓` `SEL→` | Selección — `Shift+flecha` |
 | `HOME` / `END` | Inicio / fin de línea |
 | `PGUP` / `PGDN` | Página arriba / abajo |
+| `MOUSE` | Toggle Layer 8 (Mouse mode) |
 
 Layer 7 (Apps): hold `CTL/L7` (pulgar izq-medio) desde cualquier layer — single key, sin combo. El lado derecho hereda los keybindings de Nav, por lo que las flechas y el mouse siguen funcionando.
 
@@ -218,7 +231,7 @@ Layer 7 (Apps): hold `CTL/L7` (pulgar izq-medio) desde cualquier layer — singl
 
 ## Layer 4 — Fn (hold BSP/L4)
 
-F1–F12 en la fila superior.
+F1–F12 en la fila superior. Numpad derecho: `7 8 9 - / *` (home row) · `4 5 6 1 2 3` (bot row). Numpad izquierdo: `0` (extra-col bot) · `.` (pinky bot).
 
 ---
 

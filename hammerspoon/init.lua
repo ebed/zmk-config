@@ -277,32 +277,32 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L1" id="l1-k-tab"><span class="kl">TAB</span></div>
-      <div class="kb-key active L1" id="l1-k-a"><span class="kl">!</span></div>
-      <div class="kb-key active L1" id="l1-k-r"><span class="kl">@</span></div>
-      <div class="kb-key active L1" id="l1-k-s"><span class="kl">#</span></div>
-      <div class="kb-key active L1" id="l1-k-t"><span class="kl">$</span></div>
-      <div class="kb-key active L1" id="l1-k-g"><span class="kl">%</span></div>
+      <div class="kb-key active L1" id="l1-k-a"><span class="kl">BSPC</span></div>
+      <div class="kb-key active L1" id="l1-k-r"><span class="kl">&lt;</span></div>
+      <div class="kb-key active L1" id="l1-k-s"><span class="kl">&gt;</span></div>
+      <div class="kb-key active L1" id="l1-k-t"><span class="kl">:</span></div>
+      <div class="kb-key active L1" id="l1-k-g"><span class="kl">?</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L1" id="l1-k-m"><span class="kl">-</span></div>
-      <div class="kb-key active L1" id="l1-k-n"><span class="kl">=</span></div>
-      <div class="kb-key active L1" id="l1-k-e"><span class="kl">_</span></div>
-      <div class="kb-key active L1" id="l1-k-i"><span class="kl">|</span></div>
-      <div class="kb-key active L1" id="l1-k-o"><span class="kl">\</span></div>
-      <div class="kb-key active L1" id="l1-k-apos"><span class="kl">`</span></div>
+      <div class="kb-key active L1" id="l1-k-m"><span class="kl">-/_</span></div>
+      <div class="kb-key active L1" id="l1-k-n"><span class="kl">=/+</span></div>
+      <div class="kb-key active L1" id="l1-k-e"><span class="kl">\/|</span></div>
+      <div class="kb-key active L1" id="l1-k-i"><span class="kl">`/~</span></div>
+      <div class="kb-key dim" id="l1-k-o"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-apos"><span class="kl">·</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L1" id="l1-k-ctrl"><span class="kl">SK</span><span class="km">⇧Sticky</span></div>
-      <div class="kb-key active L1" id="l1-k-z"><span class="kl">&amp;</span></div>
-      <div class="kb-key active L1" id="l1-k-x"><span class="kl">*</span></div>
-      <div class="kb-key active L1" id="l1-k-c"><span class="kl">(</span></div>
-      <div class="kb-key active L1" id="l1-k-d"><span class="kl">)</span></div>
-      <div class="kb-key active L1" id="l1-k-v"><span class="kl">^</span></div>
+      <div class="kb-key dim" id="l1-k-z"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-x"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-c"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-d"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-v"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L1" id="l1-k-k"><span class="kl">[</span></div>
-      <div class="kb-key active L1" id="l1-k-h"><span class="kl">]</span></div>
-      <div class="kb-key active L1" id="l1-k-comma"><span class="kl">{</span></div>
-      <div class="kb-key active L1" id="l1-k-dot"><span class="kl">}</span></div>
-      <div class="kb-key active L1" id="l1-k-slash"><span class="kl">+</span></div>
+      <div class="kb-key active L1" id="l1-k-k"><span class="kl">[/{</span></div>
+      <div class="kb-key active L1" id="l1-k-h"><span class="kl">]/}</span></div>
+      <div class="kb-key dim" id="l1-k-comma"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-dot"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-slash"><span class="kl">·</span></div>
       <div class="kb-key kb-extra active L1" id="l1-k-ret"><span class="kl">↵</span></div>
     </div>
     <div class="kb-row kb-center">
@@ -318,6 +318,8 @@ window.onload = function() { show('home'); };
   <ul class="notes">
     <li><b>REPT</b>: repite el último key en cualquier layer</li>
     <li><b>1/!</b> … <b>0/)</b>: tap=número, hold=símbolo</li>
+    <li>Izq home: <b>BSPC · &lt; · &gt; · : · ?</b> — símbolos frecuentes en código</li>
+    <li>Der home/bot: tap=base, hold=Shift+base (280ms) — <b>-/_ =/+ \/| `/~ [/{ ]/}</b></li>
     <li><b>SK</b>: Sticky Shift (tap=1 char, doble=sticky, triple=CapsLock)</li>
     <li><b>TOG1</b>: bloquea/desbloquea Layer 1 — hold MO1 + tap MO2</li>
   </ul>
@@ -358,12 +360,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L2" id="l2-k-apos"><span class="kl">PGUP</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l2-k-ctrl"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-z"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-x"><span class="kl">⌘X</span><span class="km">cut</span></div>
-      <div class="kb-key active L2" id="l2-k-c"><span class="kl">⌘C</span><span class="km">copy</span></div>
-      <div class="kb-key active L2" id="l2-k-d"><span class="kl">⌘V</span><span class="km">paste</span></div>
-      <div class="kb-key active L8" id="l2-k-v"><span class="kl">MOUSE</span><span class="km">tog8</span></div>
+      <div class="kb-key kb-extra active L8" id="l2-k-ctrl"><span class="kl">MOUSE</span><span class="km">tog8</span></div>
+      <div class="kb-key active L2" id="l2-k-z"><span class="kl">⌘A</span><span class="km">sel all</span></div>
+      <div class="kb-key dim" id="l2-k-x"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-c"><span class="kl">CPY/X</span><span class="km">⌘C/⌘X</span></div>
+      <div class="kb-key dim" id="l2-k-d"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-v"><span class="kl">⌘V</span><span class="km">paste</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-k"><span class="kl">SEL↑</span><span class="km">⇧↑</span></div>
       <div class="kb-key active L2" id="l2-k-h"><span class="kl">SEL←</span><span class="km">⇧←</span></div>
@@ -383,7 +385,7 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li>Izquierdo: edición — <b>⌘←/→</b>=inicio/fin línea · <b>⌘⇧←/→</b>=sel inicio/fin línea · <b>⌘Z/⌘⇧Z</b>=undo/redo · <b>⌘X/C/V</b>=cut/copy/paste · <b>DEL</b>=forward delete</li>
+    <li>Izquierdo: edición — <b>⌘←/→</b>=inicio/fin línea · <b>⌘⇧←/→</b>=sel inicio/fin línea · <b>⌘Z/⌘⇧Z</b>=undo/redo · <b>⌘A</b>=select all · <b>CPY/X</b>=⌘C/⌘X · <b>⌘V</b>=paste · <b>DEL</b>=forward delete</li>
     <li>Derecho fila 1: <b>⇧HOME</b>=sel inicio doc · <b>WJ←/→</b>=⌥←/→ (word jump) · <b>⇧END</b>=sel fin doc</li>
     <li>Derecho fila 3: <b>SEL↑/←/↓/→</b>=⇧+flecha</li>
     <li><b>Layer 7 Apps</b>: hold MO7 (izq-med)</li>
@@ -481,19 +483,19 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l4-k-s"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-t"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l4-k-g"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l4-k-m"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-n"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-e"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-i"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-o"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key active L4" id="l4-k-m"><span class="kl">7</span></div><div class="kb-key active L4" id="l4-k-n"><span class="kl">8</span></div>
+      <div class="kb-key active L4" id="l4-k-e"><span class="kl">9</span></div><div class="kb-key active L4" id="l4-k-i"><span class="kl">-</span></div>
+      <div class="kb-key active L4" id="l4-k-o"><span class="kl">/</span></div><div class="kb-key active L4" id="l4-k-apos"><span class="kl">*</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l4-k-ctrl"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-z"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-x"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra active L4" id="l4-k-ctrl"><span class="kl">0</span></div>
+      <div class="kb-key active L4" id="l4-k-z"><span class="kl">.</span></div><div class="kb-key dim" id="l4-k-x"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l4-k-c"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-d"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l4-k-v"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l4-k-k"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-h"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-comma"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-slash"><span class="kl">·</span></div><div class="kb-key kb-extra dim" id="l4-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key active L4" id="l4-k-k"><span class="kl">4</span></div><div class="kb-key active L4" id="l4-k-h"><span class="kl">5</span></div>
+      <div class="kb-key active L4" id="l4-k-comma"><span class="kl">6</span></div><div class="kb-key active L4" id="l4-k-dot"><span class="kl">1</span></div>
+      <div class="kb-key active L4" id="l4-k-slash"><span class="kl">2</span></div><div class="kb-key kb-extra active L4" id="l4-k-ret"><span class="kl">3</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb dim" id="l4-k-cpsw"><span class="kl">·</span></div>
@@ -507,6 +509,8 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>F1–F12 en la fila superior completa</li>
+    <li>Numpad der: <b>7 8 9 - / *</b> (home row) · <b>4 5 6 1 2 3</b> (bot row)</li>
+    <li>Numpad izq: <b>0</b> (extra-col bot) · <b>.</b> (pinky bot)</li>
     <li>Activación: hold <b>BSPC</b> (top-der)</li>
   </ul>
 </div>
@@ -730,8 +734,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L8" id="l8-k-n"><span class="kl">LCLK</span></div>
       <div class="kb-key active L8" id="l8-k-e"><span class="kl">MCLK</span></div>
       <div class="kb-key active L8" id="l8-k-i"><span class="kl">RCLK</span></div>
-      <div class="kb-key dim" id="l8-k-o"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key active L8" id="l8-k-o"><span class="kl">MB4</span></div>
+      <div class="kb-key active L8" id="l8-k-apos"><span class="kl">MB5</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-ctrl"><span class="kl">SCRL←</span></div>
@@ -760,9 +764,9 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
-    <li>Derecho: clics home row (<b>N=LCLK E=MCLK I=RCLK</b>) — índice→medio→anular</li>
+    <li>Derecho home: <b>N=LCLK E=MCLK I=RCLK O=MB4 '=MB5</b> — índice→medio→anular→meñique</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
-    <li><b>EXIT</b>: pulgar izq outer (L8) o L2 pos V (mismo tog8)</li>
+    <li><b>EXIT</b>: pulgar izq outer (L8) o L2 extra-col izq (REPT-pos)</li>
   </ul>
 </div>
 
