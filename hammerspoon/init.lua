@@ -376,7 +376,7 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L3" id="l2-k-cpsw"><span class="kl">MO3</span><span class="km">→Sys</span></div>
-      <div class="kb-key kb-thumb active L4" id="l2-k-gui"><span class="kl">MO4</span><span class="km">→Fn</span></div>
+      <div class="kb-key kb-thumb active L4" id="l2-k-gui"><span class="kl">TD4*</span><span class="km">→FnNum</span></div>
       <div class="kb-key kb-thumb active L2" id="l2-k-mo7"><span class="kl">SK(⇧)</span><span class="km">sticky</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo2"><span class="kl">·</span></div>
@@ -462,7 +462,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 4 -->
 <div id="v-4" class="view L4">
-  <div class="dhdr L4"><div class="dnum L4">4</div><div><div class="dname">Fn</div><div class="dhow">hold BSPC (top-der)</div></div></div>
+  <div class="dhdr L4"><div class="dnum L4">4</div><div><div class="dname">FnNum</div><div class="dhow">hold MO2+TD4 desde L2 · doble-tap TD4 para lock</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra active L4" id="l4-k-esc"><span class="kl">F1</span></div>
@@ -472,48 +472,60 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L4" id="l4-k-p"><span class="kl">F5</span></div>
       <div class="kb-key active L4" id="l4-k-b"><span class="kl">F6</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L4" id="l4-k-j"><span class="kl">F7</span></div>
-      <div class="kb-key active L4" id="l4-k-l"><span class="kl">F8</span></div>
-      <div class="kb-key active L4" id="l4-k-u"><span class="kl">F9</span></div>
-      <div class="kb-key active L4" id="l4-k-y"><span class="kl">F10</span></div>
-      <div class="kb-key active L4" id="l4-k-semi"><span class="kl">F11</span></div>
-      <div class="kb-key kb-extra active L4" id="l4-k-bspc"><span class="kl">F12</span></div>
+      <div class="kb-key active L4" id="l4-k-j"><span class="kl">⌫</span></div>
+      <div class="kb-key active L4" id="l4-k-l"><span class="kl">7</span></div>
+      <div class="kb-key active L4" id="l4-k-u"><span class="kl">8</span></div>
+      <div class="kb-key active L4" id="l4-k-y"><span class="kl">9</span></div>
+      <div class="kb-key active L4" id="l4-k-semi"><span class="kl">-</span></div>
+      <div class="kb-key kb-extra active L4" id="l4-k-bspc"><span class="kl">*</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l4-k-tab"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-a"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-r"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-s"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-t"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-g"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra active L4" id="l4-k-tab"><span class="kl">F7</span></div>
+      <div class="kb-key active L4" id="l4-k-a"><span class="kl">F8</span></div>
+      <div class="kb-key active L4" id="l4-k-r"><span class="kl">F9</span></div>
+      <div class="kb-key active L4" id="l4-k-s"><span class="kl">F10</span></div>
+      <div class="kb-key active L4" id="l4-k-t"><span class="kl">F11</span></div>
+      <div class="kb-key active L4" id="l4-k-g"><span class="kl">F12</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L4" id="l4-k-m"><span class="kl">7</span></div><div class="kb-key active L4" id="l4-k-n"><span class="kl">8</span></div>
-      <div class="kb-key active L4" id="l4-k-e"><span class="kl">9</span></div><div class="kb-key active L4" id="l4-k-i"><span class="kl">-</span></div>
-      <div class="kb-key active L4" id="l4-k-o"><span class="kl">/</span></div><div class="kb-key active L4" id="l4-k-apos"><span class="kl">*</span></div>
+      <div class="kb-key active L4" id="l4-k-m"><span class="kl">=</span></div>
+      <div class="kb-key active L4" id="l4-k-n"><span class="kl">4</span></div>
+      <div class="kb-key active L4" id="l4-k-e"><span class="kl">5</span></div>
+      <div class="kb-key active L4" id="l4-k-i"><span class="kl">6</span></div>
+      <div class="kb-key active L4" id="l4-k-o"><span class="kl">+</span></div>
+      <div class="kb-key active L4" id="l4-k-apos"><span class="kl">/</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L4" id="l4-k-ctrl"><span class="kl">0</span></div>
-      <div class="kb-key active L4" id="l4-k-z"><span class="kl">.</span></div><div class="kb-key dim" id="l4-k-x"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-c"><span class="kl">·</span></div><div class="kb-key dim" id="l4-k-d"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l4-k-ctrl"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l4-k-z"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l4-k-x"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l4-k-c"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l4-k-d"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l4-k-v"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L4" id="l4-k-k"><span class="kl">4</span></div><div class="kb-key active L4" id="l4-k-h"><span class="kl">5</span></div>
-      <div class="kb-key active L4" id="l4-k-comma"><span class="kl">6</span></div><div class="kb-key active L4" id="l4-k-dot"><span class="kl">1</span></div>
-      <div class="kb-key active L4" id="l4-k-slash"><span class="kl">2</span></div><div class="kb-key kb-extra active L4" id="l4-k-ret"><span class="kl">3</span></div>
+      <div class="kb-key active L4" id="l4-k-k"><span class="kl">⏎</span></div>
+      <div class="kb-key active L4" id="l4-k-h"><span class="kl">1</span></div>
+      <div class="kb-key active L4" id="l4-k-comma"><span class="kl">2</span></div>
+      <div class="kb-key active L4" id="l4-k-dot"><span class="kl">3</span></div>
+      <div class="kb-key active L4" id="l4-k-slash"><span class="kl">0</span></div>
+      <div class="kb-key kb-extra active L4" id="l4-k-ret"><span class="kl">.</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb dim" id="l4-k-cpsw"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l4-k-gui"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb active L4" id="l4-k-cpsw"><span class="kl">TOG-L</span><span class="km">exit</span></div>
+      <div class="kb-key kb-thumb dim" id="l4-k-gui"><span class="kl">[hld]</span><span class="km">TD4</span></div>
       <div class="kb-key kb-thumb dim" id="l4-k-mo7"><span class="kl">·</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l4-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l4-k-mo1"><span class="kl">[hld]</span><span class="km">Fn4</span></div>
+      <div class="kb-key kb-thumb dim" id="l4-k-mo2"><span class="kl">[hld]</span><span class="km">MO2</span></div>
+      <div class="kb-key kb-thumb dim" id="l4-k-mo1"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l4-k-sym5"><span class="kl">·</span></div>
     </div>
   </div>
   <ul class="notes">
-    <li>F1–F12 en la fila superior completa</li>
-    <li>Numpad der: <b>7 8 9 - / *</b> (home row) · <b>4 5 6 1 2 3</b> (bot row)</li>
-    <li>Numpad izq: <b>0</b> (extra-col bot) · <b>.</b> (pinky bot)</li>
-    <li>Activación: hold <b>BSPC</b> (top-der)</li>
+    <li>Izq fila 1: <b>F1–F6</b> · Izq fila 2: <b>F7–F12</b></li>
+    <li>Numpad der col 2-4: <b>7/4/1 · 8/5/2 · 9/6/3</b> (índice→anular, espeja numpad estándar)</li>
+    <li>Numpad der col 5-6: <b>-/+/0</b> · <b>*/÷/.</b> · col 1: <b>⌫/=/⏎</b></li>
+    <li><b>TOG-L</b> (thumb izq outer): salir del modo bloqueado</li>
+    <li>Activación normal: hold <b>MO2</b> (der inner) + <b>TD4</b> (izq middle)</li>
+    <li>Modo lock: doble-tap rápido <b>TD4</b> desde L2 → FnNum queda activa sin sostener</li>
   </ul>
 </div>
 

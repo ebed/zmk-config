@@ -65,7 +65,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |MOUSE | ⌘Z  | ⌘⇧Z |CPY/X|     | ⌘V           |        |KT(⇧)|     |     |     |     |       |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             | MO3 | MO4 | SK(⇧)|                          |     |     |[hld]|
+             | MO3 |TD4* | SK(⇧)|                          |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
@@ -78,8 +78,8 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - Derecho fila 2: `←↓→`=flechas · `END`=fin doc · `PGDN`=página abajo
 - `SK(⇧)` (thumb izq inner): sticky shift — tap=siguiente key con ⇧ · doble tap=⇧ lock
 - `KT(⇧)` (K-pos der, fila 3 índice): toggle shift — tap=activa/desactiva; para uso con 1 mano
-- `MO3` (pulgar izq outer) → Sys layer — izq outer, mano libre mientras MO2 sostiene der
-- `MO4` (pulgar izq middle) → Fn layer
+- `MO3` (pulgar izq outer) → Sys layer
+- `TD4*` (pulgar izq middle): hold→FnNum momentáneo · doble-tap→toggle FnNum bloqueado
 
 ---
 
@@ -128,24 +128,27 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ---
 
-## Layer 4 — Fn (MO2 + MO4)
+## Layer 4 — FnNum (hold MO2+TD4 · o doble-tap TD4 para bloquear)
 
 ```
 ,--------------------------------------------.        ,--------------------------------------------.
-|  F1  |  F2 |  F3 |  F4 |  F5  |  F6        |        |  F7  |  F8 |  F9 | F10 | F11 |  F12  |
+|  F1  |  F2 |  F3 |  F4 |  F5  |  F6        |        |  ⌫   |  7  |  8  |  9  |  -  |   *   |
 |------+-----+-----+-----+------+------------|        |------+-----+-----+-----+-----+-------|
-|      |     |     |     |      |            |        |  7   |  8  |  9  |  -  |  /  |   *   |
+|  F7  |  F8 |  F9 | F10 |  F11 |  F12       |        |  =   |  4  |  5  |  6  |  +  |   /   |
 |------+-----+-----+-----+------+------------|        |------+-----+-----+-----+-----+-------|
-|  0   |  .  |     |     |      |            |        |  4   |  5  |  6  |  1  |  2  |   3   |
+|      |     |     |     |      |            |        |  ⏎   |  1  |  2  |  3  |  0  |   .   |
 '------+-----+-----+-----+------+------------'        '------+-----+-----+-----+-----+-------'
-             |     |[hld]|      |                           |      |     |[hld]|
+             |TOG-L|[hld]|      |                           |      |     |[hld]|
              '-----+-----+------'                           '------+-----+-----'
 ```
 
-- F1–F12 en la fila superior
-- Numpad der: `7 8 9 - / *` (home row) + `4 5 6 1 2 3` (bot row)
-- Numpad izq: `0 .` (bot row, meñique y anular)
-- `[hld]` = MO4 (izq middle) + MO2 (der outer) — ambos mantenidos para activar la capa
+- Izq fila 1: F1–F6 · Izq fila 2: F7–F12
+- Numpad der col 2-4: `7/4/1`, `8/5/2`, `9/6/3` (índice→meñique espeja numpad estándar)
+- Numpad der col 5-6: `-/+/0`, `*/⁄/.` (operadores + 0 en pinky)
+- Col 1 der: `⌫`=backspace · `=` · `⏎`=enter
+- `TOG-L` (thumb izq outer): salir del modo bloqueado
+- `[hld]` = TD4 (izq middle) + MO2 (der outer) — ambos mantenidos para activar la capa
+- **Modo lock**: doble-tap rápido en TD4 desde L2 → FnNum queda activa sin sostener
 
 ---
 
