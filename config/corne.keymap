@@ -284,24 +284,25 @@
 /* ### Layer 1 — Sym  (hold MO1)
  * Números row 0: tap=número, hold=símbolo (1/! 2/@ 3/# 4/$ 5/% 6/^ 7/& 8/* 9/( 0/))
  * Home/bot der: tap=base, hold=Shift(base) — patrón igual a fila numérica (280ms)
- * SK (sticky shift) abajo del TAB — mismo dedo, fila inferior
+ * SK(⇧) thumb izq middle: sticky shift para acceder a cualquier símbolo shifted sin hold
+ * SK(⇧) thumb izq outer: sticky shift para fila 3 (mismo dedo, acceso rápido)
  * ,------------------------------------.                ,-----------------------------------.
  * |REPT |1/!  |2/@  |3/#  |4/$  |5/%   |                |6/^  |7/&  |8/*  |9/(  |0/)  |DEL |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
- * | TAB |BSPC | <   | >   | :   |  ?   |                | -/_ | =/+ | \/| | `/~ |     |    |
+ * | TAB |BSPC |  ·  |  ·  |  ·  |  ·   |                | -/_ | =/+ | \/| | `/~ |     |    |
  * |-----+-----+-----+-----+-----+------|                |-----+-----+-----+-----+-----+----|
  * | SK  |     |     |     |     |      |                | [/{ | ]/} |     |     |     |RET |
  * `-------------------------------------'                `----------------------------------'
- *         |TOG1  | MO7  |SPACE|                             |     |     |    |
+ *         |TOG1  |SK(⇧)|SPACE|                             |     |     |    |
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
             display-name = "Sym";
             bindings = <
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
-                &kp TAB    &kp BSPC  &kp LT   &kp GT   &kp COLON &kp QMARK  &num_sym UNDER MINUS  &num_sym PLUS EQUAL  &num_sym PIPE BSLH  &num_sym TILDE GRAVE  &none  &none
+                &kp TAB    &kp BSPC  &none    &none    &none     &none      &num_sym UNDER MINUS  &num_sym PLUS EQUAL  &num_sym PIPE BSLH  &num_sym TILDE GRAVE  &none  &none
                 &sk LSHFT  &none     &none    &none    &none    &none       &num_sym LBRC LBKT   &num_sym RBRC RBKT   &none               &none               &none  &kp RET
-                                      &tog 1   &trans   &kp SPACE             &trans    &trans    &trans
+                                      &tog 1   &sk LSHFT  &kp SPACE             &trans    &trans    &trans
             >;
         };
 

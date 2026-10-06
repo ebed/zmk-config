@@ -278,10 +278,10 @@ window.onload = function() { show('home'); };
     <div class="kb-row">
       <div class="kb-key kb-extra active L1" id="l1-k-tab"><span class="kl">TAB</span></div>
       <div class="kb-key active L1" id="l1-k-a"><span class="kl">BSPC</span></div>
-      <div class="kb-key active L1" id="l1-k-r"><span class="kl">&lt;</span></div>
-      <div class="kb-key active L1" id="l1-k-s"><span class="kl">&gt;</span></div>
-      <div class="kb-key active L1" id="l1-k-t"><span class="kl">:</span></div>
-      <div class="kb-key active L1" id="l1-k-g"><span class="kl">?</span></div>
+      <div class="kb-key dim" id="l1-k-r"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-s"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-t"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-g"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L1" id="l1-k-m"><span class="kl">-/_</span></div>
       <div class="kb-key active L1" id="l1-k-n"><span class="kl">=/+</span></div>
@@ -307,7 +307,7 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L1" id="l1-k-cpsw"><span class="kl">TOG1</span><span class="km">lock</span></div>
-      <div class="kb-key kb-thumb inherited" id="l1-k-gui"><span class="kl">MO7</span></div>
+      <div class="kb-key kb-thumb active L1" id="l1-k-gui"><span class="kl">SK(⇧)</span><span class="km">sticky</span></div>
       <div class="kb-key kb-thumb active L1" id="l1-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l1-k-mo2"><span class="kl">·</span></div>
@@ -318,9 +318,9 @@ window.onload = function() { show('home'); };
   <ul class="notes">
     <li><b>REPT</b>: repite el último key en cualquier layer</li>
     <li><b>1/!</b> … <b>0/)</b>: tap=número, hold=símbolo</li>
-    <li>Izq home: <b>BSPC · &lt; · &gt; · : · ?</b> — símbolos frecuentes en código</li>
     <li>Der home/bot: tap=base, hold=Shift+base (280ms) — <b>-/_ =/+ \/| `/~ [/{ ]/}</b></li>
-    <li><b>SK</b>: Sticky Shift (tap=1 char, doble=sticky, triple=CapsLock)</li>
+    <li><b>SK(⇧)</b> thumb izq middle: sticky shift — tap SK, luego cualquier tecla con ⇧ (<b>: ? &lt; &gt; _ | "</b> etc.)</li>
+    <li><b>SK</b> fila 3 outer: mismo pero acceso rápido desde meñique izq</li>
     <li><b>TOG1</b>: bloquea/desbloquea Layer 1 — hold MO1 + tap MO2</li>
   </ul>
 </div>

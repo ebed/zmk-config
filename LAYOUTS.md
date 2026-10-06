@@ -36,19 +36,19 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,---------------------------------------------.        ,--------------------------------------------.
 | REPT |1/!  |2/@   |3/#   |4/$   |5/%        |        |6/^   |7/&  |8/*   |9/(   |0/)   | DEL   |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
-| TAB  |BSPC |  <   |  >   |  :   |  ?        |        | -/_  | =/+ | \/|  | `/~  |      |       |
+| TAB  |BSPC |  ·   |  ·   |  ·   |  ·        |        | -/_  | =/+ | \/|  | `/~  |      |       |
 |------+-----+------+------+------+-----------|        |------+-----+------+------+------+-------|
 |  SK  |     |      |      |      |           |        | [/{  | ]/} |      |      |      | RET   |
 '------+-----+------+------+------+-----------'        '------+-----+------+------+------+-------'
-             |TOG1  | MO7  | SPACE|                         |     |      |     |
+             |TOG1  |SK(⇧)| SPACE|                         |     |      |     |
              '------+------+------'                         '-----+------+-----'
 ```
 
 - `REPT` (`&key_repeat`): repite el último key en cualquier layer
 - `1/!` … `0/)`: tap=número, hold=símbolo Shift+número (280ms)
-- `SK`: Sticky Shift (tap=1 char, doble=sticky, triple=CapsLock)
+- `SK` (fila 3 izq outer): Sticky Shift — tap=1 char con ⇧ · doble=lock
+- `SK(⇧)` (thumb izq middle): Sticky Shift — tap SK, luego la tecla que quieras con ⇧ (ej: `:`, `?`, `<`, `>`)
 - `TOG1` (`&tog 1`): bloquea/desbloquea Layer 1 — hold MO1 (der middle) + tap izq outer
-- Izq home row: `BSPC` · `<` · `>` · `:` · `?` — símbolos frecuentes en código
 - Der home/bot: tap=base, hold=Shift+base (280ms, tap-preferred) — patrón igual a fila numérica
   - `-/_` tap=`-` hold=`_` · `=/+` tap=`=` hold=`+` · `\/|` tap=`\` hold=`|` · `` `/~ `` tap=`` ` `` hold=`~`
   - `[/{` tap=`[` hold=`{` · `]/}` tap=`]` hold=`}`
