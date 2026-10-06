@@ -335,49 +335,49 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L2" id="l2-k-w"><span class="kl">⌘⇧←</span><span class="km">sel inicio línea</span></div>
       <div class="kb-key active L2" id="l2-k-f"><span class="kl">⌘⇧→</span><span class="km">sel fin línea</span></div>
       <div class="kb-key dim" id="l2-k-p"><span class="kl">·</span></div>
-      <div class="kb-key active L2" id="l2-k-b"><span class="kl">DEL</span></div>
+      <div class="kb-key dim" id="l2-k-b"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L2" id="l2-k-j"><span class="kl">⇧HOME</span><span class="km">sel inicio</span></div>
+      <div class="kb-key dim" id="l2-k-j"><span class="kl">·</span></div>
       <div class="kb-key active L2" id="l2-k-l"><span class="kl">WJ←</span><span class="km">⌥←</span></div>
       <div class="kb-key active L2" id="l2-k-u"><span class="kl">↑</span></div>
       <div class="kb-key active L2" id="l2-k-y"><span class="kl">WJ→</span><span class="km">⌥→</span></div>
-      <div class="kb-key active L2" id="l2-k-semi"><span class="kl">⇧END</span><span class="km">sel fin</span></div>
-      <div class="kb-key kb-extra active L2" id="l2-k-bspc"><span class="kl">⌫</span></div>
+      <div class="kb-key active L2" id="l2-k-semi"><span class="kl">HOME</span></div>
+      <div class="kb-key kb-extra active L2" id="l2-k-bspc"><span class="kl">PGUP</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l2-k-tab"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-a"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-a"><span class="kl">⌘A</span><span class="km">sel all</span></div>
       <div class="kb-key active L2" id="l2-k-r"><span class="kl">⌘←</span><span class="km">línea inicio</span></div>
-      <div class="kb-key active L2" id="l2-k-s"><span class="kl">⌘Z</span><span class="km">undo</span></div>
-      <div class="kb-key active L2" id="l2-k-t"><span class="kl">⌘⇧Z</span><span class="km">redo</span></div>
+      <div class="kb-key dim" id="l2-k-s"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-t"><span class="kl">·</span></div>
       <div class="kb-key active L2" id="l2-k-g"><span class="kl">⌘→</span><span class="km">línea fin</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key dim" id="l2-k-m"><span class="kl">·</span></div>
       <div class="kb-key active L2" id="l2-k-n"><span class="kl">←</span></div>
       <div class="kb-key active L2" id="l2-k-e"><span class="kl">↓</span></div>
       <div class="kb-key active L2" id="l2-k-i"><span class="kl">→</span></div>
-      <div class="kb-key active L2" id="l2-k-o"><span class="kl">HOME</span></div>
-      <div class="kb-key active L2" id="l2-k-apos"><span class="kl">PGUP</span></div>
+      <div class="kb-key active L2" id="l2-k-o"><span class="kl">END</span></div>
+      <div class="kb-key active L2" id="l2-k-apos"><span class="kl">PGDN</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l2-k-ctrl"><span class="kl">MOUSE</span><span class="km">tog8</span></div>
-      <div class="kb-key active L2" id="l2-k-z"><span class="kl">⌘A</span><span class="km">sel all</span></div>
-      <div class="kb-key dim" id="l2-k-x"><span class="kl">·</span></div>
+      <div class="kb-key active L2" id="l2-k-z"><span class="kl">⌘Z</span><span class="km">undo</span></div>
+      <div class="kb-key active L2" id="l2-k-x"><span class="kl">⌘⇧Z</span><span class="km">redo</span></div>
       <div class="kb-key active L2" id="l2-k-c"><span class="kl">CPY/X</span><span class="km">⌘C/⌘X</span></div>
       <div class="kb-key dim" id="l2-k-d"><span class="kl">·</span></div>
       <div class="kb-key active L2" id="l2-k-v"><span class="kl">⌘V</span><span class="km">paste</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L2" id="l2-k-k"><span class="kl">SEL↑</span><span class="km">⇧↑</span></div>
-      <div class="kb-key active L2" id="l2-k-h"><span class="kl">SEL←</span><span class="km">⇧←</span></div>
-      <div class="kb-key active L2" id="l2-k-comma"><span class="kl">SEL↓</span><span class="km">⇧↓</span></div>
-      <div class="kb-key active L2" id="l2-k-dot"><span class="kl">SEL→</span><span class="km">⇧→</span></div>
-      <div class="kb-key active L2" id="l2-k-slash"><span class="kl">END</span></div>
-      <div class="kb-key kb-extra active L2" id="l2-k-ret"><span class="kl">PGDN</span></div>
+      <div class="kb-key active L2" id="l2-k-k"><span class="kl">KT(⇧)</span><span class="km">toggle</span></div>
+      <div class="kb-key dim" id="l2-k-h"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-comma"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-dot"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-ret"><span class="kl">·</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L3" id="l2-k-cpsw"><span class="kl">MO3</span><span class="km">→Sys</span></div>
       <div class="kb-key kb-thumb active L4" id="l2-k-gui"><span class="kl">MO4</span><span class="km">→Fn</span></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb active L2" id="l2-k-mo7"><span class="kl">SK(⇧)</span><span class="km">sticky</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo2"><span class="kl">·</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">·</span></div>
@@ -385,10 +385,12 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li>Izquierdo: edición — <b>⌘←/→</b>=inicio/fin línea · <b>⌘⇧←/→</b>=sel inicio/fin línea · <b>⌘Z/⌘⇧Z</b>=undo/redo · <b>⌘A</b>=select all · <b>CPY/X</b>=⌘C/⌘X · <b>⌘V</b>=paste · <b>DEL</b>=forward delete</li>
-    <li>Derecho fila 1: <b>⇧HOME</b>=sel inicio doc · <b>WJ←/→</b>=⌥←/→ (word jump) · <b>⇧END</b>=sel fin doc</li>
-    <li>Derecho fila 3: <b>SEL↑/←/↓/→</b>=⇧+flecha</li>
-    <li><b>Layer 7 Apps</b>: hold MO7 (izq-med)</li>
+    <li>Izquierdo: <b>⌘A</b>=sel all (A) · <b>⌘←/→</b>=inicio/fin línea · <b>⌘⇧←/→</b>=sel inicio/fin línea · <b>⌘V</b>=paste</li>
+    <li>Bot row mnemonics: <b>⌘Z</b>=undo (Z) · <b>⌘⇧Z</b>=redo (X) · <b>CPY/X</b>=⌘C/⌘X (C) · <b>⌘V</b>=paste (V)</li>
+    <li>Derecho fila 1: <b>WJ←/→</b>=⌥←/→ (word jump) · <b>HOME</b>=inicio doc · <b>PGUP</b>=pág arriba</li>
+    <li>Derecho fila 2: flechas · <b>END</b>=fin doc · <b>PGDN</b>=pág abajo</li>
+    <li><b>SK(⇧)</b> thumb izq inner: sticky shift — 1 tap=1 key · 2 taps=lock · hold=normal</li>
+    <li><b>KT(⇧)</b> K-pos der: toggle shift para 1 mano — tap activa/desactiva</li>
   </ul>
 </div>
 
@@ -667,8 +669,8 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-n"><span class="kl">CLU</span><span class="km">⌥⌘⇧N</span></div>
       <div class="kb-key inherited" id="l7-k-e"><span class="kl">↓</span></div>
       <div class="kb-key inherited" id="l7-k-i"><span class="kl">→</span></div>
-      <div class="kb-key inherited" id="l7-k-o"><span class="kl">HOME</span></div>
-      <div class="kb-key inherited" id="l7-k-apos"><span class="kl">PGUP</span></div>
+      <div class="kb-key inherited" id="l7-k-o"><span class="kl">END</span></div>
+      <div class="kb-key inherited" id="l7-k-apos"><span class="kl">PGDN</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L7" id="l7-k-ctrl"><span class="kl">⌃⇧Tab</span></div>
@@ -678,12 +680,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-d"><span class="kl">SJMP</span><span class="km">⌘K</span></div>
       <div class="kb-key dim" id="l7-k-v"><span class="kl">·</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key inherited" id="l7-k-k"><span class="kl">SEL↑</span></div>
-      <div class="kb-key inherited" id="l7-k-h"><span class="kl">SEL←</span></div>
-      <div class="kb-key inherited" id="l7-k-comma"><span class="kl">SEL↓</span></div>
-      <div class="kb-key inherited" id="l7-k-dot"><span class="kl">SEL→</span></div>
-      <div class="kb-key inherited" id="l7-k-slash"><span class="kl">END</span></div>
-      <div class="kb-key kb-extra inherited" id="l7-k-ret"><span class="kl">PGDN</span></div>
+      <div class="kb-key inherited" id="l7-k-k"><span class="kl">KT(⇧)</span></div>
+      <div class="kb-key dim" id="l7-k-h"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-comma"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-dot"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l7-k-ret"><span class="kl">·</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb inherited" id="l7-k-cpsw"><span class="kl">CW/L6</span></div>

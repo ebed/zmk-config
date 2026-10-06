@@ -59,23 +59,25 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
-|      |     |⌘⇧←  |⌘⇧→  |     | DEL          |        |⇧HOME| WJ← | ↑   | WJ→ |⇧END | BSPC  |
+|      |     |⌘⇧←  |⌘⇧→  |     |             |        |     | WJ← | ↑   | WJ→ |HOME | PGUP  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|      |     | ⌘←  | ⌘Z  | ⌘⇧Z | ⌘→           |        |SWJ← | ←   | ↓   | →   |HOME | PGUP  |
+|      | ⌘A  | ⌘←  |     |     | ⌘→           |        |     | ←   | ↓   | →   |END  | PGDN  |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|MOUSE | ⌘A  |     |CPY/X|     | ⌘V           |        |SWJ→ |SEL← |SEL↓ |SEL→ |END  | PGDN  |
+|MOUSE | ⌘Z  | ⌘⇧Z |CPY/X|     | ⌘V           |        |KT(⇧)|     |     |     |     |       |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
-             | MO3 | MO4 |      |                           |     |     |[hld]|
+             | MO3 | MO4 | SK(⇧)|                          |     |     |[hld]|
              '-----+-----+------'                           '-----+-----+-----'
 ```
 
-- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `⌘Z/⌘⇧Z`=undo/redo · `⌘A`=select all · `CPY/X`=copy/cut · `⌘V`=paste · `DEL`=forward delete
-- `⌘A`: Select All — X-position (anular izq), tap directo
+- Izquierdo: edición de texto — `⌘←/→`=inicio/fin línea · `⌘⇧←/→`=sel inicio/fin línea · `CPY/X`=copy/cut · `⌘V`=paste
+- Mnemonics izq bot row: `⌘Z`=undo (Z-key) · `⌘⇧Z`=redo (X-key) · `CPY/X`=copy/cut (C-key) · `⌘V`=paste (V-key)
+- `⌘A`: Select All — A-key (meñique home row izq), tap directo
 - `CPY/X`: tap=⌘C copy / hold=⌘X cut (300ms, tap-preferred)
-- `MOUSE`: toggle Layer 8 (reubicado desde V)
-- Derecho fila 1: `⇧HOME`=sel inicio doc · `WJ←/→`=⌥←/→ (word jump) · `⇧END`=sel fin doc
-- Derecho fila 2: `SWJ←/→` = ⌥⇧←/→ (word select) — col inner
-- Derecho fila 3: `SEL←/↓/→` = Shift+flecha
+- `MOUSE`: toggle Layer 8 (meñique izq inferior)
+- Derecho fila 1: `WJ←/→`=⌥←/→ (word jump) · `HOME`=inicio doc · `PGUP`=página arriba
+- Derecho fila 2: `←↓→`=flechas · `END`=fin doc · `PGDN`=página abajo
+- `SK(⇧)` (thumb izq inner): sticky shift — tap=siguiente key con ⇧ · doble tap=⇧ lock
+- `KT(⇧)` (K-pos der, fila 3 índice): toggle shift — tap=activa/desactiva; para uso con 1 mano
 - `MO3` (pulgar izq outer) → Sys layer — izq outer, mano libre mientras MO2 sostiene der
 - `MO4` (pulgar izq middle) → Fn layer
 
@@ -264,5 +266,5 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `[held]` | tecla mantenida para activar la capa |
 | `SPC+MO2` | combo (left inner + right outer) → Layer 3 (Sys) |
 | `WJ←/→` | word jump (⌥←/→) |
-| `⇧HOME` / `⇧END` | selección al inicio/fin de línea |
-| `SEL↑/←/↓/→` | selección de texto (Shift+flecha) |
+| `SK(⇧)` | sticky shift — tap=1 key con ⇧, doble tap=⇧ lock |
+| `KT(⇧)` | key toggle shift — tap=activa, tap=desactiva |
