@@ -10,11 +10,13 @@ Teclado Corne (CRKBD) split 42 teclas, nice!nano v2, ZMK v0.3.0 + zmk-nice-oled.
 | `config/corne.conf` | Opciones Kconfig (BT, RGB, OLED, sleep) |
 | `config/west.yml` | Versión de ZMK y módulos (pinear revisiones, no usar `main`) |
 | `LAYOUTS.md` / `README.md` | Documentación de capas (ASCII art, tablas) |
-| `hammerspoon/`, `scripts/` | Atajos macOS que acompañan la capa Mac/Apps |
+| `hammerspoon/`, `scripts/` | Popup de capas y atajos macOS (`setup-hammerspoon.sh`) |
+| `tmux/tmux.conf` | Config de tmux (prefix `Ctrl+A`) que asume el Layer 9; se instala con `scripts/setup-tmux.sh` |
 
 ## Reglas
 
 - Todo cambio en `corne.keymap` (capas, combos, behaviors) **actualiza `LAYOUTS.md` y `README.md` en el mismo commit** (o un `docs:` inmediato). Detalle en esos archivos; leer solo la sección de la capa tocada (`offset`/`limit`).
+- Un cambio en `tmux/tmux.conf` (prefix, binds) obliga a revisar el Layer 9 y su doc/popup.
 - Mantener 42 bindings por capa y el índice de capas coherente con los `MO/TOG/LT` que las referencian; al insertar o reordenar una capa, revisar todas las referencias.
 - Validar con CI antes de dar algo por hecho: `git push` y revisar el run (`gh run list --limit 3`, `gh run view --log-failed`). No declarar "funciona" solo por compilar: el comportamiento se prueba en el teclado.
 - Cambios de Kconfig/west: uno por commit, para poder bisecar si el firmware deja de arrancar.

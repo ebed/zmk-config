@@ -305,6 +305,17 @@ Behavior `&tmx KEY` = `Ctrl+A` + KEY. **Mnemónico: la tecla física se llama ig
 | `REPT` pos. / `V` | `$` / `C-l` | Renombrar sesión / última sesión |
 | `B` / `M` | `[` / `]` | Copy-mode / pegar |
 
+### Instalar la config de tmux en otra máquina
+
+El Layer 9 asume el prefix `Ctrl+A` y los binds de `tmux/tmux.conf`. Para replicarlos:
+
+```bash
+git clone git@github.com:ebed/zmk-config.git && cd zmk-config
+./scripts/setup-tmux.sh        # instala tmux si falta y enlaza tmux/tmux.conf → ~/.tmux.conf
+```
+
+Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon).
+
 ### Display switching (lado derecho, fila inferior)
 
 Requiere [Rectangle](https://rectangleapp.com/).
