@@ -79,6 +79,7 @@ body {
 .L6 { --lc: #44ff99; --lb: #002012; }
 .L7 { --lc: #bb88ff; --lb: #160022; }
 .L9 { --lc: #ffd84a; --lb: #1e1a00; }
+.L10 { --lc: #00d4d4; --lb: #001e1e; }
 .content { flex: 1; overflow: auto; padding: 18px 22px; }
 .view { display: none; }
 /* HOME */
@@ -156,6 +157,7 @@ window.onload = function() { show('home'); };
   <div class="ni sub L7" data-l="7" onclick="show('7')"><span class="lbadge L7">7 Apps</span><span class="lhow">MO7</span></div>
   <div class="ni sub" data-l="8" onclick="show('8')" style="--lbb:#0088cc"><span class="lbadge" style="background:#0088cc">8 Mouse</span><span class="lhow">tog8</span></div>
   <div class="ni sub L9" data-l="9" onclick="show('9')"><span class="lbadge L9">9 Tmux</span><span class="lhow">hold TAB</span></div>
+  <div class="ni sub L10" data-l="10" onclick="show('10')"><span class="lbadge L10">10 Wez</span><span class="lhow">hold ESC</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
 </nav>
@@ -182,6 +184,7 @@ window.onload = function() { show('home'); };
     <div class="tr tsub L4" onclick="show('4')"><span class="tbadge L4">Fn 4</span><span class="thow">hold <b>BSPC</b></span></div>
     <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>MO7</b> (izq-med)</span></div>
     <div class="tr tsub L9" onclick="show('9')"><span class="tbadge L9">Tmux 9</span><span class="thow">hold <b>TAB</b> (izq home) · prefix Ctrl+A</span></div>
+    <div class="tr tsub L10" onclick="show('10')"><span class="tbadge L10">Wez 10</span><span class="thow">hold <b>ESC</b> (izq top) · shortcuts WezTerm</span></div>
     <div class="tr L5" onclick="show('5')"><span class="tbadge L5">Mac 5</span><span class="thow">hold <b>RET/L5</b> (der-ext)</span></div>
     <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>CW/L6</b> (izq-ext)</span></div>
   </div>
@@ -193,7 +196,7 @@ window.onload = function() { show('home'); };
   <div class="dhdr L0"><div class="dnum L0">0</div><div><div class="dname">Base</div><div class="dhow">Colemak-DH + HRM — siempre activo</div></div></div>
   <div class="kb">
     <div class="kb-row">
-      <div class="kb-key kb-extra active L0" id="l0-k-esc"><span class="kl">ESC</span></div>
+      <div class="kb-key kb-extra active L10" id="l0-k-esc"><span class="kl">ESC</span><span class="km">Wez10</span></div>
       <div class="kb-key" id="l0-k-q"><span class="kl">Q</span></div>
       <div class="kb-key" id="l0-k-w"><span class="kl">W</span></div>
       <div class="kb-key" id="l0-k-f"><span class="kl">F</span></div>
@@ -248,7 +251,7 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li><b>ESC</b>: tap=ESC (plain)</li>
+    <li><b>ESC</b>: tap=ESC / hold=Layer 10 (WezTerm)</li>
     <li><b>CW/L6</b>: tap=CapsWord / hold=Layer 6 (Lang)</li>
     <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
     <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
@@ -852,6 +855,75 @@ window.onload = function() { show('home'); };
     <li>Derecho home: <b>N=LCLK E=MCLK I=RCLK O=MB4 '=MB5</b> — índice→medio→anular→meñique</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
     <li><b>EXIT</b>: pulgar izq outer (L8) o L2 extra-col izq (REPT-pos)</li>
+  </ul>
+</div>
+
+<!-- LAYER 10 — WezTerm -->
+<div id="v-10" class="view L10">
+  <div class="dhdr L10"><div class="dnum L10">10</div><div><div class="dname">WezTerm</div><div class="dhow">hold ESC (izq top pinky) — shortcuts CMD+key / OPT+key directos</div></div></div>
+  <div class="kb">
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l10-k-esc"><span class="kl">[hld]</span></div>
+      <div class="kb-key active L10" id="l10-k-q"><span class="kl">NTAB</span><span class="km">⌘T</span></div>
+      <div class="kb-key active L10" id="l10-k-w"><span class="kl">CTAB</span><span class="km">⌘W</span></div>
+      <div class="kb-key active L10" id="l10-k-f"><span class="kl">CPANE</span><span class="km">⌘⇧W</span></div>
+      <div class="kb-key active L10" id="l10-k-p"><span class="kl">TABS</span><span class="km">⌘⇧E</span></div>
+      <div class="kb-key active L10" id="l10-k-b"><span class="kl">LNCH</span><span class="km">⌘⇧M</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active L10" id="l10-k-j"><span class="kl">TAB←</span><span class="km">⌘[</span></div>
+      <div class="kb-key active L10" id="l10-k-l"><span class="kl">TAB→</span><span class="km">⌘]</span></div>
+      <div class="kb-key active L10" id="l10-k-u"><span class="kl">PAN↑</span><span class="km">⌥K</span></div>
+      <div class="kb-key active L10" id="l10-k-y"><span class="kl">MOV←</span><span class="km">⌘⇧[</span></div>
+      <div class="kb-key active L10" id="l10-k-semi"><span class="kl">MOV→</span><span class="km">⌘⇧]</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-bspc"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l10-k-tab"><span class="kl">·</span></div>
+      <div class="kb-key active L10" id="l10-k-a"><span class="kl">WS←</span><span class="km">⌘⌃[</span></div>
+      <div class="kb-key active L10" id="l10-k-r"><span class="kl">WS→</span><span class="km">⌘⌃]</span></div>
+      <div class="kb-key active L10" id="l10-k-s"><span class="kl">WSSL</span><span class="km">⌘⇧O</span></div>
+      <div class="kb-key active L10" id="l10-k-t"><span class="kl">WSNW</span><span class="km">⌘⇧N</span></div>
+      <div class="kb-key dim" id="l10-k-g"><span class="kl">·</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key dim" id="l10-k-m"><span class="kl">·</span></div>
+      <div class="kb-key active L10" id="l10-k-n"><span class="kl">PAN←</span><span class="km">⌥H</span></div>
+      <div class="kb-key active L10" id="l10-k-e"><span class="kl">PAN↓</span><span class="km">⌥J</span></div>
+      <div class="kb-key active L10" id="l10-k-i"><span class="kl">PAN→</span><span class="km">⌥L</span></div>
+      <div class="kb-key active L10" id="l10-k-o"><span class="kl">PSEL</span><span class="km">⌘⇧P</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-apos"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l10-k-ctrl"><span class="kl">·</span></div>
+      <div class="kb-key active L10" id="l10-k-z"><span class="kl">RNM</span><span class="km">⌘,</span></div>
+      <div class="kb-key active L10" id="l10-k-x"><span class="kl">SPLH</span><span class="km">⌘D</span></div>
+      <div class="kb-key active L10" id="l10-k-c"><span class="kl">SPLV</span><span class="km">⌘⇧D</span></div>
+      <div class="kb-key active L10" id="l10-k-d"><span class="kl">ZOM</span><span class="km">⌘Z</span></div>
+      <div class="kb-key dim" id="l10-k-v"><span class="kl">·</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key dim" id="l10-k-k"><span class="kl">·</span></div>
+      <div class="kb-key active L10" id="l10-k-h"><span class="kl">RES←</span><span class="km">⌘⌥←</span></div>
+      <div class="kb-key active L10" id="l10-k-comma"><span class="kl">RES↑</span><span class="km">⌘⌥↑</span></div>
+      <div class="kb-key active L10" id="l10-k-dot"><span class="kl">RES↓</span><span class="km">⌘⌥↓</span></div>
+      <div class="kb-key active L10" id="l10-k-slash"><span class="kl">RES→</span><span class="km">⌘⌥→</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-ret"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row kb-center">
+      <div class="kb-key kb-thumb dim" id="l10-k-cpsw"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-gui"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-sep" style="width:24px"></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-mo2"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-mo1"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-sym5"><span class="kl">·</span></div>
+    </div>
+  </div>
+  <ul class="notes">
+    <li><b>Izq top — tabs:</b> NTAB=⌘T · CTAB=⌘W · CPANE=⌘⇧W · TABS=⌘⇧E (navigator) · LNCH=⌘⇧M (launcher)</li>
+    <li><b>Izq home — workspaces:</b> WS←=⌘⌃[ · WS→=⌘⌃] · WSSL=⌘⇧O (selector) · WSNW=⌘⇧N (nuevo)</li>
+    <li><b>Izq bot — gestión pane:</b> RNM=⌘, (prefs/rename) · SPLH=⌘D · SPLV=⌘⇧D · ZOM=⌘Z (zoom toggle)</li>
+    <li><b>Der fila 1 — tabs/mover:</b> TAB←=⌘[(J) · TAB→=⌘](L) · PAN↑=⌥K(U) · MOV←=⌘⇧[(Y) · MOV→=⌘⇧](;)</li>
+    <li><b>Der home — nav panes (espeja L9):</b> PAN←=⌥H(N) · PAN↓=⌥J(E) · PAN→=⌥L(I) · PSEL=⌘⇧P(O)</li>
+    <li><b>Der bot — resize:</b> RES←=⌘⌥←(H) · RES↑=⌘⌥↑(,) · RES↓=⌘⌥↓(.) · RES→=⌘⌥→(/)</li>
   </ul>
 </div>
 
