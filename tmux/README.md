@@ -90,8 +90,22 @@ Idempotente. Como es un symlink, editar `~/.tmux.conf` edita el archivo del repo
 |-------|--------|----------|
 | `prefix` `[` | Entrar copy-mode | `M`-pos home row der |
 | `v` (en copy-mode) | Iniciar selección | — |
-| `y` (en copy-mode) | Copiar y salir → Mac clipboard | — |
+| `y` (en copy-mode) | Copiar y salir → clipboard (ver cadena abajo) | — |
 | `prefix` `]` | Pegar | `O`-pos home row der |
+
+### Cadena de clipboard (`y`)
+
+`y` usa `copy-pipe-and-cancel` que dispara **en paralelo** el script helper y `set-clipboard on` (OSC 52 nativo de tmux). El script (`~/.local/bin/tmux-yank`, instalado por `setup-tmux.sh`) prueba en orden:
+
+| Prioridad | Herramienta | Cuándo actúa |
+|-----------|-------------|--------------|
+| 1 | `pbcopy` | macOS (siempre disponible) |
+| 2 | `xclip` | Linux con `$DISPLAY` (SSH + X forwarding) |
+| 3 | `wl-copy` | Linux Wayland |
+| 4 | OSC 52 manual (DCS passthrough) | Cualquier terminal que lo soporte sin pasar por tmux |
+| 5 | `set-clipboard on` (tmux nativo) | Siempre activo como capa base; WezTerm, iTerm2, kitty |
+
+Si ninguna herramienta nativa existe (SSH puro sin X), el flujo cae a OSC 52 — que en WezTerm llega al portapapeles del Mac automáticamente.
 
 ## Barra de estado
 

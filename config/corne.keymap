@@ -39,7 +39,7 @@
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <200>;
             flavor = "balanced";
@@ -62,7 +62,7 @@
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <400>;
+            tapping-term-ms = <280>;
             quick-tap-ms = <175>;
             require-prior-idle-ms = <200>;
             flavor = "balanced";
