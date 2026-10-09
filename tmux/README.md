@@ -2,6 +2,19 @@
 
 Config de tmux que acompaña al **Layer 9 (Tmux)** del teclado. Se versiona aquí para replicarla en otras máquinas.
 
+## Arquitectura terminal: WezTerm local + tmux remoto
+
+| Capa | Herramienta | Rol |
+|------|-------------|-----|
+| **Local (Mac)** | WezTerm | Tabs, splits, temas, fuentes, OSC — sin tmux |
+| **Remoto (SSH)** | tmux | Sesiones persistentes, multiplexado, clipboard vía OSC 52 |
+
+**Por qué no tmux local:** WezTerm ya provee tabs y splits nativos con GPU rendering, ligaduras y mejor integración macOS. Agregar tmux encima duplica el multiplexado sin beneficio.
+
+**Por qué tmux remoto:** sesiones persistentes que sobreviven desconexiones, navegación sin ratón, estado compartido entre terminales. Indispensable en SSH.
+
+**Clipboard bridge:** `set-clipboard on` + WezTerm `allow-passthrough on` → el texto copiado en tmux remoto llega al portapapeles del Mac vía OSC 52 sin plugins adicionales.
+
 ## Instalación
 
 ```bash
@@ -14,50 +27,88 @@ Config de tmux que acompaña al **Layer 9 (Tmux)** del teclado. Se versiona aqu�
 | 2 | Enlaza `~/.tmux.conf` → `tmux/tmux.conf` (respalda uno distinto como `~/.tmux.conf.bak`) |
 | 3 | Recarga la config en el servidor tmux activo, si hay uno |
 
-Idempotente. Como es un symlink, editar `~/.tmux.conf` edita el archivo del repo: commitea los cambios.
+Idempotente. Como es un symlink, editar `~/.tmux.conf` edita el archivo del repo.
 
 ## Opciones
 
 | Opción | Efecto |
 |--------|--------|
-| Prefix `Ctrl+A` | Reemplaza `Ctrl+B`. `Ctrl+A Ctrl+A` envía un `Ctrl+A` real a la app |
+| Prefix `Ctrl+A` | Reemplaza `Ctrl+B`. `Ctrl+A Ctrl+A` envía un `Ctrl+A` real |
 | `mouse on` | Click, scroll y resize con el mouse |
 | `base-index 1`, `pane-base-index 1` | Ventanas y panes desde 1; `renumber-windows on` evita huecos |
-| `tmux-256color` + RGB | True color (neovim) |
-| `escape-time 0`, `focus-events on` | Sin delay en ESC |
-| `mode-keys vi` | Copy-mode con teclas vi (`v` selecciona, `y` copia y sale) |
-| Barra de estado arriba | Tema oscuro; sesión a la izquierda, hora y fecha a la derecha |
+| `history-limit 50000` | 50 k líneas de scroll-back |
+| `tmux-256color` + `Tc` override | True color (Neovim, Catppuccin) |
+| `allow-passthrough on` | OSC 52 pasa de remoto al Mac vía WezTerm |
+| `set-clipboard on` | tmux usa OSC 52 para copiar al portapapeles del host |
+| `escape-time 0`, `focus-events on` | Sin delay en ESC; eventos de foco a la app |
+| `mode-keys vi` | Copy-mode vi: `v` selecciona, `y` copia y sale |
+| `update-environment SSH_AUTH_SOCK` | Refresca el socket del agente SSH en reconexión |
+| Barra arriba: `sesión · hostname` | Identifica la máquina remota de un vistazo |
+| Tema Catppuccin Mocha | Mismo tema que el entorno local |
+| `-r` en resize | `H J K L` son repetibles sin re-pulsar el prefix |
 
 ## Atajos propios (prefix = `Ctrl+A`)
 
-| Atajo | Acción | Tecla en Layer 9 (hold `TAB` +) |
-|-------|--------|---------------------------------|
-| `prefix` `\|` | Split lado a lado, mismo directorio | `U` |
-| `prefix` `-` | Split apilado, mismo directorio | `Y` |
-| `prefix` `h j k l` | Ir al pane ← ↓ ↑ → | `H` `J` `K` `L` |
-| `prefix` `H J K L` | Redimensionar 5 celdas ← ↓ ↑ → | `E` `I` `O` `'` |
-| `prefix` `r` | Recargar `~/.tmux.conf` | `R` |
-| `prefix` `s` | Árbol de sesiones y ventanas | `S` |
-| `prefix` `Ctrl+L` | Última sesión | `V` |
+### Sesiones y ventanas
 
-## Atajos de tmux por defecto que también usa el layer
+| Atajo | Acción | Tecla L9 (hold TAB +) |
+|-------|--------|----------------------|
+| `prefix` `,` | Renombrar ventana | `ESC`-pos |
+| `prefix` `$` | Renombrar sesión | `REPT`-pos |
+| `prefix` `p` / `n` | Ventana anterior / siguiente | `P`-pos / `B`-pos |
+| `prefix` `1`–`5` | Ir a ventana 1–5 | `Q W F` / `A T` |
+| `prefix` `c` | Nueva ventana | `C`-pos |
+| `prefix` `d` | Detach sesión | `D`-pos |
+| `prefix` `r` | Recargar `~/.tmux.conf` | `R`-pos |
+| `prefix` `s` | Árbol de sesiones | `S`-pos |
+| `prefix` `;` | Último pane | `G`-pos |
+| `prefix` `C-l` | Última sesión | `V`-pos |
 
-| Atajo | Acción | Tecla en Layer 9 |
-|-------|--------|------------------|
-| `prefix` `c` / `n` / `p` | Nueva / siguiente / anterior ventana | `C` / `N` / `P` |
-| `prefix` `1`-`5` | Ir a la ventana N | `Q` `W` `F` `A` `T` |
-| `prefix` `z` | Zoom del pane | `Z` |
-| `prefix` `x` / `&` | Cerrar pane / ventana | `X` / tecla `,` |
-| `prefix` `d` | Detach | `D` |
-| `prefix` `;` | Último pane | `G` |
-| `prefix` `,` / `$` | Renombrar ventana / sesión | `ESC`-pos. / `REPT`-pos. |
-| `prefix` `[` / `]` | Copy-mode / pegar | `B` / `M` |
+### Splits y panes
 
-Mapa completo del layer: [LAYOUTS.md](../LAYOUTS.md#layer-9--tmux-hold-tab). El popup `⌥⌘⇧H` de Hammerspoon también lo muestra.
+| Atajo | Acción | Tecla L9 |
+|-------|--------|----------|
+| `prefix` `\|` | Split horizontal (mismo dir) | `J`-pos fila 1 der |
+| `prefix` `-` | Split vertical (mismo dir) | `L`-pos fila 1 der |
+| `prefix` `h` / `j` / `k` / `l` | Ir al pane ← ↓ ↑ → | `N E` / `U`-pos / `I`-pos |
+| `prefix` `z` | Zoom pane | `Z`-pos |
+| `prefix` `x` | Cerrar pane | `X`-pos |
+| `prefix` `&` | Cerrar ventana | `/`-pos fila 3 der |
+
+### Resize (repetible con `-r`)
+
+| Atajo | Acción | Tecla L9 |
+|-------|--------|----------|
+| `prefix` `H` | Resize ← 5 celdas | `K`-pos fila 3 der |
+| `prefix` `J` | Resize ↓ 5 celdas | `H`-pos fila 3 der |
+| `prefix` `K` | Resize ↑ 5 celdas | `,`-pos fila 3 der |
+| `prefix` `L` | Resize → 5 celdas | `.`-pos fila 3 der |
+
+### Copy-mode vi
+
+| Atajo | Acción | Tecla L9 |
+|-------|--------|----------|
+| `prefix` `[` | Entrar copy-mode | `M`-pos home row der |
+| `v` (en copy-mode) | Iniciar selección | — |
+| `y` (en copy-mode) | Copiar y salir → Mac clipboard | — |
+| `prefix` `]` | Pegar | `O`-pos home row der |
+
+## Barra de estado
+
+```
+ sesión  hostname    1:zsh  ●2:nvim  3:ssh    │ 14:30  │ 09/10
+```
+
+- **Izquierda:** nombre de sesión (mauve) + hostname (blue) — esencial para identificar máquina en SSH
+- **Centro:** ventanas; activa con `●`, inactiva atenuada, actividad en amarillo
+- **Derecha:** hora (green) · fecha (teal)
+- **Borde de pane activo:** azul; formato muestra el comando corriendo en el pane
 
 ## Notas
 
-- `bind l` reemplaza el `last-window` por defecto de tmux (`prefix l`); para volver a la ventana previa usa `prefix p`/`n` o `prefix w`.
+- `bind l` reemplaza `last-window` por defecto (`prefix l`); para volver a la ventana previa usa `p`/`n`.
 - `%` y `"` quedan desvinculados a propósito: usa `|` y `-`.
-- Si cambias el prefix o un bind aquí, actualiza el Layer 9 (`config/corne.keymap`, `LAYOUTS.md`, `README.md` y `hammerspoon/init.lua`).
-- TPM (`~/.tmux/plugins/tpm`) puede estar instalado, pero esta config no declara plugins.
+- Si cambias el prefix o un bind aquí, actualiza Layer 9 (`config/corne.keymap`, `LAYOUTS.md`, `README.md`, `hammerspoon/init.lua`).
+- Esta config no usa TPM ni plugins — todo nativo.
+
+Mapa completo del layer: [LAYOUTS.md](../LAYOUTS.md#layer-9--tmux-hold-tab). El popup `⌥⌘⇧H` también lo muestra.

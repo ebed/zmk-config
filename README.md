@@ -316,6 +316,15 @@ Behavior `&tmx KEY` = `Ctrl+A` + KEY. El cluster de nav de panes espeja L2 Nav (
 | `K`-pos `H`-pos `,`-pos `.`-pos | fila 3 der | `H` `J` `K` `L` | Resize ← ↓ ↑ → |
 | `/`-pos | fila 3 der | `&` | Cerrar ventana |
 
+### Arquitectura terminal: WezTerm local + tmux remoto
+
+| Capa | Herramienta | Rol |
+|------|-------------|-----|
+| **Local (Mac)** | WezTerm | Tabs, splits, temas, fuentes, OSC — sin tmux |
+| **Remoto (SSH)** | tmux | Sesiones persistentes, multiplexado, clipboard vía OSC 52 |
+
+WezTerm ya provee tabs y splits nativos con GPU rendering: agregar tmux local duplicaría el multiplexado sin beneficio. En remoto, tmux es indispensable para sesiones que sobreviven desconexiones. El clipboard fluye del remoto al Mac automáticamente vía OSC 52 (`set-clipboard on` + `allow-passthrough on` en WezTerm).
+
 ### Instalar la config de tmux en otra máquina
 
 El Layer 9 asume el prefix `Ctrl+A` y los binds de `tmux/tmux.conf`. Para replicarlos:
@@ -325,7 +334,7 @@ git clone git@github.com:ebed/zmk-config.git && cd zmk-config
 ./scripts/setup-tmux.sh        # instala tmux si falta y enlaza tmux/tmux.conf → ~/.tmux.conf
 ```
 
-Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Detalle de opciones y atajos: [tmux/README.md](tmux/README.md). Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon).
+Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Detalle completo: [tmux/README.md](tmux/README.md). Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon).
 
 ### Display switching (lado derecho, fila inferior)
 
