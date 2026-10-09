@@ -15,9 +15,10 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **2 Nav** | hold `MO2` | Mouse, flechas, word-jump, selección |
 | **3 Sys** | hold `MO3` (bot-der) o combo `SPC+MO2` | BT, media, RGB, brillo, lock |
 | **4 Fn** | hold `BSP/L4` | F1–F12 |
-| **5 Mac** | hold `RET/L5` | macOS, Rectangle, tmux, undo/redo, browser, display |
+| **5 Mac** | hold `RET/L5` | macOS, Rectangle, undo/redo, browser, display |
 | **6 Lang** | hold `CW/L6` | Español: ´ ~ ¨ ¿ ¡ |
 | **7 Apps** | hold `MO7` | Zoom, Slack, WezTerm, Claude Desktop |
+| **9 Tmux** | hold `TAB` | tmux (prefix Ctrl+A): panes, ventanas, splits, resize |
 
 **Thumbs y teclas especiales (Layer 0):**
 
@@ -105,7 +106,7 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 | Input | Output |
 |-------|--------|
 | Tap | ↵ Return |
-| Hold | Layer 5 (Mac shortcuts / Rectangle / tmux) |
+| Hold | Layer 5 (Mac shortcuts / Rectangle) |
 
 ### `BSP/L4` — Top-right (BSPC / Fn layer)
 
@@ -286,17 +287,18 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 | `M` | `⌘[` | Browser/Finder — atrás |
 | `O` | `⌘]` | Browser/Finder — adelante |
 
-### Macros tmux (lado derecho, prefix = `Ctrl+B`)
+### Layer 9 Tmux (hold `TAB`, prefix = `Ctrl+A`)
 
-| Tecla | Secuencia tmux | Acción |
-|-------|----------------|--------|
-| `E` | `Ctrl+B`, `d` | Detach sesión |
-| `I` | `Ctrl+B`, `z` | Zoom/unzoom pane activo |
-| `,` | `Ctrl+B`, `c` | Nueva ventana |
-| `.` | `Ctrl+B`, `%` | Split vertical (paneles lado a lado) |
-| `/` | `Ctrl+B`, `"` | Split horizontal (paneles apilados) |
+Behavior `&tmx KEY` = `Ctrl+A` + KEY. Layout completo en [LAYOUTS.md](LAYOUTS.md).
 
-> **Nota tmux:** con HRM ya tenés `Ctrl+B` — hold `S` (→ LCTRL) + tap `B`. Los macros sirven para secuencias de dos pasos en un solo key.
+| Zona | Teclas | Acción |
+|------|--------|--------|
+| Der, home | `h j l` (+ `k` arriba) | Panes ← ↓ → ↑ (misma geometría que Nav) |
+| Der, abajo | `H J K L` | Resize 5 celdas |
+| Der, arriba | `z ; \| -` | Zoom, último pane, split horizontal, split vertical |
+| Izq, arriba | `[` `1-5` | Copy-mode, ir a ventana |
+| Izq, home | `c p n $ s` | Nueva/anterior/siguiente ventana, renombrar sesión, árbol |
+| Izq, abajo | `, x & d r C-l` | Renombrar ventana, kill pane/ventana, detach, reload, última sesión |
 
 ### Display switching (lado derecho, fila inferior)
 
