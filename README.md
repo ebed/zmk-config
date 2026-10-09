@@ -314,7 +314,7 @@ git clone git@github.com:ebed/zmk-config.git && cd zmk-config
 ./scripts/setup-tmux.sh        # instala tmux si falta y enlaza tmux/tmux.conf → ~/.tmux.conf
 ```
 
-Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon).
+Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Detalle de opciones y atajos: [tmux/README.md](tmux/README.md). Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon).
 
 ### Display switching (lado derecho, fila inferior)
 
