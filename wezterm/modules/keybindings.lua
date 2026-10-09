@@ -74,6 +74,18 @@ local function configure_tab_keys()
         end),
       },
     },
+    -- CMD+, → renombrar tab actual (mismo mnemónico que tmux prefix+,)
+    {
+      key = ',', mods = 'CMD',
+      action = act.PromptInputLine {
+        description = 'Renombrar tab',
+        action = wezterm.action_callback(function(window, pane, line)
+          if line and line ~= '' then
+            window:mux_window():active_tab():set_title(line:match('^%s*(.-)%s*$'))
+          end
+        end),
+      },
+    },
     { key = 'w', mods = 'CMD',       action = act.CloseCurrentTab { confirm = true } },
 
     -- Tab reordering (mover tabs izquierda/derecha)
