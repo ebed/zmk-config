@@ -89,12 +89,12 @@ fi
 YANK_SRC="$REPO_DIR/tmux/yank.sh"
 YANK_DEST="$HOME/.local/bin/tmux-yank"
 mkdir -p "$HOME/.local/bin"
+chmod +x "$YANK_SRC"   # siempre: sin bit de ejecución tmux falla en silencio (bind lleva "2>/dev/null; true")
 
 if [ -L "$YANK_DEST" ] && [ "$(readlink "$YANK_DEST")" = "$YANK_SRC" ]; then
     ok "tmux-yank symlink correcto"
 else
     ln -sf "$YANK_SRC" "$YANK_DEST"
-    chmod +x "$YANK_SRC"
     ok "tmux-yank instalado: $YANK_DEST"
 fi
 
