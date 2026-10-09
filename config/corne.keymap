@@ -436,27 +436,27 @@
         };
 
 /* ### Layer 9 — Tmux  (hold TAB en L0)  prefix = Ctrl+A, cada tecla envía prefix + tecla
- * MNEMÓNICO: la letra de la tecla física = la letra de tmux (c=new, p=prev, n=next, x=kill, d=detach...).
- * Símbolos/números: 1-3 en Q W F, 4/5 en A T. Resize = Shift+hjkl en E I O ' (← ↓ ↑ →).
+ * Izquierda: gestión (ventanas, sesiones, panes). Derecha: nav cluster = L2 arrows.
+ * Nav panes: h← j↓ l→ en home row der (N E I) + k↑ en U; resize H J K L en fila 3 der.
  * ,------------------------------------.                ,------------------------------------.
- * |  ,  |  1  |  2  |  3  |  p  |  [  |                |  j  |  l  |  |  |  -  |     |     |
- * |renW |     |     |     |prev |copy |                |pane↓|pane→|spl-h|spl-v|     |     |
+ * |  ,  |  1  |  2  |  3  |  p  |  n  |                |  |  |  -  |  k  |     |     |     |
+ * |renW |     |     |     |prev |next |                |spl-h|spl-v|pane↑|     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |[hld]|  4  |  r  |  s  |  5  |  ;  |                |  ]  |  n  |  H  |  J  |  K  |  L  |
- * |     |     |reld |tree |     |last |                |paste|next |res← |res↓ |res↑ |res→ |
+ * |[hld]|  4  |  r  |  s  |  5  |  ;  |                |  [  |  h  |  j  |  l  |  ]  |     |
+ * |     |     |reld |tree |     |last |                |copy |pane←|pane↓|pane→|past |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |  $  |  z  |  x  |  c  |  d  | C-l |                |  k  |  h  |  &  |     |     |     |
- * |renS |zoom |kill-|new  |det. |last |                |pane↑|pane←|kill-|     |     |     |
- * |     |     |pane |win  |     |sess |                |     |     |win  |     |     |     |
+ * |  $  |  z  |  x  |  c  |  d  | C-l |                |  H  |  J  |  K  |  L  |  &  |     |
+ * |renS |zoom |kill-|new  |det. |last |                |res← |res↓ |res↑ |res→ |kill-|     |
+ * |     |     |pane |win  |     |sess |                |     |     |     |     |win  |     |
  * `-------------------------------------'               `------------------------------------'
  */
         tmux_layer {
             display-name = "Tmux";
             bindings = <
-                &tmx COMMA &tmx N1   &tmx N2   &tmx N3   &tmx P     &tmx LBKT    &tmx J     &tmx L      &tmx PIPE   &tmx MINUS  &none       &none
-                &trans     &tmx N4   &tmx R    &tmx S    &tmx N5    &tmx SEMI    &tmx RBKT  &tmx N      &tmx LS(H)  &tmx LS(J)  &tmx LS(K)  &tmx LS(L)
-                &tmx DLLR  &tmx Z    &tmx X    &tmx C    &tmx D     &tmx LC(L)   &tmx K     &tmx H      &tmx AMPS   &none       &none       &none
-                                     &trans    &trans    &trans                  &trans     &trans      &trans
+                &tmx COMMA &tmx N1   &tmx N2   &tmx N3   &tmx P     &tmx N       &tmx PIPE   &tmx MINUS  &tmx K      &none       &none       &none
+                &trans     &tmx N4   &tmx R    &tmx S    &tmx N5    &tmx SEMI    &tmx LBKT   &tmx H      &tmx J      &tmx L      &tmx RBKT   &none
+                &tmx DLLR  &tmx Z    &tmx X    &tmx C    &tmx D     &tmx LC(L)   &tmx LS(H)  &tmx LS(J)  &tmx LS(K)  &tmx LS(L)  &tmx AMPS   &none
+                                     &trans    &trans    &trans                   &trans      &trans      &trans
             >;
         };
     };

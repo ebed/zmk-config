@@ -731,12 +731,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-w"><span class="kl">Win 2</span><span class="km">ir a vent.</span></div>
       <div class="kb-key active L9" id="l9-k-f"><span class="kl">Win 3</span><span class="km">ir a vent.</span></div>
       <div class="kb-key active L9" id="l9-k-p"><span class="kl">Prev</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-b"><span class="kl">Copy</span><span class="km">modo copia</span></div>
+      <div class="kb-key active L9" id="l9-k-b"><span class="kl">Next</span><span class="km">ventana</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L9" id="l9-k-j"><span class="kl">Pane↓</span><span class="km">ir abajo</span></div>
-      <div class="kb-key active L9" id="l9-k-l"><span class="kl">Pane→</span><span class="km">ir der.</span></div>
-      <div class="kb-key active L9" id="l9-k-u"><span class="kl">Split</span><span class="km">izq | der</span></div>
-      <div class="kb-key active L9" id="l9-k-y"><span class="kl">Split</span><span class="km">sup / inf</span></div>
+      <div class="kb-key active L9" id="l9-k-j"><span class="kl">Split |</span><span class="km">izq | der</span></div>
+      <div class="kb-key active L9" id="l9-k-l"><span class="kl">Split -</span><span class="km">sup / inf</span></div>
+      <div class="kb-key active L9" id="l9-k-u"><span class="kl">Pane↑</span><span class="km">ir arriba</span></div>
+      <div class="kb-key dim" id="l9-k-y"><span class="kl">·</span></div>
       <div class="kb-key dim" id="l9-k-semi"><span class="kl">·</span></div>
       <div class="kb-key kb-extra dim" id="l9-k-bspc"><span class="kl">·</span></div>
     </div>
@@ -748,12 +748,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-t"><span class="kl">Win 5</span><span class="km">ir a vent.</span></div>
       <div class="kb-key active L9" id="l9-k-g"><span class="kl">Último</span><span class="km">pane</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L9" id="l9-k-m"><span class="kl">Pegar</span><span class="km">buffer</span></div>
-      <div class="kb-key active L9" id="l9-k-n"><span class="kl">Next</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-e"><span class="kl">Size←</span><span class="km">resize 5</span></div>
-      <div class="kb-key active L9" id="l9-k-i"><span class="kl">Size↓</span><span class="km">resize 5</span></div>
-      <div class="kb-key active L9" id="l9-k-o"><span class="kl">Size↑</span><span class="km">resize 5</span></div>
-      <div class="kb-key active L9" id="l9-k-apos"><span class="kl">Size→</span><span class="km">resize 5</span></div>
+      <div class="kb-key active L9" id="l9-k-m"><span class="kl">Copy</span><span class="km">modo [</span></div>
+      <div class="kb-key active L9" id="l9-k-n"><span class="kl">Pane←</span><span class="km">ir izq.</span></div>
+      <div class="kb-key active L9" id="l9-k-e"><span class="kl">Pane↓</span><span class="km">ir abajo</span></div>
+      <div class="kb-key active L9" id="l9-k-i"><span class="kl">Pane→</span><span class="km">ir der.</span></div>
+      <div class="kb-key active L9" id="l9-k-o"><span class="kl">Pegar</span><span class="km">buffer ]</span></div>
+      <div class="kb-key dim" id="l9-k-apos"><span class="kl">·</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L9" id="l9-k-ctrl"><span class="kl">Renom.</span><span class="km">sesión $</span></div>
@@ -763,11 +763,11 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-d"><span class="kl">Detach</span><span class="km">sesión</span></div>
       <div class="kb-key active L9" id="l9-k-v"><span class="kl">Última</span><span class="km">sesión</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L9" id="l9-k-k"><span class="kl">Pane↑</span><span class="km">ir arriba</span></div>
-      <div class="kb-key active L9" id="l9-k-h"><span class="kl">Pane←</span><span class="km">ir izq.</span></div>
-      <div class="kb-key active L9" id="l9-k-comma"><span class="kl">Cerrar</span><span class="km">ventana &</span></div>
-      <div class="kb-key dim" id="l9-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l9-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key active L9" id="l9-k-k"><span class="kl">Size←</span><span class="km">resize H</span></div>
+      <div class="kb-key active L9" id="l9-k-h"><span class="kl">Size↓</span><span class="km">resize J</span></div>
+      <div class="kb-key active L9" id="l9-k-comma"><span class="kl">Size↑</span><span class="km">resize K</span></div>
+      <div class="kb-key active L9" id="l9-k-dot"><span class="kl">Size→</span><span class="km">resize L</span></div>
+      <div class="kb-key active L9" id="l9-k-slash"><span class="kl">Cerrar</span><span class="km">ventana &</span></div>
       <div class="kb-key kb-extra dim" id="l9-k-ret"><span class="kl">·</span></div>
     </div>
     <div class="kb-row kb-center">
@@ -781,9 +781,10 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li>Cada tecla: arriba la <b>acción</b>, abajo el objeto · <b>mnemónico</b>: la tecla física = la letra de tmux (<b>C</b> nueva, <b>N</b>/<b>P</b> next/prev, <b>X</b> cerrar pane, <b>D</b> detach, <b>Z</b> zoom, <b>R</b> reload, <b>S</b> árbol, <b>H J K L</b> panes)</li>
-    <li>Ventanas <b>1-3</b> en Q W F, <b>4/5</b> en A T · splits en U (<b>|</b>) e Y (<b>-</b>) · resize <b>Shift+hjkl</b> en E I O ' (← ↓ ↑ →)</li>
-    <li>Otros: <b>,</b> renombrar ventana (ESC pos.) · <b>&amp;</b> cerrar ventana (tecla coma) · <b>$</b> renombrar sesión (REPT pos.) · <b>C-l</b> última sesión (V)</li>
+    <li><b>Izquierda:</b> mnemonics — <b>C</b>=nueva vent. · <b>X</b>=cerrar pane · <b>D</b>=detach · <b>Z</b>=zoom · <b>R</b>=reload · <b>S</b>=árbol sesiones · <b>P</b>=prev / <b>N</b>(B-pos)=next (adyacentes)</li>
+    <li><b>Derecha home row — nav panes:</b> <b>h</b>(N) ← · <b>j</b>(E) ↓ · <b>l</b>(I) → · <b>k</b>(U, fila 1) ↑ — mismo cluster físico que L2 Nav arrows</li>
+    <li><b>Derecha fila 3 — resize:</b> K-pos=H(←) · H-pos=J(↓) · ,-pos=K(↑) · .-pos=L(→) · /-pos=&amp;(kill-win)</li>
+    <li>Splits: J-pos=<b>|</b> · L-pos=<b>-</b> · Copy mode: M-pos=<b>[</b> · Paste: O-pos=<b>]</b> · Ventanas: <b>1-3</b> en Q W F · <b>4/5</b> en A T</li>
     </ul>
 </div>
 

@@ -252,24 +252,27 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ## Layer 9 — Tmux (hold TAB)
 
-Cada tecla envía el prefix `Ctrl+A` + la tecla (behavior `&tmx`). **Mnemónico:** la letra de la tecla física es la letra de tmux.
+Cada tecla envía el prefix `Ctrl+A` + la tecla (behavior `&tmx`). El cluster de navegación de panes espeja L2 Nav — mismas posiciones físicas que las flechas.
 
 ```
 ,------------------------------------.        ,------------------------------------.
-|  ,  |  1  |  2  |  3  |  p  |  [  |        |  j  |  l  |  |  |  -  |     |     |
-|renW |     |     |     |prev |copy |        |pane↓|pane→|spl-h|spl-v|     |     |
+|  ,  |  1  |  2  |  3  |  p  |  n  |        |  |  |  -  |  k  |     |     |     |
+|renW |     |     |     |prev |next |        |spl-h|spl-v|pane↑|     |     |     |
 |-----+-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----+-----|
-|[hld]|  4  |  r  |  s  |  5  |  ;  |        |  ]  |  n  |  H  |  J  |  K  |  L  |
-|     |     |reld |tree |     |last |        |paste|next |res← |res↓ |res↑ |res→ |
+|[hld]|  4  |  r  |  s  |  5  |  ;  |        |  [  |  h  |  j  |  l  |  ]  |     |
+|     |     |reld |tree |     |last |        |copy |pane←|pane↓|pane→|past |     |
 |-----+-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----+-----|
-|  $  |  z  |  x  |  c  |  d  | C-l |        |  k  |  h  |  &  |     |     |     |
-|renS |zoom |kill-|new  |det. |last |        |pane↑|pane←|kill-|     |     |     |
-|     |     |pane |win  |     |sess |        |     |     |win  |     |     |     |
+|  $  |  z  |  x  |  c  |  d  | C-l |        |  H  |  J  |  K  |  L  |  &  |     |
+|renS |zoom |kill-|new  |det. |last |        |res← |res↓ |res↑ |res→ |kill-|     |
+|     |     |pane |win  |     |sess |        |     |     |     |     |win  |     |
 '-----+-----+-----+-----+-----+-----'        '-----+-----+-----+-----+-----+-----'
 ```
 
-- Letras = letras de tmux: `c` nueva ventana, `n`/`p` siguiente/anterior, `x` cerrar pane, `d` detach, `z` zoom, `r` reload, `s` árbol, `h j k l` panes
-- Números: `1-3` en Q W F, `4`/`5` en A T · splits `|` y `-` en U Y · resize `Shift+hjkl` en E I O ' (← ↓ ↑ →)
+- **Izquierda — gestión:** mnemonics directos: `c`=new-win · `x`=kill-pane · `d`=detach · `z`=zoom · `r`=reload · `s`=session-tree · `p`=prev-win (P-pos) · `n`=next-win (B-pos, adyacente a P)
+- **Derecha home row — nav panes:** `h`(N-pos)=pane-← · `j`(E-pos)=pane-↓ · `l`(I-pos)=pane-→ · `k`(U-pos)=pane-↑ — mismo cluster físico que L2 Nav arrows
+- **Derecha fila 3 — resize:** `H`(K-pos)=res← · `J`(H-pos)=res↓ · `K`(,-pos)=res↑ · `L`(.-pos)=res→ · `&`(/-pos)=kill-window
+- Copy/paste: `[`=M-pos (home row izq der, entrada copy mode) · `]`=O-pos (paste)
+- Números: `1-3` en Q W F · `4/5` en A T · splits `|`(J-pos) y `-`(L-pos) en fila 1 der
 - Activación: hold `TAB` (`&lt 9 TAB`); tap sigue siendo TAB
 
 ---
