@@ -726,48 +726,48 @@ window.onload = function() { show('home'); };
   <div class="dhdr L9"><div class="dnum L9">9</div><div><div class="dname">Tmux</div><div class="dhow">hold TAB (izq home) — cada tecla envía Ctrl+A + tecla</div></div></div>
   <div class="kb">
     <div class="kb-row">
-      <div class="kb-key kb-extra active L9" id="l9-k-esc"><span class="kl">Copy</span><span class="km">modo copia</span></div>
+      <div class="kb-key kb-extra active L9" id="l9-k-esc"><span class="kl">Renom.</span><span class="km">ventana ,</span></div>
       <div class="kb-key active L9" id="l9-k-q"><span class="kl">Win 1</span><span class="km">ir a vent.</span></div>
       <div class="kb-key active L9" id="l9-k-w"><span class="kl">Win 2</span><span class="km">ir a vent.</span></div>
       <div class="kb-key active L9" id="l9-k-f"><span class="kl">Win 3</span><span class="km">ir a vent.</span></div>
-      <div class="kb-key active L9" id="l9-k-p"><span class="kl">Win 4</span><span class="km">ir a vent.</span></div>
-      <div class="kb-key active L9" id="l9-k-b"><span class="kl">Win 5</span><span class="km">ir a vent.</span></div>
+      <div class="kb-key active L9" id="l9-k-p"><span class="kl">Prev</span><span class="km">ventana</span></div>
+      <div class="kb-key active L9" id="l9-k-b"><span class="kl">Copy</span><span class="km">modo copia</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key active L9" id="l9-k-j"><span class="kl">Zoom</span><span class="km">del pane</span></div>
-      <div class="kb-key active L9" id="l9-k-l"><span class="kl">Último</span><span class="km">pane</span></div>
-      <div class="kb-key active L9" id="l9-k-u"><span class="kl">Pane↑</span><span class="km">ir arriba</span></div>
-      <div class="kb-key active L9" id="l9-k-y"><span class="kl">Split</span><span class="km">izq | der</span></div>
-      <div class="kb-key active L9" id="l9-k-semi"><span class="kl">Split</span><span class="km">sup / inf</span></div>
+      <div class="kb-key active L9" id="l9-k-j"><span class="kl">Pane↓</span><span class="km">ir abajo</span></div>
+      <div class="kb-key active L9" id="l9-k-l"><span class="kl">Pane→</span><span class="km">ir der.</span></div>
+      <div class="kb-key active L9" id="l9-k-u"><span class="kl">Split</span><span class="km">izq | der</span></div>
+      <div class="kb-key active L9" id="l9-k-y"><span class="kl">Split</span><span class="km">sup / inf</span></div>
+      <div class="kb-key dim" id="l9-k-semi"><span class="kl">·</span></div>
       <div class="kb-key kb-extra dim" id="l9-k-bspc"><span class="kl">·</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L9" id="l9-k-tab"><span class="kl">[hld]</span><span class="km">TAB</span></div>
-      <div class="kb-key active L9" id="l9-k-a"><span class="kl">Nueva</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-r"><span class="kl">Prev</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-s"><span class="kl">Next</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-t"><span class="kl">Renom.</span><span class="km">sesión</span></div>
-      <div class="kb-key active L9" id="l9-k-g"><span class="kl">Árbol</span><span class="km">sesiones</span></div>
+      <div class="kb-key active L9" id="l9-k-a"><span class="kl">Win 4</span><span class="km">ir a vent.</span></div>
+      <div class="kb-key active L9" id="l9-k-r"><span class="kl">Reload</span><span class="km">tmux.conf</span></div>
+      <div class="kb-key active L9" id="l9-k-s"><span class="kl">Árbol</span><span class="km">sesiones</span></div>
+      <div class="kb-key active L9" id="l9-k-t"><span class="kl">Win 5</span><span class="km">ir a vent.</span></div>
+      <div class="kb-key active L9" id="l9-k-g"><span class="kl">Último</span><span class="km">pane</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L9" id="l9-k-m"><span class="kl">Pegar</span><span class="km">buffer</span></div>
-      <div class="kb-key active L9" id="l9-k-n"><span class="kl">Pane←</span><span class="km">ir izq.</span></div>
-      <div class="kb-key active L9" id="l9-k-e"><span class="kl">Pane↓</span><span class="km">ir abajo</span></div>
-      <div class="kb-key active L9" id="l9-k-i"><span class="kl">Pane→</span><span class="km">ir der.</span></div>
-      <div class="kb-key dim" id="l9-k-o"><span class="kl">·</span></div>
-      <div class="kb-key kb-extra dim" id="l9-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key active L9" id="l9-k-n"><span class="kl">Next</span><span class="km">ventana</span></div>
+      <div class="kb-key active L9" id="l9-k-e"><span class="kl">Size←</span><span class="km">resize 5</span></div>
+      <div class="kb-key active L9" id="l9-k-i"><span class="kl">Size↓</span><span class="km">resize 5</span></div>
+      <div class="kb-key active L9" id="l9-k-o"><span class="kl">Size↑</span><span class="km">resize 5</span></div>
+      <div class="kb-key active L9" id="l9-k-apos"><span class="kl">Size→</span><span class="km">resize 5</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra active L9" id="l9-k-ctrl"><span class="kl">Renom.</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-z"><span class="kl">Cerrar</span><span class="km">pane</span></div>
-      <div class="kb-key active L9" id="l9-k-x"><span class="kl">Cerrar</span><span class="km">ventana</span></div>
-      <div class="kb-key active L9" id="l9-k-c"><span class="kl">Detach</span><span class="km">sesión</span></div>
-      <div class="kb-key active L9" id="l9-k-d"><span class="kl">Reload</span><span class="km">tmux.conf</span></div>
+      <div class="kb-key kb-extra active L9" id="l9-k-ctrl"><span class="kl">Renom.</span><span class="km">sesión $</span></div>
+      <div class="kb-key active L9" id="l9-k-z"><span class="kl">Zoom</span><span class="km">del pane</span></div>
+      <div class="kb-key active L9" id="l9-k-x"><span class="kl">Cerrar</span><span class="km">pane</span></div>
+      <div class="kb-key active L9" id="l9-k-c"><span class="kl">Nueva</span><span class="km">ventana</span></div>
+      <div class="kb-key active L9" id="l9-k-d"><span class="kl">Detach</span><span class="km">sesión</span></div>
       <div class="kb-key active L9" id="l9-k-v"><span class="kl">Última</span><span class="km">sesión</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l9-k-k"><span class="kl">·</span></div>
-      <div class="kb-key active L9" id="l9-k-h"><span class="kl">Size←</span><span class="km">resize 5</span></div>
-      <div class="kb-key active L9" id="l9-k-comma"><span class="kl">Size↓</span><span class="km">resize 5</span></div>
-      <div class="kb-key active L9" id="l9-k-dot"><span class="kl">Size↑</span><span class="km">resize 5</span></div>
-      <div class="kb-key active L9" id="l9-k-slash"><span class="kl">Size→</span><span class="km">resize 5</span></div>
+      <div class="kb-key active L9" id="l9-k-k"><span class="kl">Pane↑</span><span class="km">ir arriba</span></div>
+      <div class="kb-key active L9" id="l9-k-h"><span class="kl">Pane←</span><span class="km">ir izq.</span></div>
+      <div class="kb-key active L9" id="l9-k-comma"><span class="kl">Cerrar</span><span class="km">ventana &</span></div>
+      <div class="kb-key dim" id="l9-k-dot"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l9-k-slash"><span class="kl">·</span></div>
       <div class="kb-key kb-extra dim" id="l9-k-ret"><span class="kl">·</span></div>
     </div>
     <div class="kb-row kb-center">
@@ -781,12 +781,10 @@ window.onload = function() { show('home'); };
     </div>
   </div>
   <ul class="notes">
-    <li>Cada tecla: arriba la <b>acción</b>, abajo el objeto (ventana = window, pane = panel, sesión = session)</li>
-    <li>Derecha: panes con la geometría de Nav (<b>h←  j↓  l→</b>, <b>k↑</b> arriba) · <b>Shift+hjkl</b> = resize 5</li>
-    <li>Splits: <b>|</b> horizontal (lado a lado), <b>-</b> vertical (apilados) · <b>z</b> zoom · <b>;</b> último pane</li>
-    <li>Izquierda: ventanas <b>1-5</b> (base-index 1), <b>c/p/n</b> nueva/prev/next, <b>$</b> renombrar sesión, <b>s</b> árbol</li>
-    <li>Fila baja: <b>, </b>renombrar ventana · <b>x</b> kill pane · <b>&amp;</b> kill ventana · <b>d</b> detach · <b>r</b> reload · <b>C-l</b> última sesión</li>
-  </ul>
+    <li>Cada tecla: arriba la <b>acción</b>, abajo el objeto · <b>mnemónico</b>: la tecla física = la letra de tmux (<b>C</b> nueva, <b>N</b>/<b>P</b> next/prev, <b>X</b> cerrar pane, <b>D</b> detach, <b>Z</b> zoom, <b>R</b> reload, <b>S</b> árbol, <b>H J K L</b> panes)</li>
+    <li>Ventanas <b>1-3</b> en Q W F, <b>4/5</b> en A T · splits en U (<b>|</b>) e Y (<b>-</b>) · resize <b>Shift+hjkl</b> en E I O ' (← ↓ ↑ →)</li>
+    <li>Otros: <b>,</b> renombrar ventana (ESC pos.) · <b>&amp;</b> cerrar ventana (tecla coma) · <b>$</b> renombrar sesión (REPT pos.) · <b>C-l</b> última sesión (V)</li>
+    </ul>
 </div>
 
 <!-- LAYER 8 — Mouse -->
@@ -989,15 +987,17 @@ local kcToKeyL7 = {
 
 -- Layer 9 (Tmux): macro sends Ctrl+A then the key (<=15ms later) → keycode (+shift/ctrl) → physical key ID
 local kcToKeyL9plain = {
-    [33]="esc", [18]="q", [19]="w", [20]="f", [21]="p", [23]="b",
-    [6]="j", [41]="l", [40]="u", [27]="semi",
-    [8]="a", [35]="r", [45]="s", [1]="g",
-    [30]="m", [4]="n", [38]="e", [37]="i",
-    [43]="ctrl", [7]="z", [2]="c", [15]="d",
+    [43]="esc", [18]="q", [19]="w", [20]="f", [35]="p", [33]="b",
+    [38]="j", [37]="l", [27]="y",
+    [21]="a", [15]="r", [1]="s", [23]="t", [41]="g",
+    [30]="m", [45]="n",
+    [6]="z", [7]="x", [8]="c", [2]="d",
+    [40]="k", [4]="h",
 }
 local kcToKeyL9shift = {
-    [21]="t", [26]="x", [42]="y",
-    [4]="h", [38]="comma", [40]="dot", [37]="slash",
+    [42]="u",                                   -- |
+    [4]="e", [38]="i", [40]="o", [37]="apos",   -- H J K L (resize)
+    [21]="ctrl", [26]="comma",                  -- $ &
 }
 local function kcToKeyL9(kc, flags)
     if flags.ctrl  then return kc == 37 and "v" or nil end
