@@ -213,12 +213,12 @@
         compatible = "zmk,keymap";
 
 /* ### Layer 0 — Base (Colemak-DH + HRM)
- * ESC = tap→ESC (plain)    combo J+L → ESC alternativo
+ * ESC = tap→ESC · hold→L10 (WezTerm)   combo J+L → ESC alternativo
  * Left thumb: CW/L6 (tap CapsWord·hold Lang) · MO7 (hold Apps).
  * Right: inner=tap RET/hold Mac5 · middle=MO1 · outer=MO2.   Combo SPC+MO2 → Sys 3.
  * DEL: meñique der inferior (Mouse toggle movido a L2 pos V).
  * ,----------------------------------.                ,----------------------------------.
- * | ESC |  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
+ * |ESC/W|  Q  |  W  |  F  |  P  |  B |                |  J  |  L  |  U  |  Y  |  ;  |BSPC|
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
  * | TAB |GUI/A|ALT/R|CTL/S|SHF/T|  G |                |  M  |SHF/N|CTL/E|ALT/I|GUI/O| '  |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+----|
@@ -230,7 +230,7 @@
         layer_0 {
             display-name = "Base";
             bindings = <
-                &kp ESC         &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
+                &lt 10 ESC      &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &lt 9 TAB       &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
                 &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp DEL
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 1  &mo 2
@@ -457,6 +457,32 @@
                 &trans     &tmx N4   &tmx R    &tmx S    &tmx N5    &tmx SEMI    &tmx LBKT   &tmx H      &tmx J      &tmx L      &tmx RBKT   &none
                 &tmx DLLR  &tmx Z    &tmx X    &tmx C    &tmx D     &tmx LC(L)   &tmx LS(H)  &tmx LS(J)  &tmx LS(K)  &tmx LS(L)  &tmx AMPS   &none
                                      &trans    &trans    &trans                   &trans      &trans      &trans
+            >;
+        };
+
+/* ### Layer 10 — WezTerm  (hold ESC en L0)  shortcuts CMD+key / OPT+key
+ * Izquierda: gestión (tabs, panes, workspaces). Derecha: nav cluster espeja L9 y L2.
+ * Nav panes: ⌥H← ⌥J↓ ⌥L→ en home row der (N E I) + ⌥K↑ en U; resize con ⌘⌥ en fila 3 der.
+ * ,-----------------------------------.                ,------------------------------------.
+ * |[hld]|NTAB |CTAB |CPANE|TABS |LNCH|                |TAB← |TAB→ |PAN↑ |MOV← |MOV→ |  ·  |
+ * |     |⌘T   |⌘W   |⌘⇧W  |⌘⇧E  |⌘⇧M |                |⌘[   |⌘]   |⌥K   |⌘⇧[  |⌘⇧]  |     |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
+ * |     |WS←  |WS→  |WSSL |WSNW |  · |                |  ·  |PAN← |PAN↓ |PAN→ |PSEL |  ·  |
+ * |     |⌘⌃[  |⌘⌃]  |⌘⇧O  |⌘⇧N  |    |                |     |⌥H   |⌥J   |⌥L   |⌘⇧P  |     |
+ * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
+ * |  ·  |RNM  |SPLH |SPLV |ZOM  |  · |                |  ·  |RES← |RES↑ |RES↓ |RES→ |  ·  |
+ * |     |⌘,   |⌘D   |⌘⇧D  |⌘Z   |    |                |     |⌘⌥←  |⌘⌥↑  |⌘⌥↓  |⌘⌥→  |     |
+ * `-----------------------------------'                `------------------------------------'
+ *         |     |     |     |                              |     |     |     |
+ *         `-----+-----+-----'                              `-----+-----+-----'
+ */
+        wezterm_layer {
+            display-name = "Wez";
+            bindings = <
+                &trans  &kp LG(T)          &kp LG(W)          &kp LG(LS(W))     &kp LG(LS(E))     &kp LG(LS(M))    &kp LG(LBKT)      &kp LG(RBKT)      &kp LA(K)           &kp LG(LS(LBKT))    &kp LG(LS(RBKT))    &none
+                &trans  &kp LG(LC(LBKT))   &kp LG(LC(RBKT))   &kp LG(LS(O))     &kp LG(LS(N))     &none            &none             &kp LA(H)         &kp LA(J)           &kp LA(L)           &kp LG(LS(P))       &none
+                &none   &kp LG(COMMA)      &kp LG(D)          &kp LG(LS(D))     &kp LG(Z)         &none            &none             &kp LG(LA(LEFT))  &kp LG(LA(UP))      &kp LG(LA(DOWN))    &kp LG(LA(RIGHT))   &none
+                                           &trans             &trans            &trans                              &trans            &trans            &trans
             >;
         };
     };

@@ -277,6 +277,86 @@ Cada tecla envía el prefix `Ctrl+A` + la tecla (behavior `&tmx`). El cluster de
 
 ---
 
+## Layer 10 — WezTerm (hold ESC)
+
+Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El cluster de nav derecho espeja L9 Tmux — mismas posiciones físicas para la misma dirección espacial.
+
+```
+,--------------------------------------------.        ,--------------------------------------------.
+|[hld]| NTAB| CTAB|CPANE| TABS| LNCH        |        |TAB← |TAB→ |PAN↑ |MOV← |MOV→ |  ·    |
+|     |  ⌘T |  ⌘W | ⌘⇧W | ⌘⇧E | ⌘⇧M        |        | ⌘[  |  ⌘] | ⌥K  | ⌘⇧[ | ⌘⇧] |       |
+|-----+-----+-----+-----+-----+------------|        |-----+-----+-----+-----+-----+-------|
+|     | WS← | WS→ |WSSL |WSNW |  ·          |        |  ·  |PAN← |PAN↓ |PAN→ |PSEL |  ·    |
+|     | ⌘⌃[ | ⌘⌃] | ⌘⇧O | ⌘⇧N |             |        |     | ⌥H  | ⌥J  | ⌥L  | ⌘⇧P |       |
+|-----+-----+-----+-----+-----+------------|        |-----+-----+-----+-----+-----+-------|
+|  ·  | RNM |SPLH |SPLV | ZOM |  ·          |        |  ·  |RES← |RES↑ |RES↓ |RES→ |  ·    |
+|     | ⌘,  | ⌘D  | ⌘⇧D | ⌘Z  |             |        |     | ⌘⌥← | ⌘⌥↑ | ⌘⌥↓ | ⌘⌥→ |       |
+'-----+-----+-----+-----+-----+------------'        '-----+-----+-----+-----+-----+-------'
+             |     |     |     |                          |     |     |     |
+             '-----+-----+-----'                          '-----+-----+-----'
+```
+
+**Izquierda — tabs:**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| Q — NTAB | `⌘T` | Nueva tab (con prompt de nombre) |
+| W — CTAB | `⌘W` | Cerrar tab |
+| F — CPANE | `⌘⇧W` | Cerrar pane |
+| P — TABS | `⌘⇧E` | Tab navigator (lista fuzzy) |
+| B — LNCH | `⌘⇧M` | Launcher (tabs + workspaces) |
+
+**Izquierda — workspaces (home row):**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| A — WS← | `⌘⌃[` | Workspace anterior |
+| R — WS→ | `⌘⌃]` | Workspace siguiente |
+| S — WSSL | `⌘⇧O` | Selector fuzzy de workspaces |
+| T — WSNW | `⌘⇧N` | Nuevo workspace (con nombre) |
+
+**Izquierda — splits + zoom (bot row):**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| Z — RNM | `⌘,` | Renombrar tab actual |
+| X — SPLH | `⌘D` | Split horizontal |
+| C — SPLV | `⌘⇧D` | Split vertical |
+| D — ZOM | `⌘Z` | Zoom pane (toggle) |
+
+**Derecha — nav panes (espeja L9, mismas posiciones físicas):**
+
+| Tecla | Posición | Shortcut | Acción |
+|-------|----------|----------|--------|
+| `N`-pos | home row | `⌥H` | Pane ← |
+| `E`-pos | home row | `⌥J` | Pane ↓ |
+| `I`-pos | home row | `⌥L` | Pane → |
+| `U`-pos | fila 1   | `⌥K` | Pane ↑ |
+| `O`-pos | home row | `⌘⇧P` | Selector interactivo de pane |
+
+**Derecha — tabs prev/next y mover (fila 1):**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| J — TAB← | `⌘[` | Tab anterior |
+| L — TAB→ | `⌘]` | Tab siguiente |
+| Y — MOV← | `⌘⇧[` | Mover tab izquierda |
+| ; — MOV→ | `⌘⇧]` | Mover tab derecha |
+
+**Derecha — resize panes (fila 3, espeja L9):**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| H-pos | `⌘⌥←` | Resize pane ← |
+| ,-pos | `⌘⌥↑` | Resize pane ↑ |
+| .-pos | `⌘⌥↓` | Resize pane ↓ |
+| /-pos | `⌘⌥→` | Resize pane → |
+
+- Activación: `&lt 10 ESC` — tap=ESC, hold=WezTerm layer
+- No hay macro `wez`: todos los bindings son `&kp LG(...)` / `&kp LA(...)` directos
+
+---
+
 ## Leyenda
 
 | Símbolo | Significado |

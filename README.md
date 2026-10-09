@@ -19,11 +19,13 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **6 Lang** | hold `CW/L6` | Español: ´ ~ ¨ ¿ ¡ |
 | **7 Apps** | hold `MO7` | Zoom, Slack, WezTerm, Claude Desktop |
 | **9 Tmux** | hold `TAB` | tmux (prefix Ctrl+A): panes, ventanas, splits, resize |
+| **10 WezTerm** | hold `ESC` | WezTerm: tabs, splits, nav panes, workspaces, resize |
 
 **Thumbs y teclas especiales (Layer 0):**
 
 | Posición | Tecla | Tap | Hold |
 |----------|-------|-----|------|
+| Top-izq (pinky col) | `ESC/W` | ESC | Layer 10 (WezTerm) |
 | Bot-izq (pinky row) | `REPT` | repite último key | — |
 | Izq externo (thumb) | `CW/L6` | CapsWord | Layer 6 (Lang) |
 | Izq medio (thumb) | `MO7` | — | Layer 7 (Apps) |
@@ -52,17 +54,18 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 
 ```
 Base (Layer 0) — siempre activa
-  └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
-       └─ hold MO2 (outer) → TOG1 (bloquea Layer 1 — numpad mode)
-       └─ tap inner right → MO3 → Sys (Layer 3)   [alternativa a combo]
-  └─ hold MO2 (pulgar der externo) → Nav (Layer 2)
-       └─ tap inner right → MO4 → Fn (Layer 4)
-  └─ combo SPC+MO2 (left inner + right outer) → Sys (Layer 3)   ← acceso directo
-  └─ hold BSP/L4 (top-der, BSPC) → Fn (Layer 4)                  ← acceso directo
+  └─ hold ESC (top-izq) → WezTerm (Layer 10)                       ← single key
+  └─ hold TAB (home-izq pinky) → Tmux (Layer 9)                    ← single key
   └─ hold MO7 (pulgar izq medio) → Apps (Layer 7)                  ← single key
   └─ hold RET/L5 (pulgar der interno) → Mac (Layer 5)              ← single key
   └─ hold CW/L6 (pulgar izq externo) → Lang (Layer 6)              ← single key
-  └─ tap CW/⌘ (bot-izq) → CapsWord / hold → ⌘ GUI
+  └─ hold MO1 (pulgar der medio) → Sym (Layer 1)
+       └─ hold MO2 (outer) → TOG1 (bloquea Layer 1 — numpad mode)
+  └─ hold MO2 (pulgar der externo) → Nav (Layer 2)
+       └─ tap outer left → MO3 → Sys (Layer 3)
+       └─ hold middle left TD4 → Fn (Layer 4)  ·  doble-tap → TOG Fn
+  └─ combo SPC+MO2 (left inner + right outer) → Sys (Layer 3)
+  └─ tap CW/L6 → CapsWord
 ```
 
 ---
@@ -316,6 +319,46 @@ Behavior `&tmx KEY` = `Ctrl+A` + KEY. El cluster de nav de panes espeja L2 Nav (
 | `K`-pos `H`-pos `,`-pos `.`-pos | fila 3 der | `H` `J` `K` `L` | Resize ← ↓ ↑ → |
 | `/`-pos | fila 3 der | `&` | Cerrar ventana |
 
+### Layer 10 — WezTerm (hold `ESC`)
+
+Activación: hold `ESC` (pinky izq top). Tap sigue siendo ESC. Layout completo en [LAYOUTS.md](LAYOUTS.md).
+
+**Izquierda — tabs:**
+
+| Tecla (hold ESC +) | Shortcut | Acción |
+|--------------------|----------|--------|
+| `Q` | `⌘T` | Nueva tab (prompt de nombre) |
+| `W` | `⌘W` | Cerrar tab |
+| `F` | `⌘⇧W` | Cerrar pane |
+| `P` | `⌘⇧E` | Tab navigator (lista fuzzy) |
+| `B` | `⌘⇧M` | Launcher (tabs + workspaces) |
+| `Z` | `⌘,` | Renombrar tab actual |
+| `X` | `⌘D` | Split horizontal |
+| `C` | `⌘⇧D` | Split vertical |
+| `D` | `⌘Z` | Zoom pane (toggle) |
+
+**Izquierda — workspaces (home row):**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `A` | `⌘⌃[` | Workspace anterior |
+| `R` | `⌘⌃]` | Workspace siguiente |
+| `S` | `⌘⇧O` | Selector fuzzy de workspaces |
+| `T` | `⌘⇧N` | Nuevo workspace |
+
+**Derecha — nav panes (cluster home row, espeja L9):**
+
+| Tecla | Posición | Shortcut | Acción |
+|-------|----------|----------|--------|
+| `N`-pos | home row | `⌥H` | Pane ← |
+| `E`-pos | home row | `⌥J` | Pane ↓ |
+| `I`-pos | home row | `⌥L` | Pane → |
+| `U`-pos | fila 1 | `⌥K` | Pane ↑ |
+| `O`-pos | home row | `⌘⇧P` | Selector interactivo de pane |
+| `J`-pos / `L`-pos | fila 1 | `⌘[` / `⌘]` | Tab anterior / siguiente |
+| `Y`-pos / `;`-pos | fila 1 | `⌘⇧[` / `⌘⇧]` | Mover tab ← / → |
+| `H`-pos `,`-pos `.`-pos `/`-pos | fila 3 | `⌘⌥←` `⌘⌥↑` `⌘⌥↓` `⌘⌥→` | Resize pane |
+
 ### Arquitectura terminal: WezTerm local + tmux remoto
 
 | Capa | Herramienta | Rol |
@@ -416,7 +459,7 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` 
 
 | Widget | Descripción |
 |--------|-------------|
-| Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac` / `Lang` / `Apps`) |
+| Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac` / `Lang` / `Apps` / `Tmux` / `Wez`) |
 | Bongo Cat | Idle: gato en reposo — typing: gato animado según WPM |
 
 ### Right OLED (periférico)
