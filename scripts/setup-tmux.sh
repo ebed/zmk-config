@@ -85,7 +85,26 @@ else
     ok "terminfo tmux-256color"
 fi
 
-# ── 4. Symlink ~/.tmux.conf → repo ───────────────────────────────────────────
+# ── 4. Clipboard helper tmux-yank ────────────────────────────────────────────
+YANK_SRC="$REPO_DIR/tmux/yank.sh"
+YANK_DEST="$HOME/.local/bin/tmux-yank"
+mkdir -p "$HOME/.local/bin"
+
+if [ -L "$YANK_DEST" ] && [ "$(readlink "$YANK_DEST")" = "$YANK_SRC" ]; then
+    ok "tmux-yank symlink correcto"
+else
+    ln -sf "$YANK_SRC" "$YANK_DEST"
+    chmod +x "$YANK_SRC"
+    ok "tmux-yank instalado: $YANK_DEST"
+fi
+
+# xclip en Linux para clipboard X11 (silencioso si no hay apt o ya está instalado)
+if command -v apt-get &>/dev/null && ! command -v xclip &>/dev/null; then
+    step "Instalando xclip (clipboard X11)..."
+    sudo apt-get install -y xclip 2>/dev/null && ok "xclip instalado" || warn "xclip no disponible — X11 clipboard no funcionará (OSC 52 sigue activo)"
+fi
+
+# ── 5. Symlink ~/.tmux.conf → repo ───────────────────────────────────────────
 if [ -L "$DEST" ]; then
     current="$(readlink "$DEST")"
     if [ "$current" = "$SRC" ]; then
@@ -109,14 +128,14 @@ else
     ok "Symlink creado: $DEST → $SRC"
 fi
 
-# ── 5. Reload en sesiones activas ─────────────────────────────────────────────
+# ── 6. Reload en sesiones activas ─────────────────────────────────────────────
 if tmux list-sessions &>/dev/null 2>&1; then
     tmux source-file "$DEST" && ok "Config recargada en el servidor tmux activo."
 else
     step "No hay servidor tmux activo — la config se cargará en la próxima sesión."
 fi
 
-# ── 6. Nota de clipboard en macOS (WezTerm) ──────────────────────────────────
+# ── 7. Nota de clipboard en macOS (WezTerm) ──────────────────────────────────
 if [[ "$(uname -s)" == "Darwin" ]]; then
     echo ""
     step "WezTerm (local): OSC 52 está habilitado por defecto — nada extra que configurar."
