@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh run:*)",
+      "Bash(gh workflow:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)"
+    ]
+  },
+  "skillOverrides": {
+    "auto-git": "off",
+    "spec-to-implementation": "off",
+    "task-orchestrator": "off"
+  }
+}
