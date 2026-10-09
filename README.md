@@ -289,16 +289,21 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 
 ### Layer 9 Tmux (hold `TAB`, prefix = `Ctrl+A`)
 
-Behavior `&tmx KEY` = `Ctrl+A` + KEY. Layout completo en [LAYOUTS.md](LAYOUTS.md).
+Behavior `&tmx KEY` = `Ctrl+A` + KEY. **Mnemónico: la tecla física se llama igual que en tmux.** Layout completo en [LAYOUTS.md](LAYOUTS.md).
 
-| Zona | Teclas | Acción |
-|------|--------|--------|
-| Der, home | `h j l` (+ `k` arriba) | Panes ← ↓ → ↑ (misma geometría que Nav) |
-| Der, abajo | `H J K L` | Resize 5 celdas |
-| Der, arriba | `z ; \| -` | Zoom, último pane, split horizontal, split vertical |
-| Izq, arriba | `[` `1-5` | Copy-mode, ir a ventana |
-| Izq, home | `c p n $ s` | Nueva/anterior/siguiente ventana, renombrar sesión, árbol |
-| Izq, abajo | `, x & d r C-l` | Renombrar ventana, kill pane/ventana, detach, reload, última sesión |
+| Tecla (hold TAB +) | Envía | Acción |
+|--------------------|-------|--------|
+| `C` / `N` / `P` | `c` `n` `p` | Nueva / siguiente / anterior ventana |
+| `Q` `W` `F` `A` `T` | `1` `2` `3` `4` `5` | Ir a ventana 1-5 |
+| `H` `J` `K` `L` | `h` `j` `k` `l` | Pane ← ↓ ↑ → |
+| `E` `I` `O` `'` | `H` `J` `K` `L` | Resize ← ↓ ↑ → (5 celdas) |
+| `U` / `Y` | `\|` / `-` | Split lado a lado / apilado |
+| `Z` / `X` / `D` | `z` `x` `d` | Zoom / cerrar pane / detach |
+| `R` / `S` / `G` | `r` `s` `;` | Reload config / árbol de sesiones / último pane |
+| `ESC` pos. (meñique izq. arriba) | `,` | Renombrar ventana |
+| `,` (tecla coma, fila inferior der.) | `&` | Cerrar ventana |
+| `REPT` pos. / `V` | `$` / `C-l` | Renombrar sesión / última sesión |
+| `B` / `M` | `[` / `]` | Copy-mode / pegar |
 
 ### Display switching (lado derecho, fila inferior)
 

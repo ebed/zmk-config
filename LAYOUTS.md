@@ -252,23 +252,24 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ## Layer 9 — Tmux (hold TAB)
 
-Cada tecla envía el prefix `Ctrl+A` seguido de la tecla (behavior `&tmx`, ver `~/.tmux.conf`).
+Cada tecla envía el prefix `Ctrl+A` + la tecla (behavior `&tmx`). **Mnemónico:** la letra de la tecla física es la letra de tmux.
 
 ```
-,-----------------------------------------.        ,-----------------------------------------.
-|  [   |  1  |  2  |  3  |  4  |  5       |        |  z  |  ;  |  k  |  |  |  -  |         |
-| copy |   ventanas 1-5                   |        |zoom |last |pane↑|spl-h|spl-v|         |
-|------+-----+-----+-----+-----+-----------|        |-----+-----+-----+-----+-----+---------|
-|[hld] |  c  |  p  |  n  |  $  |  s       |        |  ]  |  h  |  j  |  l  |     |         |
-|      | new |prev |next |ren-S|tree      |        |paste|pane←|pane↓|pane→|     |         |
-|------+-----+-----+-----+-----+-----------|        |-----+-----+-----+-----+-----+---------|
-|  ,   |  x  |  &  |  d  |  r  | C-l      |        |     |  H  |  J  |  K  |  L  |         |
-| ren-W|kill-|kill-|det. |reld |last-sess |        |     |       resize 5            |
-'------+-----+-----+-----+-----+-----------'        '-----+-----+-----+-----+-----+---------'
+,------------------------------------.        ,------------------------------------.
+|  ,  |  1  |  2  |  3  |  p  |  [  |        |  j  |  l  |  |  |  -  |     |     |
+|renW |     |     |     |prev |copy |        |pane↓|pane→|spl-h|spl-v|     |     |
+|-----+-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----+-----|
+|[hld]|  4  |  r  |  s  |  5  |  ;  |        |  ]  |  n  |  H  |  J  |  K  |  L  |
+|     |     |reld |tree |     |last |        |paste|next |res← |res↓ |res↑ |res→ |
+|-----+-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----+-----|
+|  $  |  z  |  x  |  c  |  d  | C-l |        |  k  |  h  |  &  |     |     |     |
+|renS |zoom |kill-|new  |det. |last |        |pane↑|pane←|kill-|     |     |     |
+|     |     |pane |win  |     |sess |        |     |     |win  |     |     |     |
+'-----+-----+-----+-----+-----+-----'        '-----+-----+-----+-----+-----+-----'
 ```
 
-- Derecha: panes con la geometría de Nav (h←  j↓  l→, k↑ arriba); Shift+hjkl = resize
-- Izquierda: ventanas 1-5 (`base-index 1`), c/p/n, sesiones (`$`, `s`, `C-l`), kill/detach en la fila baja
+- Letras = letras de tmux: `c` nueva ventana, `n`/`p` siguiente/anterior, `x` cerrar pane, `d` detach, `z` zoom, `r` reload, `s` árbol, `h j k l` panes
+- Números: `1-3` en Q W F, `4`/`5` en A T · splits `|` y `-` en U Y · resize `Shift+hjkl` en E I O ' (← ↓ ↑ →)
 - Activación: hold `TAB` (`&lt 9 TAB`); tap sigue siendo TAB
 
 ---
