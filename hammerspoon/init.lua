@@ -48,11 +48,18 @@ body {
 }
 .hdr {
   background: #0a0a0a; border-bottom: 1px solid #1e1e1e;
-  padding: 10px 18px; text-align: center;
+  padding: 10px 18px;
   font-size: 16px; font-weight: bold; color: #88aaff; letter-spacing: 3px;
-  flex-shrink: 0; cursor: pointer;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: space-between;
 }
-.hdr:hover { color: #aabbff; }
+.hdr-title { cursor: pointer; flex: 1; text-align: center; }
+.hdr-title:hover { color: #aabbff; }
+.pin-btn {
+  background: #1a1a1a; border: 1px solid #333; color: #555;
+  font-size: 11px; padding: 4px 12px; border-radius: 4px; cursor: pointer;
+  font-family: "SF Mono", Menlo, monospace; white-space: nowrap; flex-shrink: 0;
+}
+.pin-btn.active { border-color: #00d4d4; color: #00d4d4; background: #001e1e; }
 .main { display: flex; flex: 1; overflow: hidden; }
 .nav {
   width: 196px; flex-shrink: 0;
@@ -127,6 +134,14 @@ body {
 </style>
 <script>
 var _pt = {};
+var pinned = false;
+function autoShow(id) { if (!pinned) show(id); }
+function togglePin() {
+  pinned = !pinned;
+  var btn = document.getElementById('pin-btn');
+  btn.textContent = pinned ? '📌 Fijado' : '▶ Follow';
+  btn.classList.toggle('active', pinned);
+}
 function pressKey(id) {
   var el = document.getElementById(id);
   if (!el) return;
@@ -145,7 +160,7 @@ window.onload = function() { show('home'); };
 </script>
 </head>
 <body>
-<div class="hdr" onclick="show('home')">CORNE — LAYER REFERENCE</div>
+<div class="hdr"><span class="hdr-title" onclick="show('home')">CORNE — LAYER REFERENCE</span><button id="pin-btn" class="pin-btn" onclick="togglePin()">▶ Follow</button></div>
 <div class="main">
 <nav class="nav">
   <div class="nav-lbl">Capas</div>
@@ -1125,7 +1140,7 @@ _keyWatcher = hs.eventtap.new({hs.eventtap.event.types.keyDown}, function(event)
     if layer ~= _prevLayer then
         _prevLayer = layer
         -- Combine show + pressKey in one JS call to avoid race condition
-        local js = 'show("' .. layer .. '")'
+        local js = 'autoShow("' .. layer .. '")'
         if kid then
             js = js .. '; setTimeout(function(){ pressKey("' .. kid .. '") }, 150)'
         end
