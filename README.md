@@ -289,21 +289,32 @@ Requiere [Rectangle](https://rectangleapp.com/) instalado con atajos `⌥⌘`.
 
 ### Layer 9 Tmux (hold `TAB`, prefix = `Ctrl+A`)
 
-Behavior `&tmx KEY` = `Ctrl+A` + KEY. **Mnemónico: la tecla física se llama igual que en tmux.** Layout completo en [LAYOUTS.md](LAYOUTS.md).
+Behavior `&tmx KEY` = `Ctrl+A` + KEY. El cluster de nav de panes espeja L2 Nav (mismas posiciones físicas que las flechas). Layout completo en [LAYOUTS.md](LAYOUTS.md).
+
+**Izquierda — gestión (mnemonics directos):**
 
 | Tecla (hold TAB +) | Envía | Acción |
 |--------------------|-------|--------|
-| `C` / `N` / `P` | `c` `n` `p` | Nueva / siguiente / anterior ventana |
-| `Q` `W` `F` `A` `T` | `1` `2` `3` `4` `5` | Ir a ventana 1-5 |
-| `H` `J` `K` `L` | `h` `j` `k` `l` | Pane ← ↓ ↑ → |
-| `E` `I` `O` `'` | `H` `J` `K` `L` | Resize ← ↓ ↑ → (5 celdas) |
-| `U` / `Y` | `\|` / `-` | Split lado a lado / apilado |
-| `Z` / `X` / `D` | `z` `x` `d` | Zoom / cerrar pane / detach |
-| `R` / `S` / `G` | `r` `s` `;` | Reload config / árbol de sesiones / último pane |
-| `ESC` pos. (meñique izq. arriba) | `,` | Renombrar ventana |
-| `,` (tecla coma, fila inferior der.) | `&` | Cerrar ventana |
+| `C` | `c` | Nueva ventana |
+| `P` / `B` | `p` / `n` | Ventana anterior / siguiente (adyacentes) |
+| `Q` `W` `F` `A` `T` | `1` `2` `3` `4` `5` | Ir a ventana 1–5 |
+| `Z` / `X` / `D` | `z` / `x` / `d` | Zoom pane / cerrar pane / detach sesión |
+| `R` / `S` / `G` | `r` / `s` / `;` | Reload config / árbol sesiones / último pane |
+| `ESC` pos. | `,` | Renombrar ventana |
 | `REPT` pos. / `V` | `$` / `C-l` | Renombrar sesión / última sesión |
-| `B` / `M` | `[` / `]` | Copy-mode / pegar |
+
+**Derecha — nav y resize (cluster home row, espeja L2):**
+
+| Tecla | Posición física | Envía | Acción |
+|-------|----------------|-------|--------|
+| `N`-pos | home row izq der | `h` | Pane ← |
+| `E`-pos | home row medio | `j` | Pane ↓ |
+| `I`-pos | home row anular | `l` | Pane → |
+| `U`-pos | fila 1 der | `k` | Pane ↑ |
+| `J`-pos / `L`-pos | fila 1 der | `\|` / `-` | Split h / v |
+| `M`-pos / `O`-pos | home row extremos | `[` / `]` | Copy-mode / pegar |
+| `K`-pos `H`-pos `,`-pos `.`-pos | fila 3 der | `H` `J` `K` `L` | Resize ← ↓ ↑ → |
+| `/`-pos | fila 3 der | `&` | Cerrar ventana |
 
 ### Instalar la config de tmux en otra máquina
 
