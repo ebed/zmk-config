@@ -158,16 +158,16 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ,----------------------------------------------.        ,--------------------------------------------.
 |DSK1 |DSK2 |DSK3  |DSK4  |DSK5  | HDE        |        |WIN← |WIN→ |WIN↑  |WIN↓  |MAX   | RST   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-| FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |tmx:dt|tmx:zm| FWD  | EML   |
+| FQ  |SS📋  |SS⌘4  | UND  | RED  |MCrl        |        | BCK |CTR  |      |      | FWD  | EML   |
 |-----+-----+------+------+------+------------|        |-----+-----+------+------+------+-------|
-|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        | USR |DISP→|tmx:nw|tmx:% |tmx:" | PWD   |
+|     |DSK← |DSK→  |Exposé| MW←  | MW→        |        | USR |DISP→|      |      |      | PWD   |
 '-----+-----+------+------+------+------------'        '-----+-----+------+------+------+-------'
              |      | GUI  | SPACE|                         |[held]|      |      |
              '------+------+------'                         '------+------+------'
 ```
 
 - Izquierdo: escritorios (DSK1-5), hide others, screenshots, undo/redo, Mission Control
-- Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav (BCK/FWD), tmux, display switch (DISP←/→)
+- Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav (BCK/FWD), display switch (DISP←/→)
 - `UND`=⌘Z, `RED`=⌘⇧Z, `BCK`=⌘[, `FWD`=⌘], `FQ`=Force Quit, `MCrl`=Mission Control
 - `DISP→`=⌥⌘⇧→ (mover ventana al siguiente display) — configurar en Rectangle Preferences → Shortcuts
 - `USR`/`EML`/`PWD`: triggers → Hammerspoon recupera de macOS Keychain (`zmk-keyboard` service)
@@ -247,6 +247,29 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 | `U` — ZOM | `⌥⌘⇧+Z` | Hammerspoon | Focus-or-launch Zoom |
 | `Y` — CHR | `⌥⌘⇧+C` | Hammerspoon | Focus-or-launch Chrome |
 | `;` — CYCL | `⌘+\`` | macOS | Ciclar ventanas de la app activa |
+
+---
+
+## Layer 9 — Tmux (hold TAB)
+
+Cada tecla envía el prefix `Ctrl+A` seguido de la tecla (behavior `&tmx`, ver `~/.tmux.conf`).
+
+```
+,-----------------------------------------.        ,-----------------------------------------.
+|  [   |  1  |  2  |  3  |  4  |  5       |        |  z  |  ;  |  k  |  |  |  -  |         |
+| copy |   ventanas 1-5                   |        |zoom |last |pane↑|spl-h|spl-v|         |
+|------+-----+-----+-----+-----+-----------|        |-----+-----+-----+-----+-----+---------|
+|[hld] |  c  |  p  |  n  |  $  |  s       |        |  ]  |  h  |  j  |  l  |     |         |
+|      | new |prev |next |ren-S|tree      |        |paste|pane←|pane↓|pane→|     |         |
+|------+-----+-----+-----+-----+-----------|        |-----+-----+-----+-----+-----+---------|
+|  ,   |  x  |  &  |  d  |  r  | C-l      |        |     |  H  |  J  |  K  |  L  |         |
+| ren-W|kill-|kill-|det. |reld |last-sess |        |     |       resize 5            |
+'------+-----+-----+-----+-----+-----------'        '-----+-----+-----+-----+-----+---------'
+```
+
+- Derecha: panes con la geometría de Nav (h←  j↓  l→, k↑ arriba); Shift+hjkl = resize
+- Izquierda: ventanas 1-5 (`base-index 1`), c/p/n, sesiones (`$`, `s`, `C-l`), kill/detach en la fila baja
+- Activación: hold `TAB` (`&lt 9 TAB`); tap sigue siendo TAB
 
 ---
 

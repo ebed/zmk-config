@@ -78,6 +78,7 @@ body {
 .L5 { --lc: #ff6688; --lb: #200012; }
 .L6 { --lc: #44ff99; --lb: #002012; }
 .L7 { --lc: #bb88ff; --lb: #160022; }
+.L9 { --lc: #ffd84a; --lb: #1e1a00; }
 .content { flex: 1; overflow: auto; padding: 18px 22px; }
 .view { display: none; }
 /* HOME */
@@ -154,6 +155,7 @@ window.onload = function() { show('home'); };
   <div class="ni sub L4" data-l="4" onclick="show('4')"><span class="lbadge L4">4 Fn</span><span class="lhow">BSPC</span></div>
   <div class="ni sub L7" data-l="7" onclick="show('7')"><span class="lbadge L7">7 Apps</span><span class="lhow">MO7</span></div>
   <div class="ni sub" data-l="8" onclick="show('8')" style="--lbb:#0088cc"><span class="lbadge" style="background:#0088cc">8 Mouse</span><span class="lhow">tog8</span></div>
+  <div class="ni sub L9" data-l="9" onclick="show('9')"><span class="lbadge L9">9 Tmux</span><span class="lhow">hold TAB</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
 </nav>
@@ -179,6 +181,7 @@ window.onload = function() { show('home'); };
     <div class="tr tsub L3" onclick="show('3')"><span class="tbadge L3">Sys 3</span><span class="thow">hold <b>SPC + MO2</b> combo</span></div>
     <div class="tr tsub L4" onclick="show('4')"><span class="tbadge L4">Fn 4</span><span class="thow">hold <b>BSPC</b></span></div>
     <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>MO7</b> (izq-med)</span></div>
+    <div class="tr tsub L9" onclick="show('9')"><span class="tbadge L9">Tmux 9</span><span class="thow">hold <b>TAB</b> (izq home) · prefix Ctrl+A</span></div>
     <div class="tr L5" onclick="show('5')"><span class="tbadge L5">Mac 5</span><span class="thow">hold <b>RET/L5</b> (der-ext)</span></div>
     <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>CW/L6</b> (izq-ext)</span></div>
   </div>
@@ -205,7 +208,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L0" id="l0-k-bspc"><span class="kl">⌫</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra" id="l0-k-tab"><span class="kl">TAB</span></div>
+      <div class="kb-key kb-extra active L9" id="l0-k-tab"><span class="kl">TAB</span><span class="km">Tmux9</span></div>
       <div class="kb-key" id="l0-k-a"><span class="kl">A</span><span class="km">⌘</span></div>
       <div class="kb-key" id="l0-k-r"><span class="kl">R</span><span class="km">⌥</span></div>
       <div class="kb-key" id="l0-k-s"><span class="kl">S</span><span class="km">⌃</span></div>
@@ -249,6 +252,7 @@ window.onload = function() { show('home'); };
     <li><b>CW/L6</b>: tap=CapsWord / hold=Layer 6 (Lang)</li>
     <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
     <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
+    <li><b>TAB</b>: tap=TAB / hold=Layer 9 (Tmux) — izq home</li>
     <li><b>REPT</b>: repite el último key — meñique izq inferior</li>
     <li><b>DEL</b>: meñique der inferior (⌦) · <b>MOUSE</b>: L2 pos V → tog Layer 8 Mouse</li>
     <li><b>BSPC</b>: tap=⌫ / hold=Layer 4 (Fn)</li>
@@ -558,8 +562,8 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L5" id="l5-k-m"><span class="kl">BCK</span></div>
       <div class="kb-key active L5" id="l5-k-n"><span class="kl">CTR</span></div>
-      <div class="kb-key active L5" id="l5-k-e"><span class="kl">dt</span><span class="km">tmx detach</span></div>
-      <div class="kb-key active L5" id="l5-k-i"><span class="kl">zm</span><span class="km">tmx zoom</span></div>
+      <div class="kb-key dim" id="l5-k-e"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l5-k-i"><span class="kl">·</span></div>
       <div class="kb-key active L5" id="l5-k-o"><span class="kl">FWD</span></div>
       <div class="kb-key active L5" id="l5-k-apos"><span class="kl">EML</span><span class="km">⌥⌘⇧E</span></div>
     </div>
@@ -573,9 +577,9 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L5" id="l5-k-k"><span class="kl">USR</span><span class="km">⌥⌘⇧U</span></div>
       <div class="kb-key active L5" id="l5-k-h"><span class="kl">DISP→</span></div>
-      <div class="kb-key active L5" id="l5-k-comma"><span class="kl">nw</span><span class="km">tmx new</span></div>
-      <div class="kb-key active L5" id="l5-k-dot"><span class="kl">%</span><span class="km">tmx sph</span></div>
-      <div class="kb-key active L5" id="l5-k-slash"><span class="kl">"</span><span class="km">tmx spv</span></div>
+      <div class="kb-key dim" id="l5-k-comma"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l5-k-dot"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l5-k-slash"><span class="kl">·</span></div>
       <div class="kb-key kb-extra active L5" id="l5-k-ret"><span class="kl">PWD</span><span class="km">⌥⌘⇧P</span></div>
     </div>
     <div class="kb-row kb-center">
@@ -590,7 +594,7 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>Izquierdo: escritorios (DSK1-5), screenshots, undo/redo, Mission Control</li>
-    <li>Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav, tmux</li>
+    <li>Derecho: Rectangle (WIN←→↑↓ MAX RST), browser nav, display (tmux → Layer 9)</li>
     <li><b>DISP←/→</b>: mover ventana al display anterior/siguiente (Rectangle ⌥⌘⇧←/→)</li>
     <li><b>FQ</b>=Force Quit, <b>MCrl</b>=Mission Control, <b>BCK/FWD</b>=⌘[/⌘]</li>
   </ul>
@@ -714,6 +718,73 @@ window.onload = function() { show('home'); };
     <li>Der fila sup: focus-or-launch vía Hammerspoon (⌥⌘⇧W/S/Z/C)</li>
     <li><b>HELP</b> (tecla M): abre/cierra este popup · <b>CLU</b> (tecla N): focus Claude Desktop</li>
     <li>Grises punteados: heredados de Layer 2 Nav (transparentes)</li>
+  </ul>
+</div>
+
+<!-- LAYER 9 — Tmux -->
+<div id="v-9" class="view L9">
+  <div class="dhdr L9"><div class="dnum L9">9</div><div><div class="dname">Tmux</div><div class="dhow">hold TAB (izq home) — cada tecla envía Ctrl+A + tecla</div></div></div>
+  <div class="kb">
+    <div class="kb-row">
+      <div class="kb-key kb-extra active L9" id="l9-k-esc"><span class="kl">[</span><span class="km">copy</span></div>
+      <div class="kb-key active L9" id="l9-k-q"><span class="kl">1</span><span class="km">win</span></div>
+      <div class="kb-key active L9" id="l9-k-w"><span class="kl">2</span><span class="km">win</span></div>
+      <div class="kb-key active L9" id="l9-k-f"><span class="kl">3</span><span class="km">win</span></div>
+      <div class="kb-key active L9" id="l9-k-p"><span class="kl">4</span><span class="km">win</span></div>
+      <div class="kb-key active L9" id="l9-k-b"><span class="kl">5</span><span class="km">win</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active L9" id="l9-k-j"><span class="kl">z</span><span class="km">zoom</span></div>
+      <div class="kb-key active L9" id="l9-k-l"><span class="kl">;</span><span class="km">last</span></div>
+      <div class="kb-key active L9" id="l9-k-u"><span class="kl">k</span><span class="km">pane↑</span></div>
+      <div class="kb-key active L9" id="l9-k-y"><span class="kl">|</span><span class="km">split-h</span></div>
+      <div class="kb-key active L9" id="l9-k-semi"><span class="kl">-</span><span class="km">split-v</span></div>
+      <div class="kb-key kb-extra dim" id="l9-k-bspc"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra active L9" id="l9-k-tab"><span class="kl">[hld]</span><span class="km">TAB</span></div>
+      <div class="kb-key active L9" id="l9-k-a"><span class="kl">c</span><span class="km">new</span></div>
+      <div class="kb-key active L9" id="l9-k-r"><span class="kl">p</span><span class="km">prev</span></div>
+      <div class="kb-key active L9" id="l9-k-s"><span class="kl">n</span><span class="km">next</span></div>
+      <div class="kb-key active L9" id="l9-k-t"><span class="kl">$</span><span class="km">ren-S</span></div>
+      <div class="kb-key active L9" id="l9-k-g"><span class="kl">s</span><span class="km">tree</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active L9" id="l9-k-m"><span class="kl">]</span><span class="km">paste</span></div>
+      <div class="kb-key active L9" id="l9-k-n"><span class="kl">h</span><span class="km">pane←</span></div>
+      <div class="kb-key active L9" id="l9-k-e"><span class="kl">j</span><span class="km">pane↓</span></div>
+      <div class="kb-key active L9" id="l9-k-i"><span class="kl">l</span><span class="km">pane→</span></div>
+      <div class="kb-key dim" id="l9-k-o"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l9-k-apos"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra active L9" id="l9-k-ctrl"><span class="kl">,</span><span class="km">ren-W</span></div>
+      <div class="kb-key active L9" id="l9-k-z"><span class="kl">x</span><span class="km">kill-p</span></div>
+      <div class="kb-key active L9" id="l9-k-x"><span class="kl">&</span><span class="km">kill-w</span></div>
+      <div class="kb-key active L9" id="l9-k-c"><span class="kl">d</span><span class="km">detach</span></div>
+      <div class="kb-key active L9" id="l9-k-d"><span class="kl">r</span><span class="km">reload</span></div>
+      <div class="kb-key active L9" id="l9-k-v"><span class="kl">C-l</span><span class="km">last-s</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key dim" id="l9-k-k"><span class="kl">·</span></div>
+      <div class="kb-key active L9" id="l9-k-h"><span class="kl">H</span><span class="km">res←</span></div>
+      <div class="kb-key active L9" id="l9-k-comma"><span class="kl">J</span><span class="km">res↓</span></div>
+      <div class="kb-key active L9" id="l9-k-dot"><span class="kl">K</span><span class="km">res↑</span></div>
+      <div class="kb-key active L9" id="l9-k-slash"><span class="kl">L</span><span class="km">res→</span></div>
+      <div class="kb-key kb-extra dim" id="l9-k-ret"><span class="kl">·</span></div>
+    </div>
+    <div class="kb-row kb-center">
+      <div class="kb-key kb-thumb dim" id="l9-k-cpsw"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-gui"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-sep" style="width:24px"></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-mo2"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-mo1"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-sym5"><span class="kl">·</span></div>
+    </div>
+  </div>
+  <ul class="notes">
+    <li>Derecha: panes con la geometría de Nav (<b>h←  j↓  l→</b>, <b>k↑</b> arriba) · <b>Shift+hjkl</b> = resize 5</li>
+    <li>Splits: <b>|</b> horizontal (lado a lado), <b>-</b> vertical (apilados) · <b>z</b> zoom · <b>;</b> último pane</li>
+    <li>Izquierda: ventanas <b>1-5</b> (base-index 1), <b>c/p/n</b> nueva/prev/next, <b>$</b> renombrar sesión, <b>s</b> árbol</li>
+    <li>Fila baja: <b>, </b>renombrar ventana · <b>x</b> kill pane · <b>&amp;</b> kill ventana · <b>d</b> detach · <b>r</b> reload · <b>C-l</b> última sesión</li>
   </ul>
 </div>
 
@@ -915,8 +986,33 @@ local kcToKeyL7 = {
     [45]="l7-k-n",   -- ⌥⌘⇧N → N (CLU — Claude Desktop)
 }
 
+-- Layer 9 (Tmux): macro sends Ctrl+A then the key (<=15ms later) → keycode (+shift/ctrl) → physical key ID
+local kcToKeyL9plain = {
+    [33]="esc", [18]="q", [19]="w", [20]="f", [21]="p", [23]="b",
+    [6]="j", [41]="l", [40]="u", [27]="semi",
+    [8]="a", [35]="r", [45]="s", [1]="g",
+    [30]="m", [4]="n", [38]="e", [37]="i",
+    [43]="ctrl", [7]="z", [2]="c", [15]="d",
+}
+local kcToKeyL9shift = {
+    [21]="t", [26]="x", [42]="y",
+    [4]="h", [38]="comma", [40]="dot", [37]="slash",
+}
+local function kcToKeyL9(kc, flags)
+    if flags.ctrl  then return kc == 37 and "v" or nil end
+    if flags.shift then return kcToKeyL9shift[kc] end
+    return kcToKeyL9plain[kc]
+end
+_tmuxUntil = 0
+
 -- Infer which ZMK layer generated the keycode received by macOS
 local function inferLayer(kc, flags)
+    -- Tmux (9): Ctrl+A (kc 0) arms a short window in which the following keys belong to L9
+    if kc == 0 and flags.ctrl and not flags.cmd and not flags.alt then
+        _tmuxUntil = hs.timer.secondsSinceEpoch() + 0.2
+        return "9"
+    end
+    if hs.timer.secondsSinceEpoch() < _tmuxUntil then return "9" end
     if flags.cmd and flags.alt and flags.shift then return "7" end
     -- Lang (6): ⌥ + dead-key codes — checked before symKC because ⌥1 (¡) shares kc=18 with !
     if flags.alt then
@@ -940,6 +1036,7 @@ local function getKeyId(layer, kc, flags)
     elseif layer == "4" then return kcToKeyL4[kc]
     elseif layer == "6" then return kcToKeyL6(kc)
     elseif layer == "7" then return kcToKeyL7[kc]
+    elseif layer == "9" then return kcToKeyL9(kc, flags)
     end
     return nil
 end
