@@ -1,0 +1,36 @@
+return {
+  -- UI
+  home    = '',
+  folder  = '',
+  branch  = '',
+  dirty   = '●',
+  ahead   = '↑',
+  behind  = '↓',
+  battery = { '', '', '', '', '' },
+
+  -- Tech
+  node    = '',
+  deno    = '',
+  bun     = '󰚩',
+  python  = '',
+  ruby    = '',
+  go      = '',
+  rust    = '', -- alternativa: ''
+  java    = '',
+  kotlin  = '',
+  php     = '',
+  swift   = '',
+  elixir  = '',
+  dart    = '',
+  flutter = '󰓇',
+  csharp  = '',
+  dotnet  = '',
+  c       = '',
+  cpp     = '',
+  cmake   = '',
+  make    = '',
+  zig     = '',
+  docker  = '',
+  terraform = '󱁢',
+  yaml    = '',
+}

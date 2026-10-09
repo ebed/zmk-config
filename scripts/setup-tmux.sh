@@ -145,5 +145,12 @@ if [[ "$(uname -s)" == "Darwin" ]]; then
 fi
 
 echo ""
-ok "Setup completo."
+ok "Setup tmux completo."
 echo "   Prefix: Ctrl+A  ·  splits: | / -  ·  panes: h j k l  ·  resize: H J K L  ·  reload: prefix r"
+
+# ── macOS: recordar correr setup-wezterm.sh ───────────────────────────────────
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    echo ""
+    step "En macOS también puedes instalar la config de WezTerm:"
+    echo "   bash $(dirname "${BASH_SOURCE[0]}")/setup-wezterm.sh"
+fi
