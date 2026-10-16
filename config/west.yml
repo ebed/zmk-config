@@ -4,18 +4,19 @@ manifest:
       url-base: https://github.com/zmkfirmware
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
-    - name: mctechnology17
-      url-base: https://github.com/mctechnology17
+    - name: ebed
+      url-base: https://github.com/ebed
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
-    # nice!epaper (zmk-nice-oled) — widgets verticales para nice!view: WPM, modifiers,
-    # caps, batería. El shield nice_epaper no existe en los tags v0.0.x: pineado a
-    # commit de main (2026-01-26), que upstream declara testeado con ZMK v0.3.0.
+    # nice!epaper (zmk-nice-oled) — FORK propio sobre upstream 46f824a (testeado
+    # con ZMK v0.3.0). Rama custom-epaper-layout: modifiers en orden home-row,
+    # perfil BT "P<n>" junto a la batería (central) y sin tira de perfiles abajo.
+    # Upstream: mctechnology17/zmk-nice-oled.
     - name: zmk-nice-oled
-      remote: mctechnology17
-      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
+      remote: ebed
+      revision: fd45aeac8336c188046ef8a17378f74aab87c902
   self:
     path: config
