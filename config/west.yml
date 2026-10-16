@@ -17,6 +17,6 @@ manifest:
     # Upstream: mctechnology17/zmk-nice-oled.
     - name: zmk-nice-oled
       remote: ebed
-      revision: f0febe3d41f09cc5e552e099974d66d6e21edf5b
+      revision: cf17fa2cca24e9841d782f1b8a0f8b5000c4d21f
   self:
     path: config
