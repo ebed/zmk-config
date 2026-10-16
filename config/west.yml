@@ -6,6 +6,8 @@ manifest:
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
     - name: kevinpastor
       url-base: https://github.com/kevinpastor
+    - name: mctechnology17
+      url-base: https://github.com/mctechnology17
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -16,5 +18,11 @@ manifest:
     - name: nice-view-elemental
       remote: kevinpastor
       revision: 69c2ecd56b0b870ddb94b79110ef5a2152ca4a3a
+    # nice!epaper (zmk-nice-oled) — widgets verticales para nice!view: WPM, modifiers,
+    # caps, batería. El shield nice_epaper no existe en los tags v0.0.x: pineado a
+    # commit de main (2026-01-26), que upstream declara testeado con ZMK v0.3.0.
+    - name: zmk-nice-oled
+      remote: mctechnology17
+      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
   self:
     path: config
