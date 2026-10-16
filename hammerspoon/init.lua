@@ -173,6 +173,7 @@ window.onload = function() { show('home'); };
   <div class="ni sub" data-l="8" onclick="show('8')" style="--lbb:#0088cc"><span class="lbadge" style="background:#0088cc">8 Mouse</span><span class="lhow">tog8</span></div>
   <div class="ni sub L9" data-l="9" onclick="show('9')"><span class="lbadge L9">9 Tmux</span><span class="lhow">hold TAB</span></div>
   <div class="ni sub L10" data-l="10" onclick="show('10')"><span class="lbadge L10">10 Wez</span><span class="lhow">hold ESC</span></div>
+  <div class="ni sub" data-l="11" onclick="show('11')" style="--lbb:#cc4444"><span class="lbadge" style="background:#cc4444">11 Qwerty</span><span class="lhow">tog11 (Sys)</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
 </nav>
@@ -200,6 +201,7 @@ window.onload = function() { show('home'); };
     <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>MO7</b> (izq-med)</span></div>
     <div class="tr tsub L9" onclick="show('9')"><span class="tbadge L9">Tmux 9</span><span class="thow">hold <b>TAB</b> (izq home) · prefix Ctrl+A</span></div>
     <div class="tr tsub L10" onclick="show('10')"><span class="tbadge L10">Wez 10</span><span class="thow">hold <b>ESC</b> (izq top) · shortcuts WezTerm</span></div>
+    <div class="tr tsub" onclick="show('11')"><span class="tbadge" style="background:#cc4444">Qwerty 11</span><span class="thow">toggle <b>QWRT</b> en Sys (meñique izq inf) · gaming sin HRM</span></div>
     <div class="tr L5" onclick="show('5')"><span class="tbadge L5">Mac 5</span><span class="thow">hold <b>RET/L5</b> (der-ext)</span></div>
     <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>CW/L6</b> (izq-ext)</span></div>
   </div>
@@ -939,6 +941,73 @@ window.onload = function() { show('home'); };
     <li><b>Der fila 1 — tabs/mover:</b> TAB←=⌘[(J) · TAB→=⌘](L) · PAN↑=⌥K(U) · MOV←=⌘⇧[(Y) · MOV→=⌘⇧](;)</li>
     <li><b>Der home — nav panes (espeja L9):</b> PAN←=⌥H(N) · PAN↓=⌥J(E) · PAN→=⌥L(I) · PSEL=⌘⇧P(O)</li>
     <li><b>Der bot — resize:</b> RES←=⌘⌥←(H) · RES↑=⌘⌥↑(,) · RES↓=⌘⌥↓(.) · RES→=⌘⌥→(/)</li>
+  </ul>
+</div>
+
+<!-- LAYER 11 — QWERTY -->
+<div id="v-11" class="view">
+  <div class="dhdr" style="--lbb:#cc4444"><div class="dnum" style="background:#cc4444">11</div><div><div class="dname">QWERTY</div><div class="dhow">toggle QWRT en Sys (meñique izq inferior) — gaming / QWERTY plano sin HRM</div></div></div>
+  <div class="kb">
+    <div class="kb-row">
+      <div class="kb-key kb-extra" id="l11-k-esc"><span class="kl">ESC</span></div>
+      <div class="kb-key" id="l11-k-q"><span class="kl">Q</span></div>
+      <div class="kb-key" id="l11-k-w"><span class="kl">W</span></div>
+      <div class="kb-key" id="l11-k-f"><span class="kl">E</span></div>
+      <div class="kb-key" id="l11-k-p"><span class="kl">R</span></div>
+      <div class="kb-key" id="l11-k-b"><span class="kl">T</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key" id="l11-k-j"><span class="kl">Y</span></div>
+      <div class="kb-key" id="l11-k-l"><span class="kl">U</span></div>
+      <div class="kb-key" id="l11-k-u"><span class="kl">I</span></div>
+      <div class="kb-key" id="l11-k-y"><span class="kl">O</span></div>
+      <div class="kb-key" id="l11-k-semi"><span class="kl">P</span></div>
+      <div class="kb-key kb-extra" id="l11-k-bspc"><span class="kl">BSPC</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra" id="l11-k-tab"><span class="kl">TAB</span></div>
+      <div class="kb-key" id="l11-k-a"><span class="kl">A</span></div>
+      <div class="kb-key" id="l11-k-r"><span class="kl">S</span></div>
+      <div class="kb-key" id="l11-k-s"><span class="kl">D</span></div>
+      <div class="kb-key" id="l11-k-t"><span class="kl">F</span></div>
+      <div class="kb-key" id="l11-k-g"><span class="kl">G</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key" id="l11-k-m"><span class="kl">H</span></div>
+      <div class="kb-key" id="l11-k-n"><span class="kl">J</span></div>
+      <div class="kb-key" id="l11-k-e"><span class="kl">K</span></div>
+      <div class="kb-key" id="l11-k-i"><span class="kl">L</span></div>
+      <div class="kb-key" id="l11-k-o"><span class="kl">;</span></div>
+      <div class="kb-key" id="l11-k-apos"><span class="kl">'</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra" id="l11-k-ctrl"><span class="kl">SHIFT</span></div>
+      <div class="kb-key" id="l11-k-z"><span class="kl">Z</span></div>
+      <div class="kb-key" id="l11-k-x"><span class="kl">X</span></div>
+      <div class="kb-key" id="l11-k-c"><span class="kl">C</span></div>
+      <div class="kb-key" id="l11-k-d"><span class="kl">V</span></div>
+      <div class="kb-key" id="l11-k-v"><span class="kl">B</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key" id="l11-k-k"><span class="kl">N</span></div>
+      <div class="kb-key" id="l11-k-h"><span class="kl">M</span></div>
+      <div class="kb-key" id="l11-k-comma"><span class="kl">,</span></div>
+      <div class="kb-key" id="l11-k-dot"><span class="kl">.</span></div>
+      <div class="kb-key" id="l11-k-slash"><span class="kl">/</span></div>
+      <div class="kb-key kb-extra active" id="l11-k-ret" style="--lbb:#cc4444"><span class="kl">EXIT</span><span class="km">tog11</span></div>
+    </div>
+    <div class="kb-row kb-center">
+      <div class="kb-key kb-thumb" id="l11-k-cpsw"><span class="kl">CTRL</span></div>
+      <div class="kb-key kb-thumb" id="l11-k-gui"><span class="kl">ALT</span></div>
+      <div class="kb-key kb-thumb" id="l11-k-mo7"><span class="kl">SPACE</span></div>
+      <div class="kb-sep" style="width:24px"></div>
+      <div class="kb-key kb-thumb" id="l11-k-mo2"><span class="kl">RET</span></div>
+      <div class="kb-key kb-thumb" id="l11-k-mo1"><span class="kl">MO1</span></div>
+      <div class="kb-key kb-thumb" id="l11-k-sym5"><span class="kl">MO2</span></div>
+    </div>
+  </div>
+  <ul class="notes">
+    <li>QWERTY plano: <b>sin home-row mods ni hold-taps</b> — WASD sostenido no dispara modificadores (gaming-safe)</li>
+    <li>Entrada: <b>QWRT</b> en Sys (meñique izq inferior) · Salida: <b>EXIT</b> (meñique der inferior), patrón sticky igual a Mouse</li>
+    <li>Thumbs izq gaming: CTRL / ALT / SPACE · Thumbs der: RET / MO1 (números) / MO2 (flechas)</li>
+    <li>Combo ESC (Y+U) deshabilitado en esta capa; combo Sys (thumbs internos) sigue activo para salir</li>
   </ul>
 </div>
 

@@ -20,6 +20,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **7 Apps** | hold `MO7` | Zoom, Slack, WezTerm, Claude Desktop |
 | **9 Tmux** | hold `TAB` | tmux (prefix Ctrl+A): panes, ventanas, splits, resize |
 | **10 WezTerm** | hold `ESC` | WezTerm: tabs, splits, nav panes, workspaces, resize |
+| **11 QWERTY** | toggle `QWRT` en Sys (meñique izq inf) | QWERTY plano sin HRM — juegos / layout estándar |
 
 **Thumbs y teclas especiales (Layer 0):**
 
@@ -461,7 +462,7 @@ Status screen custom del módulo [zmk-nice-oled](https://github.com/mctechnology
 
 | Widget | Descripción |
 |--------|-------------|
-| Layer | Nombre de la capa activa, en mayúsculas (`display-name` del keymap, máx 8-9 chars): `COLEMAK` / `SYMBOLS` / `NAVIGATE` / `SYSTEM` / `FN+NUM` / `MACROS` / `LANGUAGE` / `APPS` / `MOUSE` / `TMUX` / `WEZTERM` |
+| Layer | Nombre de la capa activa, en mayúsculas (`display-name` del keymap, máx 8-9 chars): `COLEMAK` / `SYMBOLS` / `NAVIGATE` / `SYSTEM` / `FN+NUM` / `MACROS` / `LANGUAGE` / `APPS` / `MOUSE` / `TMUX` / `WEZTERM` / `QWERTY` |
 | Battery | Nivel de batería |
 | Output | USB o perfil BT y estado de conexión |
 | Modifiers | **⌘⌥⇧⌃ activos en tiempo real** (grilla 2×2, símbolos macOS) — útil para detectar home-row mods pegados |

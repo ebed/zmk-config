@@ -114,7 +114,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |      | BT0 | BT1 | BT2 |VOL-  |VOL+        |        |RGB+ |     | BL- | BL+ |RGB- | RGB++ |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
-|      | BT3 | BT4 |     |MUTE  |LCK         |        | 🟢  | 🔴  | 🔵  | 🟡  |SOFF |BOOT   |
+|QWRT  | BT3 | BT4 |     |MUTE  |LCK         |        | 🟢  | 🔴  | 🔵  | 🟡  |SOFF |BOOT   |
 '------+-----+-----+-----+------+------------'        '-----+-----+-----+-----+-----+-------'
              | GUI |     | SPACE|                           | RET |     |     |
              '-----+-----+------'                           '-----+-----+-----'
@@ -354,6 +354,27 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 
 - Activación: `&lt 10 ESC` — tap=ESC, hold=WezTerm layer
 - No hay macro `wez`: todos los bindings son `&kp LG(...)` / `&kp LA(...)` directos
+
+---
+
+## Layer 11 — QWERTY (tog 11 desde Sys, meñique izq inferior)
+
+```
+,------------------------------------.                ,------------------------------------.
+| ESC |  Q  |  W  |  E  |  R  |  T  |                |  Y  |  U  |  I  |  O  |  P  | BSPC|
+|-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+| TAB |  A  |  S  |  D  |  F  |  G  |                |  H  |  J  |  K  |  L  |  ;  |  '  |
+|-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+|SHFT |  Z  |  X  |  C  |  V  |  B  |                |  N  |  M  |  ,  |  .  |  /  |EXIT |
+'-------------------------------------'               '------------------------------------'
+        |CTRL | ALT |SPACE|                               | RET | MO1 | MO2 |
+        '-------------------'                             '-------------------'
+```
+
+- QWERTY plano para juegos o cuando se necesite ese layout: **sin home-row mods ni hold-taps** (WASD sostenido no dispara modificadores)
+- Entrada: `QWRT` en Sys (meñique izq inferior) · Salida: `EXIT` (meñique der inferior) — mismo patrón sticky que Mouse
+- Thumbs izq gaming: CTRL / ALT / SPACE · Thumbs der: RET / MO1 (números) / MO2 (flechas)
+- El combo ESC (J+L pos 6+7) está deshabilitado en esta capa (ahí vive Y+U); el combo Sys (thumbs 38+41) sigue activo
 
 ---
 

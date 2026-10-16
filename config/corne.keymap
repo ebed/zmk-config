@@ -38,6 +38,8 @@
             timeout-ms = <50>;
             key-positions = <6 7>;
             bindings = <&kp ESC>;
+            /* No en QWERTY (L11): ahí pos 6+7 = Y+U y tipear "yu" dispararía ESC */
+            layers = <0 1 2 3 4 5 6 7 8 9 10>;
         };
         combo_sys {
             timeout-ms = <50>;
@@ -307,17 +309,18 @@
  * |-----+-----+-----+-----+------+---|                |-----+-----+-----+-----+-----+-----|
  * |SOFF | BT0 | BT1 | BT2 |VOL- |VOL+|                |RGB+ |     | BL- | BL+ |RGB- |RGB++|
  * |-----+-----+-----+-----+------+---|                |-----+-----+-----+-----+-----+-----|
- * |BOOT | BT3 | BT4 | BT5 |MUTE |LCK |                |🟢   | 🔴  | 🔵  | 🟡  |     |     |
+ * |QWRT | BT3 | BT4 | BT5 |MUTE |LCK |                |🟢   | 🔴  | 🔵  | 🟡  |SOFF |BOOT |
  * `-------------------------------'                    `-------------------------------'
  *         | GUI |     |SPACE|                              | RET |     |RALT |
  *         `-------------------'                            `-------------------'
+ * QWRT = tog 11: entra/sale del layout QWERTY plano (gaming)
  */
         lower_layer {
             display-name = "System";
             bindings = <
                 &bt BT_CLR  &kp C_PREV   &kp C_PP     &kp C_NEXT    &out OUT_BLE  &out OUT_USB    &kp C_BRI_DN                        &kp C_BRI_UP                     &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
                 &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp C_VOL_DN  &kp C_VOL_UP   &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
-                &none       &bt BT_SEL 3 &bt BT_SEL 4 &none         &kp C_MUTE    &kp LG(LC(Q))  &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &soft_off        &bootloader
+                &tog 11     &bt BT_SEL 3 &bt BT_SEL 4 &none         &kp C_MUTE    &kp LG(LC(Q))  &rgb_ug RGB_COLOR_HSB(128, 100,100) &rgb_ug RGB_COLOR_HSB(0,100,100) &rgb_ug RGB_COLOR_HSB(240,100,100) &rgb_ug RGB_COLOR_HSB(64,100,50) &soft_off        &bootloader
                                          &kp LGUI     &none          &kp SPACE                     &kp RET  &none   &trans
             >;
         };
@@ -495,6 +498,31 @@
                 &trans  &kp LG(LC(LBKT))   &kp LG(LC(RBKT))   &kp LG(LS(O))     &kp LG(LS(N))     &none            &none             &kp LA(H)         &kp LA(J)           &kp LA(L)           &kp LG(LS(P))       &none
                 &none   &kp LG(COMMA)      &kp LG(D)          &kp LG(LS(D))     &kp LG(Z)         &none            &none             &kp LG(LA(LEFT))  &kp LG(LA(UP))      &kp LG(LA(DOWN))    &kp LG(LA(RIGHT))   &none
                                            &trans             &trans            &trans                              &trans            &trans            &trans
+            >;
+        };
+
+/* ### Layer 11 — QWERTY  (tog 11 desde Sys, meñique izq inferior — mismo patrón sticky que Mouse)
+ * Layout QWERTY plano para juegos o cuando se necesite QWERTY real:
+ * SIN home-row mods ni hold-taps — WASD sostenido no dispara modificadores.
+ * Thumbs izq: CTRL / ALT / SPACE (gaming). Thumbs der: RET / MO1 / MO2 (números y flechas siguen a mano).
+ * EXIT = meñique der inferior (tog 11), igual que Mouse. Sys sigue accesible via combo thumbs 38+41.
+ * ,------------------------------------.                ,------------------------------------.
+ * | ESC |  Q  |  W  |  E  |  R  |  T  |                |  Y  |  U  |  I  |  O  |  P  | BSPC|
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * | TAB |  A  |  S  |  D  |  F  |  G  |                |  H  |  J  |  K  |  L  |  ;  |  '  |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |SHFT |  Z  |  X  |  C  |  V  |  B  |                |  N  |  M  |  ,  |  .  |  /  |EXIT |
+ * `-------------------------------------'               `------------------------------------'
+ *         |CTRL | ALT |SPACE|                               | RET | MO1 | MO2 |
+ *         `-------------------'                             `-------------------'
+ */
+        qwerty_layer {
+            display-name = "QWERTY";
+            bindings = <
+                &kp ESC    &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I      &kp O    &kp P      &kp BSPC
+                &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp SEMI   &kp SQT
+                &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &tog 11
+                                  &kp LCTRL  &kp LALT  &kp SPACE    &kp RET  &mo 1  &mo 2
             >;
         };
     };
