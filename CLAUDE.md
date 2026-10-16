@@ -1,6 +1,6 @@
 # Corne ZMK Config
 
-Teclado Corne (CRKBD) split 42 teclas, nice!nano v2, ZMK v0.3.0 + nice!view con módulo nice-view-elemental (CS en P0.10 — override en `corne.keymap`). Colemak-DH con home-row mods. No hay build local: compila GitHub Actions (`.github/workflows/build.yml`, matriz en `build.yaml`).
+Teclado Corne (CRKBD) split 42 teclas, nice!nano v2, ZMK v0.3.0 + nice!view con módulo zmk-nice-oled shield `nice_epaper` (CS en P0.10 — override en `corne.keymap`). Colemak-DH con home-row mods. No hay build local: compila GitHub Actions (`.github/workflows/build.yml`, matriz en `build.yaml`).
 
 ## Archivos clave
 
