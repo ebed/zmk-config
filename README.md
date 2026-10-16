@@ -486,7 +486,7 @@ Status screen custom del módulo [zmk-nice-oled](https://github.com/mctechnology
 
 | Evento | Tiempo | Acción |
 |--------|--------|--------|
-| Inactividad | 30 s | Apaga el display (`BLANK_ON_IDLE=y`, default de `nice_epaper`) — despierta con cualquier tecla |
+| Inactividad | 30 s | El display muestra la escena "durmiendo" (sleep art) en vez de apagarse (`SHOW_SLEEP_ART_ON_IDLE=y`, consumo ~nulo en memory LCD) |
 | Inactividad | 5 min | Deep sleep — se despierta **solo con doble-tap en reset físico** |
 | RGB Underglow | — | **Apagado por default** — toggle manual en Layer 3 (`RGB-T`) |
 | Batería | — | Reporta nivel cada 60s |
