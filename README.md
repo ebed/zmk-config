@@ -44,7 +44,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 |---|---|
 | Teclado | Corne (CRKBD) — 3×6 + 3 thumbs por lado |
 | Controlador | nice!nano v2 (nRF52840) |
-| Display | nice!view (Sharp memory LCD 160×68, SPI) — shield in-tree de ZMK; CS en P0.10 |
+| Display | nice!view (Sharp memory LCD 160×68, SPI) con [nice-view-elemental](https://github.com/kevinpastor/nice-view-elemental); CS en P0.10 |
 | RGB | Underglow WS2812 — 27 LEDs |
 | Conectividad | Bluetooth 5.0 (5 perfiles) + USB |
 
@@ -455,24 +455,25 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` 
 
 ## nice!view — Widgets activos
 
-Status screen custom del shield `nice_view` (in-tree ZMK).
+Status screen custom del módulo [nice-view-elemental](https://github.com/kevinpastor/nice-view-elemental) (shield `nice_view_elemental` sobre `nice_view_adapter`).
 
 ### Left nice!view (central)
 
 | Widget | Descripción |
 |--------|-------------|
-| Battery | Nivel de batería + estado de carga |
-| Output | Salida activa: USB o perfil BT (0-4) y estado de conexión |
-| Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac` / `Lang` / `Apps` / `Tmux` / `Wez`) |
-| WPM chart | Gráfico de palabras por minuto |
+| Layer name | Nombre de la capa activa en tipografía grande con sombra/outline (`display-name` del keymap, en mayúsculas) |
+| Battery | Nivel de batería + ícono de carga |
+| Output | USB, o BT con el **número del perfil seleccionado** (0-4) y estado: conectado / desconectado / buscando |
+| Background | Animación de fondo sutil (desactivable con `CONFIG_NICE_VIEW_ELEMENTAL_ANIMATION=n`) |
 
 ### Right nice!view (periférico)
 
 | Widget | Descripción |
 |--------|-------------|
-| Battery | Nivel de batería + estado de carga |
-| Connection | Estado de conexión con la mitad central |
-| Art | Ilustración estática del shield |
+| Battery | Nivel de batería + ícono de carga |
+| Connection | Estado de conexión con la mitad central (conectado/desconectado) |
+
+> Sin arte decorativo: ambas mitades muestran solo datos. El periférico no puede mostrar capa/WPM — ZMK no propaga ese estado al lado periférico.
 
 > **Cableado:** SDA→MOSI (P0.17) y SCL→SCK (P0.20) van por el puerto OLED de 4 pines; el pin `SCS` del nice!view va soldado al pad `010` (P0.10) del nice!nano. Como P0.10 es pin NFC del nRF52840, el keymap lo libera con `nfct-pins-as-gpios` (escribe UICR al primer boot).
 
@@ -496,6 +497,7 @@ Status screen custom del shield `nice_view` (in-tree ZMK).
 | Componente | Versión | Motivo |
 |---|---|---|
 | ZMK Firmware | `v0.3.0` | Estable — pre Zephyr 4.1 migration. Incluye shields `nice_view` / `nice_view_adapter` in-tree |
+| nice-view-elemental | commit `69c2ecd` | Sin tags upstream; rama `main`/`v1` pre-LVGL9, compatible con ZMK v0.3.0 (la rama `update-to-zmk-0.4` es para ZMK nuevo) |
 | Workflow CI | `@v0.3.0` | Consistente con versión del firmware |
 
 ---
