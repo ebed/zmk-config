@@ -500,7 +500,7 @@ Status screen custom del módulo [zmk-nice-oled](https://github.com/mctechnology
 | Componente | Versión | Motivo |
 |---|---|---|
 | ZMK Firmware | `v0.3.0` | Estable — pre Zephyr 4.1 migration. Incluye shields `nice_view` / `nice_view_adapter` in-tree |
-| zmk-nice-oled | commit `46f824a` | El shield `nice_epaper` no existe en los tags v0.0.x; main declarado testeado con ZMK v0.3.0 |
+| zmk-nice-oled | **fork [ebed/zmk-nice-oled](https://github.com/ebed/zmk-nice-oled)** commit `fd45aea` (rama `custom-epaper-layout`, sobre upstream `46f824a`) | Fork propio: modifiers en orden home-row ⌘⌥⌃⇧, perfil BT "P\<n\>" junto a la batería, sin tira de perfiles abajo |
 | Workflow CI | `@v0.3.0` | Consistente con versión del firmware |
 
 ---
