@@ -240,7 +240,7 @@
  *         `---------------------'                       `-------------------'
  */
         layer_0 {
-            display-name = "Base";
+            display-name = "Colemak";
             bindings = <
                 &lt 10 ESC      &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &lt 9 TAB       &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
@@ -265,7 +265,7 @@
  *         `-------------------'                            `-------------------'
  */
         layer_1 {
-            display-name = "Sym";
+            display-name = "Symbols";
             bindings = <
                 &key_repeat &num_sym EXCL N1  &num_sym AT N2   &num_sym HASH N3  &num_sym DLLR N4  &num_sym PRCNT N5    &num_sym CARET N6  &num_sym AMPS N7  &num_sym STAR N8  &num_sym LPAR N9  &num_sym RPAR N0  &kp DEL
                 &kp TAB    &kp BSPC  &none    &none    &none     &none      &num_sym UNDER MINUS  &num_sym PLUS EQUAL  &num_sym PIPE BSLH  &num_sym TILDE GRAVE  &none  &none
@@ -291,7 +291,7 @@
  * TD4* = hold→MO4 momentáneo · doble-tap→TOG4 (bloquea FnNum)
  */
         layer_2 {
-            display-name = "Nav";
+            display-name = "Navigate";
             bindings = <
                 &none  &none      &kp LG(LS(LEFT))  &kp LG(LS(RIGHT))  &none  &none    &none      &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &kp HOME  &kp PG_UP
                 &none  &kp LG(A)  &kp LG(LEFT)       &none              &none  &kp LG(RIGHT)    &none  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END   &kp PG_DN
@@ -313,7 +313,7 @@
  *         `-------------------'                            `-------------------'
  */
         lower_layer {
-            display-name = "Sys";
+            display-name = "System";
             bindings = <
                 &bt BT_CLR  &kp C_PREV   &kp C_PP     &kp C_NEXT    &out OUT_BLE  &out OUT_USB    &kp C_BRI_DN                        &kp C_BRI_UP                     &none                              &none                            &bl BL_TOG       &rgb_ug RGB_TOG
                 &none       &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2  &kp C_VOL_DN  &kp C_VOL_UP   &rgb_ug RGB_EFF                     &none                            &bl BL_DEC                         &bl BL_INC                       &rgb_ug RGB_BRD  &rgb_ug RGB_BRI
@@ -336,7 +336,7 @@
  *         `-------------------'                             `-------------------'
  */
         functions_layer {
-            display-name = "FnNum";
+            display-name = "Fn+Num";
             bindings = <
                 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6    &kp BSPC   &kp N7  &kp N8  &kp N9  &kp MINUS  &kp STAR
                 &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12   &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp PLUS   &kp SLASH
@@ -361,7 +361,7 @@
  *         `-------------------'                            `-------------------'
  */
         macro_layer {
-            display-name = "Mac";
+            display-name = "Macros";
             bindings = <
                 &kp LC(N1)       &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)       &kp LG(LA(H))    &kp LA(LG(LEFT))  &kp LA(LG(RIGHT))  &kp LA(LG(UP))  &kp LA(LG(DOWN))  &kp LA(LG(F))  &kp LA(LG(BSPC))
                 &kp LG(LA(ESC)) &mac_ss_clip  &mac_ss_area &kp LG(Z)   &kp LG(LS(Z))   &mac_mission     &kp LG(LBKT)      &kp LA(LG(C))      &none       &none        &kp LG(RBKT)   &kp LA(LG(LS(E)))
@@ -387,7 +387,7 @@
  *         `---------------------'                           `-------------------'
  */
         lang_layer {
-            display-name = "Lang";
+            display-name = "Language";
             bindings = <
                 &trans  &trans      &trans      &trans      &trans              &trans        &trans &trans &lang_u &trans &trans &trans
                 &trans  &kp LA(E)   &kp LA(N)   &kp LA(U)   &kp LA(LS(FSLH))  &kp LA(N1)    &lang_a &lang_n &lang_e &lang_i &lang_o &trans
@@ -489,7 +489,7 @@
  *         `-----+-----+-----'                              `-----+-----+-----'
  */
         wezterm_layer {
-            display-name = "Wez";
+            display-name = "WezTerm";
             bindings = <
                 &trans  &kp LG(T)          &kp LG(W)          &kp LG(LS(W))     &kp LG(LS(E))     &kp LG(LS(M))    &kp LG(LBKT)      &kp LG(RBKT)      &kp LA(K)           &kp LG(LS(LBKT))    &kp LG(LS(RBKT))    &none
                 &trans  &kp LG(LC(LBKT))   &kp LG(LC(RBKT))   &kp LG(LS(O))     &kp LG(LS(N))     &none            &none             &kp LA(H)         &kp LA(J)           &kp LA(L)           &kp LG(LS(P))       &none
