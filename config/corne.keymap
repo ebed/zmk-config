@@ -15,6 +15,18 @@
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
+/* nice!view — CS soldado al pin 010 (P0.10), no al default del adapter (P0.06).
+ * pro_micro 16 = P0.10 en nice!nano v2. */
+&nice_view_spi {
+    cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>;
+};
+
+/* P0.09/P0.10 son pines NFC del nRF52840: liberarlos como GPIO para usar
+ * P0.10 como CS. Escribe UICR al primer boot; solo se revierte borrando UICR. */
+&uicr {
+    nfct-pins-as-gpios;
+};
+
 / {
     /* ------------------------------------------------------------------ */
     /* Combos                                                               */

@@ -44,7 +44,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 |---|---|
 | Teclado | Corne (CRKBD) — 3×6 + 3 thumbs por lado |
 | Controlador | nice!nano v2 (nRF52840) |
-| Display | OLED 128×32 con [zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled) |
+| Display | nice!view (Sharp memory LCD 160×68, SPI) — shield in-tree de ZMK; CS en P0.10 |
 | RGB | Underglow WS2812 — 27 LEDs |
 | Conectividad | Bluetooth 5.0 (5 perfiles) + USB |
 
@@ -453,21 +453,28 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` 
 
 ---
 
-## OLED — Widgets activos
+## nice!view — Widgets activos
 
-### Left OLED (central)
+Status screen custom del shield `nice_view` (in-tree ZMK).
+
+### Left nice!view (central)
 
 | Widget | Descripción |
 |--------|-------------|
+| Battery | Nivel de batería + estado de carga |
+| Output | Salida activa: USB o perfil BT (0-4) y estado de conexión |
 | Layer name | Nombre de la capa activa (`Base` / `Sym` / `Nav` / `Sys` / `Fn` / `Mac` / `Lang` / `Apps` / `Tmux` / `Wez`) |
-| Bongo Cat | Idle: gato en reposo — typing: gato animado según WPM |
+| WPM chart | Gráfico de palabras por minuto |
 
-### Right OLED (periférico)
+### Right nice!view (periférico)
 
 | Widget | Descripción |
 |--------|-------------|
-| Battery | Nivel de batería |
-| Peripheral cat | Animación propia del lado periférico |
+| Battery | Nivel de batería + estado de carga |
+| Connection | Estado de conexión con la mitad central |
+| Art | Ilustración estática del shield |
+
+> **Cableado:** SDA→MOSI (P0.17) y SCL→SCK (P0.20) van por el puerto OLED de 4 pines; el pin `SCS` del nice!view va soldado al pad `010` (P0.10) del nice!nano. Como P0.10 es pin NFC del nRF52840, el keymap lo libera con `nfct-pins-as-gpios` (escribe UICR al primer boot).
 
 ---
 
@@ -475,7 +482,7 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` 
 
 | Evento | Tiempo | Acción |
 |--------|--------|--------|
-| Inactividad | 30 s | Apaga display (OLED) — se despierta con cualquier tecla |
+| Inactividad | 30 s | Estado idle — el nice!view queda encendido (memory LCD, consumo ~nulo; el shield fija `BLANK_ON_IDLE=n`) |
 | Inactividad | 5 min | Deep sleep — se despierta **solo con doble-tap en reset físico** |
 | RGB Underglow | — | **Apagado por default** — toggle manual en Layer 3 (`RGB-T`) |
 | Batería | — | Reporta nivel cada 60s |
@@ -488,8 +495,7 @@ Requiere [Hammerspoon](https://www.hammerspoon.org/) con `hammerspoon/init.lua` 
 
 | Componente | Versión | Motivo |
 |---|---|---|
-| ZMK Firmware | `v0.3.0` | Estable — pre Zephyr 4.1 migration |
-| zmk-nice-oled | `v0.0.2` | Testeado con ZMK v0.3.0 |
+| ZMK Firmware | `v0.3.0` | Estable — pre Zephyr 4.1 migration. Incluye shields `nice_view` / `nice_view_adapter` in-tree |
 | Workflow CI | `@v0.3.0` | Consistente con versión del firmware |
 
 ---

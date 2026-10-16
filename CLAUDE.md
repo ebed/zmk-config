@@ -1,13 +1,13 @@
 # Corne ZMK Config
 
-Teclado Corne (CRKBD) split 42 teclas, nice!nano v2, ZMK v0.3.0 + zmk-nice-oled. Colemak-DH con home-row mods. No hay build local: compila GitHub Actions (`.github/workflows/build.yml`, matriz en `build.yaml`).
+Teclado Corne (CRKBD) split 42 teclas, nice!nano v2, ZMK v0.3.0 + nice!view (shield in-tree, CS en P0.10 — override en `corne.keymap`). Colemak-DH con home-row mods. No hay build local: compila GitHub Actions (`.github/workflows/build.yml`, matriz en `build.yaml`).
 
 ## Archivos clave
 
 | Archivo | Contenido |
 |---------|-----------|
 | `config/corne.keymap` | Capas, behaviors (hold-tap, macros, tap-dance), combos |
-| `config/corne.conf` | Opciones Kconfig (BT, RGB, OLED, sleep) |
+| `config/corne.conf` | Opciones Kconfig (BT, RGB, display, sleep) |
 | `config/west.yml` | Versión de ZMK y módulos (pinear revisiones, no usar `main`) |
 | `LAYOUTS.md` / `README.md` | Documentación de capas (ASCII art, tablas) |
 | `hammerspoon/`, `scripts/` | Popup de capas y atajos macOS (`setup-hammerspoon.sh`) |
@@ -20,7 +20,7 @@ Teclado Corne (CRKBD) split 42 teclas, nice!nano v2, ZMK v0.3.0 + zmk-nice-oled.
 - Mantener 42 bindings por capa y el índice de capas coherente con los `MO/TOG/LT` que las referencian; al insertar o reordenar una capa, revisar todas las referencias.
 - Validar con CI antes de dar algo por hecho: `git push` y revisar el run (`gh run list --limit 3`, `gh run view --log-failed`). No declarar "funciona" solo por compilar: el comportamiento se prueba en el teclado.
 - Cambios de Kconfig/west: uno por commit, para poder bisecar si el firmware deja de arrancar.
-- Dependencias externas (zmk, nice-oled) siempre con tag/commit fijo.
+- Dependencias externas (zmk y cualquier módulo) siempre con tag/commit fijo.
 
 ## Convenciones
 
