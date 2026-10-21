@@ -304,31 +304,31 @@ window.onload = function() { show('home'); };
     <div class="kb-row">
       <div class="kb-key kb-extra active L1" id="l1-k-tab"><span class="kl">TAB</span></div>
       <div class="kb-key active L1" id="l1-k-a"><span class="kl">BSPC</span></div>
-      <div class="kb-key dim" id="l1-k-r"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-s"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-t"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-g"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-r"><span class="kl">R</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-s"><span class="kl">S</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-t"><span class="kl">T</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L1" id="l1-k-m"><span class="kl">-/_</span></div>
       <div class="kb-key active L1" id="l1-k-n"><span class="kl">=/+</span></div>
       <div class="kb-key active L1" id="l1-k-e"><span class="kl">\/|</span></div>
       <div class="kb-key active L1" id="l1-k-i"><span class="kl">`/~</span></div>
-      <div class="kb-key dim" id="l1-k-o"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-o"><span class="kl">O</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L1" id="l1-k-ctrl"><span class="kl">SK</span><span class="km">⇧Sticky</span></div>
-      <div class="kb-key dim" id="l1-k-z"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-x"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-c"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-d"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-v"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-z"><span class="kl">Z</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-x"><span class="kl">X</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L1" id="l1-k-k"><span class="kl">[/{</span></div>
       <div class="kb-key active L1" id="l1-k-h"><span class="kl">]/}</span></div>
-      <div class="kb-key dim" id="l1-k-comma"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l1-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l1-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l1-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-extra active L1" id="l1-k-ret"><span class="kl">↵</span></div>
     </div>
     <div class="kb-row kb-center">
@@ -336,9 +336,9 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-thumb active L1" id="l1-k-gui"><span class="kl">SK(⇧)</span><span class="km">sticky</span></div>
       <div class="kb-key kb-thumb active L1" id="l1-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l1-k-mo2"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l1-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb dim" id="l1-k-mo1"><span class="kl">[hld]</span><span class="km">Sym1</span></div>
-      <div class="kb-key kb-thumb dim" id="l1-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l1-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -356,14 +356,14 @@ window.onload = function() { show('home'); };
   <div class="dhdr L2"><div class="dnum L2">2</div><div><div class="dname">Nav</div><div class="dhow">hold MO2 (der-ext)</div></div></div>
   <div class="kb">
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l2-k-esc"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-q"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l2-k-q"><span class="kl">Q</span><span class="km">sin acción</span></div>
       <div class="kb-key active L2" id="l2-k-w"><span class="kl">⌘⇧←</span><span class="km">sel inicio línea</span></div>
       <div class="kb-key active L2" id="l2-k-f"><span class="kl">⌘⇧→</span><span class="km">sel fin línea</span></div>
-      <div class="kb-key dim" id="l2-k-p"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-b"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-p"><span class="kl">P</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l2-k-b"><span class="kl">B</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l2-k-j"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-j"><span class="kl">J</span><span class="km">sin acción</span></div>
       <div class="kb-key active L2" id="l2-k-l"><span class="kl">WJ←</span><span class="km">⌥←</span></div>
       <div class="kb-key active L2" id="l2-k-u"><span class="kl">↑</span></div>
       <div class="kb-key active L2" id="l2-k-y"><span class="kl">WJ→</span><span class="km">⌥→</span></div>
@@ -371,14 +371,14 @@ window.onload = function() { show('home'); };
       <div class="kb-key kb-extra active L2" id="l2-k-bspc"><span class="kl">PGUP</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l2-k-tab"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-tab"><span class="kl">TAB</span><span class="km">sin acción</span></div>
       <div class="kb-key active L2" id="l2-k-a"><span class="kl">⌘A</span><span class="km">sel all</span></div>
       <div class="kb-key active L2" id="l2-k-r"><span class="kl">⌘←</span><span class="km">línea inicio</span></div>
-      <div class="kb-key dim" id="l2-k-s"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-t"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-s"><span class="kl">S</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l2-k-t"><span class="kl">T</span><span class="km">sin acción</span></div>
       <div class="kb-key active L2" id="l2-k-g"><span class="kl">⌘→</span><span class="km">línea fin</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l2-k-m"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-m"><span class="kl">M</span><span class="km">sin acción</span></div>
       <div class="kb-key active L2" id="l2-k-n"><span class="kl">←</span></div>
       <div class="kb-key active L2" id="l2-k-e"><span class="kl">↓</span></div>
       <div class="kb-key active L2" id="l2-k-i"><span class="kl">→</span></div>
@@ -390,23 +390,23 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L2" id="l2-k-z"><span class="kl">⌘Z</span><span class="km">undo</span></div>
       <div class="kb-key active L2" id="l2-k-x"><span class="kl">⌘⇧Z</span><span class="km">redo</span></div>
       <div class="kb-key active L2" id="l2-k-c"><span class="kl">CPY/X</span><span class="km">⌘C/⌘X</span></div>
-      <div class="kb-key dim" id="l2-k-d"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
       <div class="kb-key active L2" id="l2-k-v"><span class="kl">⌘V</span><span class="km">paste</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L2" id="l2-k-k"><span class="kl">KT(⇧)</span><span class="km">toggle</span></div>
-      <div class="kb-key dim" id="l2-k-h"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-comma"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l2-k-slash"><span class="kl">·</span></div>
-      <div class="kb-key kb-extra dim" id="l2-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l2-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l2-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l2-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l2-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra dim" id="l2-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L3" id="l2-k-cpsw"><span class="kl">MO3</span><span class="km">→Sys</span></div>
       <div class="kb-key kb-thumb active L4" id="l2-k-gui"><span class="kl">TD4*</span><span class="km">→FnNum</span></div>
       <div class="kb-key kb-thumb active L2" id="l2-k-mo7"><span class="kl">SK(⇧)</span><span class="km">sticky</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l2-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l2-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb dim" id="l2-k-sym5"><span class="kl">[hld]</span><span class="km">Nav2</span></div>
     </div>
   </div>
@@ -434,13 +434,13 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L3" id="l3-k-j"><span class="kl">BRI-</span></div>
       <div class="kb-key active L3" id="l3-k-l"><span class="kl">BRI+</span></div>
-      <div class="kb-key dim" id="l3-k-u"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l3-k-y"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l3-k-u"><span class="kl">U</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l3-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
       <div class="kb-key active L3" id="l3-k-semi"><span class="kl">BL-TG</span></div>
       <div class="kb-key kb-extra active L3" id="l3-k-bspc"><span class="kl">RGB-T</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l3-k-tab"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l3-k-tab"><span class="kl">TAB</span><span class="km">sin acción</span></div>
       <div class="kb-key active L3" id="l3-k-a"><span class="kl">BT0</span></div>
       <div class="kb-key active L3" id="l3-k-r"><span class="kl">BT1</span></div>
       <div class="kb-key active L3" id="l3-k-s"><span class="kl">BT2</span></div>
@@ -448,17 +448,17 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L3" id="l3-k-g"><span class="kl">VOL+</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L3" id="l3-k-m"><span class="kl">RGB+</span></div>
-      <div class="kb-key dim" id="l3-k-n"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l3-k-n"><span class="kl">N</span><span class="km">sin acción</span></div>
       <div class="kb-key active L3" id="l3-k-e"><span class="kl">BL-</span></div>
       <div class="kb-key active L3" id="l3-k-i"><span class="kl">BL+</span></div>
       <div class="kb-key active L3" id="l3-k-o"><span class="kl">RGB-</span></div>
       <div class="kb-key active L3" id="l3-k-apos"><span class="kl">RGB++</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l3-k-ctrl"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l3-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
       <div class="kb-key active L3" id="l3-k-z"><span class="kl">BT3</span></div>
       <div class="kb-key active L3" id="l3-k-x"><span class="kl">BT4</span></div>
-      <div class="kb-key dim" id="l3-k-c"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l3-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
       <div class="kb-key active L3" id="l3-k-d"><span class="kl">MUTE</span></div>
       <div class="kb-key active L3" id="l3-k-v"><span class="kl">LCK</span></div>
       <div class="kb-sep"></div>
@@ -471,11 +471,11 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L3" id="l3-k-cpsw"><span class="kl">⌘</span></div>
-      <div class="kb-key kb-thumb dim" id="l3-k-gui"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l3-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-mo7"><span class="kl">[hld]</span><span class="km">SPC</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l3-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l3-k-mo1"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l3-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l3-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-sym5"><span class="kl">[hld]</span><span class="km">MO2</span></div>
     </div>
   </div>
@@ -521,12 +521,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L4" id="l4-k-apos"><span class="kl">/</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l4-k-ctrl"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-z"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-x"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-c"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-d"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l4-k-v"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l4-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l4-k-z"><span class="kl">Z</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l4-k-x"><span class="kl">X</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l4-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l4-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l4-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L4" id="l4-k-k"><span class="kl">⏎</span></div>
       <div class="kb-key active L4" id="l4-k-h"><span class="kl">1</span></div>
@@ -538,11 +538,11 @@ window.onload = function() { show('home'); };
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L4" id="l4-k-cpsw"><span class="kl">TOG-L</span><span class="km">exit</span></div>
       <div class="kb-key kb-thumb dim" id="l4-k-gui"><span class="kl">[hld]</span><span class="km">TD4</span></div>
-      <div class="kb-key kb-thumb dim" id="l4-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l4-k-mo7"><span class="kl">SPC</span><span class="km">sin acción</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l4-k-mo2"><span class="kl">[hld]</span><span class="km">MO2</span></div>
-      <div class="kb-key kb-thumb dim" id="l4-k-mo1"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l4-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l4-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l4-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -584,13 +584,13 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L5" id="l5-k-m"><span class="kl">BCK</span></div>
       <div class="kb-key active L5" id="l5-k-n"><span class="kl">CTR</span></div>
-      <div class="kb-key dim" id="l5-k-e"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l5-k-i"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l5-k-e"><span class="kl">E</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l5-k-i"><span class="kl">I</span><span class="km">sin acción</span></div>
       <div class="kb-key active L5" id="l5-k-o"><span class="kl">FWD</span></div>
       <div class="kb-key active L5" id="l5-k-apos"><span class="kl">EML</span><span class="km">⌥⌘⇧E</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l5-k-ctrl"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l5-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
       <div class="kb-key active L5" id="l5-k-z"><span class="kl">DSK←</span></div>
       <div class="kb-key active L5" id="l5-k-x"><span class="kl">DSK→</span></div>
       <div class="kb-key active L5" id="l5-k-c"><span class="kl">Exposé</span></div>
@@ -599,18 +599,18 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L5" id="l5-k-k"><span class="kl">USR</span><span class="km">⌥⌘⇧U</span></div>
       <div class="kb-key active L5" id="l5-k-h"><span class="kl">DISP→</span></div>
-      <div class="kb-key dim" id="l5-k-comma"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l5-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l5-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l5-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l5-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l5-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-extra active L5" id="l5-k-ret"><span class="kl">PWD</span><span class="km">⌥⌘⇧P</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb dim" id="l5-k-cpsw"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l5-k-cpsw"><span class="kl">CW</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb" id="l5-k-gui"><span class="kl">⌘</span></div>
       <div class="kb-key kb-thumb active L5" id="l5-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l5-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l5-k-mo1"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l5-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l5-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb dim" id="l5-k-sym5"><span class="kl">[hld]</span><span class="km">RET/L5</span></div>
     </div>
   </div>
@@ -627,17 +627,17 @@ window.onload = function() { show('home'); };
   <div class="dhdr L6"><div class="dnum L6">6</div><div><div class="dname">Lang</div><div class="dhow">hold CW/L6 (izq-ext)</div></div></div>
   <div class="kb">
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l6-k-esc"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-q"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-w"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-f"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-p"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-b"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l6-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-q"><span class="kl">Q</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-w"><span class="kl">W</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-f"><span class="kl">F</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-p"><span class="kl">P</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-b"><span class="kl">B</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l6-k-j"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-l"><span class="kl">·</span></div>
-      <div class="kb-key active L6" id="l6-k-u"><span class="kl">ú</span></div><div class="kb-key dim" id="l6-k-y"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-semi"><span class="kl">·</span></div><div class="kb-key kb-extra dim" id="l6-k-bspc"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l6-k-j"><span class="kl">J</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-l"><span class="kl">L</span><span class="km">sin acción</span></div>
+      <div class="kb-key active L6" id="l6-k-u"><span class="kl">ú</span></div><div class="kb-key dim" id="l6-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-semi"><span class="kl">;</span><span class="km">sin acción</span></div><div class="kb-key kb-extra dim" id="l6-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l6-k-tab"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l6-k-tab"><span class="kl">TAB</span><span class="km">sin acción</span></div>
       <div class="kb-key active L6" id="l6-k-a"><span class="kl">´</span><span class="km">dead acute</span></div>
       <div class="kb-key active L6" id="l6-k-r"><span class="kl">~</span><span class="km">dead tilde</span></div>
       <div class="kb-key active L6" id="l6-k-s"><span class="kl">¨</span><span class="km">dead umlaut</span></div>
@@ -646,26 +646,26 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L6" id="l6-k-m"><span class="kl">á</span></div><div class="kb-key active L6" id="l6-k-n"><span class="kl">ñ</span></div>
       <div class="kb-key active L6" id="l6-k-e"><span class="kl">é</span></div><div class="kb-key active L6" id="l6-k-i"><span class="kl">í</span></div>
-      <div class="kb-key active L6" id="l6-k-o"><span class="kl">ó</span></div><div class="kb-key dim" id="l6-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key active L6" id="l6-k-o"><span class="kl">ó</span></div><div class="kb-key dim" id="l6-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l6-k-ctrl"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-z"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-x"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-c"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-d"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-v"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l6-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-z"><span class="kl">Z</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-x"><span class="kl">X</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-c"><span class="kl">C</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l6-k-k"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-h"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-comma"><span class="kl">·</span></div><div class="kb-key dim" id="l6-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l6-k-slash"><span class="kl">·</span></div><div class="kb-key kb-extra dim" id="l6-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l6-k-k"><span class="kl">K</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div><div class="kb-key dim" id="l6-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l6-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div><div class="kb-key kb-extra dim" id="l6-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb dim" id="l6-k-cpsw"><span class="kl">[hld]</span><span class="km">CW/L6</span></div>
-      <div class="kb-key kb-thumb dim" id="l6-k-gui"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l6-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l6-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l6-k-mo7"><span class="kl">SPC</span><span class="km">sin acción</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l6-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l6-k-mo1"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l6-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l6-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l6-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l6-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -686,7 +686,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-w"><span class="kl">WCLS</span><span class="km">⌘W</span></div>
       <div class="kb-key active L7" id="l7-k-f"><span class="kl">WSPL-V</span><span class="km">⌘D</span></div>
       <div class="kb-key active L7" id="l7-k-p"><span class="kl">WSPL-H</span><span class="km">⌘⇧D</span></div>
-      <div class="kb-key dim" id="l7-k-b"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-b"><span class="kl">B</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L7" id="l7-k-j"><span class="kl">WEZ</span><span class="km">⌥⌘⇧W</span></div>
       <div class="kb-key active L7" id="l7-k-l"><span class="kl">SLK</span><span class="km">⌥⌘⇧S</span></div>
@@ -701,7 +701,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-r"><span class="kl">ZVID</span><span class="km">⌘⇧V</span></div>
       <div class="kb-key active L7" id="l7-k-s"><span class="kl">ZSHR</span><span class="km">⌘⇧S</span></div>
       <div class="kb-key active L7" id="l7-k-t"><span class="kl">ZLVE</span><span class="km">⌘⇧H</span></div>
-      <div class="kb-key dim" id="l7-k-g"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key active L7" id="l7-k-m"><span class="kl">HELP</span><span class="km">⌥⌘⇧H</span></div>
       <div class="kb-key active L7" id="l7-k-n"><span class="kl">CLU</span><span class="km">⌥⌘⇧N</span></div>
@@ -716,19 +716,19 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-x"><span class="kl">SMEN</span><span class="km">⌘⇧M</span></div>
       <div class="kb-key active L7" id="l7-k-c"><span class="kl">SCOD</span><span class="km">⌘⇧C</span></div>
       <div class="kb-key active L7" id="l7-k-d"><span class="kl">SJMP</span><span class="km">⌘K</span></div>
-      <div class="kb-key dim" id="l7-k-v"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key inherited" id="l7-k-k"><span class="kl">KT(⇧)</span></div>
-      <div class="kb-key dim" id="l7-k-h"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l7-k-comma"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l7-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l7-k-slash"><span class="kl">·</span></div>
-      <div class="kb-key kb-extra dim" id="l7-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l7-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l7-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l7-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l7-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra dim" id="l7-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb inherited" id="l7-k-cpsw"><span class="kl">CW/L6</span></div>
       <div class="kb-key kb-thumb dim" id="l7-k-gui"><span class="kl">[hld]</span><span class="km">Apps7</span></div>
-      <div class="kb-key kb-thumb dim" id="l7-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l7-k-mo7"><span class="kl">SPC</span><span class="km">sin acción</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb active L7" id="l7-k-mo2"><span class="kl">⌘↩</span></div>
       <div class="kb-key kb-thumb inherited" id="l7-k-mo1"><span class="kl">MO1</span></div>
@@ -758,9 +758,9 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-j"><span class="kl">Split |</span><span class="km">izq | der</span></div>
       <div class="kb-key active L9" id="l9-k-l"><span class="kl">Split -</span><span class="km">sup / inf</span></div>
       <div class="kb-key active L9" id="l9-k-u"><span class="kl">Pane↑</span><span class="km">ir arriba</span></div>
-      <div class="kb-key dim" id="l9-k-y"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l9-k-semi"><span class="kl">·</span></div>
-      <div class="kb-key kb-extra dim" id="l9-k-bspc"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l9-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l9-k-semi"><span class="kl">;</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra dim" id="l9-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L9" id="l9-k-tab"><span class="kl">[hld]</span><span class="km">TAB</span></div>
@@ -775,7 +775,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-e"><span class="kl">Pane↓</span><span class="km">ir abajo</span></div>
       <div class="kb-key active L9" id="l9-k-i"><span class="kl">Pane→</span><span class="km">ir der.</span></div>
       <div class="kb-key active L9" id="l9-k-o"><span class="kl">Pegar</span><span class="km">buffer ]</span></div>
-      <div class="kb-key dim" id="l9-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l9-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L9" id="l9-k-ctrl"><span class="kl">Renom.</span><span class="km">sesión $</span></div>
@@ -790,16 +790,16 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-comma"><span class="kl">Size↑</span><span class="km">resize K</span></div>
       <div class="kb-key active L9" id="l9-k-dot"><span class="kl">Size→</span><span class="km">resize L</span></div>
       <div class="kb-key active L9" id="l9-k-slash"><span class="kl">Cerrar</span><span class="km">ventana &</span></div>
-      <div class="kb-key kb-extra dim" id="l9-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l9-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb dim" id="l9-k-cpsw"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l9-k-gui"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l9-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-cpsw"><span class="kl">CW</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-mo7"><span class="kl">SPC</span><span class="km">sin acción</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l9-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l9-k-mo1"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l9-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l9-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -816,28 +816,28 @@ window.onload = function() { show('home'); };
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-esc"><span class="kl">SCRL↑</span></div>
-      <div class="kb-key dim" id="l8-k-q"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-w"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-q"><span class="kl">Q</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-w"><span class="kl">W</span><span class="km">sin acción</span></div>
       <div class="kb-key active L8" id="l8-k-f"><span class="kl">M↑</span></div>
-      <div class="kb-key dim" id="l8-k-p"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-b"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-p"><span class="kl">P</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-b"><span class="kl">B</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l8-k-j"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-l"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-u"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-y"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-semi"><span class="kl">·</span></div>
-      <div class="kb-key kb-extra dim" id="l8-k-bspc"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-j"><span class="kl">J</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-l"><span class="kl">L</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-u"><span class="kl">U</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-semi"><span class="kl">;</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra dim" id="l8-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-tab"><span class="kl">SCRL↓</span></div>
-      <div class="kb-key dim" id="l8-k-a"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-a"><span class="kl">A</span><span class="km">sin acción</span></div>
       <div class="kb-key active L8" id="l8-k-r"><span class="kl">M←</span></div>
       <div class="kb-key active L8" id="l8-k-s"><span class="kl">M↓</span></div>
       <div class="kb-key active L8" id="l8-k-t"><span class="kl">M→</span></div>
-      <div class="kb-key dim" id="l8-k-g"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l8-k-m"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-m"><span class="kl">M</span><span class="km">sin acción</span></div>
       <div class="kb-key active L8" id="l8-k-n"><span class="kl">LCLK</span></div>
       <div class="kb-key active L8" id="l8-k-e"><span class="kl">MCLK</span></div>
       <div class="kb-key active L8" id="l8-k-i"><span class="kl">RCLK</span></div>
@@ -847,26 +847,26 @@ window.onload = function() { show('home'); };
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-ctrl"><span class="kl">SCRL←</span></div>
       <div class="kb-key active L8" id="l8-k-z"><span class="kl">SCRL→</span></div>
-      <div class="kb-key dim" id="l8-k-x"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-c"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-d"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-v"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-x"><span class="kl">X</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l8-k-k"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-h"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-comma"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-dot"><span class="kl">·</span></div>
-      <div class="kb-key dim" id="l8-k-slash"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l8-k-k"><span class="kl">K</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-extra active L8" id="l8-k-ret"><span class="kl">EXIT</span><span class="km">tog8</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L8" id="l8-k-cpsw"><span class="kl">EXIT</span><span class="km">tog8</span></div>
-      <div class="kb-key kb-thumb dim" id="l8-k-gui"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l8-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-mo7"><span class="kl">SPC</span><span class="km">sin acción</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l8-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l8-k-mo1"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l8-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l8-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
     </div>
   </div>
   <ul class="notes">
@@ -894,46 +894,46 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L10" id="l10-k-u"><span class="kl">PAN↑</span><span class="km">⌥K</span></div>
       <div class="kb-key active L10" id="l10-k-y"><span class="kl">MOV←</span><span class="km">⌘⇧[</span></div>
       <div class="kb-key active L10" id="l10-k-semi"><span class="kl">MOV→</span><span class="km">⌘⇧]</span></div>
-      <div class="kb-key kb-extra dim" id="l10-k-bspc"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l10-k-tab"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-tab"><span class="kl">TAB</span><span class="km">sin acción</span></div>
       <div class="kb-key active L10" id="l10-k-a"><span class="kl">WS←</span><span class="km">⌘⌃[</span></div>
       <div class="kb-key active L10" id="l10-k-r"><span class="kl">WS→</span><span class="km">⌘⌃]</span></div>
       <div class="kb-key active L10" id="l10-k-s"><span class="kl">WSSL</span><span class="km">⌘⇧O</span></div>
       <div class="kb-key active L10" id="l10-k-t"><span class="kl">WSNW</span><span class="km">⌘⇧N</span></div>
-      <div class="kb-key dim" id="l10-k-g"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l10-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l10-k-m"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l10-k-m"><span class="kl">M</span><span class="km">sin acción</span></div>
       <div class="kb-key active L10" id="l10-k-n"><span class="kl">PAN←</span><span class="km">⌥H</span></div>
       <div class="kb-key active L10" id="l10-k-e"><span class="kl">PAN↓</span><span class="km">⌥J</span></div>
       <div class="kb-key active L10" id="l10-k-i"><span class="kl">PAN→</span><span class="km">⌥L</span></div>
       <div class="kb-key active L10" id="l10-k-o"><span class="kl">PSEL</span><span class="km">⌘⇧P</span></div>
-      <div class="kb-key kb-extra dim" id="l10-k-apos"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l10-k-ctrl"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
       <div class="kb-key active L10" id="l10-k-z"><span class="kl">RNM</span><span class="km">⌘,</span></div>
       <div class="kb-key active L10" id="l10-k-x"><span class="kl">SPLH</span><span class="km">⌘D</span></div>
       <div class="kb-key active L10" id="l10-k-c"><span class="kl">SPLV</span><span class="km">⌘⇧D</span></div>
       <div class="kb-key active L10" id="l10-k-d"><span class="kl">ZOM</span><span class="km">⌘Z</span></div>
-      <div class="kb-key dim" id="l10-k-v"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l10-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l10-k-k"><span class="kl">·</span></div>
+      <div class="kb-key dim" id="l10-k-k"><span class="kl">K</span><span class="km">sin acción</span></div>
       <div class="kb-key active L10" id="l10-k-h"><span class="kl">RES←</span><span class="km">⌘⌥←</span></div>
       <div class="kb-key active L10" id="l10-k-comma"><span class="kl">RES↑</span><span class="km">⌘⌥↑</span></div>
       <div class="kb-key active L10" id="l10-k-dot"><span class="kl">RES↓</span><span class="km">⌘⌥↓</span></div>
       <div class="kb-key active L10" id="l10-k-slash"><span class="kl">RES→</span><span class="km">⌘⌥→</span></div>
-      <div class="kb-key kb-extra dim" id="l10-k-ret"><span class="kl">·</span></div>
+      <div class="kb-key kb-extra dim" id="l10-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row kb-center">
-      <div class="kb-key kb-thumb dim" id="l10-k-cpsw"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l10-k-gui"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l10-k-mo7"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-cpsw"><span class="kl">CW</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-mo7"><span class="kl">SPC</span><span class="km">sin acción</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l10-k-mo2"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l10-k-mo1"><span class="kl">·</span></div>
-      <div class="kb-key kb-thumb dim" id="l10-k-sym5"><span class="kl">·</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l10-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
     </div>
   </div>
   <ul class="notes">
