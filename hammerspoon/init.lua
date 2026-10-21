@@ -120,16 +120,18 @@ body {
 .kb-row { display:flex; gap:5px; align-items:stretch; }
 .kb-sep { width:18px; flex-shrink:0; }
 .kb-center { justify-content:center; margin-top:4px; }
-.kb-key { background:#1c1c1c; border:1px solid #333; border-bottom:3px solid #222; border-radius:5px; padding:5px 6px 4px; text-align:center; min-width:52px; font-family:"SF Mono",Menlo,monospace; }
-.kb-key .kl { font-size:13px; color:#ccc; display:block; font-weight:bold; }
-.kb-key .km { font-size:9px; color:#555; display:block; margin-top:1px; }
+.kb-key { background:#1c1c1c; border:1px solid #333; border-bottom:3px solid #222; border-radius:5px; padding:5px 3px 4px; text-align:center; flex:1 1 0; min-width:0; overflow:hidden; font-family:"SF Mono",Menlo,monospace; }
+.kb-key .kl { font-size:12px; color:#ccc; display:block; font-weight:bold; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.kb-key .km { font-size:9px; color:#555; display:block; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.kb-row.kb-center .kb-key { flex:0 0 72px; }
 .kb-key.pressed { background:#0d2a45 !important; border-color:#4a9eff !important; border-bottom-color:#1a5080 !important; }
 .kb-key.pressed .kl { color:#88cfff !important; }
-.kb-extra { min-width:60px; }
-.kb-thumb { min-width:68px; }
+/* Todas las teclas comparten ancho (flex:1) para que las 12 columnas se
+   alineen entre filas; extra/thumb ya no necesitan anchos propios. */
 .kb-key.active { border-color:var(--lc); }
 .kb-key.active .kl { color:var(--lc); }
-.kb-key.dim { opacity:0.18; }
+.kb-key.dim { background:#151515; border:1px dashed #2e2e2e; border-bottom:1px dashed #2e2e2e; }
+.kb-key.dim .kl { color:#3d3d3d; }
 .kb-key.inherited { opacity:0.38; border-style:dashed; }
 </style>
 <script>
