@@ -77,6 +77,18 @@ body {
   background: var(--lb); color: var(--lc); border: 1px solid var(--lc); white-space: nowrap;
 }
 .lhow { font-size: 11px; color: #8a8a8a; }
+/* Mini-mapa de activadores al pie del sidebar */
+.minimap { margin: 14px 10px 4px; padding-top: 10px; border-top: 1px solid #1e1e1e; }
+.mm-title { font-size: 10px; color: #6a6a6a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 7px; padding-left: 4px; }
+.mm-row { display: flex; gap: 2px; margin-bottom: 2px; }
+.mm-thumbs { display: flex; gap: 2px; justify-content: center; margin-top: 3px; }
+.mm-gap { width: 8px; flex-shrink: 0; }
+.mm-key { width: 12px; height: 15px; border: 1px solid #2d2d2d; border-radius: 2px; background: #161616;
+  font-size: 8px; line-height: 15px; text-align: center; font-family: "SF Mono", Menlo, monospace;
+  color: transparent; flex-shrink: 0; font-weight: bold; }
+.mm-key.on { border-color: var(--lc); color: var(--lc); background: var(--lb); }
+.mm-notes { font-size: 9px; color: #7a7a7a; margin-top: 8px; line-height: 1.6; padding-left: 4px; }
+.mm-notes b { color: #9a9a9a; font-family: "SF Mono", Menlo, monospace; }
 .L0 { --lc: #aaaaaa; --lb: #1e1e1e; }
 .L1 { --lc: #ff9944; --lb: #1e1100; }
 .L2 { --lc: #4a9eff; --lb: #001525; }
@@ -179,6 +191,19 @@ window.onload = function() { show('home'); };
   <div class="ni sub" data-l="11" onclick="show('11')" style="--lbb:#cc4444"><span class="lbadge" style="background:#cc4444">11 Qwerty</span><span class="lhow">tog11 (Sys)</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
+  <div class="minimap">
+    <div class="mm-title">¿Dónde se activa?</div>
+    <div class="mm-row"><div class="mm-key on L10">10</div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-gap"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div></div>
+    <div class="mm-row"><div class="mm-key on L9">9</div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-gap"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div></div>
+    <div class="mm-row"><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-gap"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div><div class="mm-key"></div></div>
+    <div class="mm-thumbs"><div class="mm-key on L6">6</div><div class="mm-key on L7">7</div><div class="mm-key on L3">3</div><div class="mm-gap"></div><div class="mm-key on L5">5</div><div class="mm-key on L1">1</div><div class="mm-key on L2">2</div></div>
+    <div class="mm-notes">
+      <b>3</b> Sys = SPC+MO2 juntos (pulgares int.)<br>
+      <b>4</b> Fn = desde Nav (TD4, pulgar izq med.)<br>
+      <b>8</b> Mouse = tog en Nav, V-pos (meñique izq inf.)<br>
+      <b>11</b> Qwerty = tog en Sys, misma tecla que 8
+    </div>
+  </div>
 </nav>
 <div class="content">
 
