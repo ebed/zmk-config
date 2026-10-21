@@ -190,6 +190,21 @@ window.onload = function() { show('home'); };
 
 <!-- HOME -->
 <div id="v-home" class="view">
+
+  <div class="tree-label" style="margin-top:4px">Mapa de activadores — dónde vive cada capa</div>
+  <div class="kb">
+    <div class="kb-row"><div class="kb-key active L10" onclick="show('10')"><span class="kl">ESC</span><span class="km">hold→Wez</span></div><div class="kb-key dim"><span class="kl">Q</span></div><div class="kb-key dim"><span class="kl">W</span></div><div class="kb-key dim"><span class="kl">F</span></div><div class="kb-key dim"><span class="kl">P</span></div><div class="kb-key dim"><span class="kl">B</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">J</span></div><div class="kb-key dim"><span class="kl">L</span></div><div class="kb-key dim"><span class="kl">U</span></div><div class="kb-key dim"><span class="kl">Y</span></div><div class="kb-key dim"><span class="kl">;</span></div><div class="kb-key dim"><span class="kl">BSPC</span></div></div>
+    <div class="kb-row"><div class="kb-key active L9" onclick="show('9')"><span class="kl">TAB</span><span class="km">hold→Tmux</span></div><div class="kb-key dim"><span class="kl">A</span></div><div class="kb-key dim"><span class="kl">R</span></div><div class="kb-key dim"><span class="kl">S</span></div><div class="kb-key dim"><span class="kl">T</span></div><div class="kb-key dim"><span class="kl">G</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">M</span></div><div class="kb-key dim"><span class="kl">N</span></div><div class="kb-key dim"><span class="kl">E</span></div><div class="kb-key dim"><span class="kl">I</span></div><div class="kb-key dim"><span class="kl">O</span></div><div class="kb-key dim"><span class="kl">'</span></div></div>
+    <div class="kb-row"><div class="kb-key active" style="--lc:#9a9a9a"><span class="kl">REPT</span><span class="km">8·11 vía capas</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
+    <div class="kb-row kb-center"><div class="kb-key kb-thumb active L6" onclick="show('6')"><span class="kl">CW</span><span class="km">hold→Lang</span></div><div class="kb-key kb-thumb active L7" onclick="show('7')"><span class="kl">MO7</span><span class="km">hold→Apps</span></div><div class="kb-key kb-thumb active L3" onclick="show('3')"><span class="kl">SPC</span><span class="km">+MO2→Sys</span></div><div class="kb-sep" style="width:24px"></div><div class="kb-key kb-thumb active L5" onclick="show('5')"><span class="kl">RET</span><span class="km">hold→Mac</span></div><div class="kb-key kb-thumb active L1" onclick="show('1')"><span class="kl">MO1</span><span class="km">hold→Sym</span></div><div class="kb-key kb-thumb active L2" onclick="show('2')"><span class="kl">MO2</span><span class="km">hold→Nav</span></div></div>
+  </div>
+  <div style="font-size:12px;color:#959595;padding-left:4px;line-height:1.7">
+    <b style="color:#cfcfcf">3 Sys</b> = SPC + MO2 juntos ·
+    <b style="color:#cfcfcf">4 Fn</b> = desde Nav: TD4 (pulgar izq medio) ·
+    <b style="color:#cfcfcf">8 Mouse</b> = tog en Nav, tecla REPT-pos ·
+    <b style="color:#cfcfcf">11 Qwerty</b> = tog en Sys, misma tecla
+  </div>
+
   <div class="thumb-label">◄ IZQUIERDO ──────────────────── DERECHO ►</div>
   <div class="thumb-row">
     <div class="tkey L6" style="--lbb:#22aa66" onclick="show('6')"><div class="kn">CW/L6</div><div class="kt">tap: CapsWord</div><div class="kh">hold → Lang 6</div></div>
@@ -215,19 +230,6 @@ window.onload = function() { show('home'); };
     <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>CW/L6</b> (izq-ext)</span></div>
   </div>
 
-  <div class="tree-label" style="margin-top:22px">Mapa de activadores — dónde vive cada capa</div>
-  <div class="kb">
-    <div class="kb-row"><div class="kb-key active L10" onclick="show('10')"><span class="kl">ESC</span><span class="km">hold→Wez</span></div><div class="kb-key dim"><span class="kl">Q</span></div><div class="kb-key dim"><span class="kl">W</span></div><div class="kb-key dim"><span class="kl">F</span></div><div class="kb-key dim"><span class="kl">P</span></div><div class="kb-key dim"><span class="kl">B</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">J</span></div><div class="kb-key dim"><span class="kl">L</span></div><div class="kb-key dim"><span class="kl">U</span></div><div class="kb-key dim"><span class="kl">Y</span></div><div class="kb-key dim"><span class="kl">;</span></div><div class="kb-key dim"><span class="kl">BSPC</span></div></div>
-    <div class="kb-row"><div class="kb-key active L9" onclick="show('9')"><span class="kl">TAB</span><span class="km">hold→Tmux</span></div><div class="kb-key dim"><span class="kl">A</span></div><div class="kb-key dim"><span class="kl">R</span></div><div class="kb-key dim"><span class="kl">S</span></div><div class="kb-key dim"><span class="kl">T</span></div><div class="kb-key dim"><span class="kl">G</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">M</span></div><div class="kb-key dim"><span class="kl">N</span></div><div class="kb-key dim"><span class="kl">E</span></div><div class="kb-key dim"><span class="kl">I</span></div><div class="kb-key dim"><span class="kl">O</span></div><div class="kb-key dim"><span class="kl">'</span></div></div>
-    <div class="kb-row"><div class="kb-key active" style="--lc:#9a9a9a"><span class="kl">REPT</span><span class="km">8·11 vía capas</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
-    <div class="kb-row kb-center"><div class="kb-key kb-thumb active L6" onclick="show('6')"><span class="kl">CW</span><span class="km">hold→Lang</span></div><div class="kb-key kb-thumb active L7" onclick="show('7')"><span class="kl">MO7</span><span class="km">hold→Apps</span></div><div class="kb-key kb-thumb active L3" onclick="show('3')"><span class="kl">SPC</span><span class="km">+MO2→Sys</span></div><div class="kb-sep" style="width:24px"></div><div class="kb-key kb-thumb active L5" onclick="show('5')"><span class="kl">RET</span><span class="km">hold→Mac</span></div><div class="kb-key kb-thumb active L1" onclick="show('1')"><span class="kl">MO1</span><span class="km">hold→Sym</span></div><div class="kb-key kb-thumb active L2" onclick="show('2')"><span class="kl">MO2</span><span class="km">hold→Nav</span></div></div>
-  </div>
-  <div style="font-size:12px;color:#959595;padding-left:4px;line-height:1.7">
-    <b style="color:#cfcfcf">3 Sys</b> = SPC + MO2 juntos ·
-    <b style="color:#cfcfcf">4 Fn</b> = desde Nav: TD4 (pulgar izq medio) ·
-    <b style="color:#cfcfcf">8 Mouse</b> = tog en Nav, tecla REPT-pos ·
-    <b style="color:#cfcfcf">11 Qwerty</b> = tog en Sys, misma tecla
-  </div>
   <div style="text-align:center;color:#252525;font-size:11px;margin-top:18px">⌥⌘⇧H · Layer 7 tecla M · click título para volver aquí</div>
 </div>
 
