@@ -101,6 +101,10 @@ body {
 .kt { font-size: 11px; color: #666; }
 .kh { font-size: 11px; color: var(--lc); font-weight: bold; margin-top: 2px; }
 .tree-label { font-size: 11px; color: #6a6a6a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.routes div { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 5px 0; cursor: pointer; }
+.routes div:hover { background: #141414; }
+.routes .rtxt { font-size: 12px; color: #aaa; }
+.routes .rtxt b { color: #e0e0e0; font-family: "SF Mono", Menlo, monospace; }
 .tree { display: flex; flex-direction: column; gap: 4px; }
 .tr { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 2px 0; }
 .tr:hover .tbadge { filter: brightness(1.2); }
@@ -195,14 +199,15 @@ window.onload = function() { show('home'); };
   <div class="kb">
     <div class="kb-row"><div class="kb-key active L10" onclick="show('10')"><span class="kl">ESC</span><span class="km">hold→Wez</span></div><div class="kb-key dim"><span class="kl">Q</span></div><div class="kb-key dim"><span class="kl">W</span></div><div class="kb-key dim"><span class="kl">F</span></div><div class="kb-key dim"><span class="kl">P</span></div><div class="kb-key dim"><span class="kl">B</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">J</span></div><div class="kb-key dim"><span class="kl">L</span></div><div class="kb-key dim"><span class="kl">U</span></div><div class="kb-key dim"><span class="kl">Y</span></div><div class="kb-key dim"><span class="kl">;</span></div><div class="kb-key dim"><span class="kl">BSPC</span></div></div>
     <div class="kb-row"><div class="kb-key active L9" onclick="show('9')"><span class="kl">TAB</span><span class="km">hold→Tmux</span></div><div class="kb-key dim"><span class="kl">A</span></div><div class="kb-key dim"><span class="kl">R</span></div><div class="kb-key dim"><span class="kl">S</span></div><div class="kb-key dim"><span class="kl">T</span></div><div class="kb-key dim"><span class="kl">G</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">M</span></div><div class="kb-key dim"><span class="kl">N</span></div><div class="kb-key dim"><span class="kl">E</span></div><div class="kb-key dim"><span class="kl">I</span></div><div class="kb-key dim"><span class="kl">O</span></div><div class="kb-key dim"><span class="kl">'</span></div></div>
-    <div class="kb-row"><div class="kb-key active" style="--lc:#9a9a9a"><span class="kl">REPT</span><span class="km">8·11 vía capas</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
-    <div class="kb-row kb-center"><div class="kb-key kb-thumb active L6" onclick="show('6')"><span class="kl">CW</span><span class="km">hold→Lang</span></div><div class="kb-key kb-thumb active L7" onclick="show('7')"><span class="kl">MO7</span><span class="km">hold→Apps</span></div><div class="kb-key kb-thumb active L3" onclick="show('3')"><span class="kl">SPC</span><span class="km">+MO2→Sys</span></div><div class="kb-sep" style="width:24px"></div><div class="kb-key kb-thumb active L5" onclick="show('5')"><span class="kl">RET</span><span class="km">hold→Mac</span></div><div class="kb-key kb-thumb active L1" onclick="show('1')"><span class="kl">MO1</span><span class="km">hold→Sym</span></div><div class="kb-key kb-thumb active L2" onclick="show('2')"><span class="kl">MO2</span><span class="km">hold→Nav</span></div></div>
+    <div class="kb-row"><div class="kb-key active" style="--lc:#9a9a9a"><span class="kl">REPT</span><span class="km">→ 8 · 11</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
+    <div class="kb-row kb-center"><div class="kb-key kb-thumb active L6" onclick="show('6')"><span class="kl">CW</span><span class="km">hold→Lang</span></div><div class="kb-key kb-thumb active L7" onclick="show('7')"><span class="kl">MO7</span><span class="km">Apps · TD4→4</span></div><div class="kb-key kb-thumb active L3" onclick="show('3')"><span class="kl">SPC</span><span class="km">+MO2→Sys</span></div><div class="kb-sep" style="width:24px"></div><div class="kb-key kb-thumb active L5" onclick="show('5')"><span class="kl">RET</span><span class="km">hold→Mac</span></div><div class="kb-key kb-thumb active L1" onclick="show('1')"><span class="kl">MO1</span><span class="km">hold→Sym</span></div><div class="kb-key kb-thumb active L2" onclick="show('2')"><span class="kl">MO2</span><span class="km">hold→Nav</span></div></div>
   </div>
-  <div style="font-size:12px;color:#959595;padding-left:4px;line-height:1.7">
-    <b style="color:#cfcfcf">3 Sys</b> = SPC + MO2 juntos ·
-    <b style="color:#cfcfcf">4 Fn</b> = desde Nav: TD4 (pulgar izq medio) ·
-    <b style="color:#cfcfcf">8 Mouse</b> = tog en Nav, tecla REPT-pos ·
-    <b style="color:#cfcfcf">11 Qwerty</b> = tog en Sys, misma tecla
+  <div class="tree-label" style="margin-top:18px">Rutas a subcapas</div>
+  <div class="routes">
+    <div onclick="show('3')"><span class="lbadge L3">3 Sys</span><span class="rtxt">mantener <b>SPC + MO2</b> juntos (pulgares internos)</span></div>
+    <div onclick="show('4')"><span class="lbadge L4">4 Fn</span><span class="rtxt">desde</span><span class="lbadge L2">2 Nav</span><span class="rtxt">hold <b>TD4</b> (pulgar izq medio) · doble-tap = bloquea</span></div>
+    <div onclick="show('8')"><span class="lbadge" style="background:#0088cc;color:#013;border-color:#0088cc">8 Mouse</span><span class="rtxt">desde</span><span class="lbadge L2">2 Nav</span><span class="rtxt">tap <b>REPT-pos</b> (meñique izq inf) · misma tecla = salir</span></div>
+    <div onclick="show('11')"><span class="lbadge" style="background:#cc4444;color:#200;border-color:#cc4444">11 Qwerty</span><span class="rtxt">desde</span><span class="lbadge L3">3 Sys</span><span class="rtxt">tap <b>REPT-pos</b> · salir: meñique der inf</span></div>
   </div>
 
   <div class="thumb-label">◄ IZQUIERDO ──────────────────── DERECHO ►</div>
@@ -214,20 +219,6 @@ window.onload = function() { show('home'); };
     <div class="tkey L2" style="--lbb:#1a4488" onclick="show('2')"><div class="kn">MO2</div><div class="kt">solo: nada</div><div class="kh">hold → Nav 2</div></div>
     <div class="tkey L1" style="--lbb:#884422" onclick="show('1')"><div class="kn">MO1</div><div class="kt">solo: nada</div><div class="kh">hold → Sym 1</div></div>
     <div class="tkey L5" style="--lbb:#882244" onclick="show('5')"><div class="kn">RET/L5</div><div class="kt">tap: ↵ RET</div><div class="kh">hold → Mac 5</div></div>
-  </div>
-  <div class="tree-label">Árbol de capas — click para ver layout</div>
-  <div class="tree">
-    <div class="tr L0" onclick="show('0')"><span class="tbadge L0">Base 0</span><span class="thow">siempre activo</span></div>
-    <div class="tr L1" onclick="show('1')"><span class="tbadge L1">Sym 1</span><span class="thow">hold <b>MO1</b> (der-med)</span></div>
-    <div class="tr L2" onclick="show('2')"><span class="tbadge L2">Nav 2</span><span class="thow">hold <b>MO2</b> (der-ext)</span></div>
-    <div class="tr tsub L3" onclick="show('3')"><span class="tbadge L3">Sys 3</span><span class="thow">hold <b>SPC + MO2</b> combo</span></div>
-    <div class="tr tsub L4" onclick="show('4')"><span class="tbadge L4">Fn 4</span><span class="thow">hold <b>BSPC</b></span></div>
-    <div class="tr tsub L7" onclick="show('7')"><span class="tbadge L7">Apps 7</span><span class="thow">hold <b>MO7</b> (izq-med)</span></div>
-    <div class="tr tsub L9" onclick="show('9')"><span class="tbadge L9">Tmux 9</span><span class="thow">hold <b>TAB</b> (izq home) · prefix Ctrl+A</span></div>
-    <div class="tr tsub L10" onclick="show('10')"><span class="tbadge L10">Wez 10</span><span class="thow">hold <b>ESC</b> (izq top) · shortcuts WezTerm</span></div>
-    <div class="tr tsub" onclick="show('11')"><span class="tbadge" style="background:#cc4444">Qwerty 11</span><span class="thow">toggle <b>QWRT</b> en Sys (meñique izq inf) · gaming sin HRM</span></div>
-    <div class="tr L5" onclick="show('5')"><span class="tbadge L5">Mac 5</span><span class="thow">hold <b>RET/L5</b> (der-ext)</span></div>
-    <div class="tr L6" onclick="show('6')"><span class="tbadge L6">Lang 6</span><span class="thow">hold <b>CW/L6</b> (izq-ext)</span></div>
   </div>
 
   <div style="text-align:center;color:#252525;font-size:11px;margin-top:18px">⌥⌘⇧H · Layer 7 tecla M · click título para volver aquí</div>
