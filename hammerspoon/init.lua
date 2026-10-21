@@ -181,6 +181,10 @@ window.onload = function() { show('home'); };
   <div class="ni sub" data-l="11" onclick="show('11')" style="--lbb:#cc4444"><span class="lbadge" style="background:#cc4444">11 Qwerty</span><span class="lhow">tog11 (Sys)</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
+  <div class="ni" onclick="show('home')" style="margin-top:10px;border-top:1px solid #1e1e1e;padding-top:12px">
+    <span class="lbadge" style="background:#15151e;color:#8a9eff;border-color:#4a5eff">🗺 Mapa</span>
+    <span class="lhow">dónde se activa cada capa</span>
+  </div>
 </nav>
 <div class="content">
 
