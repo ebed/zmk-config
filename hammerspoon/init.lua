@@ -130,8 +130,9 @@ body {
    alineen entre filas; extra/thumb ya no necesitan anchos propios. */
 .kb-key.active { border-color:var(--lc); }
 .kb-key.active .kl { color:var(--lc); }
-.kb-key.dim { background:#151515; border:1px dashed #2e2e2e; border-bottom:1px dashed #2e2e2e; }
-.kb-key.dim .kl { color:#3d3d3d; }
+.kb-key.dim { background:#1a1a1a; border:1px dashed #555; border-bottom:1px dashed #555; }
+.kb-key.dim .kl { color:#9a9a9a; }
+.kb-key.dim .km { color:#666; }
 .kb-key.inherited { opacity:0.38; border-style:dashed; }
 </style>
 <script>
