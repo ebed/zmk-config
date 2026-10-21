@@ -76,7 +76,7 @@ body {
   padding: 2px 7px; border-radius: 3px;
   background: var(--lb); color: var(--lc); border: 1px solid var(--lc); white-space: nowrap;
 }
-.lhow { font-size: 11px; color: #444; }
+.lhow { font-size: 11px; color: #8a8a8a; }
 .L0 { --lc: #aaaaaa; --lb: #1e1e1e; }
 .L1 { --lc: #ff9944; --lb: #1e1100; }
 .L2 { --lc: #4a9eff; --lb: #001525; }
@@ -98,7 +98,7 @@ body {
 .kn { font-weight: bold; font-size: 15px; color: #eee; margin-bottom: 4px; font-family: "SF Mono", Menlo, monospace; }
 .kt { font-size: 11px; color: #666; }
 .kh { font-size: 11px; color: var(--lc); font-weight: bold; margin-top: 2px; }
-.tree-label { font-size: 11px; color: #3a3a3a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.tree-label { font-size: 11px; color: #6a6a6a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
 .tree { display: flex; flex-direction: column; gap: 4px; }
 .tr { display: flex; align-items: center; gap: 10px; cursor: pointer; padding: 2px 0; }
 .tr:hover .tbadge { filter: brightness(1.2); }
@@ -110,11 +110,11 @@ body {
 .dhdr { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px solid #1e1e1e; }
 .dnum { font-family: "SF Mono", Menlo, monospace; font-size: 22px; font-weight: bold; padding: 6px 14px; border-radius: 6px; background: var(--lb); color: var(--lc); border: 2px solid var(--lc); }
 .dname { font-size: 22px; font-weight: bold; color: #eee; }
-.dhow { font-size: 13px; color: #666; margin-top: 4px; }
+.dhow { font-size: 13px; color: #9a9a9a; margin-top: 4px; }
 .notes { list-style: none; }
-.notes li { font-size: 13px; color: #666; padding: 3px 0 3px 16px; position: relative; }
+.notes li { font-size: 13px; color: #959595; padding: 3px 0 3px 16px; position: relative; }
 .notes li::before { content: '·'; position: absolute; left: 5px; color: #3a3a3a; }
-.notes li b { color: #999; }
+.notes li b { color: #cfcfcf; }
 /* KEY GRID */
 .kb { display:flex; flex-direction:column; gap:5px; margin-bottom:14px; }
 .kb-row { display:flex; gap:5px; align-items:stretch; }
@@ -130,9 +130,9 @@ body {
    alineen entre filas; extra/thumb ya no necesitan anchos propios. */
 .kb-key.active { border-color:var(--lc); }
 .kb-key.active .kl { color:var(--lc); }
-.kb-key.dim { background:#1a1a1a; border:1px dashed #555; border-bottom:1px dashed #555; }
-.kb-key.dim .kl { color:#9a9a9a; }
-.kb-key.dim .km { color:#666; }
+.kb-key.dim { background:#1d1d1d; border:1px dashed #666; border-bottom:1px dashed #666; }
+.kb-key.dim .kl { color:#b0b0b0; }
+.kb-key.dim .km { color:#7a7a7a; }
 .kb-key.inherited { opacity:0.38; border-style:dashed; }
 </style>
 <script>
