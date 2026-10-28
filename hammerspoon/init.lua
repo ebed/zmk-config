@@ -206,7 +206,7 @@ window.onload = function() { show('home'); };
   <div class="routes">
     <div onclick="show('3')"><span class="lbadge L3">3 Sys</span><span class="rtxt">desde</span><span class="lbadge L2">2 Nav</span><span class="rtxt">hold <b>CW-pos</b> (pulgar izq ext = MO3) · alt: combo <b>SPC+MO2</b> exactos juntos (&lt;50ms)</span></div>
     <div onclick="show('4')"><span class="lbadge L4">4 Fn</span><span class="rtxt">desde</span><span class="lbadge L2">2 Nav</span><span class="rtxt">hold <b>TD4</b> (pulgar izq medio) · doble-tap = bloquea</span></div>
-    <div onclick="show('8')"><span class="lbadge" style="background:#0088cc;color:#013;border-color:#0088cc">8 Mouse</span><span class="rtxt">desde</span><span class="lbadge L2">2 Nav</span><span class="rtxt">tap <b>REPT-pos</b> (meñique izq inf) · misma tecla = salir</span></div>
+    <div onclick="show('8')"><span class="lbadge" style="background:#0088cc;color:#013;border-color:#0088cc">8 Mouse</span><span class="rtxt">desde</span><span class="lbadge L2">2 Nav</span><span class="rtxt">tap <b>REPT-pos</b> (meñique izq inf) · salir: <b>DEL-pos</b> o pulgar <b>CW</b></span></div>
     <div onclick="show('11')"><span class="lbadge" style="background:#cc4444;color:#200;border-color:#cc4444">11 Qwerty</span><span class="rtxt">desde</span><span class="lbadge L3">3 Sys</span><span class="rtxt">tap <b>REPT-pos</b> · salir: meñique der inf</span></div>
   </div>
 
@@ -469,7 +469,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L3" id="l3-k-apos"><span class="kl">RGB++</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra dim" id="l3-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra active" id="l3-k-ctrl" style="--lc:#cc4444" onclick="show('11')"><span class="kl">QWRT</span><span class="km">tog 11</span></div>
       <div class="kb-key active L3" id="l3-k-z"><span class="kl">BT3</span></div>
       <div class="kb-key active L3" id="l3-k-x"><span class="kl">BT4</span></div>
       <div class="kb-key dim" id="l3-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
@@ -486,9 +486,9 @@ window.onload = function() { show('home'); };
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L3" id="l3-k-cpsw"><span class="kl">⌘</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
-      <div class="kb-key kb-thumb dim" id="l3-k-mo7"><span class="kl">[hld]</span><span class="km">SPC</span></div>
+      <div class="kb-key kb-thumb active L3" id="l3-k-mo7"><span class="kl">SPACE</span></div>
       <div class="kb-sep" style="width:24px"></div>
-      <div class="kb-key kb-thumb dim" id="l3-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb active L3" id="l3-k-mo2"><span class="kl">RET</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-thumb dim" id="l3-k-sym5"><span class="kl">[hld]</span><span class="km">MO2</span></div>
     </div>
@@ -707,7 +707,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-u"><span class="kl">ZOM</span><span class="km">⌥⌘⇧Z</span></div>
       <div class="kb-key active L7" id="l7-k-y"><span class="kl">CHR</span><span class="km">⌥⌘⇧C</span></div>
       <div class="kb-key active L7" id="l7-k-semi"><span class="kl">CYCL</span><span class="km">⌘`</span></div>
-      <div class="kb-key kb-extra inherited" id="l7-k-bspc"><span class="kl">⌫</span></div>
+      <div class="kb-key kb-extra dim" id="l7-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L7" id="l7-k-tab"><span class="kl">⌃Tab</span></div>
@@ -719,10 +719,10 @@ window.onload = function() { show('home'); };
       <div class="kb-sep"></div>
       <div class="kb-key active L7" id="l7-k-m"><span class="kl">HELP</span><span class="km">⌥⌘⇧H</span></div>
       <div class="kb-key active L7" id="l7-k-n"><span class="kl">CLU</span><span class="km">⌥⌘⇧N</span></div>
-      <div class="kb-key inherited" id="l7-k-e"><span class="kl">↓</span></div>
-      <div class="kb-key inherited" id="l7-k-i"><span class="kl">→</span></div>
-      <div class="kb-key inherited" id="l7-k-o"><span class="kl">END</span></div>
-      <div class="kb-key inherited" id="l7-k-apos"><span class="kl">PGDN</span></div>
+      <div class="kb-key dim" id="l7-k-e"><span class="kl">E</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l7-k-i"><span class="kl">I</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l7-k-o"><span class="kl">O</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l7-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L7" id="l7-k-ctrl"><span class="kl">⌃⇧Tab</span></div>
@@ -732,7 +732,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L7" id="l7-k-d"><span class="kl">SJMP</span><span class="km">⌘K</span></div>
       <div class="kb-key dim" id="l7-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key inherited" id="l7-k-k"><span class="kl">KT(⇧)</span></div>
+      <div class="kb-key dim" id="l7-k-k"><span class="kl">K</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l7-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l7-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l7-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
