@@ -20,8 +20,16 @@
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint_split>;
-        /* x2: velocidad por software (la ganancia del sensor quedó en su
-         * máximo usable, 3x — ver cirque_right.overlay) */
-        input-processors = <&zip_xy_scaler 2 1>;
+        /* x1.5 por software sobre la ganancia 3x del sensor (su máximo
+         * usable). Subir/bajar velocidad = cambiar esta fracción. */
+        input-processors = <&zip_xy_scaler 3 2>;
+
+        /* Modo precisión: con la capa Mouse (8) activa, los deltas se
+         * reducen a la mitad antes del escalado base (process-next). */
+        precision {
+            layers = <8>;
+            input-processors = <&zip_xy_scaler 1 2>;
+            process-next;
+        };
     };
 };

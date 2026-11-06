@@ -887,6 +887,7 @@ window.onload = function() { show('home'); };
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
     <li>Derecho home: <b>N=LCLK E=MCLK I=RCLK O=MB4 '=MB5</b> — índice→medio→anular→meñique</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
+    <li><b>Trackpad precisión</b>: con Mouse activo, el cursor del Cirque va a 1/2 velocidad</li>
     <li><b>EXIT</b>: pulgar izq outer (L8) o L2 extra-col izq (REPT-pos)</li>
   </ul>
 </div>
