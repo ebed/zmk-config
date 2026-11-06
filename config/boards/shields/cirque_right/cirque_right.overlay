@@ -49,6 +49,8 @@
         dr-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
         sensitivity = "2x";
         sleep;
+        /* El pad quedó montado espejado en X (derecha movía a la izquierda) */
+        x-invert;
     };
 };
 
