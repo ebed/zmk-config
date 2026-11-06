@@ -6,6 +6,21 @@
  * Cableado del Cirque: SCK->020, SI->017, SO->104, SS->009, DR->106.
  */
 
+/* Nodo input-split (los shields se procesan antes que el keymap, así que
+ * cada shield define sus propios nodos; no colisionan porque cada build
+ * incluye solo uno de los dos shields cirque_*). */
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        glidepoint_split: glidepoint_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+};
+
 &spi0_default {
     group1 {
         psels = <NRF_PSEL(SPIM_SCK, 0, 20)>,

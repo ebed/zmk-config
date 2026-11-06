@@ -28,28 +28,6 @@
     nfct-pins-as-gpios;
 };
 
-/* Trackpad Cirque en la mitad derecha (periférico): nodos split compartidos
- * por ambas mitades. El dispositivo SPI vive en el shield cirque_right y el
- * listener se habilita en cirque_left (central), según el patrón de pointing
- * split de ZMK v0.3. */
-/ {
-    split_inputs {
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        glidepoint_split: glidepoint_split@0 {
-            compatible = "zmk,input-split";
-            reg = <0>;
-        };
-    };
-
-    glidepoint_listener: glidepoint_listener {
-        compatible = "zmk,input-listener";
-        status = "disabled";
-        device = <&glidepoint_split>;
-    };
-};
-
 / {
     /* ------------------------------------------------------------------ */
     /* Combos                                                               */
