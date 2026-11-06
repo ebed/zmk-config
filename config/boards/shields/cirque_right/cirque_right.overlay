@@ -47,7 +47,10 @@
         spi-max-frequency = <1000000>;
         status = "okay";
         dr-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
-        sensitivity = "4x"; /* máximo del driver */
+        /* 3x: 4x satura el ADC capacitivo con este montaje (el pad quedaba
+         * mudo tras la calibración inicial); para más velocidad usar el
+         * slider de Mouse en macOS o zip_xy_scaler, no la ganancia. */
+        sensitivity = "3x";
         sleep;
         /* El pad quedó montado espejado en X (derecha movía a la izquierda) */
         x-invert;
