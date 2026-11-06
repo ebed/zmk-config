@@ -55,6 +55,11 @@
          * latencia de wake al primer toque ("se demora en iniciar") */
         /* El pad quedó montado espejado en X (derecha movía a la izquierda) */
         x-invert;
+        /* Umbral Z más permisivo (defaults 5/4): acepta contactos débiles
+         * como el lateral del pulgar. Si aparecen movimientos fantasma por
+         * roces, subir de vuelta. */
+        x-axis-z-min = <3>;
+        y-axis-z-min = <2>;
     };
 };
 
