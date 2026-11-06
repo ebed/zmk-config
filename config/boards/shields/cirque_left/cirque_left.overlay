@@ -5,6 +5,7 @@
  */
 
 #include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 / {
     split_inputs {
@@ -35,6 +36,21 @@
             layers = <13>;
             input-processors = <&zip_xy_scaler 4 3>; /* x3: net 2.0 */
             process-next;
+        };
+
+        /* Modo scroll (capa fantasma 15, hold SCRL en Trackpad L14): los
+         * deltas X/Y se convierten en rueda. Sin process-next: al scrollear
+         * no se aplica el escalador base del cursor.
+         *  - Y_INVERT = scroll natural (contenido sigue al dedo); si queda
+         *    al revés, borrar esa transform.
+         *  - 1/8 modera la velocidad (la rueda cuenta líneas, no píxeles);
+         *    subir el divisor si scrollea muy rápido. */
+        scroll {
+            layers = <15>;
+            input-processors
+                = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+                , <&zip_xy_scaler 1 8>
+                , <&zip_xy_to_scroll_mapper>;
         };
     };
 };

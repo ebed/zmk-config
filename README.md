@@ -21,14 +21,16 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **9 Tmux** | hold `TAB` | tmux (prefix Ctrl+A): panes, ventanas, splits, resize |
 | **10 WezTerm** | hold `ESC` | WezTerm: tabs, splits, nav panes, workspaces, resize |
 | **11 QWERTY** | toggle `QWRT` en Sys (meñique izq inf) | QWERTY plano sin HRM — juegos / layout estándar |
-| **12/13 Speed** | selector `x1/x2/x3` en Mouse (fila sup der) | Capas fantasma: velocidad del trackpad Cirque (0.75× / 1.5× / 2×) |
+| **12/13 Speed** | selector `x1/x2/x3` en Trackpad (fila sup der) | Capas fantasma: velocidad del trackpad Cirque (0.75× / 1.5× / 2×) |
+| **14 Trackpad** | hold `REPT` (meñique izq inf) | Panel del Cirque: clicks (izq home row), scroll hold, selector x1/x2/x3, Mission Control |
+| **15 Scroll** | hold `SCRL` en Trackpad (pulgar izq int) | Capa fantasma: el pad scrollea en vez de mover el cursor |
 
 **Thumbs y teclas especiales (Layer 0):**
 
 | Posición | Tecla | Tap | Hold |
 |----------|-------|-----|------|
 | Top-izq (pinky col) | `ESC/W` | ESC | Layer 10 (WezTerm) |
-| Bot-izq (pinky row) | `REPT` | repite último key | — |
+| Bot-izq (pinky row) | `REPT` | repite último key | Layer 14 (Trackpad) |
 | Izq externo (thumb) | `CW/L6` | CapsWord | Layer 6 (Lang) |
 | Izq medio (thumb) | `MO7` | — | Layer 7 (Apps) |
 | Izq interno (thumb) | `SPC` | Space | — |
@@ -144,7 +146,7 @@ Dos rutas para acceder a símbolos:
 - **Hold-tap en número**: tap = dígito / hold = símbolo Shift+número (`1/!`, `2/@`, ...)
 - **Home row**: símbolos directos sin Shift para acceso ergonómico rápido
 
-`REPT` (`&key_repeat`) — repite el último key presionado en cualquier layer. Acceso: `MO1 + ESC/~`.
+`REPT` (`&tp_rept`) — tap repite el último key presionado en cualquier layer; hold activa la capa Trackpad (L14). Acceso: `MO1 + ESC/~`.
 
 `TOG1` (`&tog 1`) — bloquea Layer 1 sin tener que mantener el pulgar. Acceso: `hold MO1 (der-med) + tap MO2 (der-ext)`. Para salir: tap `TOG1` nuevamente.
 
@@ -464,7 +466,7 @@ Status screen custom del módulo [zmk-nice-oled](https://github.com/mctechnology
 
 | Widget | Descripción |
 |--------|-------------|
-| Layer | Nombre de la capa activa, en mayúsculas (`display-name` del keymap, máx 8-9 chars): `COLEMAK` / `SYMBOLS` / `NAVIGATE` / `SYSTEM` / `FN+NUM` / `MACROS` / `LANGUAGE` / `APPS` / `MOUSE` / `TMUX` / `WEZTERM` / `QWERTY` |
+| Layer | Nombre de la capa activa, en mayúsculas (`display-name` del keymap, máx 8-9 chars): `COLEMAK` / `SYMBOLS` / `NAVIGATE` / `SYSTEM` / `FN+NUM` / `MACROS` / `LANGUAGE` / `APPS` / `MOUSE` / `TMUX` / `WEZTERM` / `QWERTY` / `TRACKPAD` / `SCROLL` |
 | Battery | Nivel de batería |
 | Output | USB o perfil BT y estado de conexión |
 | Modifiers | **⌘⌥⇧⌃ activos en tiempo real** (grilla 2×2, símbolos macOS) — útil para detectar home-row mods pegados |

@@ -19,7 +19,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 ```
 
 - `ESC`: tap=ESC (plain)
-- `REPT`: repite el último key (`&key_repeat`) — meñique izquierdo inferior
+- `REPT`: tap=repite el último key (`&key_repeat`) / hold=Layer 14 (Trackpad) — meñique izquierdo inferior
 - `BSPC`: ⌫ directo — Fn (L4) accesible desde L2 via MO4
 - `DEL`: meñique derecho inferior → ⌦ forward delete
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
@@ -87,7 +87,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 
 ```
 ,--------------------------------------------.        ,---------------------------------------------.
-|SCRL↑ |     |     | M↑  |     |              |        |     |     |     | x1  | x2  |  x3   |
+|SCRL↑ |     |     | M↑  |     |              |        |     |     |     |     |     |       |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
 |SCRL↓ |     | M←  | M↓  | M→  |              |        |     |LCLK |MCLK |RCLK | MB4 | MB5   |
 |------+-----+-----+-----+------+------------|        |-----+-----+-----+-----+-----+-------|
@@ -103,7 +103,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - `MB4`/`MB5`: back/forward del browser — anular y meñique derechos
 - `EXIT`: tog 8 en pulgar izq outer (L8) o L2 pos V (misma tecla que activó)
 - Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
-- **Selector de velocidad del trackpad** (`x1/x2/x3`, fila superior derecha): radio-button persistente — x1=preciso (0.75×), x2=normal (1.5×, default), x3=rápido (2×). Implementado con capas fantasma 12/13 (transparentes al tipeo) + overrides en `cirque_left.overlay`. Mientras x1/x3 estén activos, la pantalla muestra `X1 SLOW`/`X3 FAST`
+- Los controles del trackpad Cirque (velocidad x1/x2/x3, scroll, clicks) viven en la capa **Trackpad (L14)** — hold `REPT`
 
 ---
 
@@ -379,6 +379,29 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 
 ---
 
+## Layer 14 — Trackpad (hold REPT, meñique izq inferior)
+
+```
+,------------------------------------.                ,------------------------------------.
+|     |     |     |     |     |     |                |     |     |MCTL | x1  | x2  | x3  |
+|-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+|     |     |RCLK |MCLK |LCLK |     |                |     |DESK←|EXPO |DESK→|SHOW |     |
+|-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+|[hld]|     |     |     |     |     |                |     |     |     |     |     |     |
+'-------------------------------------'               '------------------------------------'
+        |     |     |SCRL |                               |     |     |     |
+        '-------------------'                             '-------------------'
+```
+
+- Panel de control del trackpad Cirque: la mano izquierda modula mientras la derecha desliza sobre el pad
+- Clicks directos home row izq (índice→LCLK, medio→MCLK, anular→RCLK)
+- `SCRL` (pulgar izq interior, hold): el pad scrollea en vez de mover el cursor — capa fantasma 15 + override `zip_xy_to_scroll_mapper` en `cirque_left.overlay` (scroll natural, velocidad 1/8)
+- **Selector de velocidad** `x1/x2/x3` (fila sup der): radio-button persistente — x1=preciso (0.75×), x2=normal (1.5×, default), x3=rápido (2×). Capas fantasma 12/13 + overrides en `cirque_left.overlay`. Mientras x1/x3 estén activos, la pantalla muestra `X1 SLOW`/`X3 FAST`
+- **Mission Control / escritorios** (cluster nav der, espeja flechas de L2): `MCTL`=Ctrl+↑ (U) · `DESK←/→`=Ctrl+←/→ (N/I) · `EXPO`=App Exposé Ctrl+↓ (E) · `SHOW`=Show Desktop F11 (O). Requieren los atajos estándar habilitados en Ajustes → Teclado
+- Layer 15 (`Scroll`) es fantasma: 42×`&trans`, solo conmuta el mapeo del pad
+
+---
+
 ## Leyenda
 
 | Símbolo | Significado |
@@ -389,7 +412,7 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 | `SHF/T` | tap=T, hold=Shift |
 | `1/!` | tap=1, hold=! |
 | `BSPC` | ⌫ directo |
-| `REPT` | repite el último key (`&key_repeat`) |
+| `REPT` | tap=repite el último key (`&key_repeat`), hold=Layer 14 (Trackpad) |
 | `CW/L6` | tap=CapsWord, hold=Layer 6 (Lang) |
 | `MO7` | hold=Layer 7 (Apps) — sin tap |
 | `RET/L5` | tap=↵ RET, hold=Layer 5 (Mac) |

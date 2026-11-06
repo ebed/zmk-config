@@ -183,6 +183,7 @@ window.onload = function() { show('home'); };
   <div class="ni sub L9" data-l="9" onclick="show('9')"><span class="lbadge L9">9 Tmux</span><span class="lhow">hold TAB</span></div>
   <div class="ni sub L10" data-l="10" onclick="show('10')"><span class="lbadge L10">10 Wez</span><span class="lhow">hold ESC</span></div>
   <div class="ni sub" data-l="11" onclick="show('11')" style="--lbb:#cc4444"><span class="lbadge" style="background:#cc4444">11 Qwerty</span><span class="lhow">tog11 (Sys)</span></div>
+  <div class="ni sub" data-l="14" onclick="show('14')" style="--lbb:#cc8800"><span class="lbadge" style="background:#cc8800">14 TPad</span><span class="lhow">hold REPT</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
   <div class="ni" onclick="show('home')" style="margin-top:10px;border-top:1px solid #1e1e1e;padding-top:12px">
@@ -199,7 +200,7 @@ window.onload = function() { show('home'); };
   <div class="kb">
     <div class="kb-row"><div class="kb-key active L10" onclick="show('10')"><span class="kl">ESC</span><span class="km">hold→Wez</span></div><div class="kb-key dim"><span class="kl">Q</span></div><div class="kb-key dim"><span class="kl">W</span></div><div class="kb-key dim"><span class="kl">F</span></div><div class="kb-key dim"><span class="kl">P</span></div><div class="kb-key dim"><span class="kl">B</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">J</span></div><div class="kb-key dim"><span class="kl">L</span></div><div class="kb-key dim"><span class="kl">U</span></div><div class="kb-key dim"><span class="kl">Y</span></div><div class="kb-key dim"><span class="kl">;</span></div><div class="kb-key dim"><span class="kl">BSPC</span></div></div>
     <div class="kb-row"><div class="kb-key active L9" onclick="show('9')"><span class="kl">TAB</span><span class="km">hold→Tmux</span></div><div class="kb-key dim"><span class="kl">A</span></div><div class="kb-key dim"><span class="kl">R</span></div><div class="kb-key dim"><span class="kl">S</span></div><div class="kb-key dim"><span class="kl">T</span></div><div class="kb-key dim"><span class="kl">G</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">M</span></div><div class="kb-key dim"><span class="kl">N</span></div><div class="kb-key dim"><span class="kl">E</span></div><div class="kb-key dim"><span class="kl">I</span></div><div class="kb-key dim"><span class="kl">O</span></div><div class="kb-key dim"><span class="kl">'</span></div></div>
-    <div class="kb-row"><div class="kb-key active" style="--lc:#9a9a9a"><span class="kl">REPT</span><span class="km">→ 8 · 11</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
+    <div class="kb-row"><div class="kb-key active" style="--lc:#cc8800" onclick="show('14')"><span class="kl">REPT</span><span class="km">hold→TPad · →8·11</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
     <div class="kb-row kb-center"><div class="kb-key kb-thumb active L6" onclick="show('6')"><span class="kl">CW</span><span class="km">Lang · Nav→Sys</span></div><div class="kb-key kb-thumb active L7" onclick="show('7')"><span class="kl">MO7</span><span class="km">Apps · TD4→4</span></div><div class="kb-key kb-thumb active L3" onclick="show('3')"><span class="kl">SPC</span><span class="km">combo c/MO2</span></div><div class="kb-sep" style="width:24px"></div><div class="kb-key kb-thumb active L5" onclick="show('5')"><span class="kl">RET</span><span class="km">hold→Mac</span></div><div class="kb-key kb-thumb active L1" onclick="show('1')"><span class="kl">MO1</span><span class="km">hold→Sym</span></div><div class="kb-key kb-thumb active L2" onclick="show('2')"><span class="kl">MO2</span><span class="km">hold→Nav</span></div></div>
   </div>
   <div class="tree-label" style="margin-top:18px">Rutas a subcapas</div>
@@ -839,9 +840,9 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l8-k-j"><span class="kl">J</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l8-k-l"><span class="kl">L</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l8-k-u"><span class="kl">U</span><span class="km">sin acción</span></div>
-      <div class="kb-key active L8" id="l8-k-y"><span class="kl">x1</span><span class="km">preciso</span></div>
-      <div class="kb-key active L8" id="l8-k-semi"><span class="kl">x2</span><span class="km">normal</span></div>
-      <div class="kb-key kb-extra active L8" id="l8-k-bspc"><span class="kl">x3</span><span class="km">rápido</span></div>
+      <div class="kb-key dim" id="l8-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l8-k-semi"><span class="kl">;</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra dim" id="l8-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-tab"><span class="kl">SCRL↓</span></div>
@@ -887,7 +888,7 @@ window.onload = function() { show('home'); };
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
     <li>Derecho home: <b>N=LCLK E=MCLK I=RCLK O=MB4 '=MB5</b> — índice→medio→anular→meñique</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
-    <li><b>Trackpad x1/x2/x3</b> (fila sup der): selector persistente de velocidad del Cirque — x1 preciso · x2 normal · x3 rápido. La pantalla muestra X1/X3 mientras no estés en normal</li>
+    <li>Los controles del trackpad Cirque (x1/x2/x3, scroll, clicks) viven en <b>14 Trackpad</b> — hold REPT</li>
     <li><b>EXIT</b>: pulgar izq outer (L8) o L2 extra-col izq (REPT-pos)</li>
   </ul>
 </div>
@@ -1025,6 +1026,74 @@ window.onload = function() { show('home'); };
     <li>Entrada: <b>QWRT</b> en Sys (meñique izq inferior) · Salida: <b>EXIT</b> (meñique der inferior), patrón sticky igual a Mouse</li>
     <li>Thumbs izq gaming: CTRL / ALT / SPACE · Thumbs der: RET / MO1 (números) / MO2 (flechas)</li>
     <li>Combo ESC (Y+U) deshabilitado en esta capa; combo Sys (thumbs internos) sigue activo para salir</li>
+  </ul>
+</div>
+
+<!-- LAYER 14 — Trackpad -->
+<div id="v-14" class="view">
+  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inferior) — panel del Cirque: izq modula, der desliza</div></div></div>
+  <div class="kb">
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l14-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-q"><span class="kl">Q</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-w"><span class="kl">W</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-f"><span class="kl">F</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-p"><span class="kl">P</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-b"><span class="kl">B</span><span class="km">sin acción</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key dim" id="l14-k-j"><span class="kl">J</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-l"><span class="kl">L</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-u"><span class="kl">MCTL</span><span class="km">⌃↑ Mission Ctrl</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-y"><span class="kl">x1</span><span class="km">preciso</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-semi"><span class="kl">x2</span><span class="km">normal</span></div>
+      <div class="kb-key kb-extra active" style="--lc:#cc8800" id="l14-k-bspc"><span class="kl">x3</span><span class="km">rápido</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l14-k-tab"><span class="kl">TAB</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-a"><span class="kl">A</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-r"><span class="kl">RCLK</span><span class="km">anular</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-s"><span class="kl">MCLK</span><span class="km">medio</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-t"><span class="kl">LCLK</span><span class="km">índice</span></div>
+      <div class="kb-key dim" id="l14-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key dim" id="l14-k-m"><span class="kl">M</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-n"><span class="kl">DESK←</span><span class="km">⌃←</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-e"><span class="kl">EXPO</span><span class="km">⌃↓ App Exposé</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-i"><span class="kl">DESK→</span><span class="km">⌃→</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-o"><span class="kl">SHOW</span><span class="km">F11 escritorio</span></div>
+      <div class="kb-key dim" id="l14-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra active" style="--lc:#cc8800" id="l14-k-ctrl"><span class="kl">REPT</span><span class="km">[held]</span></div>
+      <div class="kb-key dim" id="l14-k-z"><span class="kl">Z</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-x"><span class="kl">X</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key dim" id="l14-k-k"><span class="kl">K</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
+      <div class="kb-key dim" id="l14-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra dim" id="l14-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
+    </div>
+    <div class="kb-row kb-center">
+      <div class="kb-key kb-thumb dim" id="l14-k-cpsw"><span class="kl">CW</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l14-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb active" style="--lc:#cc8800" id="l14-k-mo7"><span class="kl">SCRL</span><span class="km">hold: pad=scroll</span></div>
+      <div class="kb-sep" style="width:24px"></div>
+      <div class="kb-key kb-thumb dim" id="l14-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l14-k-mo1"><span class="kl">MO1</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb dim" id="l14-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
+    </div>
+  </div>
+  <ul class="notes">
+    <li>Hold <b>REPT</b> con el meñique izq mientras la mano derecha usa el pad; tap REPT sigue siendo key-repeat</li>
+    <li>Clicks directos home row izq: <b>T=LCLK S=MCLK R=RCLK</b> (índice→medio→anular)</li>
+    <li><b>SCRL</b> (pulgar izq interior, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
+    <li><b>x1/x2/x3</b>: selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). La pantalla muestra X1/X3 mientras no estés en normal</li>
+    <li><b>Mission Control</b> (cluster nav der, espeja flechas de Nav): MCTL=⌃↑ · DESK←/→=⌃←/→ · EXPO=⌃↓ · SHOW=F11 — requieren los atajos estándar activos en Ajustes → Teclado</li>
   </ul>
 </div>
 

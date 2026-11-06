@@ -76,6 +76,16 @@
             bindings = <&mo>, <&caps_word>;
         };
 
+        /* REPT-pos (meñique izq inferior): tap→key_repeat / hold→Trackpad (L14) */
+        tp_rept: trackpad_or_repeat {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&key_repeat>;
+        };
+
         /* Toggles explícitos para el selector de velocidad del trackpad ---- */
         tog_on: toggle_layer_on {
             compatible = "zmk,behavior-toggle-layer";
@@ -280,7 +290,7 @@
             bindings = <
                 &lt 10 ESC      &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &lt 9 TAB       &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
-                &key_repeat     &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp DEL
+                &tp_rept 14 0   &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp DEL
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 1  &mo 2
             >;
         };
@@ -477,7 +487,7 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &none      &none       &none       &spd1  &spd2  &spd3
+                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &none      &none       &none       &none  &none  &none
                 &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &none      &mkp LCLK   &mkp MCLK   &mkp RCLK  &mkp MB4  &mkp MB5
                 &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none           &none  &none    &none      &none       &none       &none  &none  &tog 8
                                 &tog 8           &none  &none                            &none  &none  &none
@@ -563,8 +573,8 @@
 /* ### Layers 12/13 — Speed x1 / x3 (fantasma)
  * 100% transparentes al tipeo: su único efecto es conmutar el escalador del
  * trackpad Cirque (overrides por capa en cirque_left.overlay). Selector en
- * Mouse (fila superior derecha): x1 / x2 / x3. Nota: mientras x1 o x3 estén
- * activas, la pantalla muestra su nombre como capa superior. */
+ * Trackpad (L14, fila superior derecha): x1 / x2 / x3. Nota: mientras x1 o
+ * x3 estén activas, la pantalla muestra su nombre como capa superior. */
         speed_slow_layer {
             display-name = "x1 Slow";
             bindings = <
@@ -577,6 +587,50 @@
 
         speed_fast_layer {
             display-name = "x3 Fast";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+/* ### Layer 14 — Trackpad  (hold REPT-pos, meñique izq inferior en L0)
+ * Panel de control del Cirque: la mano izquierda modula mientras la derecha
+ * desliza sobre el pad.
+ * - Home row izq (R/S/T): clicks directos RCLK/MCLK/LCLK (índice = LCLK).
+ * - Pulgar izq interior (SPACE-pos): hold SCRL → capa fantasma 15, el pad
+ *   scrollea en vez de mover el cursor (override en cirque_left.overlay).
+ * - Cluster nav der (espeja flechas de L2): Mission Control Ctrl+↑ en U,
+ *   escritorio ←/→ Ctrl+←/→ en N/I, App Exposé Ctrl+↓ en E, Show Desktop
+ *   F11 en O (atajos estándar de macOS; requieren estar habilitados en
+ *   Ajustes → Teclado → Atajos de función rápida).
+ * - Fila superior derecha: selector persistente de velocidad x1/x2/x3.
+ * ,------------------------------------.                ,----------------------------------.
+ * |     |     |     |     |     |     |                |     |     |MCTL | x1  | x2  | x3  |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |     |     |RCLK |MCLK |LCLK |     |                |     |DESK←|EXPO |DESK→|SHOW |     |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |[hld]|     |     |     |     |     |                |     |     |     |     |     |     |
+ * `-------------------------------------'               `----------------------------------'
+ *         |     |     |SCRL |                              |     |     |     |
+ *         `-------------------'                            `-------------------'
+ */
+        trackpad_layer {
+            display-name = "Trackpad";
+            bindings = <
+                &none  &none  &none      &none      &none      &none    &none  &none         &kp LC(UP)    &spd1          &spd2    &spd3
+                &none  &none  &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(RIGHT)  &kp F11  &none
+                &none  &none  &none      &none      &none      &none    &none  &none         &none         &none          &none    &none
+                              &none      &none      &mo 15                     &none  &none  &none
+            >;
+        };
+
+/* ### Layer 15 — Scroll (fantasma): mientras está activa, los deltas del
+ * Cirque se mapean a rueda de scroll (override por capa en
+ * cirque_left.overlay). Transparente al tipeo, igual que 12/13. */
+        tp_scroll_layer {
+            display-name = "Scroll";
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
