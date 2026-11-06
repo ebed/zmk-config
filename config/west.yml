@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/ebed
     - name: petejohanson
       url-base: https://github.com/petejohanson
+    - name: zettaface
+      url-base: https://github.com/zettaface
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -25,5 +27,11 @@ manifest:
     - name: cirque-input-module
       remote: petejohanson
       revision: 0de55f36bc720b5be3d8880dc856d4d78baf5214
+    # Input processor zmk,input-processor-keybind: cuantiza movimiento XY del
+    # trackpad en behaviors (modo gesto: swipe → Ctrl+flechas para Mission
+    # Control / escritorios). Sin tags: pineado a commit de main (2025-07-24).
+    - name: zmk-input-processor-keybind
+      remote: zettaface
+      revision: 64303bd3932bfa7f49261fc6d0c9a3fdd06f8271
   self:
     path: config
