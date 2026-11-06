@@ -47,6 +47,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | Controlador | nice!nano v2 (nRF52840) |
 | Display | nice!view (Sharp memory LCD 160×68, SPI) con [zmk-nice-oled](https://github.com/mctechnology17/zmk-nice-oled) shield `nice_epaper`; CS en P0.10 |
 | RGB | Underglow WS2812 — 27 LEDs |
+| Trackpad | Cirque GlidePoint (SPI, mitad derecha) — bus compartido con nice!view; SO→104, SS→009, DR→106; driver [cirque-input-module](https://github.com/petejohanson/cirque-input-module) |
 | Conectividad | Bluetooth 5.0 (5 perfiles) + USB |
 
 ---

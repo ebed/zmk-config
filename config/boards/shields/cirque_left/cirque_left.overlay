@@ -1,0 +1,8 @@
+/*
+ * Lado central (izquierda): habilita el listener del trackpad Cirque que
+ * recibe los eventos del periférico vía input-split (nodo en corne.keymap).
+ */
+
+&glidepoint_listener {
+    status = "okay";
+};
