@@ -39,9 +39,8 @@
 };
 
 &nice_view_spi {
-    /* idx 0 = nice!view (ls0xx, CS activo alto) · idx 1 = Cirque (activo bajo) */
-    cs-gpios = <&pro_micro 16 GPIO_ACTIVE_HIGH>, <&gpio0 9 GPIO_ACTIVE_LOW>;
-
+    /* cs-gpios (idx0 display, idx1 Cirque) se define en corne.keymap: el
+     * keymap se procesa al final y pisaría cualquier array definido aquí. */
     glidepoint: glidepoint@1 {
         compatible = "cirque,pinnacle";
         reg = <1>;
