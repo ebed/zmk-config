@@ -573,8 +573,8 @@
 /* ### Layers 12/13 — Speed x1 / x3 (fantasma)
  * 100% transparentes al tipeo: su único efecto es conmutar el escalador del
  * trackpad Cirque (overrides por capa en cirque_left.overlay). Selector en
- * Trackpad (L14, fila superior derecha): x1 / x2 / x3. Nota: mientras x1 o
- * x3 estén activas, la pantalla muestra su nombre como capa superior. */
+ * Trackpad (L14, fila superior izquierda Q/W/F): x1 / x2 / x3. Nota: mientras
+ * x1 o x3 estén activas, la pantalla muestra su nombre como capa superior. */
         speed_slow_layer {
             display-name = "x1 Slow";
             bindings = <
@@ -596,36 +596,33 @@
         };
 
 /* ### Layer 14 — Trackpad  (hold REPT-pos, meñique izq inferior en L0)
- * Panel de control del Cirque: la mano izquierda modula mientras la derecha
- * desliza sobre el pad.
+ * Panel de control del Cirque, 100% operable con la mano izquierda mientras
+ * la derecha desliza sobre el pad:
+ * - Fila superior izq (Q/W/F): selector persistente de velocidad x1/x2/x3.
  * - Home row izq (R/S/T): clicks directos RCLK/MCLK/LCLK (índice = LCLK).
- * - Pulgar izq interior (SPACE-pos): hold SCRL → capa fantasma 15, el pad
- *   scrollea en vez de mover el cursor (override en cirque_left.overlay).
+ * - Z (anular, junto a REPT): hold SCRL → capa fantasma 15, el pad scrollea
+ *   en vez de mover el cursor (override en cirque_left.overlay).
  * - Pulgar izq medio (MO7-pos): hold GEST → capa fantasma 16, deslizar el
  *   pad dispara los atajos de Mission Control (swipe ←/→ = escritorio,
- *   ↑ = Mission Control, ↓ = App Exposé) vía zip_gesture_keybind.
- * - Cluster nav der (espeja flechas de L2): Mission Control Ctrl+↑ en U,
- *   escritorio ←/→ Ctrl+←/→ en N/I, App Exposé Ctrl+↓ en E, Show Desktop
- *   F11 en O (atajos estándar de macOS; requieren estar habilitados en
- *   Ajustes → Teclado → Atajos de función rápida).
- * - Fila superior derecha: selector persistente de velocidad x1/x2/x3.
+ *   ↑ = Mission Control, ↓ = App Exposé) vía zip_gesture_keybind. Los
+ *   atajos equivalentes por tecla no viven acá (duplicarían el gesto).
  * ,------------------------------------.                ,----------------------------------.
- * |     |     |     |     |     |     |                |     |     |MCTL | x1  | x2  | x3  |
+ * |     | x1  | x2  | x3  |     |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |     |     |RCLK |MCLK |LCLK |     |                |     |DESK←|EXPO |DESK→|SHOW |     |
+ * |     |     |RCLK |MCLK |LCLK |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |[hld]|     |     |     |     |     |                |     |     |     |     |     |     |
+ * |[hld]|SCRL |     |     |     |     |                |     |     |     |     |     |     |
  * `-------------------------------------'               `----------------------------------'
- *         |     |GEST |SCRL |                              |     |     |     |
+ *         |     |GEST |     |                              |     |     |     |
  *         `-------------------'                            `-------------------'
  */
         trackpad_layer {
             display-name = "Trackpad";
             bindings = <
-                &none  &none  &none      &none      &none      &none    &none  &none         &kp LC(UP)    &spd1          &spd2    &spd3
-                &none  &none  &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(RIGHT)  &kp F11  &none
-                &none  &none  &none      &none      &none      &none    &none  &none         &none         &none          &none    &none
-                              &none      &mo 16     &mo 15                     &none  &none  &none
+                &none  &spd1   &spd2      &spd3      &none      &none    &none  &none  &none  &none  &none  &none
+                &none  &none   &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &none  &none  &none  &none  &none
+                &none  &mo 15  &none      &none      &none      &none    &none  &none  &none  &none  &none  &none
+                               &none      &mo 16     &none                      &none  &none  &none
             >;
         };
 

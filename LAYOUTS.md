@@ -383,22 +383,21 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 
 ```
 ,------------------------------------.                ,------------------------------------.
-|     |     |     |     |     |     |                |     |     |MCTL | x1  | x2  | x3  |
+|     | x1  | x2  | x3  |     |     |                |     |     |     |     |     |     |
 |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
-|     |     |RCLK |MCLK |LCLK |     |                |     |DESK←|EXPO |DESK→|SHOW |     |
+|     |     |RCLK |MCLK |LCLK |     |                |     |     |     |     |     |     |
 |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
-|[hld]|     |     |     |     |     |                |     |     |     |     |     |     |
+|[hld]|SCRL |     |     |     |     |                |     |     |     |     |     |     |
 '-------------------------------------'               '------------------------------------'
-        |     |GEST |SCRL |                               |     |     |     |
+        |     |GEST |     |                               |     |     |     |
         '-------------------'                             '-------------------'
 ```
 
-- Panel de control del trackpad Cirque: la mano izquierda modula mientras la derecha desliza sobre el pad
+- Panel de control del trackpad Cirque, **100% operable con la mano izquierda** mientras la derecha desliza sobre el pad
 - Clicks directos home row izq (índice→LCLK, medio→MCLK, anular→RCLK)
-- `SCRL` (pulgar izq interior, hold): el pad scrollea en vez de mover el cursor — capa fantasma 15 + override `zip_xy_to_scroll_mapper` en `cirque_left.overlay` (scroll natural, velocidad 1/8)
-- `GEST` (pulgar izq medio, hold): modo gesto — deslizar el pad dispara los atajos de Mission Control en vez de mover el cursor: swipe ←/→ = cambiar escritorio (Ctrl+←/→), ↑ = Mission Control (Ctrl+↑), ↓ = App Exposé (Ctrl+↓). Capa fantasma 16 + processor `zip_gesture_keybind` (módulo `zmk-input-processor-keybind`, 4-way, tick 60, pausa 300ms)
-- **Selector de velocidad** `x1/x2/x3` (fila sup der): radio-button persistente — x1=preciso (0.75×), x2=normal (1.5×, default), x3=rápido (2×). Capas fantasma 12/13 + overrides en `cirque_left.overlay`. Mientras x1/x3 estén activos, la pantalla muestra `X1 SLOW`/`X3 FAST`
-- **Mission Control / escritorios** (cluster nav der, espeja flechas de L2): `MCTL`=Ctrl+↑ (U) · `DESK←/→`=Ctrl+←/→ (N/I) · `EXPO`=App Exposé Ctrl+↓ (E) · `SHOW`=Show Desktop F11 (O). Requieren los atajos estándar habilitados en Ajustes → Teclado
+- `SCRL` (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor — capa fantasma 15 + override `zip_xy_to_scroll_mapper` en `cirque_left.overlay` (scroll natural, velocidad 1/8)
+- `GEST` (pulgar izq medio, hold): modo gesto — deslizar el pad dispara los atajos de Mission Control en vez de mover el cursor: swipe ←/→ = cambiar escritorio (Ctrl+←/→), ↑ = Mission Control (Ctrl+↑), ↓ = App Exposé (Ctrl+↓). Capa fantasma 16 + processor `zip_gesture_keybind` (módulo `zmk-input-processor-keybind`, 4-way, tick 60, pausa 300ms). Requiere los atajos estándar habilitados en Ajustes → Teclado
+- **Selector de velocidad** `x1/x2/x3` (fila sup izq, Q/W/F): radio-button persistente — x1=preciso (0.75×), x2=normal (1.5×, default), x3=rápido (2×). Capas fantasma 12/13 + overrides en `cirque_left.overlay`. Mientras x1/x3 estén activos, la pantalla muestra `X1 SLOW`/`X3 FAST`
 - Layers 15 (`Scroll`) y 16 (`Gesture`) son fantasma: 42×`&trans`, solo conmutan el mapeo del pad
 
 ---

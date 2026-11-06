@@ -21,9 +21,9 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **9 Tmux** | hold `TAB` | tmux (prefix Ctrl+A): panes, ventanas, splits, resize |
 | **10 WezTerm** | hold `ESC` | WezTerm: tabs, splits, nav panes, workspaces, resize |
 | **11 QWERTY** | toggle `QWRT` en Sys (meñique izq inf) | QWERTY plano sin HRM — juegos / layout estándar |
-| **12/13 Speed** | selector `x1/x2/x3` en Trackpad (fila sup der) | Capas fantasma: velocidad del trackpad Cirque (0.75× / 1.5× / 2×) |
-| **14 Trackpad** | hold `REPT` (meñique izq inf) | Panel del Cirque: clicks (izq home row), scroll hold, selector x1/x2/x3, Mission Control |
-| **15 Scroll** | hold `SCRL` en Trackpad (pulgar izq int) | Capa fantasma: el pad scrollea en vez de mover el cursor |
+| **12/13 Speed** | selector `x1/x2/x3` en Trackpad (Q/W/F) | Capas fantasma: velocidad del trackpad Cirque (0.75× / 1.5× / 2×) |
+| **14 Trackpad** | hold `REPT` (meñique izq inf) | Panel del Cirque, todo mano izq: clicks (home row), scroll (Z), selector x1/x2/x3 (Q/W/F), gestos (GEST) |
+| **15 Scroll** | hold `SCRL` en Trackpad (Z, anular izq) | Capa fantasma: el pad scrollea en vez de mover el cursor |
 | **16 Gesture** | hold `GEST` en Trackpad (pulgar izq med) | Capa fantasma: swipes en el pad = Mission Control / cambio de escritorio / Exposé |
 
 **Thumbs y teclas especiales (Layer 0):**
