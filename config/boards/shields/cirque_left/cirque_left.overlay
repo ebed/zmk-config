@@ -4,6 +4,8 @@
  * del shield (los shields se procesan antes que el keymap).
  */
 
+#include <input/processors.dtsi>
+
 / {
     split_inputs {
         #address-cells = <1>;
@@ -18,5 +20,8 @@
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint_split>;
+        /* x2: velocidad por software (la ganancia del sensor quedó en su
+         * máximo usable, 3x — ver cirque_right.overlay) */
+        input-processors = <&zip_xy_scaler 2 1>;
     };
 };

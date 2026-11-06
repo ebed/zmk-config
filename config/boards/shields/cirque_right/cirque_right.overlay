@@ -51,7 +51,8 @@
          * mudo tras la calibración inicial); para más velocidad usar el
          * slider de Mouse en macOS o zip_xy_scaler, no la ganancia. */
         sensitivity = "3x";
-        sleep;
+        /* sin sleep: el modo de bajo consumo del Pinnacle agrega ~300ms de
+         * latencia de wake al primer toque ("se demora en iniciar") */
         /* El pad quedó montado espejado en X (derecha movía a la izquierda) */
         x-invert;
     };
