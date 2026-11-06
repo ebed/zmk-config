@@ -103,6 +103,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - `MB4`/`MB5`: back/forward del browser — anular y meñique derechos
 - `EXIT`: tog 8 en pulgar izq outer (L8) o L2 pos V (misma tecla que activó)
 - Velocidad global: `MOVE_VAL=2000` (3.3× default) · `SCRL_VAL=20` (2× default)
+- **Trackpad en modo precisión**: con Mouse activo, el cursor del Cirque va a 1/2 velocidad (override por capa en `cirque_left.overlay`)
 
 ---
 
