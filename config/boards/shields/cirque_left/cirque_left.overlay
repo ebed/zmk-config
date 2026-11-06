@@ -18,6 +18,22 @@
         };
     };
 
+    /* Modo gesto (capa fantasma 16): cuantiza el movimiento del pad en
+     * atajos de Mission Control. Orden de bindings del driver:
+     * RIGHT, LEFT, DOWN, UP. Swipe → = ir al escritorio de la derecha
+     * (Ctrl+→); si se prefiere "el contenido sigue al dedo" (como el swipe
+     * nativo de 3 dedos), intercambiar los dos primeros bindings. */
+    zip_gesture_keybind: zip_gesture_keybind {
+        compatible = "zmk,input-processor-keybind";
+        #input-processor-cells = <0>;
+        mode = <1>;       /* 4-way: domina el eje con más movimiento */
+        tick = <60>;      /* unidades de delta por activación: swipe amplio */
+        wait-ms = <300>;  /* pausa entre activaciones — evita ráfagas */
+        tap-ms = <30>;
+        max_pending_activations = <1>; /* 1 gesto por swipe, sin cola */
+        bindings = <&kp LC(RIGHT)>, <&kp LC(LEFT)>, <&kp LC(DOWN)>, <&kp LC(UP)>;
+    };
+
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint_split>;
@@ -51,6 +67,14 @@
                 = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
                 , <&zip_xy_scaler 1 8>
                 , <&zip_xy_to_scroll_mapper>;
+        };
+
+        /* Modo gesto (capa fantasma 16, hold GEST en Trackpad L14): el pad
+         * deja de mover el cursor y cada swipe dispara un atajo de Mission
+         * Control / escritorios. Sin process-next. */
+        gesture {
+            layers = <16>;
+            input-processors = <&zip_gesture_keybind>;
         };
     };
 };

@@ -601,6 +601,9 @@
  * - Home row izq (R/S/T): clicks directos RCLK/MCLK/LCLK (índice = LCLK).
  * - Pulgar izq interior (SPACE-pos): hold SCRL → capa fantasma 15, el pad
  *   scrollea en vez de mover el cursor (override en cirque_left.overlay).
+ * - Pulgar izq medio (MO7-pos): hold GEST → capa fantasma 16, deslizar el
+ *   pad dispara los atajos de Mission Control (swipe ←/→ = escritorio,
+ *   ↑ = Mission Control, ↓ = App Exposé) vía zip_gesture_keybind.
  * - Cluster nav der (espeja flechas de L2): Mission Control Ctrl+↑ en U,
  *   escritorio ←/→ Ctrl+←/→ en N/I, App Exposé Ctrl+↓ en E, Show Desktop
  *   F11 en O (atajos estándar de macOS; requieren estar habilitados en
@@ -613,7 +616,7 @@
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
  * |[hld]|     |     |     |     |     |                |     |     |     |     |     |     |
  * `-------------------------------------'               `----------------------------------'
- *         |     |     |SCRL |                              |     |     |     |
+ *         |     |GEST |SCRL |                              |     |     |     |
  *         `-------------------'                            `-------------------'
  */
         trackpad_layer {
@@ -622,7 +625,7 @@
                 &none  &none  &none      &none      &none      &none    &none  &none         &kp LC(UP)    &spd1          &spd2    &spd3
                 &none  &none  &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(RIGHT)  &kp F11  &none
                 &none  &none  &none      &none      &none      &none    &none  &none         &none         &none          &none    &none
-                              &none      &none      &mo 15                     &none  &none  &none
+                              &none      &mo 16     &mo 15                     &none  &none  &none
             >;
         };
 
@@ -631,6 +634,21 @@
  * cirque_left.overlay). Transparente al tipeo, igual que 12/13. */
         tp_scroll_layer {
             display-name = "Scroll";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+/* ### Layer 16 — Gesture (fantasma): mientras está activa (hold GEST en
+ * Trackpad), deslizar el pad dispara atajos de Mission Control en vez de
+ * mover el cursor: swipe → = Ctrl+→ (escritorio der), ← = Ctrl+←,
+ * ↑ = Ctrl+↑ (Mission Control), ↓ = Ctrl+↓ (App Exposé). Override
+ * zip_gesture_keybind en cirque_left.overlay. Transparente al tipeo. */
+        tp_gesture_layer {
+            display-name = "Gesture";
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans

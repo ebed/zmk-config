@@ -24,6 +24,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **12/13 Speed** | selector `x1/x2/x3` en Trackpad (fila sup der) | Capas fantasma: velocidad del trackpad Cirque (0.75× / 1.5× / 2×) |
 | **14 Trackpad** | hold `REPT` (meñique izq inf) | Panel del Cirque: clicks (izq home row), scroll hold, selector x1/x2/x3, Mission Control |
 | **15 Scroll** | hold `SCRL` en Trackpad (pulgar izq int) | Capa fantasma: el pad scrollea en vez de mover el cursor |
+| **16 Gesture** | hold `GEST` en Trackpad (pulgar izq med) | Capa fantasma: swipes en el pad = Mission Control / cambio de escritorio / Exposé |
 
 **Thumbs y teclas especiales (Layer 0):**
 
@@ -466,7 +467,7 @@ Status screen custom del módulo [zmk-nice-oled](https://github.com/mctechnology
 
 | Widget | Descripción |
 |--------|-------------|
-| Layer | Nombre de la capa activa, en mayúsculas (`display-name` del keymap, máx 8-9 chars): `COLEMAK` / `SYMBOLS` / `NAVIGATE` / `SYSTEM` / `FN+NUM` / `MACROS` / `LANGUAGE` / `APPS` / `MOUSE` / `TMUX` / `WEZTERM` / `QWERTY` / `TRACKPAD` / `SCROLL` |
+| Layer | Nombre de la capa activa, en mayúsculas (`display-name` del keymap, máx 8-9 chars): `COLEMAK` / `SYMBOLS` / `NAVIGATE` / `SYSTEM` / `FN+NUM` / `MACROS` / `LANGUAGE` / `APPS` / `MOUSE` / `TMUX` / `WEZTERM` / `QWERTY` / `TRACKPAD` / `SCROLL` / `GESTURE` |
 | Battery | Nivel de batería |
 | Output | USB o perfil BT y estado de conexión |
 | Modifiers | **⌘⌥⇧⌃ activos en tiempo real** (grilla 2×2, símbolos macOS) — útil para detectar home-row mods pegados |

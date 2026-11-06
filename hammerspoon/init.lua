@@ -1080,7 +1080,7 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb dim" id="l14-k-cpsw"><span class="kl">CW</span><span class="km">sin acción</span></div>
-      <div class="kb-key kb-thumb dim" id="l14-k-gui"><span class="kl">MO7</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-thumb active" style="--lc:#cc8800" id="l14-k-gui"><span class="kl">GEST</span><span class="km">hold: pad=gestos</span></div>
       <div class="kb-key kb-thumb active" style="--lc:#cc8800" id="l14-k-mo7"><span class="kl">SCRL</span><span class="km">hold: pad=scroll</span></div>
       <div class="kb-sep" style="width:24px"></div>
       <div class="kb-key kb-thumb dim" id="l14-k-mo2"><span class="kl">RET</span><span class="km">sin acción</span></div>
@@ -1094,6 +1094,7 @@ window.onload = function() { show('home'); };
     <li><b>SCRL</b> (pulgar izq interior, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
     <li><b>x1/x2/x3</b>: selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). La pantalla muestra X1/X3 mientras no estés en normal</li>
     <li><b>Mission Control</b> (cluster nav der, espeja flechas de Nav): MCTL=⌃↑ · DESK←/→=⌃←/→ · EXPO=⌃↓ · SHOW=F11 — requieren los atajos estándar activos en Ajustes → Teclado</li>
+    <li><b>GEST</b> (pulgar izq medio, hold): modo gesto — <b>deslizar el pad</b> dispara los mismos atajos: swipe ←/→ cambia escritorio · ↑ Mission Control · ↓ App Exposé (capa fantasma 16, un gesto por swipe)</li>
   </ul>
 </div>
 
