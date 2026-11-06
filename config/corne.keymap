@@ -599,7 +599,7 @@
  * Panel de control del Cirque, 100% operable con la mano izquierda mientras
  * la derecha desliza sobre el pad:
  * - Fila superior izq (Q/W/F): selector persistente de velocidad x1/x2/x3.
- * - Home row izq (R/S/T): clicks directos RCLK/MCLK/LCLK (índice = LCLK).
+ * - Home row izq: clicks directos — MCLK en A, RCLK en R, LCLK en T (índice).
  * - Z (anular, junto a REPT): hold SCRL → capa fantasma 15, el pad scrollea
  *   en vez de mover el cursor (override en cirque_left.overlay).
  * - Pulgar izq medio (MO7-pos): hold GEST → capa fantasma 16, deslizar el
@@ -609,7 +609,7 @@
  * ,------------------------------------.                ,----------------------------------.
  * |     | x1  | x2  | x3  |     |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |     |     |RCLK |MCLK |LCLK |     |                |     |     |     |     |     |     |
+ * |     |MCLK |RCLK |     |LCLK |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
  * |[hld]|SCRL |     |     |     |     |                |     |     |     |     |     |     |
  * `-------------------------------------'               `----------------------------------'
@@ -620,7 +620,7 @@
             display-name = "Trackpad";
             bindings = <
                 &none  &spd1   &spd2      &spd3      &none      &none    &none  &none  &none  &none  &none  &none
-                &none  &none   &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &none  &none  &none  &none  &none
+                &none  &mkp MCLK  &mkp RCLK  &none   &mkp LCLK  &none    &none  &none  &none  &none  &none  &none
                 &none  &mo 15  &none      &none      &none      &none    &none  &none  &none  &none  &none  &none
                                &none      &mo 16     &none                      &none  &none  &none
             >;
