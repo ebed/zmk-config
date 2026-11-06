@@ -21,6 +21,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **9 Tmux** | hold `TAB` | tmux (prefix Ctrl+A): panes, ventanas, splits, resize |
 | **10 WezTerm** | hold `ESC` | WezTerm: tabs, splits, nav panes, workspaces, resize |
 | **11 QWERTY** | toggle `QWRT` en Sys (meñique izq inf) | QWERTY plano sin HRM — juegos / layout estándar |
+| **12/13 Speed** | selector `x1/x2/x3` en Mouse (fila sup der) | Capas fantasma: velocidad del trackpad Cirque (0.75× / 1.5× / 2×) |
 
 **Thumbs y teclas especiales (Layer 0):**
 

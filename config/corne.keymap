@@ -76,6 +76,36 @@
             bindings = <&mo>, <&caps_word>;
         };
 
+        /* Toggles explícitos para el selector de velocidad del trackpad ---- */
+        tog_on: toggle_layer_on {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            toggle-mode = "on";
+        };
+        tog_off: toggle_layer_off {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            toggle-mode = "off";
+        };
+        /* Selector radio-button x1/x2/x3: capas fantasma 12 (slow) y 13 (fast),
+         * transparentes al tipeo; solo conmutan el escalador del trackpad
+         * (overrides por capa en cirque_left.overlay). x2 = ninguna activa. */
+        spd1: speed_slow_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 13>, <&tog_on 12>;
+        };
+        spd2: speed_normal_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 12>, <&tog_off 13>;
+        };
+        spd3: speed_fast_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 12>, <&tog_on 13>;
+        };
+
         /* Home Row Mods — derecha: hold solo al presionar mano izquierda -- */
         hmr: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
@@ -447,7 +477,7 @@
         mouse_layer {
             display-name = "Mouse";
             bindings = <
-                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &none      &none       &none       &none  &none  &none
+                &msc SCRL_UP    &none            &none  &mmv MOVE_UP    &none  &none    &none      &none       &none       &spd1  &spd2  &spd3
                 &msc SCRL_DOWN  &none            &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &none      &mkp LCLK   &mkp MCLK   &mkp RCLK  &mkp MB4  &mkp MB5
                 &msc SCRL_LEFT  &msc SCRL_RIGHT  &none  &none           &none  &none    &none      &none       &none       &none  &none  &tog 8
                                 &tog 8           &none  &none                            &none  &none  &none
@@ -527,6 +557,31 @@
                 &kp TAB    &kp A  &kp S  &kp D  &kp F  &kp G    &kp H  &kp J  &kp K      &kp L    &kp SEMI   &kp SQT
                 &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp SLASH  &tog 11
                                   &kp LCTRL  &kp LALT  &kp SPACE    &kp RET  &mo 1  &mo 2
+            >;
+        };
+
+/* ### Layers 12/13 — Speed x1 / x3 (fantasma)
+ * 100% transparentes al tipeo: su único efecto es conmutar el escalador del
+ * trackpad Cirque (overrides por capa en cirque_left.overlay). Selector en
+ * Mouse (fila superior derecha): x1 / x2 / x3. Nota: mientras x1 o x3 estén
+ * activas, la pantalla muestra su nombre como capa superior. */
+        speed_slow_layer {
+            display-name = "x1 Slow";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        speed_fast_layer {
+            display-name = "x3 Fast";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };

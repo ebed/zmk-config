@@ -839,9 +839,9 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l8-k-j"><span class="kl">J</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l8-k-l"><span class="kl">L</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l8-k-u"><span class="kl">U</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l8-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l8-k-semi"><span class="kl">;</span><span class="km">sin acción</span></div>
-      <div class="kb-key kb-extra dim" id="l8-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
+      <div class="kb-key active L8" id="l8-k-y"><span class="kl">x1</span><span class="km">preciso</span></div>
+      <div class="kb-key active L8" id="l8-k-semi"><span class="kl">x2</span><span class="km">normal</span></div>
+      <div class="kb-key kb-extra active L8" id="l8-k-bspc"><span class="kl">x3</span><span class="km">rápido</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active L8" id="l8-k-tab"><span class="kl">SCRL↓</span></div>
@@ -887,7 +887,7 @@ window.onload = function() { show('home'); };
     <li>Izquierdo: movimiento ESDF-like (F=M↑ R=M← S=M↓ T=M→) + scroll col externa</li>
     <li>Derecho home: <b>N=LCLK E=MCLK I=RCLK O=MB4 '=MB5</b> — índice→medio→anular→meñique</li>
     <li>Velocidad: MOVE_VAL=2000 (3.3× default) · SCRL_VAL=20 (2× default)</li>
-    <li><b>Trackpad precisión</b>: con Mouse activo, el cursor del Cirque va a 1/2 velocidad</li>
+    <li><b>Trackpad x1/x2/x3</b> (fila sup der): selector persistente de velocidad del Cirque — x1 preciso · x2 normal · x3 rápido. La pantalla muestra X1/X3 mientras no estés en normal</li>
     <li><b>EXIT</b>: pulgar izq outer (L8) o L2 extra-col izq (REPT-pos)</li>
   </ul>
 </div>
