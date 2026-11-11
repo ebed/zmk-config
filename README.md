@@ -386,7 +386,13 @@ git clone git@github.com:ebed/zmk-config.git && cd zmk-config
 ./scripts/setup-tmux.sh        # instala tmux si falta y enlaza tmux/tmux.conf → ~/.tmux.conf
 ```
 
-Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Detalle completo: [tmux/README.md](tmux/README.md). Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon).
+Para **sincronizar la config a servidores remotos** sin clonar el repo allá (p.ej. tras cambiar un bind como el NEST/F12):
+
+```bash
+./scripts/setup-tmux.sh user@servidor1 user@servidor2   # scp de tmux.conf + tmux-yank y reload del server remoto
+```
+
+Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Detalle completo: [tmux/README.md](tmux/README.md). Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon) y re-sincroniza los remotos.
 
 ### Display switching (lado derecho, fila inferior)
 

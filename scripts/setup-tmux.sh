@@ -2,6 +2,13 @@
 # scripts/setup-tmux.sh — instala tmux >= 3.3, terminfo tmux-256color y enlaza la config.
 # Rol: esta config es el motor de sesiones para máquinas REMOTAS (SSH). Local: WezTerm nativo.
 # Idempotente — correr varias veces es seguro.
+#
+# Modos:
+#   setup-tmux.sh                      instalación completa en ESTA máquina (symlink al repo)
+#   setup-tmux.sh user@host [...]      sync remoto: copia tmux.conf + tmux-yank por scp
+#                                      (archivos reales, sin clonar el repo) y recarga el
+#                                      server tmux remoto si está corriendo. No instala
+#                                      tmux/terminfo allá — para eso, script completo en el host.
 
 set -euo pipefail
 
@@ -14,6 +21,27 @@ MIN_MAJOR=3; MIN_MINOR=3   # allow-passthrough (OSC 52 clipboard) requiere >= 3.
 ok()   { printf '\033[0;32m✓\033[0m %s\n' "$*"; }
 warn() { printf '\033[1;33m⚠\033[0m  %s\n' "$*"; }
 step() { printf '→ %s\n' "$*"; }
+
+# ── Modo remoto: sync de config a uno o más hosts ─────────────────────────────
+if [ $# -gt 0 ]; then
+    for host in "$@"; do
+        step "Sync a $host..."
+        scp -q "$SRC" "$host:.tmux.conf"
+        scp -q "$REPO_DIR/tmux/yank.sh" "$host:.tmux-yank.tmp"
+        ssh "$host" '
+            mkdir -p ~/.local/bin
+            mv ~/.tmux-yank.tmp ~/.local/bin/tmux-yank
+            chmod +x ~/.local/bin/tmux-yank
+            if tmux list-sessions >/dev/null 2>&1; then
+                tmux source-file ~/.tmux.conf && echo "  config recargada en server activo"
+            else
+                echo "  sin server tmux activo — cargará en la próxima sesión"
+            fi
+        '
+        ok "$host sincronizado"
+    done
+    exit 0
+fi
 
 # ── 1. Instalar tmux si falta ─────────────────────────────────────────────────
 if ! command -v tmux &>/dev/null; then
