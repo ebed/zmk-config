@@ -1031,7 +1031,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 14 — Trackpad -->
 <div id="v-14" class="view">
-  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inferior) — panel del Cirque: izq modula, der desliza</div></div></div>
+  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inf) o automática al mover el pad (400ms) — panel del Cirque: izq modula, der desliza</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l14-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
@@ -1090,6 +1090,7 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>Hold <b>REPT</b> con el meñique izq mientras la mano derecha usa el pad; tap REPT sigue siendo key-repeat. <b>Toda la capa se opera con la mano izquierda</b></li>
+    <li><b>Auto-activación</b>: mover el pad activa la capa por 400ms — clicks sin sostener REPT. No se activa si tipeaste hace <400ms; cualquier tecla fuera del panel la corta. Ojo: A/R/S justo tras mover el pad = click, no letra</li>
     <li>Clicks directos home row izq: <b>A=LCLK R=MCLK S=RCLK</b> (T libre)</li>
     <li><b>SCRL</b> (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
     <li><b>x1/x2/x3</b> (Q/W/F): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). La pantalla muestra X1/X3 mientras no estés en normal</li>

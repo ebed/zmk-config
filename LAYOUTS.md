@@ -394,6 +394,7 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 ```
 
 - Panel de control del trackpad Cirque, **100% operable con la mano izquierda** mientras la derecha desliza sobre el pad
+- **Auto-activación**: mover el pad activa esta capa por 400ms (`zip_tp_auto_layer` en `cirque_left.overlay`) — clicks disponibles sin sostener REPT. No se activa si se tipeó hace <400ms; cualquier tecla fuera del panel la corta y tipea normal. Tradeoff: A/R/S justo después de mover el pad hacen click, no letra
 - Clicks directos home row izq: `LCLK` en A · `MCLK` en R · `RCLK` en S (T libre)
 - `SCRL` (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor — capa fantasma 15 + override `zip_xy_to_scroll_mapper` en `cirque_left.overlay` (scroll natural, velocidad 1/8)
 - `GEST` (pulgar izq medio, hold): modo gesto — deslizar el pad dispara los atajos de Mission Control en vez de mover el cursor: swipe ←/→ = cambiar escritorio (Ctrl+←/→), ↑ = Mission Control (Ctrl+↑), ↓ = App Exposé (Ctrl+↓). Capa fantasma 16 + processor `zip_gesture_keybind` (módulo `zmk-input-processor-keybind`, 4-way, tick 60, pausa 300ms). Requiere los atajos estándar habilitados en Ajustes → Teclado
