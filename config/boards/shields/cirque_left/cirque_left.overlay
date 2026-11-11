@@ -35,12 +35,30 @@
         bindings = <&kp LC(RIGHT)>, <&kp LC(LEFT)>, <&kp LC(DOWN)>, <&kp LC(UP)>;
     };
 
+    /* Auto mouse layer: mover el pad activa temporalmente la capa Trackpad
+     * (L14) — clicks en A/R/S disponibles sin sostener REPT.
+     *  - require-prior-idle-ms: no se activa si se tipeó hace <400ms.
+     *  - excluded-positions: teclas de la capa que NO la desactivan
+     *    (Q/W/F selector, A/R/S clicks, REPT, Z scroll, pulgar GEST);
+     *    cualquier otra tecla la corta y tipea normal.
+     * Tradeoff conocido: tipear A/R/S dentro de la ventana post-movimiento
+     * hace click en vez de letra — si molesta, bajar el timeout (2º param)
+     * o quitar este processor de la cadena. */
+    zip_tp_auto_layer: zip_tp_auto_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        require-prior-idle-ms = <400>;
+        excluded-positions = <1 2 3 13 14 15 24 25 37>;
+    };
+
     glidepoint_listener: glidepoint_listener {
         compatible = "zmk,input-listener";
         device = <&glidepoint_split>;
         /* x1.5 por software sobre la ganancia 3x del sensor (su máximo
-         * usable). Subir/bajar velocidad = cambiar esta fracción. */
-        input-processors = <&zip_xy_scaler 3 2>;
+         * usable). Subir/bajar velocidad = cambiar esta fracción.
+         * zip_tp_auto_layer primero: cada evento del pad (re)activa L14
+         * por 400ms. */
+        input-processors = <&zip_tp_auto_layer 14 400>, <&zip_xy_scaler 3 2>;
 
         /* Selector x1/x2/x3 (capas fantasma 12/13 del keymap, radio-button
          * desde la capa Mouse). x2 = default (solo el escalador base). */
@@ -60,13 +78,15 @@
          * no se aplica el escalador base del cursor.
          *  - Y_INVERT = scroll natural (contenido sigue al dedo); si queda
          *    al revés, borrar esa transform.
-         *  - 1/8 modera la velocidad (la rueda cuenta líneas, no píxeles);
-         *    subir el divisor si scrollea muy rápido. */
+         *  - 2/1 calibrado para SMOOTH_SCROLLING (multiplicador HID 16: el
+         *    host divide la rueda por 16) — equivale en velocidad al 1/8
+         *    que usábamos con scroll por líneas. Ajustar el numerador para
+         *    acelerar/frenar. */
         scroll {
             layers = <15>;
             input-processors
                 = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
-                , <&zip_xy_scaler 1 8>
+                , <&zip_xy_scaler 2 1>
                 , <&zip_xy_to_scroll_mapper>;
         };
 
