@@ -534,11 +534,11 @@
  * |[hld]|NTAB |CTAB |CPANE|TABS |LNCH|                |TAB← |TAB→ |PAN↑ |MOV← |MOV→ |  ·  |
  * |     |⌘T   |⌘W   |⌘⇧W  |⌘⇧E  |⌘⇧M |                |⌘[   |⌘]   |⌥K   |⌘⇧[  |⌘⇧]  |     |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
- * |     |WS←  |WS→  |WSSL |WSNW |  · |                |  ·  |PAN← |PAN↓ |PAN→ |PSEL |  ·  |
- * |     |⌘⌃[  |⌘⌃]  |⌘⇧O  |⌘⇧N  |    |                |     |⌥H   |⌥J   |⌥L   |⌘⇧P  |     |
+ * |     |WS←  |WS→  |WSSL |WSNW |  · |                | F+  |PAN← |PAN↓ |PAN→ |PSEL | F0  |
+ * |     |⌘⌃[  |⌘⌃]  |⌘⇧O  |⌘⇧N  |    |                |⌘=   |⌥H   |⌥J   |⌥L   |⌘⇧P  |⌘0   |
  * |-----+-----+-----+-----+-----+----|                |-----+-----+-----+-----+-----+-----|
- * |  ·  |RNM  |SPLH |SPLV |ZOM  |  · |                |  ·  |RES← |RES↑ |RES↓ |RES→ |  ·  |
- * |     |⌘,   |⌘D   |⌘⇧D  |⌘Z   |    |                |     |⌘⌥←  |⌘⌥↑  |⌘⌥↓  |⌘⌥→  |     |
+ * |  ·  |RNM  |SPLH |SPLV |ZOM  |  · |                | F-  |RES← |RES↑ |RES↓ |RES→ |  ·  |
+ * |     |⌘,   |⌘D   |⌘⇧D  |⌘Z   |    |                |⌘-   |⌘⌥←  |⌘⌥↑  |⌘⌥↓  |⌘⌥→  |     |
  * `-----------------------------------'                `------------------------------------'
  *         |     |     |     |                              |     |     |     |
  *         `-----+-----+-----'                              `-----+-----+-----'
@@ -547,8 +547,8 @@
             display-name = "WezTerm";
             bindings = <
                 &trans  &kp LG(T)          &kp LG(W)          &kp LG(LS(W))     &kp LG(LS(E))     &kp LG(LS(M))    &kp LG(LBKT)      &kp LG(RBKT)      &kp LA(K)           &kp LG(LS(LBKT))    &kp LG(LS(RBKT))    &none
-                &trans  &kp LG(LC(LBKT))   &kp LG(LC(RBKT))   &kp LG(LS(O))     &kp LG(LS(N))     &none            &none             &kp LA(H)         &kp LA(J)           &kp LA(L)           &kp LG(LS(P))       &none
-                &none   &kp LG(COMMA)      &kp LG(D)          &kp LG(LS(D))     &kp LG(Z)         &none            &none             &kp LG(LA(LEFT))  &kp LG(LA(UP))      &kp LG(LA(DOWN))    &kp LG(LA(RIGHT))   &none
+                &trans  &kp LG(LC(LBKT))   &kp LG(LC(RBKT))   &kp LG(LS(O))     &kp LG(LS(N))     &none            &kp LG(EQUAL)     &kp LA(H)         &kp LA(J)           &kp LA(L)           &kp LG(LS(P))       &kp LG(N0)
+                &none   &kp LG(COMMA)      &kp LG(D)          &kp LG(LS(D))     &kp LG(Z)         &none            &kp LG(MINUS)     &kp LG(LA(LEFT))  &kp LG(LA(UP))      &kp LG(LA(DOWN))    &kp LG(LA(RIGHT))   &none
                                            &trans             &trans            &trans                              &trans            &trans            &trans
             >;
         };

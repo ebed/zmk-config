@@ -921,12 +921,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L10" id="l10-k-t"><span class="kl">WSNW</span><span class="km">⌘⇧N</span></div>
       <div class="kb-key dim" id="l10-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l10-k-m"><span class="kl">M</span><span class="km">sin acción</span></div>
+      <div class="kb-key active L10" id="l10-k-m"><span class="kl">F+</span><span class="km">⌘= font +</span></div>
       <div class="kb-key active L10" id="l10-k-n"><span class="kl">PAN←</span><span class="km">⌥H</span></div>
       <div class="kb-key active L10" id="l10-k-e"><span class="kl">PAN↓</span><span class="km">⌥J</span></div>
       <div class="kb-key active L10" id="l10-k-i"><span class="kl">PAN→</span><span class="km">⌥L</span></div>
       <div class="kb-key active L10" id="l10-k-o"><span class="kl">PSEL</span><span class="km">⌘⇧P</span></div>
-      <div class="kb-key kb-extra dim" id="l10-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
+      <div class="kb-key kb-extra active L10" id="l10-k-apos"><span class="kl">F0</span><span class="km">⌘0 font reset</span></div>
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l10-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
@@ -936,7 +936,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L10" id="l10-k-d"><span class="kl">ZOM</span><span class="km">⌘Z</span></div>
       <div class="kb-key dim" id="l10-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l10-k-k"><span class="kl">K</span><span class="km">sin acción</span></div>
+      <div class="kb-key active L10" id="l10-k-k"><span class="kl">F-</span><span class="km">⌘- font -</span></div>
       <div class="kb-key active L10" id="l10-k-h"><span class="kl">RES←</span><span class="km">⌘⌥←</span></div>
       <div class="kb-key active L10" id="l10-k-comma"><span class="kl">RES↑</span><span class="km">⌘⌥↑</span></div>
       <div class="kb-key active L10" id="l10-k-dot"><span class="kl">RES↓</span><span class="km">⌘⌥↓</span></div>

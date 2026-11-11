@@ -363,6 +363,8 @@ Activación: hold `ESC` (pinky izq top). Tap sigue siendo ESC. Layout completo e
 | `U`-pos | fila 1 | `⌥K` | Pane ↑ |
 | `O`-pos | home row | `⌘⇧P` | Selector interactivo de pane |
 | `J`-pos / `L`-pos | fila 1 | `⌘[` / `⌘]` | Tab anterior / siguiente |
+| `M`-pos / `K`-pos | home row / fila 3 (misma columna) | `⌘=` / `⌘-` | Font size + / − |
+| `'`-pos | home row | `⌘0` | Font size reset (al default de la máquina — respeta `~/.wezterm-local.lua`) |
 | `Y`-pos / `;`-pos | fila 1 | `⌘⇧[` / `⌘⇧]` | Mover tab ← / → |
 | `H`-pos `,`-pos `.`-pos `/`-pos | fila 3 | `⌘⌥←` `⌘⌥↑` `⌘⌥↓` `⌘⌥→` | Resize pane |
 

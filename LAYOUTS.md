@@ -288,11 +288,11 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 |[hld]| NTAB| CTAB|CPANE| TABS| LNCH        |        |TAB← |TAB→ |PAN↑ |MOV← |MOV→ |  ·    |
 |     |  ⌘T |  ⌘W | ⌘⇧W | ⌘⇧E | ⌘⇧M        |        | ⌘[  |  ⌘] | ⌥K  | ⌘⇧[ | ⌘⇧] |       |
 |-----+-----+-----+-----+-----+------------|        |-----+-----+-----+-----+-----+-------|
-|     | WS← | WS→ |WSSL |WSNW |  ·          |        |  ·  |PAN← |PAN↓ |PAN→ |PSEL |  ·    |
-|     | ⌘⌃[ | ⌘⌃] | ⌘⇧O | ⌘⇧N |             |        |     | ⌥H  | ⌥J  | ⌥L  | ⌘⇧P |       |
+|     | WS← | WS→ |WSSL |WSNW |  ·          |        | F+  |PAN← |PAN↓ |PAN→ |PSEL | F0    |
+|     | ⌘⌃[ | ⌘⌃] | ⌘⇧O | ⌘⇧N |             |        | ⌘=  | ⌥H  | ⌥J  | ⌥L  | ⌘⇧P | ⌘0    |
 |-----+-----+-----+-----+-----+------------|        |-----+-----+-----+-----+-----+-------|
-|  ·  | RNM |SPLH |SPLV | ZOM |  ·          |        |  ·  |RES← |RES↑ |RES↓ |RES→ |  ·    |
-|     | ⌘,  | ⌘D  | ⌘⇧D | ⌘Z  |             |        |     | ⌘⌥← | ⌘⌥↑ | ⌘⌥↓ | ⌘⌥→ |       |
+|  ·  | RNM |SPLH |SPLV | ZOM |  ·          |        | F-  |RES← |RES↑ |RES↓ |RES→ |  ·    |
+|     | ⌘,  | ⌘D  | ⌘⇧D | ⌘Z  |             |        | ⌘-  | ⌘⌥← | ⌘⌥↑ | ⌘⌥↓ | ⌘⌥→ |       |
 '-----+-----+-----+-----+-----+------------'        '-----+-----+-----+-----+-----+-------'
              |     |     |     |                          |     |     |     |
              '-----+-----+-----'                          '-----+-----+-----'
@@ -335,6 +335,14 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 | `I`-pos | home row | `⌥L` | Pane → |
 | `U`-pos | fila 1   | `⌥K` | Pane ↑ |
 | `O`-pos | home row | `⌘⇧P` | Selector interactivo de pane |
+
+**Derecha — font size (columna M/K + reset en '):**
+
+| Tecla | Shortcut | Acción |
+|-------|----------|--------|
+| `M`-pos — F+ | `⌘=` | Font size + |
+| `K`-pos — F- | `⌘-` | Font size − (misma columna, abajo) |
+| `'`-pos — F0 | `⌘0` | Font reset — vuelve al default de la máquina (respeta `~/.wezterm-local.lua`) |
 
 **Derecha — tabs prev/next y mover (fila 1):**
 
