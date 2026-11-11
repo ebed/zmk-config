@@ -1031,7 +1031,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 14 — Trackpad -->
 <div id="v-14" class="view">
-  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inf) o automática al mover el pad (400ms) — panel del Cirque: izq modula, der desliza</div></div></div>
+  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inf) o automática al mover el pad (3s, EXIT en T) — panel del Cirque: izq modula, der desliza</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l14-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
@@ -1053,7 +1053,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active" style="--lc:#cc8800" id="l14-k-a"><span class="kl">LCLK</span><span class="km">click izq</span></div>
       <div class="kb-key active" style="--lc:#cc8800" id="l14-k-r"><span class="kl">MCLK</span><span class="km">click medio</span></div>
       <div class="kb-key active" style="--lc:#cc8800" id="l14-k-s"><span class="kl">RCLK</span><span class="km">click der</span></div>
-      <div class="kb-key dim" id="l14-k-t"><span class="kl">T</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-t"><span class="kl">EXIT</span><span class="km">cierra la capa</span></div>
       <div class="kb-key dim" id="l14-k-g"><span class="kl">G</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
       <div class="kb-key dim" id="l14-k-m"><span class="kl">M</span><span class="km">sin acción</span></div>
@@ -1090,8 +1090,8 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>Hold <b>REPT</b> con el meñique izq mientras la mano derecha usa el pad; tap REPT sigue siendo key-repeat. <b>Toda la capa se opera con la mano izquierda</b></li>
-    <li><b>Auto-activación</b>: mover el pad activa la capa por 400ms — clicks sin sostener REPT. No se activa si tipeaste hace <400ms; cualquier tecla fuera del panel la corta. Ojo: A/R/S justo tras mover el pad = click, no letra</li>
-    <li>Clicks directos home row izq: <b>A=LCLK R=MCLK S=RCLK</b> (T libre)</li>
+    <li><b>Auto-activación</b>: mover el pad activa la capa por <b>3s</b> — apunta, selecciona y haz click sin sostener REPT. No se activa si tipeaste hace <400ms; cualquier tecla fuera del panel la corta y tipea; salida anticipada con <b>EXIT</b> (T). Ojo: A/R/S dentro de la ventana = click, no letra</li>
+    <li>Clicks directos home row izq: <b>A=LCLK R=MCLK S=RCLK</b> · <b>T=EXIT</b></li>
     <li><b>SCRL</b> (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
     <li><b>x1/x2/x3</b> (Q/W/F): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). La pantalla muestra X1/X3 mientras no estés en normal</li>
     <li><b>GEST</b> (pulgar izq medio, hold): modo gesto — <b>deslizar el pad</b> dispara Mission Control: swipe ←/→ cambia escritorio (⌃←/→) · ↑ Mission Control (⌃↑) · ↓ App Exposé (⌃↓) — un gesto por swipe (capa fantasma 16); requiere los atajos estándar activos en Ajustes → Teclado</li>

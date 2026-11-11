@@ -600,6 +600,8 @@
  * la derecha desliza sobre el pad:
  * - Fila superior izq (Q/W/F): selector persistente de velocidad x1/x2/x3.
  * - Home row izq: clicks directos — LCLK en A, MCLK en R, RCLK en S.
+ * - T: EXIT (&tog_off 14) — cierra la capa cuando se activó sola al mover
+ *   el pad (auto-layer de 3s, zip_tp_auto_layer en cirque_left.overlay).
  * - Z (anular, junto a REPT): hold SCRL → capa fantasma 15, el pad scrollea
  *   en vez de mover el cursor (override en cirque_left.overlay).
  * - Pulgar izq medio (MO7-pos): hold GEST → capa fantasma 16, deslizar el
@@ -609,7 +611,7 @@
  * ,------------------------------------.                ,----------------------------------.
  * |     | x1  | x2  | x3  |     |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |     |LCLK |MCLK |RCLK |     |     |                |     |     |     |     |     |     |
+ * |     |LCLK |MCLK |RCLK |EXIT |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
  * |[hld]|SCRL |     |     |     |     |                |     |     |     |     |     |     |
  * `-------------------------------------'               `----------------------------------'
@@ -620,7 +622,7 @@
             display-name = "Trackpad";
             bindings = <
                 &none  &spd1   &spd2      &spd3      &none      &none    &none  &none  &none  &none  &none  &none
-                &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &none  &none    &none  &none  &none  &none  &none  &none
+                &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &tog_off 14  &none    &none  &none  &none  &none  &none  &none
                 &none  &mo 15  &none      &none      &none      &none    &none  &none  &none  &none  &none  &none
                                &none      &mo 16     &none                      &none  &none  &none
             >;
