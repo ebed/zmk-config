@@ -21,7 +21,7 @@ manifest:
     # Upstream: mctechnology17/zmk-nice-oled.
     - name: zmk-nice-oled
       remote: ebed
-      revision: 89b359319af78e3333aad7c2cb735b05e5977833
+      revision: 1f9d122f25da0a5ad2a9908ff8306e689e656525
     # Driver cirque,pinnacle (trackpad Cirque GlidePoint SPI) — módulo oficial
     # de Pete Johanson; sin tags: pineado a commit de main (2025-02-18).
     - name: cirque-input-module
