@@ -12,7 +12,10 @@
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 2000  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+/* 320 = 20 * 16: con CONFIG_ZMK_POINTING_SMOOTH_SCROLLING el host divide
+ * cada unidad de rueda por el resolution multiplier (16), así que el valor
+ * se multiplica para mantener la velocidad efectiva de siempre (20). */
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 320   // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 /* nice!view — CS soldado al pin 010 (P0.10), no al default del adapter (P0.06).
@@ -43,7 +46,12 @@
             key-positions = <6 7>;
             bindings = <&kp ESC>;
             /* No en QWERTY (L11): ahí pos 6+7 = Y+U y tipear "yu" dispararía ESC */
-            layers = <0 1 2 3 4 5 6 7 8 9 10>;
+            /* Todas las capas menos QWERTY (11). Incluye las fantasma
+             * 12-16: los combos filtran por la capa MÁS ALTA activa
+             * (combo.c usa zmk_keymap_highest_layer_active), así que sin
+             * ellas el combo ESC moría con x1/x3 seleccionado o durante la
+             * ventana auto-Trackpad. */
+            layers = <0 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16>;
         };
         combo_sys {
             timeout-ms = <50>;

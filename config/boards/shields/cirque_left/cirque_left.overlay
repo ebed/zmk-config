@@ -43,16 +43,20 @@
      *    capa externo y cancela su timer) o cualquier tecla no excluida.
      *  - require-prior-idle-ms: no se activa si se tipeó hace <400ms.
      *  - excluded-positions: teclas de la capa que NO la desactivan
-     *    (Q/W/F selector, A/R/S clicks, T exit, REPT, Z scroll, pulgar
-     *    GEST); cualquier otra tecla la corta y tipea normal.
-     * Tradeoff conocido: tipear A/R/S dentro de la ventana post-movimiento
-     * hace click en vez de letra — si molesta, bajar el timeout (2º param)
-     * o quitar este processor de la cadena. */
+     *    (A/R/S clicks, T exit, REPT, Z scroll, pulgar GEST); cualquier
+     *    otra tecla la corta y tipea normal. Q/W/F (selector x1/x2/x3)
+     *    NO están excluidas a propósito: tipearlas en la ventana debe
+     *    tipear la letra, no cambiar la velocidad en silencio — el
+     *    selector se usa con la capa sostenida (hold REPT), donde este
+     *    processor no interfiere (solo desactiva capas que él activó).
+     * Tradeoff conocido: tipear A/R/S/T/Z dentro de la ventana
+     * post-movimiento ejecuta el panel en vez de la letra — si molesta,
+     * bajar el timeout (2º param) o quitar este processor de la cadena. */
     zip_tp_auto_layer: zip_tp_auto_layer {
         compatible = "zmk,input-processor-temp-layer";
         #input-processor-cells = <2>;
         require-prior-idle-ms = <400>;
-        excluded-positions = <1 2 3 13 14 15 16 24 25 37>;
+        excluded-positions = <13 14 15 16 24 25 37>;
     };
 
     glidepoint_listener: glidepoint_listener {

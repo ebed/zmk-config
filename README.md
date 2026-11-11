@@ -93,7 +93,7 @@ Tap = letra / Hold = modificador. Orden GACS (fuera → dentro):
 | Anular der | `I` | `i` | `RALT` |
 | Pinky der | `O` | `o` | `RGUI` |
 
-**Timings:** `tapping-term=400ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
+**Timings:** `tapping-term=280ms` · `quick-tap=175ms` · `require-prior-idle=200ms` · flavor `balanced` · positional HRM (hold solo con mano contraria)
 
 ### `CW/L6` — Outer left thumb (CapsWord / Lang layer)
 
