@@ -773,7 +773,7 @@ window.onload = function() { show('home'); };
       <div class="kb-key active L9" id="l9-k-j"><span class="kl">Split |</span><span class="km">izq | der</span></div>
       <div class="kb-key active L9" id="l9-k-l"><span class="kl">Split -</span><span class="km">sup / inf</span></div>
       <div class="kb-key active L9" id="l9-k-u"><span class="kl">Pane↑</span><span class="km">ir arriba</span></div>
-      <div class="kb-key dim" id="l9-k-y"><span class="kl">Y</span><span class="km">sin acción</span></div>
+      <div class="kb-key active L9" id="l9-k-y"><span class="kl">NEST</span><span class="km">F12: tmux anidado</span></div>
       <div class="kb-key dim" id="l9-k-semi"><span class="kl">;</span><span class="km">sin acción</span></div>
       <div class="kb-key kb-extra dim" id="l9-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
     </div>
@@ -822,6 +822,7 @@ window.onload = function() { show('home'); };
     <li><b>Derecha home row — nav panes:</b> <b>h</b>(N) ← · <b>j</b>(E) ↓ · <b>l</b>(I) → · <b>k</b>(U, fila 1) ↑ — mismo cluster físico que L2 Nav arrows</li>
     <li><b>Derecha fila 3 — resize:</b> K-pos=H(←) · H-pos=J(↓) · ,-pos=K(↑) · .-pos=L(→) · /-pos=&amp;(kill-win)</li>
     <li>Splits: J-pos=<b>|</b> · L-pos=<b>-</b> · Copy mode: M-pos=<b>[</b> · Paste: O-pos=<b>]</b> · Ventanas: <b>1-3</b> en Q W F · <b>4/5</b> en A T</li>
+    <li><b>NEST</b> (Y-pos, F12): <b>tmux anidado</b> — apaga prefix/binds del tmux externo (barra gris "⏸ OFF") y todo el layer opera sobre el tmux remoto; otra vez para restaurar. Alternativa puntual: C-a C-a tecla</li>
     </ul>
 </div>
 

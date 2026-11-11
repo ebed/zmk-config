@@ -257,8 +257,8 @@ Cada tecla envía el prefix `Ctrl+A` + la tecla (behavior `&tmx`). El cluster de
 
 ```
 ,------------------------------------.        ,------------------------------------.
-|  ,  |  1  |  2  |  3  |  p  |  n  |        |  |  |  -  |  k  |     |     |     |
-|renW |     |     |     |prev |next |        |spl-h|spl-v|pane↑|     |     |     |
+|  ,  |  1  |  2  |  3  |  p  |  n  |        |  |  |  -  |  k  |NEST |     |     |
+|renW |     |     |     |prev |next |        |spl-h|spl-v|pane↑|f12  |     |     |
 |-----+-----+-----+-----+-----+-----|        |-----+-----+-----+-----+-----+-----|
 |[hld]|  4  |  r  |  s  |  5  |  ;  |        |  [  |  h  |  j  |  l  |  ]  |     |
 |     |     |reld |tree |     |last |        |copy |pane←|pane↓|pane→|past |     |
@@ -274,6 +274,7 @@ Cada tecla envía el prefix `Ctrl+A` + la tecla (behavior `&tmx`). El cluster de
 - **Derecha fila 3 — resize:** `H`(K-pos)=res← · `J`(H-pos)=res↓ · `K`(,-pos)=res↑ · `L`(.-pos)=res→ · `&`(/-pos)=kill-window
 - Copy/paste: `[`=M-pos (home row izq der, entrada copy mode) · `]`=O-pos (paste)
 - Números: `1-3` en Q W F · `4/5` en A T · splits `|`(J-pos) y `-`(L-pos) en fila 1 der
+- `NEST` (Y-pos, F12): toggle de passthrough para **tmux anidado** — apaga prefix y binds del tmux externo (barra gris "⏸ OFF") para que todo el layer opere sobre el tmux remoto anidado; otra vez para restaurar. Requiere el bind F12 de `tmux/tmux.conf`
 - Activación: hold `TAB` (`&lt 9 TAB`); tap sigue siendo TAB
 
 ---

@@ -324,6 +324,7 @@ Behavior `&tmx KEY` = `Ctrl+A` + KEY. El cluster de nav de panes espeja L2 Nav (
 | `M`-pos / `O`-pos | home row extremos | `[` / `]` | Copy-mode / pegar |
 | `K`-pos `H`-pos `,`-pos `.`-pos | fila 3 der | `H` `J` `K` `L` | Resize ← ↓ ↑ → |
 | `/`-pos | fila 3 der | `&` | Cerrar ventana |
+| `Y`-pos | fila 1 der | `F12` | `NEST`: passthrough para tmux anidado — apaga el tmux externo (barra gris "⏸ OFF") y el layer opera sobre el remoto; otra vez restaura |
 
 ### Layer 10 — WezTerm (hold `ESC`)
 
@@ -373,6 +374,8 @@ Activación: hold `ESC` (pinky izq top). Tap sigue siendo ESC. Layout completo e
 | **Remoto (SSH)** | tmux | Sesiones persistentes, multiplexado, clipboard vía OSC 52 |
 
 WezTerm ya provee tabs y splits nativos con GPU rendering: agregar tmux local duplicaría el multiplexado sin beneficio. En remoto, tmux es indispensable para sesiones que sobreviven desconexiones. El clipboard fluye del remoto al Mac automáticamente vía OSC 52 (`set-clipboard on` + `allow-passthrough on` en WezTerm).
+
+**Tmux anidado** (tmux local + tmux remoto vía SSH/mosh, ambos con prefix `Ctrl+A`): el local captura el prefix y el Layer 9 opera sobre el tmux equivocado. Solución: `NEST` (F12, Y-pos en L9) alterna el modo passthrough del tmux externo — barra gris "⏸ OFF" mientras está transparente. Alternativa puntual: `C-a C-a <key>` (send-prefix) manda un solo comando al anidado.
 
 ### Instalar la config de tmux en otra máquina
 
