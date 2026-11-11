@@ -458,5 +458,25 @@ wezterm.on('reset-opacity', function(window, pane)
   wezterm.log_info(string.format("Opacity reset to: %.0f%%", default_opacity * 100))
 end)
 
+-- =============================================================================
+-- Overrides locales por máquina (archivo NO versionado): ~/.wezterm-local.lua
+-- Si existe y devuelve una tabla, se fusiona sobre la config compartida
+-- (merge de un nivel: sub-tablas como window_frame se fusionan, no se
+-- reemplazan). Útil cuando otra máquina tiene distinto DPI, p.ej.:
+--   return { font_size = 12.0, window_frame = { font_size = 12.0 } }
+-- =============================================================================
+local ok, local_overrides = pcall(dofile, wezterm.home_dir .. '/.wezterm-local.lua')
+if ok and type(local_overrides) == 'table' then
+  for k, v in pairs(local_overrides) do
+    if type(v) == 'table' and type(config[k]) == 'table' then
+      for k2, v2 in pairs(v) do
+        config[k][k2] = v2
+      end
+    else
+      config[k] = v
+    end
+  end
+end
+
 -- Return the configuration
 return config
