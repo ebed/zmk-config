@@ -86,15 +86,16 @@
          * no se aplica el escalador base del cursor.
          *  - Y_INVERT = scroll natural (contenido sigue al dedo); si queda
          *    al revés, borrar esa transform.
-         *  - 2/1 calibrado para SMOOTH_SCROLLING (multiplicador HID 16: el
-         *    host divide la rueda por 16) — equivale en velocidad al 1/8
-         *    que usábamos con scroll por líneas. Ajustar el numerador para
-         *    acelerar/frenar. */
+         *  - 1/2 con SMOOTH_SCROLLING (multiplicador HID 16: el host divide
+         *    la rueda por 16) — neto 1/32 de línea por unidad de delta. El
+         *    2/1 inicial resultó demasiado rápido en uso real; ajustar esta
+         *    fracción para acelerar/frenar (track-remainders acumula los
+         *    restos, el scroll lento no pierde movimiento). */
         scroll {
             layers = <15>;
             input-processors
                 = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
-                , <&zip_xy_scaler 2 1>
+                , <&zip_xy_scaler 1 2>
                 , <&zip_xy_to_scroll_mapper>;
         };
 
