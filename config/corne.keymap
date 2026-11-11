@@ -609,7 +609,7 @@
  * - Fila superior izq (Q/W/F): selector persistente de velocidad x1/x2/x3.
  * - Home row izq: clicks directos — LCLK en A, MCLK en R, RCLK en S.
  * - T: EXIT (&tog_off 14) — cierra la capa cuando se activó sola al mover
- *   el pad (auto-layer de 5s, zip_tp_auto_layer en cirque_left.overlay).
+ *   el pad (auto-layer de 4s, zip_tp_auto_layer en cirque_left.overlay).
  * - Z (anular, junto a REPT): hold SCRL → capa fantasma 15, el pad scrollea
  *   en vez de mover el cursor (override en cirque_left.overlay).
  * - Pulgar izq medio (MO7-pos): hold GEST → capa fantasma 16, deslizar el

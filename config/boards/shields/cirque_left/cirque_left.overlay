@@ -37,8 +37,8 @@
 
     /* Auto mouse layer: mover el pad activa temporalmente la capa Trackpad
      * (L14) — clicks en A/R/S disponibles sin sostener REPT.
-     *  - Ventana de 5s tras el último movimiento (3s resultó corto en uso
-     *    real): da tiempo a apuntar,
+     *  - Ventana de 4s tras el último movimiento (en uso real 3s quedó
+     *    corto y 5s largo): da tiempo a apuntar,
      *    seleccionar y hacer click derecho sin apurarse. Salida anticipada:
      *    tecla EXIT en T (&tog_off 14 — el processor detecta el cambio de
      *    capa externo y cancela su timer) o cualquier tecla no excluida.
@@ -66,8 +66,8 @@
         /* x1.5 por software sobre la ganancia 3x del sensor (su máximo
          * usable). Subir/bajar velocidad = cambiar esta fracción.
          * zip_tp_auto_layer primero: cada evento del pad (re)activa L14
-         * por 5s. */
-        input-processors = <&zip_tp_auto_layer 14 5000>, <&zip_xy_scaler 3 2>;
+         * por 4s. */
+        input-processors = <&zip_tp_auto_layer 14 4000>, <&zip_xy_scaler 3 2>;
 
         /* Selector x1/x2/x3 (capas fantasma 12/13 del keymap, radio-button
          * desde la capa Mouse). x2 = default (solo el escalador base). */
