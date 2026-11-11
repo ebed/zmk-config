@@ -1093,7 +1093,7 @@ window.onload = function() { show('home'); };
     <li><b>Auto-activación</b>: mover el pad activa la capa por <b>3s</b> — apunta, selecciona y haz click sin sostener REPT. No se activa si tipeaste hace <400ms; cualquier tecla fuera del panel (incl. Q/W/F) la corta y tipea; salida anticipada con <b>EXIT</b> (T). Ojo: A/R/S/T/Z dentro de la ventana = panel, no letra</li>
     <li>Clicks directos home row izq: <b>A=LCLK R=MCLK S=RCLK</b> · <b>T=EXIT</b></li>
     <li><b>SCRL</b> (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
-    <li><b>x1/x2/x3</b> (Q/W/F, usar con hold REPT): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). La pantalla muestra X1/X3 mientras no estés en normal</li>
+    <li><b>x1/x2/x3</b> (Q/W/F, usar con hold REPT): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). Con el panel visible la pantalla muestra <b>TPAD X1/X2/X3</b> en vivo; fuera del panel, X1/X3 mientras no estés en normal</li>
     <li><b>GEST</b> (pulgar izq medio, hold): modo gesto — <b>deslizar el pad</b> dispara Mission Control: swipe ←/→ cambia escritorio (⌃←/→) · ↑ Mission Control (⌃↑) · ↓ App Exposé (⌃↓) — un gesto por swipe (capa fantasma 16); requiere los atajos estándar activos en Ajustes → Teclado</li>
   </ul>
 </div>
