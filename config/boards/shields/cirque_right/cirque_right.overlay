@@ -55,11 +55,12 @@
          * latencia de wake al primer toque ("se demora en iniciar") */
         /* El pad quedó montado espejado en X (derecha movía a la izquierda) */
         x-invert;
-        /* Umbral Z permisivo (defaults 5/4; registro WIDE_Z_MIN del ADC):
-         * acepta contactos débiles como el lateral del pulgar. Con 3/2 el
-         * lateral seguía sin trazar → 2/1. Piso práctico: 1/1. Si aparecen
-         * movimientos fantasma por roces/hover, subir de vuelta. */
-        x-axis-z-min = <2>;
+        /* Umbral Z en el piso (defaults 5/4; registro WIDE_Z_MIN del ADC):
+         * acepta los contactos más débiles, como el lateral del pulgar
+         * (2/1 aún no lo trazaba). No hay más margen bajo 1/1: si sigue
+         * fallando, el límite es físico (ganancia ya al máximo usable 3x).
+         * Si aparecen movimientos fantasma por roces/hover, subir. */
+        x-axis-z-min = <1>;
         y-axis-z-min = <1>;
     };
 };
