@@ -1,3 +1,8 @@
+-- AppleScript habilitado: lo usan setup-hammerspoon.sh y el hook post-merge
+-- para hs.reload() remoto/automático tras un git pull. Sin esto, la recarga
+-- automática falla (error -50) y hay que recargar a mano desde el menubar.
+hs.allowAppleScript(true)
+
 keymapWebview = nil
 _prevLayer    = "home"
 
