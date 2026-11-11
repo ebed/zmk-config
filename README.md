@@ -394,6 +394,12 @@ Para **sincronizar la config a servidores remotos** sin clonar el repo allá (p.
 
 Idempotente: respalda un `~/.tmux.conf` distinto como `.bak` y recarga las sesiones activas. Detalle completo: [tmux/README.md](tmux/README.md). Si cambias un bind en `tmux/tmux.conf`, actualiza también el Layer 9 (keymap, LAYOUTS, README, Hammerspoon) y re-sincroniza los remotos.
 
+**Auto-actualización al hacer `git pull`** — hook `post-merge` versionado en `scripts/githooks/`: detecta si el pull trajo cambios en `tmux/`, `wezterm/` o `hammerspoon/` y corre solo los setups afectados (cada uno recarga su app). Activarlo una vez por clone:
+
+```bash
+git config core.hooksPath scripts/githooks
+```
+
 ### Display switching (lado derecho, fila inferior)
 
 Requiere [Rectangle](https://rectangleapp.com/).

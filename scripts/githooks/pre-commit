@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Pre-Commit Expert Review Hook
+# Automatically runs code quality checks before commit
+
+# Run pre-commit checks script
+if [ -f "$HOME/.claude/scripts/pre-commit-checks.sh" ]; then
+  "$HOME/.claude/scripts/pre-commit-checks.sh"
+  exit $?
+else
+  echo "⚠️  Warning: Pre-commit checks script not found"
+  echo "   Expected: $HOME/.claude/scripts/pre-commit-checks.sh"
+  echo ""
+  echo "Proceeding with commit (checks skipped)"
+  exit 0
+fi

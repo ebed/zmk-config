@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# Hook post-merge (corre tras cada `git pull` con cambios): detecta qué configs
+# cambiaron en el merge y ejecuta solo los setups afectados. Los setups son
+# idempotentes y recargan su app (tmux: source-file en el server activo;
+# hammerspoon: hs.reload; WezTerm recarga su config solo — el setup solo
+# re-verifica el symlink).
+#
+# Instalación (una vez por clone):  git config core.hooksPath scripts/githooks
+set -uo pipefail
+
+REPO_DIR="$(git rev-parse --show-toplevel)"
+CHANGED="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD 2>/dev/null || true)"
+[ -z "$CHANGED" ] && exit 0
+
+run_if() {
+    local pattern="$1" script="$2" label="$3"
+    if grep -q "^$pattern" <<< "$CHANGED"; then
+        echo "post-merge: $label cambió → scripts/$script"
+        bash "$REPO_DIR/scripts/$script" || echo "post-merge: ⚠ $script falló — córrelo a mano"
+    fi
+}
+
+run_if "tmux/" setup-tmux.sh "tmux"
+
+# WezTerm y Hammerspoon solo existen en el Mac local
+if [ "$(uname -s)" = "Darwin" ]; then
+    run_if "hammerspoon/" setup-hammerspoon.sh "hammerspoon"
+    run_if "wezterm/"     setup-wezterm.sh     "wezterm"
+fi
+
+if grep -q "^tmux/" <<< "$CHANGED"; then
+    echo "post-merge: recuerda sincronizar los servidores remotos:"
+    echo "  $REPO_DIR/scripts/setup-tmux.sh user@host [...]"
+fi
