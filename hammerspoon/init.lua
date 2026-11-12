@@ -1071,9 +1071,9 @@ window.onload = function() { show('home'); };
     </div>
     <div class="kb-row">
       <div class="kb-key kb-extra active" style="--lc:#cc8800" id="l14-k-ctrl"><span class="kl">REPT</span><span class="km">[held]</span></div>
-      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-z"><span class="kl">SCRL</span><span class="km">hold: pad=scroll</span></div>
-      <div class="kb-key dim" id="l14-k-x"><span class="kl">X</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l14-k-c"><span class="kl">C</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-z"><span class="kl">SCRL</span><span class="km">hold: scroll normal</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-x"><span class="kl">SCR−</span><span class="km">hold: scroll lento</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-c"><span class="kl">SCR+</span><span class="km">hold: scroll rápido</span></div>
       <div class="kb-key dim" id="l14-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l14-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
@@ -1099,7 +1099,7 @@ window.onload = function() { show('home'); };
     <li><b>Auto-activación</b>: mover el pad activa la capa (default <b>2s</b>) — apunta, selecciona y haz click sin sostener REPT. No se activa si tipeaste hace <200ms. Durante la ventana el teclado es <b>solo-panel</b> (el resto de teclas quedan muertas): para tipear antes, <b>EXIT</b> (T) o esperar; el combo ESC sigue activo</li>
     <li><b>Timeout del auto-layer</b> (fila inf der): <b>t.5/t1/t2/t3/t4/tOFF</b> — selector persistente (2s default; tOFF = solo hold REPT). Con valor no-default activo, la pantalla muestra TA 0.5S/1S/3S/4S/OFF</li>
     <li>Clicks directos home row izq: <b>A=LCLK R=MCLK S=RCLK</b> · <b>T=EXIT</b></li>
-    <li><b>SCRL</b> (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
+    <li><b>SCRL/SCR−/SCR+</b> (Z/X/C, hold): el pad scrollea en vez de mover el cursor — normal (1/2) / lento (1/4) / rápido (1/1), scroll natural (capas fantasma 15/22/23)</li>
     <li><b>x1/x2/x3</b> (Q/W/F): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). Con el panel visible la pantalla muestra <b>TPAD X1/X2/X3</b> en vivo; fuera del panel, X1/X3 mientras no estés en normal</li>
     <li><b>GEST</b> (pulgar izq medio, hold): modo gesto — <b>deslizar el pad</b> dispara Mission Control: swipe ←/→ cambia escritorio (⌃←/→) · ↑ Mission Control (⌃↑) · ↓ App Exposé (⌃↓) — un gesto por swipe (capa fantasma 16); requiere los atajos estándar activos en Ajustes → Teclado</li>
   </ul>

@@ -101,6 +101,24 @@
                 , <&zip_xy_to_scroll_mapper>;
         };
 
+        /* Variantes de velocidad del scroll: hold X (SCR− lento) / hold C
+         * (SCR+ rápido) en Trackpad L14, capas fantasma 22/23. Mismo chain
+         * que scroll con otro divisor. Sin process-next. */
+        scroll_slow {
+            layers = <22>;
+            input-processors
+                = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+                , <&zip_xy_scaler 1 4>
+                , <&zip_xy_to_scroll_mapper>;
+        };
+        scroll_fast {
+            layers = <23>;
+            input-processors
+                = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>
+                , <&zip_xy_scaler 1 1>
+                , <&zip_xy_to_scroll_mapper>;
+        };
+
         /* Modo gesto (capa fantasma 16, hold GEST en Trackpad L14): el pad
          * deja de mover el cursor y cada swipe dispara un atajo de Mission
          * Control / escritorios. Sin process-next. */

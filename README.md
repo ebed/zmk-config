@@ -26,6 +26,7 @@ Configuración personalizada para teclado Corne (CRKBD) split 42 teclas usando [
 | **15 Scroll** | hold `SCRL` en Trackpad (Z, anular izq) | Capa fantasma: el pad scrollea en vez de mover el cursor |
 | **16 Gesture** | hold `GEST` en Trackpad (pulgar izq med) | Capa fantasma: swipes en el pad = Mission Control / cambio de escritorio / Exposé |
 | **17-21 TA** | selector `t.5/t1/t2/t3/t4/tOFF` en Trackpad (fila inf der) | Capas fantasma: timeout del auto-layer (0.5s/1s/3s/4s/sin auto; 2s = default sin capa) |
+| **22/23 Scrl ∓** | hold `SCR−` (X) / `SCR+` (C) en Trackpad | Capas fantasma: scroll lento (1/4) / rápido (1/1); Z = normal (1/2) |
 
 **Thumbs y teclas especiales (Layer 0):**
 
