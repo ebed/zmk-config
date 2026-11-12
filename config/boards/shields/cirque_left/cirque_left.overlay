@@ -37,8 +37,9 @@
 
     /* Auto mouse layer: mover el pad activa temporalmente la capa Trackpad
      * (L14) — clicks en A/R/S disponibles sin sostener REPT.
-     *  - Ventana de 4s tras el último movimiento (en uso real 3s quedó
-     *    corto y 5s largo): da tiempo a apuntar,
+     *  - Ventana default de 2s tras el último movimiento, ajustable en
+     *    runtime con el selector de L14 (capas fantasma 17-21, abajo):
+     *    da tiempo a apuntar,
      *    seleccionar y hacer click derecho sin apurarse. Salida anticipada:
      *    tecla EXIT en T (&tog_off 14 — el processor detecta el cambio de
      *    capa externo y cancela su timer) o cualquier tecla no excluida.
@@ -66,8 +67,8 @@
         /* x1.5 por software sobre la ganancia 3x del sensor (su máximo
          * usable). Subir/bajar velocidad = cambiar esta fracción.
          * zip_tp_auto_layer primero: cada evento del pad (re)activa L14
-         * por 4s. */
-        input-processors = <&zip_tp_auto_layer 14 4000>, <&zip_xy_scaler 3 2>;
+         * por 2s (default del selector de timeout). */
+        input-processors = <&zip_tp_auto_layer 14 2000>, <&zip_xy_scaler 3 2>;
 
         /* Selector x1/x2/x3 (capas fantasma 12/13 del keymap, radio-button
          * desde la capa Mouse). x2 = default (solo el escalador base). */
@@ -106,6 +107,35 @@
         gesture {
             layers = <16>;
             input-processors = <&zip_gesture_keybind>;
+        };
+
+        /* Selector de timeout del auto-layer (capas fantasma 17-21, teclas
+         * en L14 fila inferior der). Cada chain replica el base con otro
+         * parámetro de zip_tp_auto_layer; sin process-next (reemplaza al
+         * base). Van DESPUÉS de speed/scroll/gesture: los speed (con
+         * process-next) pre-escalan y estos aplican el 3/2 base, así la
+         * velocidad neta se conserva; scroll/gesture cortan antes. 2s =
+         * default del chain base (ninguna fantasma activa). */
+        tmo_half {
+            layers = <17>;
+            input-processors = <&zip_tp_auto_layer 14 500>, <&zip_xy_scaler 3 2>;
+        };
+        tmo_1s {
+            layers = <18>;
+            input-processors = <&zip_tp_auto_layer 14 1000>, <&zip_xy_scaler 3 2>;
+        };
+        tmo_3s {
+            layers = <19>;
+            input-processors = <&zip_tp_auto_layer 14 3000>, <&zip_xy_scaler 3 2>;
+        };
+        tmo_4s {
+            layers = <20>;
+            input-processors = <&zip_tp_auto_layer 14 4000>, <&zip_xy_scaler 3 2>;
+        };
+        /* Sin auto-activación: solo el escalador del cursor. */
+        tmo_off {
+            layers = <21>;
+            input-processors = <&zip_xy_scaler 3 2>;
         };
     };
 };

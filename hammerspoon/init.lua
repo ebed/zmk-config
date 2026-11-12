@@ -1037,7 +1037,7 @@ window.onload = function() { show('home'); };
 
 <!-- LAYER 14 — Trackpad -->
 <div id="v-14" class="view">
-  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inf) o automática al mover el pad (4s, EXIT en T) — panel del Cirque: izq modula, der desliza</div></div></div>
+  <div class="dhdr" style="--lbb:#cc8800"><div class="dnum" style="background:#cc8800">14</div><div><div class="dname">Trackpad</div><div class="dhow">hold REPT (meñique izq inf) o automática al mover el pad (2s default, EXIT en T) — panel del Cirque: izq modula, der desliza</div></div></div>
   <div class="kb">
     <div class="kb-row">
       <div class="kb-key kb-extra dim" id="l14-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
@@ -1077,12 +1077,12 @@ window.onload = function() { show('home'); };
       <div class="kb-key dim" id="l14-k-d"><span class="kl">D</span><span class="km">sin acción</span></div>
       <div class="kb-key dim" id="l14-k-v"><span class="kl">V</span><span class="km">sin acción</span></div>
       <div class="kb-sep"></div>
-      <div class="kb-key dim" id="l14-k-k"><span class="kl">K</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l14-k-h"><span class="kl">H</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l14-k-comma"><span class="kl">,</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l14-k-dot"><span class="kl">.</span><span class="km">sin acción</span></div>
-      <div class="kb-key dim" id="l14-k-slash"><span class="kl">/</span><span class="km">sin acción</span></div>
-      <div class="kb-key kb-extra dim" id="l14-k-ret"><span class="kl">DEL</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-k"><span class="kl">t.5</span><span class="km">timeout 0.5s</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-h"><span class="kl">t1</span><span class="km">1s</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-comma"><span class="kl">t2</span><span class="km">2s default</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-dot"><span class="kl">t3</span><span class="km">3s</span></div>
+      <div class="kb-key active" style="--lc:#cc8800" id="l14-k-slash"><span class="kl">t4</span><span class="km">4s</span></div>
+      <div class="kb-key kb-extra active" style="--lc:#cc8800" id="l14-k-ret"><span class="kl">tOFF</span><span class="km">sin auto</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb dim" id="l14-k-cpsw"><span class="kl">CW</span><span class="km">sin acción</span></div>
@@ -1096,7 +1096,8 @@ window.onload = function() { show('home'); };
   </div>
   <ul class="notes">
     <li>Hold <b>REPT</b> con el meñique izq mientras la mano derecha usa el pad; tap REPT sigue siendo key-repeat. <b>Toda la capa se opera con la mano izquierda</b></li>
-    <li><b>Auto-activación</b>: mover el pad activa la capa por <b>4s</b> — apunta, selecciona y haz click sin sostener REPT. No se activa si tipeaste hace <200ms. Durante la ventana el teclado es <b>solo-panel</b> (el resto de teclas quedan muertas): para tipear antes, <b>EXIT</b> (T) o esperar; el combo ESC sigue activo</li>
+    <li><b>Auto-activación</b>: mover el pad activa la capa (default <b>2s</b>) — apunta, selecciona y haz click sin sostener REPT. No se activa si tipeaste hace <200ms. Durante la ventana el teclado es <b>solo-panel</b> (el resto de teclas quedan muertas): para tipear antes, <b>EXIT</b> (T) o esperar; el combo ESC sigue activo</li>
+    <li><b>Timeout del auto-layer</b> (fila inf der): <b>t.5/t1/t2/t3/t4/tOFF</b> — selector persistente (2s default; tOFF = solo hold REPT). Con valor no-default activo, la pantalla muestra TA 0.5S/1S/3S/4S/OFF</li>
     <li>Clicks directos home row izq: <b>A=LCLK R=MCLK S=RCLK</b> · <b>T=EXIT</b></li>
     <li><b>SCRL</b> (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor (scroll natural, capa fantasma 15)</li>
     <li><b>x1/x2/x3</b> (Q/W/F): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). Con el panel visible la pantalla muestra <b>TPAD X1/X2/X3</b> en vivo; fuera del panel, X1/X3 mientras no estés en normal</li>

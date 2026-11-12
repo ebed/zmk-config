@@ -51,7 +51,7 @@
              * (combo.c usa zmk_keymap_highest_layer_active), así que sin
              * ellas el combo ESC moría con x1/x3 seleccionado o durante la
              * ventana auto-Trackpad. */
-            layers = <0 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16>;
+            layers = <0 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 17 18 19 20 21>;
         };
         combo_sys {
             timeout-ms = <50>;
@@ -122,6 +122,41 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&tog_off 12>, <&tog_on 13>;
+        };
+
+        /* Selector radio-button del timeout del auto-layer Trackpad: capas
+         * fantasma 17-21 (overrides en cirque_left.overlay). 2s = default,
+         * ninguna activa. Mientras una esté activa la pantalla muestra su
+         * nombre como capa superior (mismo tradeoff que x1/x3). */
+        tmo05: tmo_half_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 18>, <&tog_off 19>, <&tog_off 20>, <&tog_off 21>, <&tog_on 17>;
+        };
+        tmo1: tmo_1s_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 17>, <&tog_off 19>, <&tog_off 20>, <&tog_off 21>, <&tog_on 18>;
+        };
+        tmo2: tmo_2s_default_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 17>, <&tog_off 18>, <&tog_off 19>, <&tog_off 20>, <&tog_off 21>;
+        };
+        tmo3: tmo_3s_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 17>, <&tog_off 18>, <&tog_off 20>, <&tog_off 21>, <&tog_on 19>;
+        };
+        tmo4: tmo_4s_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 17>, <&tog_off 18>, <&tog_off 19>, <&tog_off 21>, <&tog_on 20>;
+        };
+        tmoff: tmo_no_auto_select {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog_off 17>, <&tog_off 18>, <&tog_off 19>, <&tog_off 20>, <&tog_on 21>;
         };
 
         /* Home Row Mods — derecha: hold solo al presionar mano izquierda -- */
@@ -607,6 +642,8 @@
  * Panel de control del Cirque, 100% operable con la mano izquierda mientras
  * la derecha desliza sobre el pad:
  * - Fila superior izq (Q/W/F): selector persistente de velocidad x1/x2/x3.
+ * - Fila inferior der: selector persistente del timeout del auto-layer
+ *   (0.5s/1s/2s/3s/4s/sin auto; 2s = default, capas fantasma 17-21).
  * - Home row izq: clicks directos — LCLK en A, MCLK en R, RCLK en S.
  * - T: EXIT (&tog_off 14) — cierra la capa cuando se activó sola al mover
  *   el pad (auto-layer de 4s, zip_tp_auto_layer en cirque_left.overlay).
@@ -621,7 +658,7 @@
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
  * |     |LCLK |MCLK |RCLK |EXIT |     |                |     |     |     |     |     |     |
  * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
- * |[hld]|SCRL |     |     |     |     |                |     |     |     |     |     |     |
+ * |[hld]|SCRL |     |     |     |     |                |t.5  |t1   |t2   |t3   |t4   |tOFF |
  * `-------------------------------------'               `----------------------------------'
  *         |     |GEST |     |                              |     |     |     |
  *         `-------------------'                            `-------------------'
@@ -630,8 +667,8 @@
             display-name = "Trackpad";
             bindings = <
                 &none  &spd1   &spd2      &spd3      &none      &none    &none  &none  &none  &none  &none  &none
-                &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &tog_off 14  &none    &none  &none  &none  &none  &none  &none
-                &none  &mo 15  &none      &none      &none      &none    &none  &none  &none  &none  &none  &none
+                &none  &mkp LCLK  &mkp MCLK  &mkp RCLK  &tog_off 14  &none    &none   &none  &none  &none  &none  &none
+                &none  &mo 15  &none      &none      &none      &none    &tmo05  &tmo1  &tmo2  &tmo3  &tmo4  &tmoff
                                &none      &mo 16     &none                      &none  &none  &none
             >;
         };
@@ -656,6 +693,62 @@
  * zip_gesture_keybind en cirque_left.overlay. Transparente al tipeo. */
         tp_gesture_layer {
             display-name = "Gesture";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+/* ### Layers 17-21 — Timeout del auto-layer (fantasma)
+ * Radio-button del tiempo de desactivación automática de Trackpad (selector
+ * en L14, fila inferior derecha): 0.5s/1s/3s/4s/sin-auto. 2s = default
+ * (ninguna activa). Cada capa conmuta un override del listener en
+ * cirque_left.overlay con distinto parámetro de zip_tp_auto_layer; "sin
+ * auto" usa un chain sin el processor. Transparentes al tipeo. */
+        tmo_half_layer {
+            display-name = "TA 0.5s";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        tmo_1s_layer {
+            display-name = "TA 1s";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        tmo_3s_layer {
+            display-name = "TA 3s";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        tmo_4s_layer {
+            display-name = "TA 4s";
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        tmo_off_layer {
+            display-name = "TA off";
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans

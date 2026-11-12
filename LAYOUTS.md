@@ -396,19 +396,20 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
 |     |LCLK |MCLK |RCLK |EXIT |     |                |     |     |     |     |     |     |
 |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
-|[hld]|SCRL |     |     |     |     |                |     |     |     |     |     |     |
+|[hld]|SCRL |     |     |     |     |                |t.5  |t1   |t2   |t3   |t4   |tOFF |
 '-------------------------------------'               '------------------------------------'
         |     |GEST |     |                               |     |     |     |
         '-------------------'                             '-------------------'
 ```
 
 - Panel de control del trackpad Cirque, **100% operable con la mano izquierda** mientras la derecha desliza sobre el pad
-- **Auto-activación**: mover el pad activa esta capa por **4s** (`zip_tp_auto_layer` en `cirque_left.overlay`) — da tiempo a apuntar, seleccionar y hacer click sin sostener REPT. No se activa si se tipeó hace <200ms. Durante la ventana el teclado es **solo-panel**: todas las demás teclas quedan muertas (`&none`), sin letras a medias — para tipear antes, `EXIT` (T) o esperar; el combo ESC sigue activo
+- **Auto-activación**: mover el pad activa esta capa (`zip_tp_auto_layer` en `cirque_left.overlay`) — da tiempo a apuntar, seleccionar y hacer click sin sostener REPT. No se activa si se tipeó hace <200ms. Durante la ventana el teclado es **solo-panel**: todas las demás teclas quedan muertas (`&none`), sin letras a medias — para tipear antes, `EXIT` (T) o esperar; el combo ESC sigue activo
+- **Selector de timeout del auto-layer** (fila inferior der): `t.5/t1/t2/t3/t4/tOFF` — radio-button persistente del tiempo de desactivación (**2s = default**, `tOFF` desactiva la auto-activación y deja solo hold REPT). Capas fantasma 17-21 + overrides en `cirque_left.overlay`; mientras un valor no-default esté activo, la pantalla muestra `TA 0.5S/1S/3S/4S/OFF` como capa superior
 - Clicks directos home row izq: `LCLK` en A · `MCLK` en R · `RCLK` en S · `EXIT` en T (cierra la capa auto-activada)
 - `SCRL` (Z, anular — junto a REPT, hold): el pad scrollea en vez de mover el cursor — capa fantasma 15 + override `zip_xy_to_scroll_mapper` en `cirque_left.overlay` (scroll natural, suave por píxel vía smooth scrolling, escalado 2/1)
 - `GEST` (pulgar izq medio, hold): modo gesto — deslizar el pad dispara los atajos de Mission Control en vez de mover el cursor: swipe ←/→ = cambiar escritorio (Ctrl+←/→), ↑ = Mission Control (Ctrl+↑), ↓ = App Exposé (Ctrl+↓). Capa fantasma 16 + processor `zip_gesture_keybind` (módulo `zmk-input-processor-keybind`, 4-way, tick 60, pausa 300ms). Requiere los atajos estándar habilitados en Ajustes → Teclado
 - **Selector de velocidad** `x1/x2/x3` (fila sup izq, Q/W/F): radio-button persistente — x1=preciso (0.75×), x2=normal (1.5×, default), x3=rápido (2×). Capas fantasma 12/13 + overrides en `cirque_left.overlay`. Con Trackpad visible la pantalla muestra la velocidad activa (`TPAD X1/X2/X3`, se actualiza al presionar el selector); fuera del panel, con x1/x3 activos muestra `X1 SLOW`/`X3 FAST`
-- Layers 15 (`Scroll`) y 16 (`Gesture`) son fantasma: 42×`&trans`, solo conmutan el mapeo del pad
+- Layers 15 (`Scroll`), 16 (`Gesture`) y 17-21 (`TA *`, timeout) son fantasma: 42×`&trans`, solo conmutan el mapeo del pad
 
 ---
 
