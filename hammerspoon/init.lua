@@ -187,8 +187,10 @@ function show(id) {
   });
 }
 /* Tooltip de teclas: hover sobre cualquier .kb-key muestra label +
- * descripción completa (los sublabels se truncan con ellipsis). Un solo
- * handler delegado cubre todas las vistas. */
+ * descripción completa (los sublabels se truncan con ellipsis). Anclado a
+ * la tecla (no al cursor): getBoundingClientRect entrega px reales de
+ * viewport, pero el tooltip vive dentro del body con zoom — se compensa
+ * dividiendo por _zoom. */
 document.addEventListener('mouseover', function(e) {
   var key = e.target.closest ? e.target.closest('.kb-key') : null;
   var tip = document.getElementById('ktip');
@@ -201,13 +203,14 @@ document.addEventListener('mouseover', function(e) {
   tip.querySelector('.td').textContent = km ? km.textContent : '';
   tip.querySelector('.td').style.display = km && km.textContent ? 'block' : 'none';
   tip.style.display = 'block';
-});
-document.addEventListener('mousemove', function(e) {
-  var tip = document.getElementById('ktip');
-  if (!tip || tip.style.display === 'none') return;
-  var x = e.clientX + 14, y = e.clientY + 16;
-  if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 10;
-  if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - 10;
+  var r = key.getBoundingClientRect();
+  var z = _zoom || 1;
+  var x = r.left / z;
+  var y = (r.bottom / z) + 6;
+  if (x + tip.offsetWidth > (window.innerWidth / z) - 8) x = (window.innerWidth / z) - tip.offsetWidth - 8;
+  if (y + tip.offsetHeight > (window.innerHeight / z) - 8) y = (r.top / z) - tip.offsetHeight - 6;
+  if (x < 4) x = 4;
+  if (y < 4) y = 4;
   tip.style.left = x + 'px';
   tip.style.top = y + 'px';
 });
@@ -1261,6 +1264,9 @@ local function toggleKeymapHelp()
     keymapWebview:level(hs.drawing.windowLevels.floating)
     keymapWebview:allowGestures(false)
     keymapWebview:allowNewWindows(false)
+    -- Sin esto la ventana HUD no puede ser "key" y el webview no recibe
+    -- eventos de hover (los tooltips solo aparecían al hacer click).
+    keymapWebview:allowTextEntry(true)
     keymapWebview:windowTitle("Keymap Reference")
     keymapWebview:html(keymapHtml)
     keymapWebview:show()
