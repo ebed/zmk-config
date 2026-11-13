@@ -154,6 +154,13 @@ body {
 .kb-key.dim .kl { color:#b0b0b0; }
 .kb-key.dim .km { color:#8a9099; }
 .kb-key.inherited { opacity:0.38; border-style:dashed; }
+#ktip {
+  position: fixed; display: none; z-index: 999; pointer-events: none;
+  background: #1c242e; border: 1px solid #5a6b7a; border-radius: 7px;
+  padding: 7px 11px; max-width: 320px; box-shadow: 0 4px 14px rgba(0,0,0,0.6);
+}
+#ktip .tk { font-family: "SF Mono", Menlo, monospace; font-size: 14px; font-weight: bold; color: #88d4bb; display: block; }
+#ktip .td { font-size: 13px; color: #d8dee6; margin-top: 2px; display: block; white-space: normal; }
 </style>
 <script>
 var _pt = {};
@@ -179,6 +186,32 @@ function show(id) {
     el.classList.toggle('sel', el.dataset.l === id);
   });
 }
+/* Tooltip de teclas: hover sobre cualquier .kb-key muestra label +
+ * descripción completa (los sublabels se truncan con ellipsis). Un solo
+ * handler delegado cubre todas las vistas. */
+document.addEventListener('mouseover', function(e) {
+  var key = e.target.closest ? e.target.closest('.kb-key') : null;
+  var tip = document.getElementById('ktip');
+  if (!tip) return;
+  if (!key) { tip.style.display = 'none'; return; }
+  var kl = key.querySelector('.kl');
+  var km = key.querySelector('.km');
+  if (!kl) { tip.style.display = 'none'; return; }
+  tip.querySelector('.tk').textContent = kl.textContent;
+  tip.querySelector('.td').textContent = km ? km.textContent : '';
+  tip.querySelector('.td').style.display = km && km.textContent ? 'block' : 'none';
+  tip.style.display = 'block';
+});
+document.addEventListener('mousemove', function(e) {
+  var tip = document.getElementById('ktip');
+  if (!tip || tip.style.display === 'none') return;
+  var x = e.clientX + 14, y = e.clientY + 16;
+  if (x + tip.offsetWidth > window.innerWidth - 8) x = e.clientX - tip.offsetWidth - 10;
+  if (y + tip.offsetHeight > window.innerHeight - 8) y = e.clientY - tip.offsetHeight - 10;
+  tip.style.left = x + 'px';
+  tip.style.top = y + 'px';
+});
+
 var _zoom = 1.0;
 function setZoom(z) {
   _zoom = Math.round(Math.min(1.6, Math.max(0.8, z)) * 10) / 10;
@@ -196,6 +229,7 @@ window.onload = function() {
 </script>
 </head>
 <body>
+<div id="ktip"><span class="tk"></span><span class="td"></span></div>
 <div class="hdr"><span class="hdr-title" onclick="show('home')">CORNE — LAYER REFERENCE</span><span class="zoom-ctl"><button class="zoom-btn" onclick="setZoom(_zoom-0.1)">A−</button><span id="zoom-lbl" onclick="setZoom(1.0)" title="click = reset">100%</span><button class="zoom-btn" onclick="setZoom(_zoom+0.1)">A+</button></span><button id="pin-btn" class="pin-btn" onclick="togglePin()">▶ Follow</button></div>
 <div class="main">
 <nav class="nav">
@@ -288,7 +322,7 @@ window.onload = function() {
       <div class="kb-key" id="l0-k-apos"><span class="kl">'</span></div>
     </div>
     <div class="kb-row">
-      <div class="kb-key kb-extra" id="l0-k-ctrl"><span class="kl">REPT</span><span class="km">repeat</span></div>
+      <div class="kb-key kb-extra active" style="--lc:#cc8800" id="l0-k-ctrl" onclick="show('14')"><span class="kl">REPT</span><span class="km">repeat · hold→TPad14</span></div>
       <div class="kb-key" id="l0-k-z"><span class="kl">Z</span></div>
       <div class="kb-key" id="l0-k-x"><span class="kl">X</span></div>
       <div class="kb-key" id="l0-k-c"><span class="kl">C</span></div>
@@ -300,7 +334,7 @@ window.onload = function() {
       <div class="kb-key" id="l0-k-comma"><span class="kl">,</span></div>
       <div class="kb-key" id="l0-k-dot"><span class="kl">.</span></div>
       <div class="kb-key" id="l0-k-slash"><span class="kl">/</span></div>
-      <div class="kb-key kb-extra active L0" id="l0-k-ret"><span class="kl">DEL</span></div>
+      <div class="kb-key kb-extra active" style="--lc:#44aa88" id="l0-k-ret" onclick="show('24')"><span class="kl">DEL</span><span class="km">⌦ · hold→Nvim24</span></div>
     </div>
     <div class="kb-row kb-center">
       <div class="kb-key kb-thumb active L6" id="l0-k-cpsw"><span class="kl">CW/L6</span><span class="km">CW·Lang6</span></div>
@@ -318,8 +352,8 @@ window.onload = function() {
     <li><b>MO7</b>: hold only → Layer 7 (Apps) — ⌃ Ctrl via HRM en S</li>
     <li><b>RET/L5</b>: tap=↵ RET / hold=Layer 5 (Mac) — inner right thumb</li>
     <li><b>TAB</b>: tap=TAB / hold=Layer 9 (Tmux) — izq home</li>
-    <li><b>REPT</b>: repite el último key — meñique izq inferior</li>
-    <li><b>DEL</b>: meñique der inferior (⌦) · <b>MOUSE</b>: L2 pos V → tog Layer 8 Mouse</li>
+    <li><b>REPT</b>: tap=repite el último key / hold=Layer 14 (Trackpad) — meñique izq inferior</li>
+    <li><b>DEL</b>: tap=⌦ / hold=Layer 24 (Nvim) — meñique der inferior · <b>MOUSE</b>: L2 pos V → tog Layer 8 Mouse</li>
     <li><b>BSPC</b>: tap=⌫ / hold=Layer 4 (Fn)</li>
     <li><b>HRM</b>: tap=letra, hold=modificador (GUI/ALT/CTL/SHF)</li>
   </ul>
