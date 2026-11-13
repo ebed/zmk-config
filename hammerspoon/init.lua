@@ -133,7 +133,7 @@ body {
 .kb-center { justify-content:center; margin-top:4px; }
 .kb-key { background:#1c1c1c; border:1px solid #333; border-bottom:3px solid #222; border-radius:5px; padding:5px 3px 4px; text-align:center; flex:1 1 0; min-width:0; overflow:hidden; font-family:"SF Mono",Menlo,monospace; }
 .kb-key .kl { font-size:12px; color:#ccc; display:block; font-weight:bold; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.kb-key .km { font-size:9px; color:#555; display:block; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.kb-key .km { font-size:9px; color:#8a9099; display:block; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 .kb-row.kb-center .kb-key { flex:0 0 72px; }
 .kb-key.pressed { background:#0d2a45 !important; border-color:#4a9eff !important; border-bottom-color:#1a5080 !important; }
 .kb-key.pressed .kl { color:#88cfff !important; }
@@ -141,6 +141,7 @@ body {
    alineen entre filas; extra/thumb ya no necesitan anchos propios. */
 .kb-key.active { border-color:var(--lc); }
 .kb-key.active .kl { color:var(--lc); }
+.kb-key.active .km { color:#b8c2cc; }
 .kb-key.dim { background:#1d1d1d; border:1px dashed #666; border-bottom:1px dashed #666; }
 .kb-key.dim .kl { color:#b0b0b0; }
 .kb-key.dim .km { color:#7a7a7a; }
