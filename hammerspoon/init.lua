@@ -189,6 +189,7 @@ window.onload = function() { show('home'); };
   <div class="ni sub L10" data-l="10" onclick="show('10')"><span class="lbadge L10">10 Wez</span><span class="lhow">hold ESC</span></div>
   <div class="ni sub" data-l="11" onclick="show('11')" style="--lbb:#cc4444"><span class="lbadge" style="background:#cc4444">11 Qwerty</span><span class="lhow">tog11 (Sys)</span></div>
   <div class="ni sub" data-l="14" onclick="show('14')" style="--lbb:#cc8800"><span class="lbadge" style="background:#cc8800">14 TPad</span><span class="lhow">hold REPT</span></div>
+  <div class="ni sub" data-l="24" onclick="show('24')" style="--lbb:#44aa88"><span class="lbadge" style="background:#44aa88">24 Nvim</span><span class="lhow">hold DEL</span></div>
   <div class="ni L5" data-l="5" onclick="show('5')"><span class="lbadge L5">5 Mac</span><span class="lhow">RET/L5</span></div>
   <div class="ni L6" data-l="6" onclick="show('6')"><span class="lbadge L6">6 Lang</span><span class="lhow">CW/L6</span></div>
   <div class="ni" onclick="show('home')" style="margin-top:10px;border-top:1px solid #1e1e1e;padding-top:12px">
@@ -205,7 +206,7 @@ window.onload = function() { show('home'); };
   <div class="kb">
     <div class="kb-row"><div class="kb-key active L10" onclick="show('10')"><span class="kl">ESC</span><span class="km">hold→Wez</span></div><div class="kb-key dim"><span class="kl">Q</span></div><div class="kb-key dim"><span class="kl">W</span></div><div class="kb-key dim"><span class="kl">F</span></div><div class="kb-key dim"><span class="kl">P</span></div><div class="kb-key dim"><span class="kl">B</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">J</span></div><div class="kb-key dim"><span class="kl">L</span></div><div class="kb-key dim"><span class="kl">U</span></div><div class="kb-key dim"><span class="kl">Y</span></div><div class="kb-key dim"><span class="kl">;</span></div><div class="kb-key dim"><span class="kl">BSPC</span></div></div>
     <div class="kb-row"><div class="kb-key active L9" onclick="show('9')"><span class="kl">TAB</span><span class="km">hold→Tmux</span></div><div class="kb-key dim"><span class="kl">A</span></div><div class="kb-key dim"><span class="kl">R</span></div><div class="kb-key dim"><span class="kl">S</span></div><div class="kb-key dim"><span class="kl">T</span></div><div class="kb-key dim"><span class="kl">G</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">M</span></div><div class="kb-key dim"><span class="kl">N</span></div><div class="kb-key dim"><span class="kl">E</span></div><div class="kb-key dim"><span class="kl">I</span></div><div class="kb-key dim"><span class="kl">O</span></div><div class="kb-key dim"><span class="kl">'</span></div></div>
-    <div class="kb-row"><div class="kb-key active" style="--lc:#cc8800" onclick="show('14')"><span class="kl">REPT</span><span class="km">hold→TPad · →8·11</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key dim"><span class="kl">DEL</span></div></div>
+    <div class="kb-row"><div class="kb-key active" style="--lc:#cc8800" onclick="show('14')"><span class="kl">REPT</span><span class="km">hold→TPad · →8·11</span></div><div class="kb-key dim"><span class="kl">Z</span></div><div class="kb-key dim"><span class="kl">X</span></div><div class="kb-key dim"><span class="kl">C</span></div><div class="kb-key dim"><span class="kl">D</span></div><div class="kb-key dim"><span class="kl">V</span></div><div class="kb-sep"></div><div class="kb-key dim"><span class="kl">K</span></div><div class="kb-key dim"><span class="kl">H</span></div><div class="kb-key dim"><span class="kl">,</span></div><div class="kb-key dim"><span class="kl">.</span></div><div class="kb-key dim"><span class="kl">/</span></div><div class="kb-key active" style="--lc:#44aa88" onclick="show('24')"><span class="kl">DEL</span><span class="km">hold→Nvim</span></div></div>
     <div class="kb-row kb-center"><div class="kb-key kb-thumb active L6" onclick="show('6')"><span class="kl">CW</span><span class="km">Lang · Nav→Sys</span></div><div class="kb-key kb-thumb active L7" onclick="show('7')"><span class="kl">MO7</span><span class="km">Apps · TD4→4</span></div><div class="kb-key kb-thumb active L3" onclick="show('3')"><span class="kl">SPC</span><span class="km">combo c/MO2</span></div><div class="kb-sep" style="width:24px"></div><div class="kb-key kb-thumb active L5" onclick="show('5')"><span class="kl">RET</span><span class="km">hold→Mac</span></div><div class="kb-key kb-thumb active L1" onclick="show('1')"><span class="kl">MO1</span><span class="km">hold→Sym</span></div><div class="kb-key kb-thumb active L2" onclick="show('2')"><span class="kl">MO2</span><span class="km">hold→Nav</span></div></div>
   </div>
   <div class="tree-label" style="margin-top:18px">Rutas a subcapas</div>
@@ -1102,6 +1103,74 @@ window.onload = function() { show('home'); };
     <li><b>SCRL/SCR−/SCR+</b> (Z/X/C, hold): el pad scrollea en vez de mover el cursor — normal (1/2) / lento (1/4) / rápido (1/1), scroll natural (capas fantasma 15/22/23)</li>
     <li><b>x1/x2/x3</b> (Q/W/F): selector persistente de velocidad del Cirque — x1 preciso (0.75×) · x2 normal (1.5×) · x3 rápido (2×). Con el panel visible la pantalla muestra <b>TPAD X1/X2/X3</b> en vivo; fuera del panel, X1/X3 mientras no estés en normal</li>
     <li><b>GEST</b> (pulgar izq medio, hold): modo gesto — <b>deslizar el pad</b> dispara Mission Control: swipe ←/→ cambia escritorio (⌃←/→) · ↑ Mission Control (⌃↑) · ↓ App Exposé (⌃↓) — un gesto por swipe (capa fantasma 16); requiere los atajos estándar activos en Ajustes → Teclado</li>
+  </ul>
+</div>
+
+<!-- LAYER 24 — Nvim -->
+<div id="v-24" class="view">
+  <div class="dhdr" style="--lbb:#44aa88"><div class="dnum" style="background:#44aa88">24</div><div><div class="dname">Nvim</div><div class="dhow">hold DEL (meñique der inferior) — macros &lt;leader&gt;… (solo modo normal): izq busca, der actúa</div></div></div>
+  <div class="kb">
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l24-k-esc"><span class="kl">ESC</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-q"><span class="kl">H1</span><span class="km">harpoon 1</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-w"><span class="kl">H2</span><span class="km">harpoon 2</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-f"><span class="kl">H3</span><span class="km">harpoon 3</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-p"><span class="kl">H4</span><span class="km">harpoon 4</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-b"><span class="kl">H+</span><span class="km">harpoon add</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-j"><span class="kl">cc</span><span class="km">Claude toggle</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-l"><span class="kl">cy</span><span class="km">accept diff</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-u"><span class="kl">cd</span><span class="km">deny diff</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-y"><span class="kl">cp</span><span class="km">add file ctx</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-semi"><span class="kl">ct</span><span class="km">ctx board</span></div>
+      <div class="kb-key kb-extra dim" id="l24-k-bspc"><span class="kl">BSPC</span><span class="km">sin acción</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l24-k-tab"><span class="kl">TAB</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-a"><span class="kl">ff</span><span class="km">find files</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-r"><span class="kl">fg</span><span class="km">live grep</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-s"><span class="kl">sw</span><span class="km">grep palabra</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-t"><span class="kl">bufs</span><span class="km">buffers</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-g"><span class="kl">smart</span><span class="km">smart find</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-m"><span class="kl">ca</span><span class="km">code action</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-n"><span class="kl">rn</span><span class="km">rename</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-e"><span class="kl">FMT</span><span class="km">format ⎵F</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-i"><span class="kl">ss</span><span class="km">símbolos LSP</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-o"><span class="kl">xx</span><span class="km">Trouble</span></div>
+      <div class="kb-key kb-extra dim" id="l24-k-apos"><span class="kl">'</span><span class="km">sin acción</span></div>
+    </div>
+    <div class="kb-row">
+      <div class="kb-key kb-extra dim" id="l24-k-ctrl"><span class="kl">REPT</span><span class="km">sin acción</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-z"><span class="kl">gg</span><span class="km">LazyGit</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-x"><span class="kl">gs</span><span class="km">git status</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-c"><span class="kl">gd</span><span class="km">git diff</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-d"><span class="kl">gb</span><span class="km">branches</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-v"><span class="kl">fr</span><span class="km">recientes</span></div>
+      <div class="kb-sep"></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-k"><span class="kl">Te</span><span class="km">test cercano</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-h"><span class="kl">Tc</span><span class="km">tests archivo</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-comma"><span class="kl">lt</span><span class="km">term archivo</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-dot"><span class="kl">bd</span><span class="km">cerrar buffer</span></div>
+      <div class="kb-key active" style="--lc:#44aa88" id="l24-k-slash"><span class="kl">zen</span><span class="km">zen mode</span></div>
+      <div class="kb-key kb-extra active" style="--lc:#44aa88" id="l24-k-ret"><span class="kl">DEL</span><span class="km">[held]</span></div>
+    </div>
+    <div class="kb-row kb-center">
+      <div class="kb-key kb-thumb active" style="--lc:#44aa88" id="l24-k-cpsw"><span class="kl">q</span><span class="km">quit ventana</span></div>
+      <div class="kb-key kb-thumb active" style="--lc:#44aa88" id="l24-k-gui"><span class="kl">e</span><span class="km">explorer</span></div>
+      <div class="kb-key kb-thumb active" style="--lc:#44aa88" id="l24-k-mo7"><span class="kl">w</span><span class="km">guardar</span></div>
+      <div class="kb-sep" style="width:24px"></div>
+      <div class="kb-key kb-thumb active" style="--lc:#44aa88" id="l24-k-mo2"><span class="kl">C-/</span><span class="km">terminal</span></div>
+      <div class="kb-key kb-thumb active" style="--lc:#44aa88" id="l24-k-mo1"><span class="kl">nohl</span><span class="km">limpiar búsq</span></div>
+      <div class="kb-key kb-thumb dim" id="l24-k-sym5"><span class="kl">MO2</span><span class="km">sin acción</span></div>
+    </div>
+  </div>
+  <ul class="notes">
+    <li>Cada tecla tipea la secuencia <b>&lt;leader&gt;…</b> de nvim (leader = SPACE) — <b>solo en modo normal</b>; en insert tipearía la secuencia literal</li>
+    <li><b>Izquierda = buscar/navegar</b>: Harpoon 1-4 + add arriba (imita la fila numérica) · búsqueda en home row · git en fila 3</li>
+    <li><b>Derecha = actuar</b>: fila superior completa Claude Code (accept/deny contiguos) · home row LSP · tests/buffers fila 3</li>
+    <li><b>FMT</b> envía ⎵F (mayúscula): la f minúscula es prefijo del grupo find — remapeado en nvim (lsp.lua/conform.lua)</li>
+    <li>Ranking y fuente: <b>~/.config/nvim/CORNE_NVIM_LAYER.md</b> — Tier B queda como secuencias leader (which-key las muestra)</li>
   </ul>
 </div>
 

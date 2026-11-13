@@ -21,7 +21,7 @@ ASCII art de todas las capas. Para explicaciones, comportamientos y shortcuts ve
 - `ESC`: tap=ESC (plain)
 - `REPT`: tap=repite el último key (`&key_repeat`) / hold=Layer 14 (Trackpad) — meñique izquierdo inferior
 - `BSPC`: ⌫ directo — Fn (L4) accesible desde L2 via MO4
-- `DEL`: meñique derecho inferior → ⌦ forward delete
+- `DEL`: meñique derecho inferior → tap=⌦ forward delete / hold=Layer 24 (Nvim)
 - `CW/L6`: tap=CapsWord / hold=Layer 6 (Lang)
 - `MO7`: hold=Layer 7 (Apps) — Ctrl viene del HRM en `S`
 - `RET/L5`: tap=↵ RET / hold=Layer 5 (Mac)
@@ -410,6 +410,29 @@ Cada binding envía directamente el shortcut de WezTerm (CMD+key u OPT+key). El 
 - `GEST` (pulgar izq medio, hold): modo gesto — deslizar el pad dispara los atajos de Mission Control en vez de mover el cursor: swipe ←/→ = cambiar escritorio (Ctrl+←/→), ↑ = Mission Control (Ctrl+↑), ↓ = App Exposé (Ctrl+↓). Capa fantasma 16 + processor `zip_gesture_keybind` (módulo `zmk-input-processor-keybind`, 4-way, tick 60, pausa 300ms). Requiere los atajos estándar habilitados en Ajustes → Teclado
 - **Selector de velocidad** `x1/x2/x3` (fila sup izq, Q/W/F): radio-button persistente — x1=preciso (0.75×), x2=normal (1.5×, default), x3=rápido (2×). Capas fantasma 12/13 + overrides en `cirque_left.overlay`. Con Trackpad visible la pantalla muestra la velocidad activa (`TPAD X1/X2/X3`, se actualiza al presionar el selector); fuera del panel, con x1/x3 activos muestra `X1 SLOW`/`X3 FAST`
 - Layers 15 (`Scroll`), 16 (`Gesture`), 17-21 (`TA *`, timeout) y 22/23 (`Scrl -/+`) son fantasma: 42×`&trans`, solo conmutan el mapeo del pad
+
+---
+
+## Layer 24 — Nvim (hold DEL, meñique der inferior)
+
+```
+,------------------------------------.                ,------------------------------------.
+|     | H1  | H2  | H3  | H4  | H+  |                | cc  | cy  | cd  | cp  | ct  |     |
+|-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+|     | ff  | fg  | sw  |bufs |smart|                | ca  | rn  | FMT | ss  | xx  |     |
+|-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+|     | gg  | gs  | gd  | gb  | fr  |                | Te  | Tc  | lt  | bd  | zen |[hld]|
+'-------------------------------------'               '------------------------------------'
+        |  q  |  e  |  w  |                               |C-/  |nohl |     |
+        '-------------------'                             '-------------------'
+```
+
+- Cada tecla tipea la secuencia `<leader>…` de nvim (leader = SPACE) como macro ZMK — **solo en modo normal**; en insert tipearía la secuencia literal
+- **Izquierda = buscar/navegar/git**: Harpoon 1-4 + add (fila sup, imita la fila numérica) · búsqueda en home row (`ff` files · `fg` grep · `sw` palabra · `bufs` · `smart`) · git en fila 3 (`gg` LazyGit · `gs` status · `gd` diff · `gb` branches · `fr` recientes)
+- **Derecha = actuar**: fila sup completa = Claude Code (`cc` toggle · `cy` accept diff · `cd` deny · `cp` add file · `ct` ctx-board) · home row = LSP (`ca` action · `rn` rename · `FMT` format · `ss` símbolos · `xx` Trouble) · fila 3 = tests y buffers (`Te`/`Tc` neotest · `lt` terminal del archivo · `bd` cerrar buffer · `zen`)
+- `FMT` envía `<leader>F` (mayúscula): la `f` minúscula es prefijo del grupo find en nvim y dispararía con lag — remapeado en la config de nvim (lsp.lua + conform.lua)
+- Thumbs: `q` quit · `e` explorer · `w` save (izq, q separado de w) · `C-/` terminal · `nohl` (der)
+- Fuente y ranking: `~/.config/nvim/CORNE_NVIM_LAYER.md` (Tier S+A; Tier B queda como secuencias leader via which-key)
 
 ---
 

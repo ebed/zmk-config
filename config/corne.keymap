@@ -51,7 +51,7 @@
              * (combo.c usa zmk_keymap_highest_layer_active), así que sin
              * ellas el combo ESC moría con x1/x3 seleccionado o durante la
              * ventana auto-Trackpad. */
-            layers = <0 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 17 18 19 20 21 22 23>;
+            layers = <0 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 17 18 19 20 21 22 23 24>;
         };
         combo_sys {
             timeout-ms = <50>;
@@ -92,6 +92,17 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&key_repeat>;
+        };
+
+        /* DEL-pos (meñique der inferior): tap→DEL / hold→Nvim (L24) — espejo
+         * del tp_rept izquierdo. */
+        nv_del: nvim_or_del {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
         };
 
         /* Toggles explícitos para el selector de velocidad del trackpad ---- */
@@ -158,6 +169,46 @@
             #binding-cells = <0>;
             bindings = <&tog_off 17>, <&tog_off 18>, <&tog_off 19>, <&tog_off 20>, <&tog_on 21>;
         };
+
+        /* Macros capa Nvim (L24): cada una tipea la secuencia <leader>…
+         * (leader = SPACE). Solo tienen sentido en modo normal de nvim;
+         * en insert tipearían la secuencia literal. FMT envía F mayúscula
+         * (<leader>F): la f minúscula es prefijo del grupo find en nvim
+         * y dispararía con lag de timeoutlen. */
+        nv_sm:  nv_smart_find  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp SPACE>; };
+        nv_ff:  nv_find_files  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp F>, <&kp F>; };
+        nv_fg:  nv_live_grep   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp F>, <&kp G>; };
+        nv_sw:  nv_grep_word   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp S>, <&kp W>; };
+        nv_bu:  nv_buffers     { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp COMMA>; };
+        nv_fr:  nv_recent      { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp F>, <&kp R>; };
+        nv_h1:  nv_harpoon_1   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp N1>; };
+        nv_h2:  nv_harpoon_2   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp N2>; };
+        nv_h3:  nv_harpoon_3   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp N3>; };
+        nv_h4:  nv_harpoon_4   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp N4>; };
+        nv_ha:  nv_harpoon_add { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp H>, <&kp A>; };
+        nv_ex:  nv_explorer    { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp E>; };
+        nv_w:   nv_save        { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp W>; };
+        nv_q:   nv_quit        { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp Q>; };
+        nv_nh:  nv_nohl        { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp H>; };
+        nv_gg:  nv_lazygit     { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp G>, <&kp G>; };
+        nv_gs:  nv_git_status  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp G>, <&kp S>; };
+        nv_gd:  nv_git_diff    { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp G>, <&kp D>; };
+        nv_gb:  nv_git_branch  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp G>, <&kp B>; };
+        nv_ca:  nv_code_action { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp C>, <&kp A>; };
+        nv_rn:  nv_rename      { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp R>, <&kp N>; };
+        nv_fmt: nv_format      { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp LS(F)>; };
+        nv_ss:  nv_symbols     { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp S>, <&kp S>; };
+        nv_xx:  nv_trouble     { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp X>, <&kp X>; };
+        nv_cc:  nv_claude      { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp C>, <&kp C>; };
+        nv_cy:  nv_claude_yes  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp C>, <&kp Y>; };
+        nv_cd:  nv_claude_deny { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp C>, <&kp D>; };
+        nv_cp:  nv_claude_add  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp C>, <&kp P>; };
+        nv_ct:  nv_ctx_board   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp C>, <&kp T>; };
+        nv_te:  nv_test_near   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp LS(T)>, <&kp E>; };
+        nv_tc:  nv_test_file   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp LS(T)>, <&kp C>; };
+        nv_lt:  nv_term_file   { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp L>, <&kp T>; };
+        nv_bd:  nv_buf_delete  { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp B>, <&kp D>; };
+        nv_z:   nv_zen         { compatible = "zmk,behavior-macro"; #binding-cells = <0>; bindings = <&kp SPACE>, <&kp Z>; };
 
         /* Home Row Mods — derecha: hold solo al presionar mano izquierda -- */
         hmr: homerow_mods_right {
@@ -333,7 +384,7 @@
             bindings = <
                 &lt 10 ESC      &kp Q       &kp W       &kp F        &kp P        &kp B          &kp J    &kp L        &kp U        &kp Y       &kp SEMI    &kp BSPC
                 &lt 9 TAB       &hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T  &kp G          &kp M    &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O  &kp SQT
-                &tp_rept 14 0   &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &kp DEL
+                &tp_rept 14 0   &kp Z       &kp X       &kp C        &kp D        &kp V          &kp K    &kp H        &kp COMMA    &kp DOT     &kp SLASH   &nv_del 24 DEL
                                             &lang_cw 6 0  &mo 7        &kp SPACE                  &lt 5 RET  &mo 1  &mo 2
             >;
         };
@@ -779,6 +830,31 @@
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+/* ### Layer 24 — Nvim  (hold DEL-pos, meñique der inferior en L0)
+ * Keymaps de nvim como teclas físicas (macros que tipean <leader>+secuencia;
+ * leader = SPACE). SOLO en modo normal — en insert tipearían la secuencia.
+ * Diseño: izquierda = buscar/navegar/git · derecha = actuar (Claude/LSP/
+ * tests). Fuente: ~/.config/nvim/CORNE_NVIM_LAYER.md (auditado 2026-11-13).
+ * ,------------------------------------.                ,------------------------------------.
+ * |     | H1  | H2  | H3  | H4  | H+  |                | cc  | cy  | cd  | cp  | ct  |     |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |     | ff  | fg  | sw  |bufs |smart|                | ca  | rn  | FMT | ss  | xx  |     |
+ * |-----+-----+-----+-----+-----+-----|                |-----+-----+-----+-----+-----+-----|
+ * |     | gg  | gs  | gd  | gb  | fr  |                | Te  | Tc  | lt  | bd  | zen |[hld]|
+ * `-------------------------------------'               `------------------------------------'
+ *         |  q  |  e  |  w  |                              |C-/  |nohl |     |
+ *         `-------------------'                            `-------------------'
+ */
+        nvim_layer {
+            display-name = "Nvim";
+            bindings = <
+                &none  &nv_h1  &nv_h2  &nv_h3  &nv_h4  &nv_ha    &nv_cc  &nv_cy  &nv_cd   &nv_cp  &nv_ct  &none
+                &none  &nv_ff  &nv_fg  &nv_sw  &nv_bu  &nv_sm    &nv_ca  &nv_rn  &nv_fmt  &nv_ss  &nv_xx  &none
+                &none  &nv_gg  &nv_gs  &nv_gd  &nv_gb  &nv_fr    &nv_te  &nv_tc  &nv_lt   &nv_bd  &nv_z   &none
+                               &nv_q   &nv_ex  &nv_w             &kp LC(FSLH)  &nv_nh  &none
             >;
         };
     };
