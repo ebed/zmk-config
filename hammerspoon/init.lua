@@ -60,10 +60,18 @@ body {
 .hdr-title { cursor: pointer; flex: 1; text-align: center; }
 .hdr-title:hover { color: #aabbff; }
 .pin-btn {
-  background: #1a1a1a; border: 1px solid #333; color: #555;
+  background: #1a1a1a; border: 1px solid #3a4046; color: #9aa4ad;
   font-size: 11px; padding: 4px 12px; border-radius: 4px; cursor: pointer;
   font-family: "SF Mono", Menlo, monospace; white-space: nowrap; flex-shrink: 0;
 }
+.zoom-ctl { display: flex; gap: 4px; align-items: center; flex-shrink: 0; margin-right: 10px; }
+.zoom-btn {
+  background: #1a1a1a; border: 1px solid #3a4046; color: #9aa4ad;
+  font-size: 12px; padding: 3px 9px; border-radius: 4px; cursor: pointer;
+  font-family: "SF Mono", Menlo, monospace;
+}
+.zoom-btn:hover { border-color: #88aaff; color: #aabbff; }
+#zoom-lbl { font-size: 10px; color: #9aa4ad; min-width: 34px; text-align: center; cursor: pointer; }
 .pin-btn.active { border-color: #00d4d4; color: #00d4d4; background: #001e1e; }
 .main { display: flex; flex: 1; overflow: hidden; }
 .nav {
@@ -71,7 +79,7 @@ body {
   background: #0d0d0d; border-right: 1px solid #1e1e1e;
   overflow-y: auto; padding: 12px 0;
 }
-.nav-lbl { font-size: 10px; color: #333; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px 8px; }
+.nav-lbl { font-size: 10px; color: #6a7076; letter-spacing: 2px; text-transform: uppercase; padding: 4px 14px 8px; }
 .ni { display: flex; align-items: center; gap: 8px; padding: 7px 12px; cursor: pointer; border-left: 3px solid transparent; }
 .ni:hover { background: #181818; }
 .ni.sel { border-left-color: var(--lc); background: var(--lb); }
@@ -97,7 +105,7 @@ body {
 .content { flex: 1; overflow: auto; padding: 18px 22px; }
 .view { display: none; }
 /* HOME */
-.thumb-label { font-size: 11px; color: #3a3a3a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+.thumb-label { font-size: 11px; color: #6a7076; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
 .thumb-row { display: flex; justify-content: center; align-items: flex-start; gap: 8px; margin-bottom: 20px; }
 .tgap { width: 26px; flex-shrink: 0; }
 .tkey { background: #1a1a1a; border: 2px solid var(--lc); border-bottom: 4px solid var(--lbb); border-radius: 7px; padding: 8px 10px 6px; text-align: center; min-width: 82px; cursor: pointer; }
@@ -124,7 +132,7 @@ body {
 .dhow { font-size: 13px; color: #9a9a9a; margin-top: 4px; }
 .notes { list-style: none; }
 .notes li { font-size: 13px; color: #959595; padding: 3px 0 3px 16px; position: relative; }
-.notes li::before { content: '·'; position: absolute; left: 5px; color: #3a3a3a; }
+.notes li::before { content: '·'; position: absolute; left: 5px; color: #6a7076; }
 .notes li b { color: #cfcfcf; }
 /* KEY GRID */
 .kb { display:flex; flex-direction:column; gap:5px; margin-bottom:14px; }
@@ -144,7 +152,7 @@ body {
 .kb-key.active .km { color:#b8c2cc; }
 .kb-key.dim { background:#1d1d1d; border:1px dashed #666; border-bottom:1px dashed #666; }
 .kb-key.dim .kl { color:#b0b0b0; }
-.kb-key.dim .km { color:#7a7a7a; }
+.kb-key.dim .km { color:#8a9099; }
 .kb-key.inherited { opacity:0.38; border-style:dashed; }
 </style>
 <script>
@@ -171,11 +179,24 @@ function show(id) {
     el.classList.toggle('sel', el.dataset.l === id);
   });
 }
-window.onload = function() { show('home'); };
+var _zoom = 1.0;
+function setZoom(z) {
+  _zoom = Math.round(Math.min(1.6, Math.max(0.8, z)) * 10) / 10;
+  document.body.style.zoom = _zoom;
+  var lbl = document.getElementById('zoom-lbl');
+  if (lbl) lbl.textContent = Math.round(_zoom * 100) + '%';
+  try { localStorage.setItem('kmZoom', _zoom); } catch (e) {}
+}
+window.onload = function() {
+  var saved = 1.1;  /* default: un punto más grande que antes */
+  try { saved = parseFloat(localStorage.getItem('kmZoom')) || 1.1; } catch (e) {}
+  setZoom(saved);
+  show('home');
+};
 </script>
 </head>
 <body>
-<div class="hdr"><span class="hdr-title" onclick="show('home')">CORNE — LAYER REFERENCE</span><button id="pin-btn" class="pin-btn" onclick="togglePin()">▶ Follow</button></div>
+<div class="hdr"><span class="hdr-title" onclick="show('home')">CORNE — LAYER REFERENCE</span><span class="zoom-ctl"><button class="zoom-btn" onclick="setZoom(_zoom-0.1)">A−</button><span id="zoom-lbl" onclick="setZoom(1.0)" title="click = reset">100%</span><button class="zoom-btn" onclick="setZoom(_zoom+0.1)">A+</button></span><button id="pin-btn" class="pin-btn" onclick="togglePin()">▶ Follow</button></div>
 <div class="main">
 <nav class="nav">
   <div class="nav-lbl">Capas</div>
@@ -229,7 +250,7 @@ window.onload = function() { show('home'); };
     <div class="tkey L5" style="--lbb:#882244" onclick="show('5')"><div class="kn">RET/L5</div><div class="kt">tap: ↵ RET</div><div class="kh">hold → Mac 5</div></div>
   </div>
 
-  <div style="text-align:center;color:#252525;font-size:11px;margin-top:18px">⌥⌘⇧H · Layer 7 tecla M · click título para volver aquí</div>
+  <div style="text-align:center;color:#5a6066;font-size:11px;margin-top:18px">⌥⌘⇧H · Layer 7 tecla M · click título para volver aquí</div>
 </div>
 
 <!-- LAYER 0 -->
@@ -1194,7 +1215,9 @@ local function toggleKeymapHelp()
         return
     end
     local screen = hs.screen.mainScreen():frame()
-    local w, h = 1040, 560
+    -- Más grande por defecto (legibilidad), acotado a la pantalla
+    local w = math.min(1240, screen.w - 60)
+    local h = math.min(700, screen.h - 120)
     keymapWebview = hs.webview.new({
         x = screen.x + (screen.w - w) / 2,
         y = screen.y + 80,
